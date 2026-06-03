@@ -465,10 +465,11 @@
                 <div class="flex gap-8">
                     <a href="https://docs.rail.aurellix.com/" target="_blank" class="text-link text-[0.7rem] uppercase font-bold tracking-widest text-white/70 hover:text-white" data-i18n="nav_api">API Docs</a>
                     <a href="https://merchant.rail.aurellix.com/" target="_blank" class="text-link text-[0.7rem] uppercase font-bold tracking-widest text-white/70 hover:text-white" data-i18n="nav_portal">Merchant Portal</a>
+                    <a href="#" onclick="onAurellix()" target="_blank" class="text-link text-[0.7rem] uppercase font-bold tracking-widest text-white/70 hover:text-white" data-i18n="nav_aurellix">Aurellix Group</a>
                 </div>
             </div>
             <div class="label-caps text-white/50 flex flex-col md:flex-row justify-between items-center gap-6">
-                <p data-i18n="copyright">© 2025 Aurellix Pay. All rights reserved.</p>
+                <p data-i18n="copyright">© 2026 Aurellix Pay. All rights reserved.</p>
                 <div class="flex gap-8 font-black">
                     <a href="https://hexbit.gitbook.io/hexbit-docs/legal/privacy-notice-for-eu-users-gdpr-compliance" target="_blank"href="#" class="hover:text-white transition">Privacy Policy</a>
                     <a href="https://hexbit.gitbook.io/hexbit-docs/terms-of-service" target="_blank" class="hover:text-white transition">Terms of Service</a>
@@ -480,7 +481,7 @@
     <script>
         const translations = {
             en: {
-                nav_portal: "Merchant Portal", nav_api: "API Docs", hero_badge: "Global Compliance Platform",
+                nav_portal: "Merchant Portal", nav_api: "API Docs", hero_badge: "Global Compliance Platform",nav_aurellix: "Aurellix Group",
                 hero_title: "Global Leading Stablecoin Payment Solutions",
                 hero_desc: "Aurellix Pay is a compliant stablecoin aggregate payment platform, providing efficient and stable crypto payment solutions for overseas platforms, Web3 projects, and payment providers.",
                 checkout_title: "Aurellix Pay Checkout", checkout_label: "Select Token", checkout_due: "Amount Due", checkout_pay: "Confirm Payment",
@@ -509,7 +510,7 @@
                 copyright: "© 2025 Aurellix Pay. All rights reserved."
             },
             zh: {
-                nav_portal: "商户管理后台", nav_api: "API 接口文档", hero_badge: "全球合规支付平台",
+                nav_portal: "商户管理后台", nav_api: "API 接口文档", hero_badge: "全球合规支付平台", nav_aurellix: "Aurellix集团",
                 hero_title: "全球领先的稳定币支付解决方案",
                 hero_desc: "Aurellix Pay 是合规稳定币聚合支付平台，专注于为出海平台、Web3项目、支付公司等提供合规、高效、稳定的加密支付解决方案，灵活对接全球主流法币、数字货币与支付通道。",
                 checkout_title: "Aurellix Pay 收银台", checkout_label: "选择支付币种", checkout_due: "待支付总额", checkout_pay: "确认支付",
@@ -538,7 +539,9 @@
             }
         };
 
+        let currentLang = 'en'
         function changeLang(lang) {
+            currentLang = lang
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (translations[lang] && translations[lang][key]) {
@@ -547,6 +550,7 @@
             });
             const label = { en: "EN", zh: "中文" }[lang];
             const deskLabel = document.getElementById('current-lang-label');
+            console.log('deskLabel', deskLabel)
             const mobileLabel = document.getElementById('mobile-lang-label');
             if (deskLabel) deskLabel.innerText = label;
             if (mobileLabel) mobileLabel.innerText = label;
@@ -555,6 +559,23 @@
                 opt.style.color = opt.innerText.includes(label) ? 'var(--hex-blue)' : '#64748b';
             });
         }
+
+        window.addEventListener('DOMContentLoaded', ()=>{
+      // 和你的代码一致：URLSearchParams获取search参数
+      const params = new URLSearchParams(location.search)
+      const langs = params.get('lang')
+
+      if(langs === 'zh') {
+         changeLang('zh')
+      } else if(langs === 'en') {
+        changeLang('en')
+      }
+      // 没有lang参数则保持默认语言
+    })
+
+    function onAurellix() {
+        window.open(`https://www.sandbox.aurellix.com/?lang=${currentLang}`, '_blank')
+    }
 
         function onMerchant() {
             window.open('https://merchant.rail.aurellix.com/', '_blank')
