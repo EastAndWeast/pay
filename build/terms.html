@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurellix Pay | Terms of Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="static/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root { --hex-blue: #0052ff; }
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; background: #f8fafc; }
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+        .btn-primary { background: var(--hex-blue); color: white; font-weight: 800; transition: all 0.3s; }
+        .btn-primary:hover { background: #0041cc; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0, 82, 255, 0.3); }
+        .btn-contact { background: #ffffff; border: 2px solid rgba(0, 82, 255, 0.1); color: #0052ff; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .btn-contact:hover { background: #f0f5ff; border-color: rgba(0, 82, 255, 0.25); transform: translateY(-1px); }
+        .lang-dropdown { position: relative; }
+        .lang-menu { display: none; position: absolute; top: 100%; right: 0; margin-top: 0.5rem; background: white; border-radius: 0.75rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 0.5rem; min-width: 120px; z-index: 60; }
+        .lang-dropdown:hover .lang-menu { display: block; }
+        .lang-option { padding: 0.5rem 1rem; font-size: 0.8rem; font-weight: 600; color: #64748b; border-radius: 0.5rem; cursor: pointer; transition: all 0.2s; }
+        .lang-option:hover { background: #f1f5f9; color: var(--hex-blue); }
+        .legal-content h2 { font-size: 1.25rem; font-weight: 800; color: #1e293b; margin-top: 2.5rem; margin-bottom: 1rem; }
+        .legal-content h3 { font-size: 1rem; font-weight: 700; color: #334155; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .legal-content p { font-size: 0.875rem; color: #475569; line-height: 1.8; margin-bottom: 1rem; }
+        .legal-content ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .legal-content ul li { font-size: 0.875rem; color: #475569; line-height: 1.8; margin-bottom: 0.25rem; }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="fixed w-full z-50 glass-nav">
+    <div class="max-w-6xl mx-auto px-5 lg:px-6">
+        <div class="flex h-16 items-center">
+            <a href="index.html" class="flex items-center gap-3 shrink-0">
+                <img src="static/headerLogo.png" style="width: 126px;"/>
+            </a>
+            <div class="hidden md:flex items-center gap-7 ml-10">
+                <a href="index.html" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-slate-500 hover:text-[#0052ff]" data-i18n="nav_home">Home</a>
+                <a href="coverage.html" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-slate-500 hover:text-[#0052ff]" data-i18n="nav_coverage">Coverage</a>
+                <a href="https://docs.rail.aurellix.com/" target="_blank" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-slate-500 hover:text-[#0052ff]" data-i18n="nav_api">API Docs</a>
+                <a href="https://demo.rail.aurellix.com" target="_blank" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-slate-500 hover:text-[#0052ff] flex items-center gap-1" data-i18n="nav_demo">Demo <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] opacity-60"></i></a>
+            </div>
+            <div class="hidden md:flex items-center gap-5 ml-auto">
+                <div class="lang-dropdown group">
+                    <button class="flex items-center gap-1.5 text-[0.7rem] font-black text-slate-400 group-hover:text-[#0052ff] transition">
+                        <span id="current-lang-label">EN</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="lang-menu">
+                        <div class="lang-option" onclick="changeLang('en')">English</div>
+                        <div class="lang-option" onclick="changeLang('zh')">简体中文</div>
+                    </div>
+                </div>
+                <a href="https://t.me/cs_aurellixpay" target="_blank" class="btn-contact px-5 py-2.5 rounded-xl text-[0.75rem] uppercase tracking-widest font-bold flex items-center gap-1.5" data-i18n="nav_contact">Contact <i class="fa-brands fa-telegram text-[0.7rem]"></i></a>
+                <a href="https://merchant.rail.aurellix.com/" target="_blank" class="btn-primary px-6 py-2.5 rounded-xl text-[0.75rem] uppercase tracking-widest shadow-sm" data-i18n="nav_portal">Merchant Portal</a>
+            </div>
+            <button class="md:hidden text-slate-500 ml-auto" onclick="toggleMobileMenu()"><i id="menu-icon" class="fa-solid fa-bars text-xl"></i></button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[100] bg-white lg:hidden overflow-y-auto pt-24 px-6 pb-12 text-start" style="transform: translateX(100%); transition: transform 0.3s ease;">
+    <button onclick="toggleMobileMenu()" class="absolute top-5 right-5 w-12 h-12 flex items-center justify-center text-slate-400">
+        <i class="fa-solid fa-xmark text-2xl"></i>
+    </button>
+    <div class="flex flex-col gap-6 text-lg font-bold text-slate-800 mb-8">
+        <a href="index.html" onclick="toggleMobileMenu()" data-i18n="nav_home">Home</a>
+        <a href="coverage.html" onclick="toggleMobileMenu()" data-i18n="nav_coverage">Coverage</a>
+        <a href="https://docs.rail.aurellix.com/" target="_blank" data-i18n="nav_api">API Docs</a>
+        <a href="https://demo.rail.aurellix.com" target="_blank" class="flex items-center gap-2" data-i18n="nav_demo">Demo <i class="fa-solid fa-arrow-up-right-from-square text-sm opacity-50"></i></a>
+    </div>
+    <div class="space-y-4 pt-6 border-t border-slate-100 mb-6">
+        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Select Language</p>
+        <div class="grid grid-cols-2 gap-3">
+            <button onclick="changeLang('en'); toggleMobileMenu();" class="py-3 rounded-xl border-2 border-slate-200 text-sm font-bold">English</button>
+            <button onclick="changeLang('zh'); toggleMobileMenu();" class="py-3 rounded-xl border-2 border-slate-200 text-sm font-bold">简体中文</button>
+        </div>
+    </div>
+    <a href="https://t.me/cs_aurellixpay" target="_blank" class="block w-full text-center btn-contact px-5 py-3 rounded-xl text-sm font-bold mb-3" data-i18n="nav_contact">Contact</a>
+    <a href="https://merchant.rail.aurellix.com/" target="_blank" class="block w-full text-center btn-primary px-6 py-3 rounded-xl text-sm font-bold" data-i18n="nav_portal">Merchant Portal</a>
+</div>
+
+<!-- Page Header -->
+<section class="pt-28 pb-8 bg-gradient-to-b from-white to-slate-50">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <h1 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-3" data-i18n="terms_title">Terms of Service</h1>
+        <p class="text-sm text-slate-400" data-i18n="terms_updated">Last updated: June 2026</p>
+    </div>
+</section>
+
+<!-- Content EN -->
+<section id="content-en" class="pb-20">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-8 md:p-12 legal-content">
+            <p>Welcome to Aurellix Pay. These Terms of Service ("Terms") govern your access to and use of the Aurellix Pay platform, website, APIs, and related services (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.</p>
+
+            <h2>1. Definitions</h2>
+            <ul>
+                <li><strong>"Platform"</strong> refers to the Aurellix Pay payment processing platform, including its web interface, APIs, and mobile applications.</li>
+                <li><strong>"Merchant"</strong> refers to any business entity or individual that integrates or uses the Platform to accept payments.</li>
+                <li><strong>"User"</strong> or <strong>"Payer"</strong> refers to any individual making payments through a Merchant's integration.</li>
+                <li><strong>"Services"</strong> encompasses all payment processing, settlement, and related financial services provided by Aurellix Pay.</li>
+            </ul>
+
+            <h2>2. Eligibility and Account Registration</h2>
+            <ul>
+                <li>You must be at least 18 years old and have the legal capacity to enter into binding agreements.</li>
+                <li>Merchants must be duly registered business entities with valid business licenses in their operating jurisdictions.</li>
+                <li>You must provide accurate, complete, and current information during registration and keep your account information updated.</li>
+                <li>We reserve the right to refuse service, suspend, or terminate accounts at our sole discretion.</li>
+            </ul>
+
+            <h2>3. Permitted Use</h2>
+            <p>You agree to use the Services only for lawful purposes and in compliance with all applicable laws and regulations. You shall not:</p>
+            <ul>
+                <li>Use the Services for money laundering, terrorist financing, or any illegal activity</li>
+                <li>Process transactions involving sanctioned entities, individuals, or jurisdictions</li>
+                <li>Circumvent or attempt to circumvent transaction limits, security measures, or compliance checks</li>
+                <li>Provide false, misleading, or fraudulent information</li>
+                <li>Engage in chargeback fraud or payment disputes in bad faith</li>
+                <li>Use the Services to process payments for prohibited goods or services (including but not limited to illegal drugs, weapons, gambling in restricted jurisdictions, adult content without proper age verification)</li>
+            </ul>
+
+            <h2>4. Payment Processing</h2>
+            <h3>4.1 Transaction Processing</h3>
+            <p>We facilitate the processing of payments in supported fiat currencies and stablecoins (including USDT and USDC). Transaction processing is subject to availability, network conditions, and applicable limits.</p>
+            <h3>4.2 Fees</h3>
+            <p>Service fees are outlined in your Merchant agreement or displayed on the Platform. We reserve the right to modify fees with reasonable advance notice.</p>
+            <h3>4.3 Settlement</h3>
+            <p>Settlement times vary based on payment method, currency, and jurisdiction. We will make commercially reasonable efforts to process settlements within the stated timeframes.</p>
+            <h3>4.4 Exchange Rates</h3>
+            <p>Where currency conversion is required, exchange rates will be determined at the time of transaction processing and may include a markup over the interbank rate.</p>
+
+            <h2>5. Compliance Obligations</h2>
+            <ul>
+                <li>Merchants must implement and maintain adequate KYC (Know Your Customer) and AML (Anti-Money Laundering) procedures.</li>
+                <li>You must cooperate with any compliance audits or information requests from Aurellix Pay.</li>
+                <li>We may suspend or terminate services if you fail to meet compliance requirements.</li>
+                <li>You are responsible for obtaining all necessary licenses and registrations in your operating jurisdictions.</li>
+            </ul>
+
+            <h2>6. Intellectual Property</h2>
+            <p>All intellectual property rights in the Platform, including software, designs, logos, and documentation, are owned by Aurellix Pay or its licensors. You are granted a limited, non-exclusive, non-transferable license to use the Platform in accordance with these Terms.</p>
+
+            <h2>7. Limitation of Liability</h2>
+            <p>To the maximum extent permitted by law:</p>
+            <ul>
+                <li>Aurellix Pay shall not be liable for any indirect, incidental, special, consequential, or punitive damages.</li>
+                <li>Our total liability shall not exceed the fees paid by you to us in the 12 months preceding the claim.</li>
+                <li>We are not responsible for losses arising from circumstances beyond our reasonable control, including but not limited to blockchain network failures, banking system disruptions, or force majeure events.</li>
+            </ul>
+
+            <h2>8. Indemnification</h2>
+            <p>You agree to indemnify and hold harmless Aurellix Pay, its affiliates, officers, and employees from any claims, damages, losses, and expenses arising from your use of the Services, violation of these Terms, or infringement of any third-party rights.</p>
+
+            <h2>9. Termination</h2>
+            <p>Either party may terminate this agreement with 30 days written notice. We may immediately suspend or terminate your access if you breach these Terms, engage in fraudulent activity, or pose a compliance risk. Upon termination, you remain liable for any outstanding fees or obligations.</p>
+
+            <h2>10. Dispute Resolution</h2>
+            <p>Any disputes arising from or relating to these Terms shall first be resolved through good-faith negotiation. If unresolved within 30 days, disputes shall be submitted to binding arbitration in accordance with the rules of the applicable jurisdiction.</p>
+
+            <h2>11. Modifications</h2>
+            <p>We may update these Terms from time to time. Material changes will be communicated via email or platform notification at least 30 days before taking effect. Continued use of the Services constitutes acceptance of the modified Terms.</p>
+
+            <h2>12. Contact Us</h2>
+            <p>For questions regarding these Terms, please contact us:</p>
+            <ul>
+                <li>Email: <a href="mailto:legal@aurellix.com" class="text-[#0052ff] hover:underline">legal@aurellix.com</a></li>
+                <li>Telegram: <a href="https://t.me/cs_aurellixpay" target="_blank" class="text-[#0052ff] hover:underline">@cs_aurellixpay</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Content ZH (hidden by default) -->
+<section id="content-zh" class="pb-20 hidden">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-8 md:p-12 legal-content">
+            <p>欢迎使用 Aurellix Pay。本服务条款（以下简称"条款"）规范您对 Aurellix Pay 平台、网站、API 及相关服务（统称"服务"）的访问和使用。访问或使用我们的服务即表示您同意受本条款约束。</p>
+
+            <h2>1. 定义</h2>
+            <ul>
+                <li><strong>"平台"</strong> 指 Aurellix Pay 支付处理平台，包括其网页界面、API 和移动应用程序。</li>
+                <li><strong>"商户"</strong> 指整合或使用平台接受支付的任何商业实体或个人。</li>
+                <li><strong>"用户"</strong> 或 <strong>"付款人"</strong> 指通过商户集成进行支付的任何个人。</li>
+                <li><strong>"服务"</strong> 涵盖 Aurellix Pay 提供的所有支付处理、结算及相关金融服务。</li>
+            </ul>
+
+            <h2>2. 资格与账户注册</h2>
+            <ul>
+                <li>您必须年满 18 周岁且具有签订具有约束力协议的法律行为能力。</li>
+                <li>商户必须是在其经营管辖区内合法注册的商业实体，持有有效的营业执照。</li>
+                <li>您必须在注册时提供准确、完整和最新的信息，并及时更新您的账户信息。</li>
+                <li>我们保留自行决定是否拒绝服务、暂停或终止账户的权利。</li>
+            </ul>
+
+            <h2>3. 许可用途</h2>
+            <p>您同意仅将服务用于合法目的，并遵守所有适用的法律法规。您不得：</p>
+            <ul>
+                <li>将服务用于洗钱、恐怖主义融资或任何非法活动</li>
+                <li>处理涉及受制裁实体、个人或管辖区的交易</li>
+                <li>规避或试图规避交易限额、安全措施或合规检查</li>
+                <li>提供虚假、误导或欺诈性信息</li>
+                <li>从事恶意拒付欺诈或支付争议</li>
+                <li>使用服务处理违禁商品或服务的支付（包括但不限于非法毒品、武器、受限管辖区的赌博、未经适当年龄验证的成人内容）</li>
+            </ul>
+
+            <h2>4. 支付处理</h2>
+            <h3>4.1 交易处理</h3>
+            <p>我们协助处理支持的法币和稳定币（包括 USDT 和 USDC）支付。交易处理取决于可用性、网络状况和适用的限额。</p>
+            <h3>4.2 费用</h3>
+            <p>服务费用在您的商户协议中列出或在平台上显示。我们保留在合理提前通知后修改费用的权利。</p>
+            <h3>4.3 结算</h3>
+            <p>结算时间因支付方式、货币和管辖区而异。我们将尽商业合理的努力在规定的时间范围内处理结算。</p>
+            <h3>4.4 汇率</h3>
+            <p>如需货币转换，汇率将在交易处理时确定，可能包含银行间汇率之上的加价。</p>
+
+            <h2>5. 合规义务</h2>
+            <ul>
+                <li>商户必须实施并维护充分的 KYC（了解您的客户）和 AML（反洗钱）程序。</li>
+                <li>您必须配合 Aurellix Pay 的任何合规审计或信息请求。</li>
+                <li>如果您未能满足合规要求，我们可能会暂停或终止服务。</li>
+                <li>您有责任在您经营的管辖区获得所有必要的许可证和注册。</li>
+            </ul>
+
+            <h2>6. 知识产权</h2>
+            <p>平台的所有知识产权，包括软件、设计、标识和文档，归 Aurellix Pay 或其许可方所有。您被授予有限的、非排他性的、不可转让的许可，以按照本条款使用平台。</p>
+
+            <h2>7. 责任限制</h2>
+            <p>在法律允许的最大范围内：</p>
+            <ul>
+                <li>Aurellix Pay 不对任何间接、附带、特殊、后果性或惩罚性损害承担责任。</li>
+                <li>我们的总责任不超过您在索赔前 12 个月内向我们支付的费用。</li>
+                <li>我们不对超出合理控制范围的情况导致的损失负责，包括但不限于区块链网络故障、银行系统中断或不可抗力事件。</li>
+            </ul>
+
+            <h2>8. 赔偿</h2>
+            <p>您同意就因您使用服务、违反本条款或侵犯任何第三方权利而产生的任何索赔、损害、损失和费用，对 Aurellix Pay、其关联公司、高管和员工进行赔偿并使其免受损害。</p>
+
+            <h2>9. 终止</h2>
+            <p>任一方均可提前 30 天书面通知终止本协议。如果您违反本条款、从事欺诈活动或构成合规风险，我们可能会立即暂停或终止您的访问权限。终止后，您仍需对任何未结费用或义务承担责任。</p>
+
+            <h2>10. 争议解决</h2>
+            <p>因本条款引起或与之相关的任何争议应首先通过善意协商解决。如在 30 天内无法解决，争议应按照适用管辖区的规则提交具有约束力的仲裁。</p>
+
+            <h2>11. 条款修改</h2>
+            <p>我们可能会不时更新本条款。重大变更将通过电子邮件或平台通知至少提前 30 天传达。继续使用服务即视为接受修改后的条款。</p>
+
+            <h2>12. 联系我们</h2>
+            <p>如对本条款有疑问，请联系我们：</p>
+            <ul>
+                <li>邮箱：<a href="mailto:legal@aurellix.com" class="text-[#0052ff] hover:underline">legal@aurellix.com</a></li>
+                <li>Telegram：<a href="https://t.me/cs_aurellixpay" target="_blank" class="text-[#0052ff] hover:underline">@cs_aurellixpay</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gradient-to-br from-[#1e3a5f] via-[#1a2f4a] to-[#0f1f35] text-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 pt-14 pb-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-10">
+            <div class="md:col-span-5">
+                <img src="static/logo.png" style="width: 126px; margin-bottom: 16px;"/>
+                <p class="text-white/50 text-[0.8rem] leading-relaxed max-w-xs mb-5" data-i18n="footer_desc">Aurellix Pay is a compliant stablecoin aggregate payment platform.</p>
+                <div class="flex items-center gap-3">
+                    <a href="https://t.me/cs_aurellixpay" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110" title="Telegram"><i class="fa-brands fa-telegram text-white/70 text-sm"></i></a>
+                    <a href="https://www.aurellix.com/" target="_blank" id="group-link" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/60 hover:text-white text-[0.7rem] transition-all duration-300 group">
+                        <i class="fa-solid fa-building text-white/40 text-[0.6rem]"></i>
+                        <span data-i18n="footer_group">Aurellix Group</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[0.45rem] text-white/30"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="md:col-span-3">
+                <h4 class="text-[0.65rem] uppercase tracking-[0.2em] font-black text-white/40 mb-5" data-i18n="footer_product">Product</h4>
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="text-white/70 hover:text-white text-[0.8rem] transition-colors" data-i18n="nav_home">Home</a></li>
+                    <li><a href="coverage.html" class="text-white/70 hover:text-white text-[0.8rem] transition-colors" data-i18n="nav_coverage">Coverage</a></li>
+                    <li><a href="https://demo.rail.aurellix.com" target="_blank" class="text-white/70 hover:text-white text-[0.8rem] transition-colors inline-flex items-center gap-1" data-i18n="nav_demo">Demo <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] text-white/40"></i></a></li>
+                    <li><a href="https://merchant.rail.aurellix.com/" target="_blank" class="text-white/70 hover:text-white text-[0.8rem] transition-colors" data-i18n="nav_portal">Merchant Portal</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-2">
+                <h4 class="text-[0.65rem] uppercase tracking-[0.2em] font-black text-white/40 mb-5" data-i18n="footer_resources">Resources</h4>
+                <ul class="space-y-3">
+                    <li><a href="https://docs.rail.aurellix.com/" target="_blank" class="text-white/70 hover:text-white text-[0.8rem] transition-colors inline-flex items-center gap-1" data-i18n="nav_api">API Docs <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] text-white/40"></i></a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-2">
+                <h4 class="text-[0.65rem] uppercase tracking-[0.2em] font-black text-white/40 mb-5" data-i18n="nav_contact">Contact</h4>
+                <a href="https://t.me/cs_aurellixpay" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-[0.8rem] transition-all duration-300 group">
+                    <i class="fa-brands fa-telegram text-[#29b6f6] group-hover:scale-110 transition-transform"></i>
+                    <span>Telegram</span>
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-6 flex flex-col items-center gap-3 text-center">
+            <p class="text-white/30 text-[0.7rem] tracking-wide" data-i18n="copyright">© 2026 Aurellix Pay. All rights reserved.</p>
+            <div class="flex items-center gap-4 text-[0.65rem]">
+                <a href="privacy.html" class="text-white/40 hover:text-white/70 transition-colors" data-i18n="footer_privacy">Privacy Policy</a>
+                <span class="text-white/15">|</span>
+                <a href="terms.html" class="text-white/40 hover:text-white/70 transition-colors" data-i18n="footer_terms">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const translations = {
+        en: {
+            nav_portal: "Merchant Portal", nav_api: "API Docs", nav_home: "Home", nav_demo: "Demo", nav_contact: "Contact", nav_coverage: "Coverage",
+            terms_title: "Terms of Service", terms_updated: "Last updated: June 2026",
+            footer_product: "Product", footer_resources: "Resources", footer_group: "Aurellix Group",
+            footer_privacy: "Privacy Policy", footer_terms: "Terms of Service",
+            footer_desc: "Aurellix Pay is a compliant stablecoin aggregate payment platform, providing efficient and stable crypto solutions globally.",
+            copyright: "© 2026 Aurellix Pay. All rights reserved."
+        },
+        zh: {
+            nav_portal: "商户管理后台", nav_api: "API 接口文档", nav_home: "首页", nav_demo: "演示 Demo", nav_contact: "咨询", nav_coverage: "覆盖范围",
+            terms_title: "服务条款", terms_updated: "最后更新：2026 年 6 月",
+            footer_product: "产品", footer_resources: "资源", footer_group: "Aurellix 集团",
+            footer_privacy: "隐私政策", footer_terms: "服务条款",
+            footer_desc: "Aurellix Pay 是合规稳定币聚合支付平台，专注于提供合规、高效、稳定的全球加密支付解决方案。",
+            copyright: "© 2026 Aurellix Pay. All rights reserved."
+        }
+    };
+
+    let currentLang = 'en';
+    function changeLang(lang) {
+        currentLang = lang;
+        localStorage.setItem('pref-lang', lang);
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) el.innerText = translations[lang][key];
+        });
+        document.querySelectorAll('a[href$=".html"]').forEach(link => {
+            try { const url = new URL(link.href, location.origin); url.searchParams.set('lang', lang); link.href = url.pathname + url.search; } catch(e) {}
+        });
+        const groupLink = document.getElementById('group-link');
+        if (groupLink) groupLink.href = 'https://www.aurellix.com/' + (lang === 'zh' ? '?lang=zh' : '');
+        document.getElementById('content-en').classList.toggle('hidden', lang !== 'en');
+        document.getElementById('content-zh').classList.toggle('hidden', lang !== 'zh');
+        const label = { en: "EN", zh: "中文" }[lang];
+        const d = document.getElementById('current-lang-label');
+        if (d) d.innerText = label;
+        document.querySelectorAll('.lang-option').forEach(opt => { opt.style.color = opt.innerText.includes(label) ? 'var(--hex-blue)' : '#64748b'; });
+    }
+
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+        const isOpen = menu.style.transform === 'translateX(0px)';
+        menu.style.transform = isOpen ? 'translateX(100%)' : 'translateX(0px)';
+        icon.className = isOpen ? 'fa-solid fa-bars text-xl' : 'fa-solid fa-xmark text-xl';
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(location.search);
+        let langs = params.get('lang') || localStorage.getItem('pref-lang') || 'en';
+        changeLang(langs);
+    });
+</script>
+</body>
+</html>
