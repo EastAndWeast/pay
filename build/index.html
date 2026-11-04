@@ -1,21 +1,30 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 👇 新增 Open Graph 元标签 -->
-     <meta property="og:url" content="https://rail.aurellix.com/" /> <!-- 替换为页面完整 URL -->
-    <meta property="og:title" content="Aurellix Pay | Global Leading Stablecoin Payment Solutions" />
-    <meta property="og:description" content="Aurellix Pay is a compliant stablecoin payment platform, providing crypto payment solutions for global platforms and Web3 projects — especially RWA initiatives — with full on-ramp and off-ramp capabilities across 40+ fiat and digital currencies." />
-    <meta property="og:image" content="https://rail.aurellix.com/static/home.png" /> <!-- 替换为实际图片 URL -->
-    
+    <title id="page-title">Aurellix Pay | Global Leading Stablecoin Payment Solutions</title>
+    <meta name="description" content="Aurellix Pay is an institutional compliant stablecoin aggregate payment platform offering global fiat acquiring, T+0 bi-directional OTC conversion, multi-currency Virtual Accounts (VA), and global payout across 26+ sovereign currencies." />
+    <meta name="keywords" content="Aurellix Pay, stablecoin payment, crypto gateway, USDT acquiring, USDC settlement, fiat to crypto, global OTC, virtual account collection, POBO payout" />
+    <link rel="canonical" href="https://rail.aurellix.com/" />
+    <link rel="alternate" hreflang="en" href="https://rail.aurellix.com/?lang=en" />
+    <link rel="alternate" hreflang="zh" href="https://rail.aurellix.com/?lang=zh" />
+
+    <!-- Open Graph / Telegram / WhatsApp / WeChat -->
     <meta property="og:type" content="website" />
-    <!-- 👇 Telegram/Twitter 增强标签 -->
+    <meta property="og:url" content="https://rail.aurellix.com/" />
+    <meta property="og:title" id="og-title" content="Aurellix Pay | Global Leading Stablecoin Payment Solutions" />
+    <meta property="og:description" id="og-desc" content="Aurellix Pay provides compliant stablecoin aggregate payment solutions, global fiat acquiring, T+0 bi-directional OTC conversion, multi-currency VA accounts, and global payouts." />
+    <meta property="og:image" id="og-image" content="https://rail.aurellix.com/static/share_en.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Aurellix Pay" />
+
+    <!-- Twitter / Telegram Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Aurellix Pay | Global Leading Stablecoin Payment Solutions" />
-    <meta name="twitter:description" content="Aurellix Pay is a compliant stablecoin payment platform, providing crypto payment solutions for global platforms and Web3 projects — especially RWA initiatives — with full on-ramp and off-ramp capabilities across 40+ fiat and digital currencies." />
-    <meta name="twitter:image" content="https://rail.aurellix.com/static/home.png" /> <!-- 与 og:image 保持一致 -->
-    <title>Aurellix Pay | Global Leading Stablecoin Payment Solutions</title>
+    <meta name="twitter:title" id="tw-title" content="Aurellix Pay | Global Leading Stablecoin Payment Solutions" />
+    <meta name="twitter:description" id="tw-desc" content="Compliant stablecoin aggregate payment gateway, T+0 bi-directional OTC conversion, multi-currency Virtual Accounts, and global payout." />
+    <meta name="twitter:image" id="tw-image" content="https://rail.aurellix.com/static/share_en.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="static/vite.png" />
     <!-- Google Fonts -->
@@ -210,6 +219,7 @@
                 <div class="hidden md:flex items-center gap-7 ml-10">
                     <a href="index.html" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-[#0052ff]" data-i18n="nav_home">Home</a>
                     <a href="coverage.html" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-slate-500 hover:text-[#0052ff]" data-i18n="nav_coverage">Coverage</a>
+                    <a href="otc.html" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-slate-500 hover:text-[#0052ff]" data-i18n="nav_otc">OTC</a>
                     <a href="https://docs.rail.aurellix.com/" target="_blank" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-slate-500 hover:text-[#0052ff]" data-i18n="nav_api">API Docs</a>
                     <a href="https://demo.rail.aurellix.com" target="_blank" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-slate-500 hover:text-[#0052ff] flex items-center gap-1" data-i18n="nav_demo">Demo <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] opacity-60"></i></a>
                 </div>
@@ -226,7 +236,7 @@
                             <div class="lang-option" onclick="changeLang('zh')">简体中文</div>
                         </div>
                     </div>
-                    <a href="https://t.me/cs_aurellixpay" target="_blank" class="btn-contact px-5 py-2.5 rounded-xl text-[0.75rem] uppercase tracking-widest font-bold flex items-center gap-1.5" data-i18n="nav_contact">Contact <i class="fa-brands fa-telegram text-[0.7rem]"></i></a>
+                    <a href="https://t.me/cs_aurellix" target="_blank" class="btn-contact px-5 py-2.5 rounded-xl text-[0.75rem] uppercase tracking-widest font-bold flex items-center gap-1.5" data-i18n="nav_contact">Contact <i class="fa-brands fa-telegram text-[0.7rem]"></i></a>
                     <button onclick="onMerchant()" class="btn-primary px-6 py-2.5 rounded-xl text-[0.75rem] uppercase tracking-widest shadow-sm" data-i18n="nav_portal">Merchant Portal</button>
                 </div>
                 <button class="md:hidden text-slate-500 ml-auto" onclick="toggleMobileMenu()"><i id="menu-icon" class="fa-solid fa-bars text-xl"></i></button>
@@ -243,6 +253,7 @@
         <div class="flex flex-col gap-6 text-lg font-bold text-slate-800 mb-8 text-start">
             <a href="index.html" onclick="toggleMobileMenu()" class="text-[#0052ff]" data-i18n="nav_home">Home</a>
             <a href="coverage.html" onclick="toggleMobileMenu()" data-i18n="nav_coverage">Coverage</a>
+            <a href="otc.html" onclick="toggleMobileMenu()" data-i18n="nav_otc">OTC</a>
             <a href="https://docs.rail.aurellix.com/" target="_blank" onclick="toggleMobileMenu()" data-i18n="nav_api">API Docs</a>
             <a href="https://demo.rail.aurellix.com" target="_blank" onclick="toggleMobileMenu()" class="flex items-center gap-2" data-i18n="nav_demo">Demo <i class="fa-solid fa-arrow-up-right-from-square text-sm opacity-50"></i></a>
         </div>
@@ -253,7 +264,7 @@
                 <button onclick="changeLang('en'); toggleMobileMenu();" class="px-4 py-3 bg-slate-50 rounded-xl text-sm font-bold text-slate-600 text-left">English</button>
                 <button onclick="changeLang('zh'); toggleMobileMenu();" class="px-4 py-3 bg-slate-50 rounded-xl text-sm font-bold text-slate-600 text-left">简体中文</button>
             </div>
-            <a href="https://t.me/cs_aurellixpay" target="_blank" class="flex items-center gap-2 text-base font-bold text-slate-600 mt-4" data-i18n="nav_contact">Contact <i class="fa-brands fa-telegram text-blue-500"></i></a>
+            <a href="https://t.me/cs_aurellix" target="_blank" class="flex items-center gap-2 text-base font-bold text-slate-600 mt-4" data-i18n="nav_contact">Contact <i class="fa-brands fa-telegram text-blue-500"></i></a>
         </div>
         <!-- CTA -->
         <div class="mt-6 text-center">
@@ -385,6 +396,142 @@
         </div>
     </section>
 
+    <!-- Section: Global OTC & Settlement Feature -->
+    <section id="otc-spotlight" class="py-24 border-b border-slate-200 bg-white overflow-hidden">
+        <div class="max-w-6xl mx-auto px-5 lg:px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+                
+                <!-- Left: Headline & Core Values -->
+                <div class="lg:col-span-7 reveal reveal-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-[#0052ff] label-caps mb-6 ring-1 ring-blue-100">
+                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_cyan]"></span>
+                        <span data-i18n="spotlight_otc_badge">Institutional Desk & Liquidity Rails</span>
+                    </div>
+                    <h2 class="heading-lg text-slate-900 mb-6">
+                        <span data-i18n="spotlight_otc_title">Global Fiat & Stablecoin Bi-Directional Settlement Network</span>
+                    </h2>
+                    <p class="body-text text-base mb-8 max-w-xl" data-i18n="spotlight_otc_desc">
+                        Bridging traditional banking rails (SWIFT & Local Rails) with stablecoin liquidity. Empowering enterprises with compliant T+0 bi-directional conversion, multi-currency Virtual Accounts (VA), and Global Payouts (POBO).
+                    </p>
+
+                    <!-- 3 Specific Exchange Modes Badges -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+                        <div class="p-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl">
+                            <div class="text-[0.65rem] font-black uppercase text-blue-600 mb-1" data-i18n="idx_mode1_tag">Fiat ⇄ Stablecoin</div>
+                            <div class="text-xs font-black text-slate-800" data-i18n="idx_mode1_title">Fiat ⇄ USDT/USDC</div>
+                        </div>
+                        <div class="p-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl">
+                            <div class="text-[0.65rem] font-black uppercase text-indigo-600 mb-1" data-i18n="idx_mode2_tag">Fiat ⇄ Fiat FX</div>
+                            <div class="text-xs font-black text-slate-800" data-i18n="idx_mode2_title">26+ Multi-Currency FX</div>
+                        </div>
+                        <div class="p-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl">
+                            <div class="text-[0.65rem] font-black uppercase text-emerald-600 mb-1" data-i18n="idx_mode3_tag">Crypto ⇄ Crypto</div>
+                            <div class="text-xs font-black text-slate-800" data-i18n="idx_mode3_title">USDT ⇄ USDC ⇄ EURC</div>
+                        </div>
+                    </div>
+
+                    <!-- Feature Check Pills -->
+                    <div class="space-y-3 mb-10 text-sm font-bold text-slate-700">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-blue-100 text-[#0052ff] flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-check"></i></div>
+                            <span data-i18n="spotlight_otc_f1">Dedicated Multi-Currency Virtual Accounts (Global SWIFT & Local VA)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-blue-100 text-[#0052ff] flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-check"></i></div>
+                            <span data-i18n="spotlight_otc_f2">Global Disbursements Across 26+ Corridors (SWIFT POBO & Local Rails)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-blue-100 text-[#0052ff] flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-check"></i></div>
+                            <span data-i18n="spotlight_otc_f3">T+0 Institutional Deep Liquidity & Embedded Real-Time KYT Protection</span>
+                        </div>
+                    </div>
+
+                    <!-- Dual CTA -->
+                    <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
+                        <a href="https://t.me/cs_aurellix" target="_blank" class="btn-primary px-8 py-3.5 rounded-2xl text-xs uppercase tracking-widest text-center shadow-lg hover:shadow-xl transition inline-flex items-center justify-center gap-2" data-i18n="spotlight_otc_btn_contact">
+                            Contact Institutional Desk <i class="fa-brands fa-telegram text-sm"></i>
+                        </a>
+                        <a href="otc.html" class="bg-slate-50 border-2 border-slate-200 text-slate-700 px-8 py-3.5 rounded-2xl text-xs font-black uppercase tracking-widest text-center hover:bg-slate-100 hover:border-slate-300 transition inline-flex items-center justify-center gap-1.5" data-i18n="spotlight_otc_btn_explore">
+                            View 26+ Currencies Matrix <i class="fa-solid fa-arrow-right text-[0.65rem]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: High-tech Visual Architecture Card -->
+                <div class="lg:col-span-5 reveal reveal-right">
+                    <div class="bg-gradient-to-br from-slate-900 to-[#0f172a] text-white p-8 lg:p-9 rounded-[2.5rem] shadow-2xl border border-slate-800 relative overflow-hidden">
+                        <div class="absolute -right-16 -top-16 w-48 h-48 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                        <div class="absolute -left-16 -bottom-16 w-48 h-48 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-5 mb-6">
+                            <span class="label-caps text-blue-400 font-black" data-i18n="spotlight_flow_title">Settlement Flow</span>
+                            <span class="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[0.65rem] font-bold border border-emerald-500/20 flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> T+0 Instant Delivery
+                            </span>
+                        </div>
+
+                        <!-- Step 1: Fiat Virtual Accounts -->
+                        <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700/60 mb-3">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs font-bold text-slate-300 uppercase tracking-wider" data-i18n="spotlight_flow_s1">1. Fiat Collections (VA)</span>
+                                <span class="text-[0.65rem] text-cyan-400 font-mono">SWIFT & Local Pay-in</span>
+                            </div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2 py-0.5 rounded bg-slate-700 text-xs font-bold">USD</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-700 text-xs font-bold">EUR</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-700 text-xs font-bold">GBP</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-700 text-xs font-bold">HKD</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-700 text-xs font-bold">SGD</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-700 text-xs font-bold text-slate-400">+21 Fiats</span>
+                            </div>
+                        </div>
+
+                        <!-- Directional Arrow Engine -->
+                        <div class="flex items-center justify-center my-3 text-cyan-400 gap-2 font-mono text-[0.7rem] uppercase tracking-widest font-black">
+                            <i class="fa-solid fa-arrows-up-down text-sm animate-bounce"></i>
+                            <span>Bi-Directional Smart Routing</span>
+                        </div>
+
+                        <!-- Step 2: Stablecoin Liquidity Pool -->
+                        <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700/60 mb-3">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs font-bold text-slate-300 uppercase tracking-wider" data-i18n="spotlight_flow_s2">2. Stablecoin Settlement</span>
+                                <span class="text-[0.65rem] text-emerald-400 font-mono">KYT Verified</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <div class="px-3 py-1 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-black flex items-center gap-1.5">
+                                    <div class="w-2 h-2 rounded-full bg-emerald-400"></div> USDT
+                                </div>
+                                <div class="px-3 py-1 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs font-black flex items-center gap-1.5">
+                                    <div class="w-2 h-2 rounded-full bg-blue-400"></div> USDC
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Directional Arrow Engine -->
+                        <div class="flex items-center justify-center my-3 text-cyan-400 gap-2 font-mono text-[0.7rem] uppercase tracking-widest font-black">
+                            <i class="fa-solid fa-arrows-up-down text-sm animate-bounce"></i>
+                            <span>POBO & Domestic Clearing</span>
+                        </div>
+
+                        <!-- Step 3: Global Payout -->
+                        <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700/60">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs font-bold text-slate-300 uppercase tracking-wider" data-i18n="spotlight_flow_s3">3. Global Payout (POBO)</span>
+                                <span class="text-[0.65rem] text-blue-400 font-mono">SWIFT & Local Rail</span>
+                            </div>
+                            <p class="text-[0.7rem] text-slate-400 leading-relaxed" data-i18n="spotlight_flow_s3_desc">
+                                Direct disbursement to beneficiary bank accounts across 26+ countries and territories.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Industry & RWA Sections - Enhanced Flow Background -->
     <section id="cases" class="py-24 glow-bg overflow-hidden">
         <div class="max-w-6xl mx-auto px-6 relative z-10">
@@ -489,7 +636,7 @@
                     <img src="static/logo.png" style="width: 126px; margin-bottom: 16px;"/>
                     <p class="text-white/50 text-[0.8rem] leading-relaxed max-w-xs mb-5" data-i18n="footer_desc">Aurellix Pay is a compliant stablecoin aggregate payment platform.</p>
                     <div class="flex items-center gap-3">
-                        <a href="https://t.me/cs_aurellixpay" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110" title="Telegram">
+                        <a href="https://t.me/cs_aurellix" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110" title="Telegram">
                             <i class="fa-brands fa-telegram text-white/70 text-sm"></i>
                         </a>
                         <a href="https://www.aurellix.com/" target="_blank" id="group-link" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/60 hover:text-white text-[0.7rem] transition-all duration-300 group">
@@ -505,6 +652,7 @@
                     <ul class="space-y-3">
                         <li><a href="index.html" class="text-white/70 hover:text-white text-[0.8rem] transition-colors" data-i18n="nav_home">Home</a></li>
                         <li><a href="coverage.html" class="text-white/70 hover:text-white text-[0.8rem] transition-colors" data-i18n="nav_coverage">Coverage</a></li>
+                        <li><a href="otc.html" class="text-white/70 hover:text-white text-[0.8rem] transition-colors" data-i18n="nav_otc">OTC</a></li>
                     </ul>
                 </div>
                 <!-- Resources Column -->
@@ -519,7 +667,7 @@
                 <!-- Contact Column -->
                 <div class="md:col-span-2">
                     <h4 class="text-[0.65rem] uppercase tracking-[0.2em] font-black text-white/40 mb-5" data-i18n="nav_contact">Contact</h4>
-                    <a href="https://t.me/cs_aurellixpay" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-[0.8rem] transition-all duration-300 group">
+                    <a href="https://t.me/cs_aurellix" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-[0.8rem] transition-all duration-300 group">
                         <i class="fa-brands fa-telegram text-[#29b6f6] group-hover:scale-110 transition-transform"></i>
                         <span>Telegram</span>
                     </a>
@@ -540,7 +688,7 @@
     <script>
         const translations = {
             en: {
-                nav_portal: "Merchant Portal", nav_api: "API Docs", nav_home: "Home", nav_demo: "Demo", nav_contact: "Contact", hero_badge: "Global Compliance Platform",nav_aurellix: "Aurellix Group", nav_coverage: "Coverage",
+                nav_portal: "Merchant Portal", nav_api: "API Docs", nav_home: "Home", nav_demo: "Demo", nav_contact: "Contact", hero_badge: "Global Compliance Platform",nav_aurellix: "Aurellix Group", nav_coverage: "Coverage", nav_otc: "OTC",
                 hero_title: "Global Leading Stablecoin Payment Solutions",
                 hero_desc: "Aurellix Pay is a compliant stablecoin aggregate payment platform, providing efficient and stable crypto payment solutions for overseas platforms, Web3 projects, and payment providers.",
                 checkout_title: "Aurellix Pay Checkout", checkout_label: "Select Token", checkout_due: "Amount Due", checkout_pay: "Confirm Payment",
@@ -581,10 +729,29 @@ footer_desc: "Aurellix Pay is a compliant stablecoin aggregate payment platform,
                 cov_us: "United States",
                 cov_global_title: "Global Support Directory",
                 cov_more_link: "View Official Channel Lists",
-                cov_disclaimer: "* Available payment methods, supported assets, and transaction limits may vary over time. Please refer to the actual checkout interface or your merchant portal for real-time availability."
+                cov_disclaimer: "* Available payment methods, supported assets, and transaction limits may vary over time. Please refer to the actual checkout interface or your merchant portal for real-time availability.",
+                spotlight_otc_badge: "Institutional Desk & Liquidity Rails",
+                spotlight_otc_title: "Global Fiat & Stablecoin Bi-Directional Settlement Network",
+                spotlight_otc_desc: "Bridging traditional banking rails (SWIFT & Local Rails) with stablecoin liquidity. Empowering enterprises with compliant T+0 bi-directional conversion, multi-currency Virtual Accounts (VA), and Global Payouts (POBO).",
+                spotlight_otc_f1: "Dedicated Multi-Currency Virtual Accounts (Global SWIFT & Local VA)",
+                spotlight_otc_f2: "Global Disbursements Across 26+ Corridors (SWIFT POBO & Local Rails)",
+                spotlight_otc_f3: "T+0 Institutional Deep Liquidity & Embedded Real-Time KYT Protection",
+                idx_mode1_tag: "Fiat ⇄ Stablecoin",
+                idx_mode1_title: "Fiat ⇄ USDT/USDC",
+                idx_mode2_tag: "Fiat ⇄ Fiat FX",
+                idx_mode2_title: "26+ Multi-Currency FX",
+                idx_mode3_tag: "Crypto ⇄ Crypto",
+                idx_mode3_title: "USDT ⇄ USDC ⇄ EURC",
+                spotlight_otc_btn_contact: "Contact Institutional Desk",
+                spotlight_otc_btn_explore: "View 26+ Currencies Matrix",
+                spotlight_flow_title: "Settlement Flow",
+                spotlight_flow_s1: "1. Fiat Collections (VA)",
+                spotlight_flow_s2: "2. Stablecoin Settlement",
+                spotlight_flow_s3: "3. Global Payout (POBO)",
+                spotlight_flow_s3_desc: "Direct disbursement to beneficiary bank accounts across 26+ countries and territories."
             },
             zh: {
-                nav_portal: "商户管理后台", nav_api: "API 接口文档", nav_home: "首页", nav_demo: "演示 Demo", nav_contact: "咨询", hero_badge: "全球合规支付平台", nav_aurellix: "Aurellix集团", nav_coverage: "覆盖范围",
+                nav_portal: "商户管理后台", nav_api: "API 接口文档", nav_home: "首页", nav_demo: "演示 Demo", nav_contact: "咨询", hero_badge: "全球合规支付平台", nav_aurellix: "Aurellix集团", nav_coverage: "覆盖范围", nav_otc: "全球承兑",
                 hero_title: "全球领先的稳定币支付解决方案",
                 hero_desc: "Aurellix Pay 是合规稳定币聚合支付平台，专注于为出海平台、Web3项目、支付公司等提供合规、高效、稳定的加密支付解决方案，灵活对接全球主流法币、数字货币与支付通道。",
                 checkout_title: "Aurellix Pay 收银台", checkout_label: "选择支付币种", checkout_due: "待支付总额", checkout_pay: "确认支付",
@@ -624,7 +791,26 @@ footer_desc: "Aurellix Pay 是合规稳定币聚合支付平台，专注于提�
                 cov_us: "美国",
                 cov_global_title: "全球多区域支持目录",
                 cov_more_link: "查阅官方完整通道文档",
-                cov_disclaimer: "* 实际可用的支付方式、支持币种及限额可能因各地区合规政策与通道调整而有所不同，请以实际收银台（Checkout）或商户后台展示为准。"
+                cov_disclaimer: "* 实际可用的支付方式、支持币种及限额可能因各地区合规政策与通道调整而有所不同，请以实际收银台（Checkout）或商户后台展示为准。",
+                spotlight_otc_badge: "机构级承兑台与清算网络",
+                spotlight_otc_title: "全球法币与稳定币双向承兑网络",
+                spotlight_otc_desc: "打通传统银行清算网络（SWIFT / 本地通道）与稳定币生态，为企业提供合规、T+0 极速交割的多币种虚拟账户（VA）收款、大额双向承兑及全球法币同名代付（POBO）服务。",
+                spotlight_otc_f1: "企业专属多币种虚拟账户（Global SWIFT / Local VA 收款）",
+                spotlight_otc_f2: "全球 26+ 币种极速下发（SWIFT POBO 代付 / Local Rail 本地清算）",
+                spotlight_otc_f3: "T+0 机构级深度流动性与全流程实时 KYT 防冻卡风控",
+                idx_mode1_tag: "法币与稳定币承兑",
+                idx_mode1_title: "法币 ⇄ USDT/USDC 双向承兑",
+                idx_mode2_tag: "跨国法币多币种外汇",
+                idx_mode2_title: "26+ 国多币种法币直接兑换",
+                idx_mode3_tag: "大额稳定币与币币互兑",
+                idx_mode3_title: "USDT ⇄ USDC ⇄ EURC 互兑",
+                spotlight_otc_btn_contact: "联系专属顾问",
+                spotlight_otc_btn_explore: "查看 26 国支持币种矩阵",
+                spotlight_flow_title: "双向清算架构",
+                spotlight_flow_s1: "1. 多币种法币虚拟账户 (VA)",
+                spotlight_flow_s2: "2. 稳定币合规清算池",
+                spotlight_flow_s3: "3. 全球法币极速下发 (POBO)",
+                spotlight_flow_s3_desc: "稳定币实时承兑并直达全球 26+ 国家与地区受益人银行账户。"
             }
         };
 
@@ -660,6 +846,27 @@ footer_desc: "Aurellix Pay 是合规稳定币聚合支付平台，专注于提�
             if (groupLink) {
                 groupLink.href = 'https://www.aurellix.com/' + (lang === 'zh' ? '?lang=zh' : '');
             }
+            // Update SEO & Social sharing meta tags dynamically
+            const metaTitle = lang === 'zh' ? 'Aurellix Pay | 全球领先的稳定币支付解决方案' : 'Aurellix Pay | Global Leading Stablecoin Payment Solutions';
+            const metaDesc = lang === 'zh' ? 'Aurellix Pay 是合规稳定币聚合支付平台，提供全球法币收单、T+0 双向承兑清算、多币种虚拟账户（VA）与 26+ 国法币代付下发。' : 'Aurellix Pay is an institutional compliant stablecoin aggregate payment platform offering global fiat acquiring, T+0 bi-directional OTC conversion, and global payout across 26+ currencies.';
+            const shareImg = lang === 'zh' ? 'https://rail.aurellix.com/static/share_zh.png' : 'https://rail.aurellix.com/static/share_en.png';
+
+            document.title = metaTitle;
+            const metaDescEl = document.querySelector('meta[name="description"]');
+            if (metaDescEl) metaDescEl.setAttribute('content', metaDesc);
+            const ogTitle = document.getElementById('og-title');
+            if (ogTitle) ogTitle.setAttribute('content', metaTitle);
+            const ogDesc = document.getElementById('og-desc');
+            if (ogDesc) ogDesc.setAttribute('content', metaDesc);
+            const ogImg = document.getElementById('og-image');
+            if (ogImg) ogImg.setAttribute('content', shareImg);
+            const twTitle = document.getElementById('tw-title');
+            if (twTitle) twTitle.setAttribute('content', metaTitle);
+            const twDesc = document.getElementById('tw-desc');
+            if (twDesc) twDesc.setAttribute('content', metaDesc);
+            const twImg = document.getElementById('tw-image');
+            if (twImg) twImg.setAttribute('content', shareImg);
+
             const label = { en: "EN", zh: "中文" }[lang];
             const deskLabel = document.getElementById('current-lang-label');
             console.log('deskLabel', deskLabel)
@@ -698,7 +905,7 @@ footer_desc: "Aurellix Pay 是合规稳定币聚合支付平台，专注于提�
         }
 
         function handleTalk() {
-            window.open('https://t.me/cs_aurellixpay', '_blank')
+            window.open('https://t.me/cs_aurellix', '_blank')
         }
 
         const revealObserver = new IntersectionObserver((entries) => {

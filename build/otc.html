@@ -1,0 +1,846 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="page-title">Aurellix Pay | OTC</title>
+    <meta name="description" content="Aurellix Pay Global OTC & Settlement Desk: Bi-directional fiat-to-stablecoin conversion, multi-currency Virtual Accounts (VA), and POBO payouts across 26+ sovereign currencies." />
+    <meta name="keywords" content="Aurellix Pay OTC, fiat to crypto, stablecoin conversion, USDT OTC, virtual account collection, POBO wire, SWIFT payout, local rail" />
+    <link rel="canonical" href="https://rail.aurellix.com/otc.html" />
+    <link rel="alternate" hreflang="en" href="https://rail.aurellix.com/otc.html?lang=en" />
+    <link rel="alternate" hreflang="zh" href="https://rail.aurellix.com/otc.html?lang=zh" />
+
+    <!-- Open Graph / Telegram / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rail.aurellix.com/otc.html" />
+    <meta property="og:title" id="og-title" content="Aurellix Pay | Global OTC & Settlement Network" />
+    <meta property="og:description" id="og-desc" content="Institutional T+0 bi-directional conversion, multi-currency Virtual Accounts (VA), and domestic local clearing across 26+ sovereign currencies." />
+    <meta property="og:image" id="og-image" content="https://rail.aurellix.com/static/share_en.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Aurellix Pay" />
+
+    <!-- Twitter / Telegram Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" id="tw-title" content="Aurellix Pay | Global OTC & Settlement Network" />
+    <meta name="twitter:description" id="tw-desc" content="Institutional T+0 bi-directional conversion, multi-currency Virtual Accounts (VA), and domestic local clearing across 26+ currencies." />
+    <meta name="twitter:image" id="tw-image" content="https://rail.aurellix.com/static/share_en.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="static/vite.png" />
+    <link rel="icon" href="static/favicon.svg" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --hex-blue: #0052ff;
+            --hex-cyan: #3cfff3;
+        }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #ffffff; 
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            color: #0f172a;
+            overflow-x: hidden;
+        }
+        
+        .reveal { 
+            opacity: 0; 
+            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); 
+            will-change: transform, opacity;
+        }
+        .reveal-up { transform: translateY(40px); }
+        .reveal-scale { transform: scale(0.97); }
+        .reveal.active { opacity: 1; transform: translate(0, 0) scale(1); }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 82, 255, 0.05);
+            z-index: 100;
+        }
+
+        .glow-bg {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(rgba(0, 82, 255, 0.04) 1.5px, transparent 1.5px),
+                linear-gradient(rgba(0, 82, 255, 0.01) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 82, 255, 0.01) 1px, transparent 1px);
+            background-size: 32px 32px, 64px 64px, 64px 64px;
+            position: relative;
+            overflow: hidden;
+        }
+        .glow-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 50% -10%, rgba(0, 82, 255, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 10% 40%, rgba(60, 255, 243, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 70%, rgba(0, 82, 255, 0.06) 0%, transparent 45%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--hex-blue), #003cc2);
+            color: #ffffff;
+            font-weight: 800;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0, 82, 255, 0.15);
+        }
+        .btn-primary:hover {
+            box-shadow: 0 10px 25px rgba(0, 82, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .btn-contact {
+            background: #ffffff;
+            border: 2px solid rgba(0, 82, 255, 0.1);
+            color: #0052ff;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        .btn-contact:hover {
+            background: #f0f5ff;
+            border-color: rgba(0, 82, 255, 0.25);
+            box-shadow: 0 4px 12px rgba(0, 82, 255, 0.08);
+            transform: translateY(-1px);
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(0, 82, 255, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 82, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 82, 255, 0); }
+        }
+        .pulse-btn { animation: pulse-glow 2.5s infinite; }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 
+                0 4px 30px rgba(0, 82, 255, 0.02),
+                inset 0 1px 1px rgba(255, 255, 255, 0.8);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(0, 82, 255, 0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 82, 255, 0.08);
+        }
+
+        .heading-xl { font-size: 3rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; }
+        .heading-lg { font-size: 2.25rem; font-weight: 900; letter-spacing: -0.04em; line-height: 1.15; } 
+        .card-title { font-size: 1.15rem; font-weight: 900; letter-spacing: -0.01em; color: #0f172a; }
+        .body-text { font-size: 0.875rem; line-height: 1.6; color: #64748b; font-weight: 600; }
+        .label-caps { font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.15em; }
+
+        .lang-dropdown { position: relative; display: inline-block; padding: 10px 0; }
+        .lang-menu {
+            display: none; position: absolute; right: 0; top: 100%; background: white;
+            border: 1px solid #f1f5f9; box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-radius: 12px; min-width: 120px; z-index: 110; overflow: hidden;
+        }
+        .lang-dropdown:hover .lang-menu { display: block; }
+        .lang-option { padding: 12px 16px; font-size: 0.75rem; font-weight: 900; color: #64748b; cursor: pointer; transition: all 0.2s; }
+        .lang-option:hover { background: #f0f7ff; color: var(--hex-blue); }
+
+        #mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        #mobile-menu.open { transform: translateX(0); }
+
+        .tag-pill {
+            background: linear-gradient(135deg, #f0f7ff, #e0f2fe);
+            color: #0369a1;
+            border: 1px solid rgba(3, 105, 161, 0.15);
+            font-weight: 800;
+            font-size: 0.65rem;
+        }
+
+        .badge-live {
+            background: #ecfdf5;
+            color: #059669;
+            border: 1px solid #a7f3d0;
+            font-weight: 800;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .badge-pobo {
+            background: #eff6ff;
+            color: #1d4ed8;
+            border: 1px solid #bfdbfe;
+            font-weight: 800;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .badge-none {
+            color: #cbd5e1;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-6xl mx-auto px-5 lg:px-6">
+            <div class="flex h-16 items-center">
+                <a href="index.html" class="flex items-center gap-3 shrink-0">
+                    <img src="static/headerLogo.png" style="width: 126px;"/>
+                </a>
+                
+                <!-- Group 1: Nav Links -->
+                <div class="hidden md:flex items-center gap-7 ml-10">
+                    <a href="index.html" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-slate-500 hover:text-[#0052ff]" data-i18n="nav_home">Home</a>
+                    <a href="coverage.html" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-slate-500 hover:text-[#0052ff]" data-i18n="nav_coverage">Coverage</a>
+                    <a href="otc.html" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-[#0052ff]" data-i18n="nav_otc">OTC</a>
+                    <a href="https://docs.rail.aurellix.com/" target="_blank" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-slate-500 hover:text-[#0052ff]" data-i18n="nav_api">API Docs</a>
+                    <a href="https://demo.rail.aurellix.com" target="_blank" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-slate-500 hover:text-[#0052ff] flex items-center gap-1" data-i18n="nav_demo">Demo <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] opacity-60"></i></a>
+                </div>
+                
+                <!-- Group 2: Actions -->
+                <div class="hidden md:flex items-center gap-5 ml-auto">
+                    <div class="lang-dropdown group">
+                        <button class="flex items-center gap-1.5 text-[0.7rem] font-black text-slate-400 group-hover:text-[#0052ff] transition">
+                            <span id="current-lang-label">EN</span>
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="lang-menu">
+                            <div class="lang-option" onclick="changeLang('en')">English</div>
+                            <div class="lang-option" onclick="changeLang('zh')">简体中文</div>
+                        </div>
+                    </div>
+                    <a href="https://t.me/cs_aurellix" target="_blank" class="btn-contact px-5 py-2.5 rounded-xl text-[0.75rem] uppercase tracking-widest font-bold flex items-center gap-1.5" data-i18n="nav_contact">Contact <i class="fa-brands fa-telegram text-[0.7rem]"></i></a>
+                    <button onclick="onMerchant()" class="btn-primary px-6 py-2.5 rounded-xl text-[0.75rem] uppercase tracking-widest shadow-sm" data-i18n="nav_portal">Merchant Portal</button>
+                </div>
+                <button class="md:hidden text-slate-500 ml-auto" onclick="toggleMobileMenu()"><i id="menu-icon" class="fa-solid fa-bars text-xl"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-white lg:hidden overflow-y-auto pt-24 px-6 pb-12 text-start">
+        <button onclick="toggleMobileMenu()" class="absolute top-5 right-5 w-12 h-12 flex items-center justify-center text-slate-400">
+            <i class="fa-solid fa-xmark text-2xl"></i>
+        </button>
+        <div class="flex flex-col gap-6 text-lg font-bold text-slate-800 mb-8 text-start">
+            <a href="index.html" onclick="toggleMobileMenu()" data-i18n="nav_home">Home</a>
+            <a href="coverage.html" onclick="toggleMobileMenu()" data-i18n="nav_coverage">Coverage</a>
+            <a href="otc.html" onclick="toggleMobileMenu()" class="text-[#0052ff]" data-i18n="nav_otc">OTC</a>
+            <a href="https://docs.rail.aurellix.com/" target="_blank" onclick="toggleMobileMenu()" data-i18n="nav_api">API Docs</a>
+            <a href="https://demo.rail.aurellix.com" target="_blank" onclick="toggleMobileMenu()" class="flex items-center gap-2" data-i18n="nav_demo">Demo <i class="fa-solid fa-arrow-up-right-from-square text-sm opacity-50"></i></a>
+        </div>
+        <div class="space-y-4 pt-6 border-t border-slate-100 text-start mb-6">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Select Language</p>
+            <div class="grid grid-cols-2 gap-3 text-start">
+                <button onclick="changeLang('en'); toggleMobileMenu();" class="px-4 py-3 bg-slate-50 rounded-xl text-sm font-bold text-slate-600 text-left">English</button>
+                <button onclick="changeLang('zh'); toggleMobileMenu();" class="px-4 py-3 bg-slate-50 rounded-xl text-sm font-bold text-slate-600 text-left">简体中文</button>
+            </div>
+            <a href="https://t.me/cs_aurellix" target="_blank" class="flex items-center gap-2 text-base font-bold text-slate-600 mt-4" data-i18n="nav_contact">Contact <i class="fa-brands fa-telegram text-blue-500"></i></a>
+        </div>
+        <div class="mt-6 text-center">
+            <button onclick="onMerchant(); toggleMobileMenu();" class="w-full btn-primary px-6 py-[0.875rem] btn-base text-[15px] rounded-xl text-white uppercase tracking-widest shadow-xl" data-i18n="nav_portal">Merchant Portal</button>
+        </div>
+    </div>
+
+    <!-- Section 1: Hero Section -->
+    <section class="relative pt-36 pb-20 lg:pt-48 lg:pb-28 glow-bg">
+        <div class="max-w-6xl mx-auto px-5 lg:px-6 relative z-10 text-center">
+            <div class="reveal reveal-up active inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-[#0052ff] label-caps mb-8 ring-1 ring-blue-100">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_cyan]"></span>
+                <span data-i18n="otc_hero_badge">Institutional Desk & Liquidity Rails</span>
+            </div>
+            <h1 class="heading-xl text-slate-900 mb-6 max-w-4xl mx-auto reveal reveal-up active delay-1">
+                <span data-i18n="otc_hero_title">Global Fiat & Stablecoin Bi-Directional Settlement Network</span>
+            </h1>
+            <p class="body-text text-base max-w-2xl mx-auto mb-10 reveal reveal-up active delay-2" data-i18n="otc_hero_desc">
+                Bridging traditional banking rails (SWIFT & Local Rails) with stablecoin liquidity. Empowering enterprises with compliant T+0 bi-directional conversion, multi-currency Virtual Accounts (VA), and Global Payouts (POBO).
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center reveal reveal-up active delay-3">
+                <a href="https://t.me/cs_aurellix" target="_blank" class="btn-primary px-10 py-4 rounded-2xl text-sm uppercase tracking-widest pulse-btn inline-flex items-center gap-2" data-i18n="otc_cta_consult">
+                    Contact Institutional Desk <i class="fa-brands fa-telegram text-base"></i>
+                </a>
+                <a href="#currency-matrix" class="bg-white border-2 border-slate-200 text-slate-600 px-8 py-4 rounded-2xl text-sm font-bold hover:bg-slate-50 transition shadow-sm inline-flex items-center gap-2" data-i18n="otc_cta_view_matrix">
+                    View 26+ Supported Currencies <i class="fa-solid fa-arrow-down text-xs"></i>
+                </a>
+            </div>
+
+            <!-- 4-Stat Strip -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto">
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-3xl lg:text-4xl font-900 text-[#0052ff] tracking-tight">26+</div>
+                    <div class="text-[0.65rem] uppercase font-black text-slate-400 tracking-wider mt-1" data-i18n="otc_stat_fiats">Settlement Currencies</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-3xl lg:text-4xl font-900 text-[#0052ff] tracking-tight">T+0</div>
+                    <div class="text-[0.65rem] uppercase font-black text-slate-400 tracking-wider mt-1" data-i18n="otc_stat_t0">Real-time Settlement</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-3xl lg:text-4xl font-900 text-[#0052ff] tracking-tight">4 Rails</div>
+                    <div class="text-[0.65rem] uppercase font-black text-slate-400 tracking-wider mt-1" data-i18n="otc_stat_rails">Banking Channels</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-3xl lg:text-4xl font-900 text-[#0052ff] tracking-tight">100%</div>
+                    <div class="text-[0.65rem] uppercase font-black text-slate-400 tracking-wider mt-1" data-i18n="otc_stat_compliance">Licensed & Protected</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: 3 Comprehensive Conversion Modes -->
+    <section class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-5 lg:px-6">
+            <div class="text-center mb-14 reveal reveal-up active">
+                <span class="label-caps text-[#0052ff] mb-2 block" data-i18n="modes_tag">Tri-Directional Conversion</span>
+                <h2 class="heading-lg text-slate-900 mb-3" data-i18n="modes_title">Comprehensive Corporate Exchange Modes</h2>
+                <p class="body-text max-w-xl mx-auto" data-i18n="modes_desc">Seamless conversion across digital assets and sovereign currencies with institutional liquidity and guaranteed rate locks.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Mode 1: Fiat <-> Stablecoin -->
+                <div class="glass-card p-8 rounded-3xl border border-slate-100 flex flex-col justify-between hover:border-blue-300 transition-all">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#0052ff] flex items-center justify-center text-xl mb-6 shadow-sm">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                        </div>
+                        <div class="inline-block px-2.5 py-0.5 rounded-full bg-blue-50 text-[#0052ff] text-[0.65rem] font-black uppercase tracking-wider mb-2">Fiat ⇄ Stablecoin</div>
+                        <h3 class="card-title text-lg mb-3" data-i18n="mode1_title">Fiat to Stablecoin Conversion</h3>
+                        <p class="body-text text-sm mb-6" data-i18n="mode1_desc">
+                            Deposit via 26+ sovereign fiat currencies (USD, EUR, GBP, SGD, HKD, etc.) through SWIFT or domestic VA and instantly settle into USDT/USDC. Alternatively, convert stablecoins into fiat for vendor payouts.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-400">Supported:</span>
+                        <div class="flex gap-1.5 font-mono text-[0.65rem] font-black text-slate-700">
+                            <span class="px-2 py-0.5 bg-slate-100 rounded">26 Fiats</span>
+                            <span class="text-blue-500">⇄</span>
+                            <span class="px-2 py-0.5 bg-blue-50 text-blue-600 rounded">USDT / USDC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mode 2: Fiat <-> Fiat FX -->
+                <div class="glass-card p-8 rounded-3xl border border-slate-100 flex flex-col justify-between hover:border-indigo-300 transition-all">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl mb-6 shadow-sm">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
+                        <div class="inline-block px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-600 text-[0.65rem] font-black uppercase tracking-wider mb-2">Fiat ⇄ Fiat FX</div>
+                        <h3 class="card-title text-lg mb-3" data-i18n="mode2_title">Cross-Currency Fiat FX</h3>
+                        <p class="body-text text-sm mb-6" data-i18n="mode2_desc">
+                            Direct corporate foreign exchange (FX) between 26+ major and emerging fiat currencies (e.g., USD ⇄ EUR, SGD ⇄ USD, HKD ⇄ USD, BRL ⇄ USD) without double conversion friction or excessive banking fees.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-400">Supported:</span>
+                        <div class="flex gap-1.5 font-mono text-[0.65rem] font-black text-slate-700">
+                            <span class="px-2 py-0.5 bg-slate-100 rounded">Major FX</span>
+                            <span class="text-indigo-500">⇄</span>
+                            <span class="px-2 py-0.5 bg-indigo-50 text-indigo-600 rounded">Emerging Corridors</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mode 3: Crypto <-> Crypto -->
+                <div class="glass-card p-8 rounded-3xl border border-slate-100 flex flex-col justify-between hover:border-emerald-300 transition-all">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl mb-6 shadow-sm">
+                            <i class="fa-solid fa-right-left"></i>
+                        </div>
+                        <div class="inline-block px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-600 text-[0.65rem] font-black uppercase tracking-wider mb-2">Crypto ⇄ Crypto</div>
+                        <h3 class="card-title text-lg mb-3" data-i18n="mode3_title">Stablecoin & Crypto Swap</h3>
+                        <p class="body-text text-sm mb-6" data-i18n="mode3_desc">
+                            Instant, high-volume swap between compliant stablecoins and digital assets (USDT ⇄ USDC ⇄ EURC ⇄ PYUSD) with zero slippage, institutional depth, and on-chain KYT/AML protection.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-400">Supported:</span>
+                        <div class="flex gap-1.5 font-mono text-[0.65rem] font-black text-slate-700">
+                            <span class="px-2 py-0.5 bg-emerald-50 text-emerald-600 rounded">USDT</span>
+                            <span>•</span>
+                            <span class="px-2 py-0.5 bg-blue-50 text-blue-600 rounded">USDC</span>
+                            <span>•</span>
+                            <span class="px-2 py-0.5 bg-slate-100 rounded">EURC / PYUSD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Core Capabilities Grid -->
+    <section class="py-24 border-y border-slate-200 bg-slate-50/70">
+        <div class="max-w-6xl mx-auto px-5 lg:px-6">
+            <div class="text-center mb-16 reveal reveal-up active">
+                <span class="label-caps text-[#0052ff] mb-2 block" data-i18n="otc_core_tag">Core Capabilities</span>
+                <h2 class="heading-lg text-slate-900" data-i18n="otc_core_title">Enterprise-Grade Settlement Infrastructure</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 1. Virtual Account Collection -->
+                <div class="glass-card p-8 rounded-3xl reveal reveal-up active">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-[#0052ff] text-xl mb-6">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h3 class="card-title text-xl mb-3" data-i18n="otc_cap1_title">Virtual Account Collection (VA)</h3>
+                    <p class="body-text mb-6" data-i18n="otc_cap1_desc">
+                        Provide buyers with dedicated SWIFT or local virtual accounts. Collect fiat directly and automatically convert to USDT/USDC with real-time settlement.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="tag-pill px-3 py-1 rounded-full">Global SWIFT Pay-in</span>
+                        <span class="tag-pill px-3 py-1 rounded-full">Local Bank VA</span>
+                        <span class="tag-pill px-3 py-1 rounded-full">Multi-Currency</span>
+                    </div>
+                </div>
+
+                <!-- 2. Global Payout & POBO -->
+                <div class="glass-card p-8 rounded-3xl reveal reveal-up active delay-1">
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-100 flex items-center justify-center text-indigo-600 text-xl mb-6">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                    </div>
+                    <h3 class="card-title text-xl mb-3" data-i18n="otc_cap2_title">Global Payout & POBO</h3>
+                    <p class="body-text mb-6" data-i18n="otc_cap2_desc">
+                        Convert stablecoins into 26+ fiat currencies and execute instant disbursements to suppliers or partners via SWIFT (POBO) or domestic local clearing rails.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="tag-pill px-3 py-1 rounded-full">SWIFT (POBO)</span>
+                        <span class="tag-pill px-3 py-1 rounded-full">Local Rail Fast Transfer</span>
+                        <span class="tag-pill px-3 py-1 rounded-full">Vendor Payments</span>
+                    </div>
+                </div>
+
+                <!-- 3. T+0 Institutional Liquidity -->
+                <div class="glass-card p-8 rounded-3xl reveal reveal-up active delay-2">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 text-xl mb-6">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="card-title text-xl mb-3" data-i18n="otc_cap3_title">T+0 Institutional Liquidity</h3>
+                    <p class="body-text mb-6" data-i18n="otc_cap3_desc">
+                        Aggregate deep liquidity with intelligent FX routing. Enjoy competitive foreign exchange spreads, zero intermediary cuts, and guaranteed rate locks.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="tag-pill px-3 py-1 rounded-full">Deep Liquidity Pool</span>
+                        <span class="tag-pill px-3 py-1 rounded-full">T+0 Delivery</span>
+                        <span class="tag-pill px-3 py-1 rounded-full">Competitive FX Spread</span>
+                    </div>
+                </div>
+
+                <!-- 4. Regulated & Risk-Protected -->
+                <div class="glass-card p-8 rounded-3xl reveal reveal-up active delay-3">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center text-amber-600 text-xl mb-6">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="card-title text-xl mb-3" data-i18n="otc_cap4_title">Regulated & Risk-Protected</h3>
+                    <p class="body-text mb-6" data-i18n="otc_cap4_desc">
+                        Built upon MAS-licensed infrastructure with embedded real-time KYT, AML, and CFT monitoring, safeguarding corporate capital from account freeze risks.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="tag-pill px-3 py-1 rounded-full">Licensed Rails</span>
+                        <span class="tag-pill px-3 py-1 rounded-full">Real-time KYT/AML</span>
+                        <span class="tag-pill px-3 py-1 rounded-full">Zero-Freeze Guarantee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: 26 Currencies Matrix Table -->
+    <section id="currency-matrix" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-5 lg:px-6">
+            <div class="text-center mb-12">
+                <span class="label-caps text-[#0052ff] mb-2 block" data-i18n="matrix_tag">Supported Corridors</span>
+                <h2 class="heading-lg text-slate-900 mb-4" data-i18n="matrix_title">26 Multi-Currency Clearing Matrix</h2>
+                <p class="body-text max-w-xl mx-auto" data-i18n="matrix_desc">
+                    Comprehensive cross-border pay-in and pay-out capabilities spanning major global currencies and key emerging regional markets.
+                </p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex justify-center border-b border-slate-200 mb-8 gap-3">
+                <button onclick="filterCurrencies('all')" id="tab-curr-all" class="px-6 py-3 text-xs font-black uppercase tracking-wider border-b-2 border-[#0052ff] text-[#0052ff] transition-all" data-i18n="tab_curr_all">All Currencies (26)</button>
+                <button onclick="filterCurrencies('major')" id="tab-curr-major" class="px-6 py-3 text-xs font-black uppercase tracking-wider border-b-2 border-transparent text-slate-400 hover:text-slate-600 transition-all" data-i18n="tab_curr_major">Major Currencies (10)</button>
+                <button onclick="filterCurrencies('local')" id="tab-curr-local" class="px-6 py-3 text-xs font-black uppercase tracking-wider border-b-2 border-transparent text-slate-400 hover:text-slate-600 transition-all" data-i18n="tab_curr_local">Local & Emerging (16)</button>
+            </div>
+
+            <!-- Matrix Table Container -->
+            <div class="overflow-x-auto rounded-3xl border border-slate-200/80 shadow-sm">
+                <table class="w-full text-left border-collapse bg-white">
+                    <thead>
+                        <tr class="bg-slate-50 border-b border-slate-200 text-xs font-black uppercase tracking-wider text-slate-500">
+                            <th class="py-4 px-6" data-i18n="th_currency">Currency & Location</th>
+                            <th class="py-4 px-6 text-center" data-i18n="th_g_va">Global VA<br><span class="text-[0.6rem] font-medium text-slate-400">SWIFT Pay-in</span></th>
+                            <th class="py-4 px-6 text-center" data-i18n="th_l_va">Local VA<br><span class="text-[0.6rem] font-medium text-slate-400">Local Pay-in</span></th>
+                            <th class="py-4 px-6 text-center" data-i18n="th_g_payout">SWIFT Payout<br><span class="text-[0.6rem] font-medium text-slate-400">POBO Wire</span></th>
+                            <th class="py-4 px-6 text-center" data-i18n="th_l_rail">Local Rail<br><span class="text-[0.6rem] font-medium text-slate-400">Local Fast Transfer</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="matrix-tbody" class="divide-y divide-slate-100 text-sm font-bold text-slate-700">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="mt-8 text-center text-xs font-medium text-slate-400 leading-relaxed max-w-2xl mx-auto" data-i18n="matrix_footnote">
+                * Note: Channel availability, onboarding structure (Named Virtual Accounts vs. Omnibus setup), and real-time execution rates are subject to compliance verification and merchant onboarding.
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: CTA Banner -->
+    <section class="py-20 glow-bg">
+        <div class="max-w-5xl mx-auto px-5 lg:px-6">
+            <div class="relative bg-gradient-to-r from-[#0052ff] to-[#003cb3] rounded-[2.5rem] p-10 lg:p-14 text-white shadow-2xl overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="max-w-xl text-center md:text-left">
+                    <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-cyan-300 text-xs font-black uppercase tracking-widest mb-4" data-i18n="cta_banner_tag">Ready to get started?</span>
+                    <h2 class="text-2xl lg:text-3xl font-black mb-3 leading-snug" data-i18n="cta_banner_title">Open Corporate Virtual Accounts & Unlock Global Settlement</h2>
+                    <p class="text-white/80 text-sm leading-relaxed" data-i18n="cta_banner_desc">
+                        Connect with our institutional desk to evaluate your cross-border volume and receive tailored corridor quotes and settlement setups.
+                    </p>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://t.me/cs_aurellix" target="_blank" class="px-8 py-4 bg-white text-[#0052ff] rounded-2xl text-sm font-black uppercase tracking-wider hover:bg-slate-50 transition shadow-lg hover:scale-105 inline-flex items-center gap-2">
+                        <i class="fa-brands fa-telegram text-lg text-[#0052ff]"></i> <span data-i18n="nav_contact">Contact</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-[#1e3a5f] via-[#1a2f4a] to-[#0f1f35] text-white overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 pt-14 pb-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-10 reveal active">
+                <div class="md:col-span-5">
+                    <img src="static/logo.png" style="width: 126px; margin-bottom: 16px;"/>
+                    <p class="text-white/50 text-[0.8rem] leading-relaxed max-w-xs mb-5" data-i18n="footer_desc">Aurellix Pay is a compliant stablecoin aggregate payment platform.</p>
+                    <div class="flex items-center gap-3">
+                        <a href="https://t.me/cs_aurellix" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110" title="Telegram">
+                            <i class="fa-brands fa-telegram text-white/70 text-sm"></i>
+                        </a>
+                        <a href="https://www.aurellix.com/" target="_blank" id="group-link" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/60 hover:text-white text-[0.7rem] transition-all duration-300 group">
+                            <i class="fa-solid fa-building text-white/40 text-[0.6rem] group-hover:text-white/70 transition-colors"></i>
+                            <span data-i18n="footer_group">Aurellix Group</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[0.45rem] text-white/30"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-3">
+                    <h4 class="text-[0.65rem] uppercase tracking-[0.2em] font-black text-white/40 mb-5" data-i18n="footer_product">Product</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-white/70 hover:text-white text-[0.8rem] transition-colors" data-i18n="nav_home">Home</a></li>
+                        <li><a href="coverage.html" class="text-white/70 hover:text-white text-[0.8rem] transition-colors" data-i18n="nav_coverage">Coverage</a></li>
+                        <li><a href="otc.html" class="text-white/70 hover:text-white text-[0.8rem] transition-colors" data-i18n="nav_otc">OTC</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="text-[0.65rem] uppercase tracking-[0.2em] font-black text-white/40 mb-5" data-i18n="footer_resources">Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://docs.rail.aurellix.com/" target="_blank" class="text-white/70 hover:text-white text-[0.8rem] transition-colors inline-flex items-center gap-1" data-i18n="nav_api">API Docs <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] text-white/40"></i></a></li>
+                        <li><a href="https://demo.rail.aurellix.com" target="_blank" class="text-white/70 hover:text-white text-[0.8rem] transition-colors inline-flex items-center gap-1" data-i18n="nav_demo">Demo <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] text-white/40"></i></a></li>
+                        <li><a href="https://merchant.rail.aurellix.com/" target="_blank" class="text-white/70 hover:text-white text-[0.8rem] transition-colors" data-i18n="nav_portal">Merchant Portal</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="text-[0.65rem] uppercase tracking-[0.2em] font-black text-white/40 mb-5" data-i18n="nav_contact">Contact</h4>
+                    <a href="https://t.me/cs_aurellix" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-[0.8rem] transition-all duration-300 group">
+                        <i class="fa-brands fa-telegram text-[#29b6f6] group-hover:scale-110 transition-transform"></i>
+                        <span>Telegram</span>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-6 flex flex-col items-center gap-3 text-center">
+                <p class="text-white/30 text-[0.7rem] tracking-wide" data-i18n="copyright">© 2026 Aurellix Pay. All rights reserved.</p>
+                <div class="flex items-center gap-4 text-[0.65rem]">
+                    <a href="privacy.html" class="text-white/40 hover:text-white/70 transition-colors" data-i18n="footer_privacy">Privacy Policy</a>
+                    <span class="text-white/15">|</span>
+                    <a href="terms.html" class="text-white/40 hover:text-white/70 transition-colors" data-i18n="footer_terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                nav_portal: "Merchant Portal", nav_api: "API Docs", nav_home: "Home", nav_demo: "Demo", nav_contact: "Contact", hero_badge: "Global Compliance Platform", nav_aurellix: "Aurellix Group", nav_coverage: "Coverage", nav_otc: "OTC",
+                footer_product: "Product", footer_resources: "Resources", footer_group: "Aurellix Group", footer_privacy: "Privacy Policy", footer_terms: "Terms of Service",
+                footer_desc: "Aurellix Pay is a compliant stablecoin aggregate payment platform, providing efficient and stable crypto solutions globally.",
+                copyright: "© 2026 Aurellix Pay. All rights reserved.",
+                page_title: "Aurellix Pay | OTC",
+                otc_hero_badge: "Institutional Desk & Liquidity Rails",
+                otc_hero_title: "Global Fiat & Stablecoin Bi-Directional Settlement Network",
+                otc_hero_desc: "Bridging traditional banking rails (SWIFT & Local Rails) with stablecoin liquidity. Empowering enterprises with compliant T+0 bi-directional conversion, multi-currency Virtual Accounts (VA), and Global Payouts (POBO).",
+                otc_cta_consult: "Contact Institutional Desk",
+                otc_cta_view_matrix: "View 26+ Supported Currencies",
+                otc_stat_fiats: "Settlement Currencies",
+                otc_stat_t0: "Real-time Settlement",
+                otc_stat_rails: "Banking Channels",
+                otc_stat_compliance: "Licensed & Protected",
+                modes_tag: "Tri-Directional Conversion",
+                modes_title: "Comprehensive Corporate Exchange Modes",
+                modes_desc: "Seamless conversion across digital assets and sovereign currencies with institutional liquidity and guaranteed rate locks.",
+                mode1_title: "Fiat to Stablecoin Conversion",
+                mode1_desc: "Deposit via 26+ sovereign fiat currencies (USD, EUR, GBP, SGD, HKD, etc.) through SWIFT or domestic VA and instantly settle into USDT/USDC. Alternatively, convert stablecoins into fiat for vendor payouts.",
+                mode2_title: "Cross-Currency Fiat FX",
+                mode2_desc: "Direct corporate foreign exchange (FX) between 26+ major and emerging fiat currencies (e.g., USD ⇄ EUR, SGD ⇄ USD, HKD ⇄ USD, BRL ⇄ USD) without double conversion friction or excessive banking fees.",
+                mode3_title: "Stablecoin & Crypto Swap",
+                mode3_desc: "Instant, high-volume swap between compliant stablecoins and digital assets (USDT ⇄ USDC ⇄ EURC ⇄ PYUSD) with zero slippage, institutional depth, and on-chain KYT/AML protection.",
+                otc_core_tag: "Core Capabilities",
+                otc_core_title: "Enterprise-Grade Settlement Infrastructure",
+                otc_cap1_title: "Virtual Account Collection (VA)",
+                otc_cap1_desc: "Provide buyers with dedicated SWIFT or local virtual accounts. Collect fiat directly and automatically convert to USDT/USDC with real-time settlement.",
+                otc_cap2_title: "Global Payout & POBO",
+                otc_cap2_desc: "Convert stablecoins into 26+ fiat currencies and execute instant disbursements to suppliers or partners via SWIFT (POBO) or domestic local clearing rails.",
+                otc_cap3_title: "T+0 Institutional Liquidity",
+                otc_cap3_desc: "Aggregate deep liquidity with intelligent FX routing. Enjoy competitive foreign exchange spreads, zero intermediary cuts, and guaranteed rate locks.",
+                otc_cap4_title: "Regulated & Risk-Protected",
+                otc_cap4_desc: "Built upon MAS-licensed infrastructure with embedded real-time KYT, AML, and CFT monitoring, safeguarding corporate capital from account freeze risks.",
+                matrix_tag: "Supported Corridors",
+                matrix_title: "26 Multi-Currency Clearing Matrix",
+                matrix_desc: "Comprehensive cross-border pay-in and pay-out capabilities spanning major global currencies and key emerging regional markets.",
+                tab_curr_all: "All Currencies (26)",
+                tab_curr_major: "Major Currencies (10)",
+                tab_curr_local: "Local & Emerging (16)",
+                th_currency: "Currency & Location",
+                th_g_va: "Global VA (SWIFT Pay-in)",
+                th_l_va: "Local VA (Local Pay-in)",
+                th_g_payout: "SWIFT Payout (POBO)",
+                th_l_rail: "Local Rail Payout",
+                matrix_footnote: "* Note: Channel availability, onboarding structure (Named Virtual Accounts vs. Omnibus setup), and real-time execution rates are subject to compliance verification and merchant onboarding.",
+                cta_banner_tag: "Ready to get started?",
+                cta_banner_title: "Open Corporate Virtual Accounts & Unlock Global Settlement",
+                cta_banner_desc: "Connect with our institutional desk to evaluate your cross-border volume and receive tailored corridor quotes and settlement setups."
+            },
+            zh: {
+                nav_portal: "商户管理后台", nav_api: "API 接口文档", nav_home: "首页", nav_demo: "演示 Demo", nav_contact: "咨询", hero_badge: "全球合规支付平台", nav_aurellix: "Aurellix集团", nav_coverage: "覆盖范围", nav_otc: "全球承兑",
+                footer_product: "产品", footer_resources: "资源", footer_group: "Aurellix 集团", footer_privacy: "隐私政策", footer_terms: "服务条款",
+                footer_desc: "Aurellix Pay 是合规稳定币聚合支付平台，专注于提供合规、高效、稳定的全球加密支付解决方案。",
+                copyright: "© 2026 Aurellix Pay. All rights reserved.",
+                page_title: "Aurellix Pay | 全球承兑",
+                otc_hero_badge: "机构级承兑台与清算网络",
+                otc_hero_title: "全球法币与稳定币双向承兑网络",
+                otc_hero_desc: "打通传统银行清算网络（SWIFT / 本地通道）与稳定币生态，为企业提供合规、T+0 极速交割的多币种虚拟账户（VA）收款、大额双向承兑及全球法币同名代付（POBO）服务。",
+                otc_cta_consult: "联系专属顾问",
+                otc_cta_view_matrix: "查看 26 国支持币种",
+                otc_stat_fiats: "清算支持币种",
+                otc_stat_t0: "实时交割清算",
+                otc_stat_rails: "银行清算轨道",
+                otc_stat_compliance: "持牌合规与风控",
+                modes_tag: "全场景兑换矩阵",
+                modes_title: "全场景企业级承兑与兑换业务",
+                modes_desc: "打通法币与稳定币、法币多币种外汇以及币币互兑链路，依托机构级深度流动性实现无损即时结算。",
+                mode1_title: "法币与稳定币双向承兑",
+                mode1_desc: "支持 26+ 种主流及本地法币（USD, EUR, GBP, SGD, HKD 等）通过 SWIFT 或本地虚拟账户（VA）收款并自动承兑结算为 USDT/USDC；亦支持将稳定币实时承兑为各国法币代付供应商。",
+                mode2_title: "全球跨币种法币兑换 (FX)",
+                mode2_desc: "依托持牌外汇网络，支持 26+ 种法币之间的直接外汇结算与兑换（如 USD ⇄ EUR、SGD ⇄ USD、HKD ⇄ USD 等），省去传统多重跨国转汇磨损与高昂中间行手续费。",
+                mode3_title: "大额稳定币与数字货币互兑",
+                mode3_desc: "支持主流合规稳定币与数字资产之间（USDT ⇄ USDC ⇄ EURC ⇄ PYUSD）的大额极速互兑，零滑点锁价撮合，内嵌实时链上 KYT/AML 纯净度检测。",
+                otc_core_tag: "核心能力",
+                otc_core_title: "企业级全球清结算基础设施",
+                otc_cap1_title: "多币种虚拟账户收款 (VA)",
+                otc_cap1_desc: "为企业开立专属 SWIFT 或本地本币虚拟收款账户。直接收取全球买家汇款并自动承兑结算为 USDT / USDC，资金极速归集。",
+                otc_cap2_title: "全球法币极速下发 (POBO)",
+                otc_cap2_desc: "支持将稳定币实时承兑为 26+ 种法币，通过 SWIFT 同名代付（POBO）或各国本地清算网络直达供应商与合作伙伴银行账户。",
+                otc_cap3_title: "T+0 机构级深度流动性",
+                otc_cap3_desc: "聚合机构级流动性池与智能外汇路由，支持大额实时锁价交割，享受具有竞争力的汇兑点差与零中间行损耗。",
+                otc_cap4_title: "持牌合规与防冻卡风控",
+                otc_cap4_desc: "依托新加坡及全球持牌清算通道，全流程内嵌链上 KYT 与反洗钱筛查，确保大额资金链路纯净合规，远离冻卡风险。",
+                matrix_tag: "清算通道矩阵",
+                matrix_title: "26 国多币种承兑与银行清算矩阵",
+                matrix_desc: "全面覆盖 10 大国际主流外汇清算币种与 16 大高增长新兴市场本币出入金通道。",
+                tab_curr_all: "全部币种 (26)",
+                tab_curr_major: "主流币种 (10)",
+                tab_curr_local: "本地及新兴市场 (16)",
+                th_currency: "币种与国家/地区",
+                th_g_va: "全球虚拟账户 (SWIFT 入金)",
+                th_l_va: "本地虚拟账户 (本地入金)",
+                th_g_payout: "全球电汇下发 (SWIFT POBO)",
+                th_l_rail: "本地网络下发 (Local Rail)",
+                matrix_footnote: "* 注：通道支持模式（同名专属账户 Named VA 或聚合账户 Omnibus）、准入资质及实时承兑费率请联系商务顾问确认。",
+                cta_banner_tag: "开启全球合规清算",
+                cta_banner_title: "立即开通企业专属虚拟账户，畅享全球承兑网络",
+                cta_banner_desc: "联系我们的机构业务专家，评估您的跨国业务体量，获取定制化通道方案与实时汇率报价。"
+            }
+        };
+
+        // 26 Currencies Dataset
+        const currenciesList = [
+            // MAJOR CURRENCIES (10)
+            { type: 'major', code: 'AUD', nameEn: 'Australia', nameZh: '澳大利亚', flag: 'au', gVa: true, lVa: false, swift: true, localRail: false },
+            { type: 'major', code: 'CAD', nameEn: 'Canada', nameZh: '加拿大', flag: 'ca', gVa: true, lVa: false, swift: true, localRail: false },
+            { type: 'major', code: 'CHF', nameEn: 'Switzerland', nameZh: '瑞士', flag: 'ch', gVa: true, lVa: false, swift: true, localRail: false },
+            { type: 'major', code: 'CNY (Offshore)', nameEn: 'Hong Kong (Offshore)', nameZh: '中国香港 (离岸人民币)', flag: 'cn', gVa: true, lVa: false, swift: true, localRail: false },
+            { type: 'major', code: 'EUR', nameEn: 'Europe', nameZh: '欧洲 (欧元区)', flag: 'eu', gVa: true, lVa: true, swift: true, localRail: 'pobo' },
+            { type: 'major', code: 'GBP', nameEn: 'United Kingdom', nameZh: '英国', flag: 'gb', gVa: true, lVa: true, swift: true, localRail: 'pobo' },
+            { type: 'major', code: 'HKD', nameEn: 'Hong Kong', nameZh: '中国香港', flag: 'hk', gVa: true, lVa: true, swift: true, localRail: true },
+            { type: 'major', code: 'JPY', nameEn: 'Japan', nameZh: '日本', flag: 'jp', gVa: true, lVa: false, swift: true, localRail: false },
+            { type: 'major', code: 'SGD', nameEn: 'Singapore', nameZh: '新加坡', flag: 'sg', gVa: true, lVa: true, swift: true, localRail: true },
+            { type: 'major', code: 'USD', nameEn: 'US + Global', nameZh: '美国及全球', flag: 'us', gVa: true, lVa: true, swift: true, localRail: 'pobo' },
+
+            // LOCAL CURRENCIES (16)
+            { type: 'local', code: 'AED', nameEn: 'UAE', nameZh: '阿联酋', flag: 'ae', gVa: true, lVa: true, swift: true, localRail: false },
+            { type: 'local', code: 'ARS', nameEn: 'Argentina', nameZh: '阿根廷', flag: 'ar', gVa: false, lVa: true, swift: false, localRail: true },
+            { type: 'local', code: 'BRL', nameEn: 'Brazil', nameZh: '巴西', flag: 'br', gVa: false, lVa: true, swift: false, localRail: true },
+            { type: 'local', code: 'IDR', nameEn: 'Indonesia', nameZh: '印度尼西亚', flag: 'id', gVa: false, lVa: true, swift: false, localRail: true },
+            { type: 'local', code: 'ILS', nameEn: 'Israel', nameZh: '以色列', flag: 'il', gVa: true, lVa: false, swift: true, localRail: false },
+            { type: 'local', code: 'INR', nameEn: 'India', nameZh: '印度', flag: 'in', gVa: false, lVa: true, swift: true, localRail: 'pobo' },
+            { type: 'local', code: 'KRW', nameEn: 'South Korea', nameZh: '韩国', flag: 'kr', gVa: false, lVa: true, swift: true, localRail: true },
+            { type: 'local', code: 'MXN', nameEn: 'Mexico', nameZh: '墨西哥', flag: 'mx', gVa: false, lVa: true, swift: false, localRail: true },
+            { type: 'local', code: 'MYR', nameEn: 'Malaysia', nameZh: '马来西亚', flag: 'my', gVa: true, lVa: true, swift: true, localRail: true },
+            { type: 'local', code: 'NGN', nameEn: 'Nigeria', nameZh: '尼日利亚', flag: 'ng', gVa: false, lVa: true, swift: false, localRail: true },
+            { type: 'local', code: 'PHP', nameEn: 'Philippines', nameZh: '菲律宾', flag: 'ph', gVa: false, lVa: true, swift: true, localRail: true },
+            { type: 'local', code: 'PKR', nameEn: 'Pakistan', nameZh: '巴基斯坦', flag: 'pk', gVa: false, lVa: true, swift: false, localRail: 'pobo' },
+            { type: 'local', code: 'SAR', nameEn: 'Saudi Arabia', nameZh: '沙特阿拉伯', flag: 'sa', gVa: false, lVa: true, swift: false, localRail: true },
+            { type: 'local', code: 'THB', nameEn: 'Thailand', nameZh: '泰国', flag: 'th', gVa: false, lVa: false, swift: true, localRail: true },
+            { type: 'local', code: 'VND', nameEn: 'Vietnam', nameZh: '越南', flag: 'vn', gVa: false, lVa: true, swift: false, localRail: true },
+            { type: 'local', code: 'ZAR', nameEn: 'South Africa', nameZh: '南非', flag: 'za', gVa: true, lVa: false, swift: true, localRail: false }
+        ];
+
+        let currentLang = 'en';
+        let currentFilter = 'all';
+
+        function renderMatrix() {
+            const tbody = document.getElementById('matrix-tbody');
+            if (!tbody) return;
+            tbody.innerHTML = '';
+
+            const list = currenciesList.filter(c => currentFilter === 'all' || c.type === currentFilter);
+
+            list.forEach(c => {
+                const locName = currentLang === 'zh' ? c.nameZh : c.nameEn;
+                const flagUrl = `https://flagcdn.com/${c.flag}.svg`;
+
+                const renderBadge = (val) => {
+                    if (val === true) return `<span class="badge-live"><i class="fa-solid fa-check text-[0.6rem]"></i> Live</span>`;
+                    if (val === 'pobo') return `<span class="badge-pobo"><i class="fa-solid fa-bolt text-[0.6rem]"></i> POBO</span>`;
+                    return `<span class="badge-none">—</span>`;
+                };
+
+                const row = `
+                    <tr class="hover:bg-slate-50/80 transition-colors">
+                        <td class="py-4 px-6 flex items-center gap-3">
+                            <img src="${flagUrl}" class="w-6 h-4 object-cover rounded shadow-sm border border-slate-200" alt="${c.code}"/>
+                            <div>
+                                <span class="font-extrabold text-slate-900">${c.code}</span>
+                                <span class="text-xs text-slate-400 font-semibold ml-2">(${locName})</span>
+                            </div>
+                        </td>
+                        <td class="py-4 px-6 text-center">${renderBadge(c.gVa)}</td>
+                        <td class="py-4 px-6 text-center">${renderBadge(c.lVa)}</td>
+                        <td class="py-4 px-6 text-center">${renderBadge(c.swift)}</td>
+                        <td class="py-4 px-6 text-center">${renderBadge(c.localRail)}</td>
+                    </tr>
+                `;
+                tbody.insertAdjacentHTML('beforeend', row);
+            });
+        }
+
+        function filterCurrencies(type) {
+            currentFilter = type;
+            ['all', 'major', 'local'].forEach(t => {
+                const btn = document.getElementById(`tab-curr-${t}`);
+                if (btn) {
+                    if (t === type) {
+                        btn.className = "px-6 py-3 text-xs font-black uppercase tracking-wider border-b-2 border-[#0052ff] text-[#0052ff] transition-all";
+                    } else {
+                        btn.className = "px-6 py-3 text-xs font-black uppercase tracking-wider border-b-2 border-transparent text-slate-400 hover:text-slate-600 transition-all";
+                    }
+                }
+            });
+            renderMatrix();
+        }
+
+        function changeLang(lang) {
+            currentLang = lang;
+            localStorage.setItem('pref-lang', lang);
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    const icon = el.querySelector('i');
+                    el.innerText = translations[lang][key];
+                    if (icon) {
+                        el.appendChild(document.createTextNode(' '));
+                        el.appendChild(icon);
+                    }
+                }
+            });
+
+            // Update Tab Title
+            document.title = translations[lang].page_title;
+
+            // Preserve query param on links
+            document.querySelectorAll('a[href$=".html"]').forEach(link => {
+                try {
+                    const url = new URL(link.href, location.origin);
+                    url.searchParams.set('lang', lang);
+                    link.href = url.pathname + url.search;
+                } catch(e) {}
+            });
+
+            // API Docs link
+            document.querySelectorAll('[data-i18n="nav_api"]').forEach(link => {
+                link.href = lang === 'zh' ? 'https://docs.rail.aurellix.com/zh/' : 'https://docs.rail.aurellix.com/';
+            });
+
+            // Aurellix Group link
+            const groupLink = document.getElementById('group-link');
+            if (groupLink) {
+                groupLink.href = 'https://www.aurellix.com/' + (lang === 'zh' ? '?lang=zh' : '');
+            }
+
+            const label = { en: "EN", zh: "中文" }[lang];
+            const deskLabel = document.getElementById('current-lang-label');
+            if (deskLabel) deskLabel.innerText = label;
+
+            document.querySelectorAll('.lang-option').forEach(opt => {
+                opt.style.color = opt.innerText.includes(label) ? 'var(--hex-blue)' : '#64748b';
+            });
+
+            renderMatrix();
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(location.search);
+            let langs = params.get('lang') || localStorage.getItem('pref-lang');
+            if (!langs) {
+                const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+                langs = browserLang.startsWith('zh') ? 'zh' : 'en';
+            }
+            changeLang(langs === 'zh' ? 'zh' : 'en');
+        });
+
+        function onMerchant() {
+            window.open('https://merchant.rail.aurellix.com/', '_blank');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            const isOpen = menu.classList.toggle('open');
+            document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+            icon.className = isOpen ? 'fa-solid fa-xmark text-xl' : 'fa-solid fa-bars text-xl';
+        }
+    </script>
+</body>
+</html>
+
