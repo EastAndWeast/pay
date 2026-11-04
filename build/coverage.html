@@ -15,7 +15,9 @@
     <meta property="og:url" content="https://rail.aurellix.com/coverage.html" />
     <meta property="og:title" id="og-title" content="Aurellix Pay | Global Coverage & Payment Methods" />
     <meta property="og:description" id="og-desc" content="Explore verified markets and 140+ countries supported with domestic clearing, cards, and APMs on Aurellix Pay." />
-    <meta property="og:image" id="og-image" content="https://rail.aurellix.com/static/share_en.png" />
+    <meta property="og:image" id="og-image" content="https://pay-52p.pages.dev/static/share_en.png" />
+    <meta property="og:image:secure_url" content="https://pay-52p.pages.dev/static/share_en.png" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Aurellix Pay" />
@@ -24,7 +26,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" id="tw-title" content="Aurellix Pay | Global Coverage & Payment Methods" />
     <meta name="twitter:description" id="tw-desc" content="Explore verified markets and 140+ countries supported with domestic clearing, cards, and APMs on Aurellix Pay." />
-    <meta name="twitter:image" id="tw-image" content="https://rail.aurellix.com/static/share_en.png" />
+    <meta name="twitter:image" id="tw-image" content="https://pay-52p.pages.dev/static/share_en.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="static/vite.png" />
     <link rel="icon" href="static/favicon.svg" />
@@ -872,7 +874,8 @@ footer_desc: "Aurellix Pay 是合规稳定币聚合支付平台，专注于提�
             // Update Tab Title & SEO Tags
             const metaTitle = lang === 'zh' ? 'Aurellix Pay | 覆盖范围' : 'Aurellix Pay | Coverage';
             const metaDesc = lang === 'zh' ? 'Aurellix Pay 全球覆盖范围与支付通道：探索亚太、欧洲、拉美及全球 140+ 国家/地区支持的本地通道（FPS、PayID、SPEI、PIX、SEPA等）与国际信用卡收单网络。' : 'Aurellix Pay Global Coverage: Explore verified supported countries, local payment methods (APMs), and fiat currencies across APAC, Europe, LatAm, and global regions.';
-            const shareImg = lang === 'zh' ? 'https://rail.aurellix.com/static/share_zh.png' : 'https://rail.aurellix.com/static/share_en.png';
+            const baseHost = (location.origin && location.origin.startsWith('http')) ? location.origin : 'https://pay-52p.pages.dev';
+            const shareImg = lang === 'zh' ? (baseHost + '/static/share_zh.png') : (baseHost + '/static/share_en.png');
 
             document.title = metaTitle;
             const metaDescEl = document.querySelector('meta[name="description"]');

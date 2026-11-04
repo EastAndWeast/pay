@@ -115,3 +115,14 @@
      - 在 `index.html`、`coverage.html`、`otc.html`、`privacy.html`、`terms.html` 中注入标准 `<meta name="description">`、`<meta name="keywords">`、`<link rel="canonical">`、`<link rel="alternate" hreflang="...">` 以及符合 Telegram / WhatsApp 规范的 `og:title`、`og:description`、`og:image` (1200x630)、`og:site_name` 和 `twitter:card`。
      - 在 JavaScript 的 `changeLang()` 函数中增加了 Meta 标签的动态响应更新机制（切换至中文时自动将 Meta Description、OG Title 和 OG Image 切换为中文版）。
 - **测试记录**：详见 [任务和测试过程/2026-11-04-SEO-and-Social-Share-Image-Test.md](file:///d:/ShuangXiangTongBu/Aurellix/1.%E4%BA%A7%E5%93%81&%E5%BC%80%E5%8F%91/3.%E5%8E%9F%E5%9E%8B/Aurellix/AurellixPay_new_website/%E4%BB%BB%E5%8A%A1%E5%92%8C%E6%B5%8B%E8%AF%95%E8%BF%87%E7%A8%8B/2026-11-04-SEO-and-Social-Share-Image-Test.md)。
+
+
+---
+
+## 11. 任务 5 完成：代码与文档提交并推送至 GitHub (11:15)
+- **用户指令**：帮我提交一下到github
+- **执行内容**：
+  - 暂存所有修改及新增业务文件（`build/`）与开发测试文档（`任务和测试过程/`、`文档/`、`AI沟通记录/`、`提示词.txt`）。
+  - 执行本地 Commit：`c849970 feat: add global OTC module, 3 conversion modes, 26-fiat matrix, and dual-language SEO share images`。
+  - 成功推送到远端：`git push origin dev`。
+- **当前状态**：`origin/dev` 已同步至最新 Commit `c849970`。
