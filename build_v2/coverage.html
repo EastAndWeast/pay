@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Aurellix Pay | Coverage</title>
+    <meta name="description" content="Aurellix Pay Global Coverage: 36-market dual-channel matrix (Global FX vs Global OTC) across 6 regions plus interactive 94-country merchant acquiring map." />
+    <meta name="keywords" content="Aurellix Pay coverage, 36 markets matrix, Global FX vs Global OTC, supported countries, local rails, APM, FPS, PayID, SPEI, PIX, SEPA Instant" />
+    <link rel="canonical" href="https://rail.aurellix.com/coverage.html" />
+    <link rel="alternate" hreflang="en" href="https://rail.aurellix.com/coverage.html?lang=en" />
+    <link rel="alternate" hreflang="zh" href="https://rail.aurellix.com/coverage.html?lang=zh" />
+
+    <!-- Open Graph / Telegram / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rail.aurellix.com/coverage.html" />
+    <meta property="og:title" id="og-title" content="Aurellix Pay | Global Coverage &amp; Dual-Channel Matrix" />
+    <meta property="og:description" id="og-desc" content="Compare 36 core markets across Global FX &amp; Global OTC and explore 94 acquiring countries on our interactive map." />
+    <meta property="og:image" id="og-image" content="https://pay-52p.pages.dev/static/share_en.png" />
+    <meta property="og:image:secure_url" content="https://pay-52p.pages.dev/static/share_en.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Aurellix Pay" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" id="tw-title" content="Aurellix Pay | Global Coverage &amp; Dual-Channel Matrix" />
+    <meta name="twitter:description" id="tw-desc" content="Compare 36 core markets across Global FX &amp; Global OTC and explore 94 acquiring countries on our interactive map." />
+    <meta name="twitter:image" id="tw-image" content="https://pay-52p.pages.dev/static/share_en.png" />
+
+    <link rel="icon" href="static/brand_icon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="static/v2.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="fixed top-0 inset-x-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+            <div class="flex h-16 items-center gap-4">
+                <a href="index.html" class="flex items-center gap-2.5 shrink-0" aria-label="Aurellix Pay Home">
+                    <img src="static/headerLogo.png" alt="Aurellix Pay" class="h-7 w-auto" />
+                </a>
+
+                <nav class="hidden lg:flex items-center gap-7 ml-8" aria-label="Primary">
+                    <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
+
+                    <div class="nav-dropdown">
+                        <button type="button" class="nav-dropdown-trigger" aria-expanded="false">
+                            <span data-i18n="nav_products">Products</span>
+                            <i class="fa-solid fa-chevron-down text-[0.65rem] opacity-60 nav-chevron" aria-hidden="true"></i>
+                        </button>
+                        <div class="nav-popover">
+                            <a href="fx.html#fx-va-matrix" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-sky-50 text-sky-600"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_prod_collect">Global Collection</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_prod_collect_desc">22+ local & global VA accounts</span>
+                                </span>
+                            </a>
+                            <a href="fx.html#fx-wallets" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-emerald-50 text-emerald-600"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_prod_payout">Global Payout</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_prod_payout_desc">33+ local rails, SWIFT & e-wallets</span>
+                                </span>
+                            </a>
+                            <a href="otc.html" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-amber-50 text-amber-600"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_prod_otc">FX & Stablecoin OTC</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_prod_otc_desc">0-fee FX & 26-fiat USDT/USDC OTC</span>
+                                </span>
+                            </a>
+                            <a href="index.html#acquiring" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-indigo-50 text-indigo-600"><i class="fa-solid fa-credit-card" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_prod_acq">Global Acquiring</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_prod_acq_desc">94+ countries cards, APMs & crypto</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="nav-dropdown">
+                        <button type="button" class="nav-dropdown-trigger" aria-expanded="false">
+                            <span data-i18n="nav_solutions">Solutions</span>
+                            <i class="fa-solid fa-chevron-down text-[0.65rem] opacity-60 nav-chevron" aria-hidden="true"></i>
+                        </button>
+                        <div class="nav-popover">
+                            <a href="fx.html#fx-b2b" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-blue-50 text-[#0052ff]"><i class="fa-solid fa-ship" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_sol_b2b">B2B Foreign Trade</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_sol_b2b_desc">Local-currency collect, FX & supplier payout</span>
+                                </span>
+                            </a>
+                            <a href="otc.html" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-amber-50 text-amber-600"><i class="fa-solid fa-coins" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_sol_otc">Institutional OTC</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_sol_otc_desc">Fiat ⇄ Stablecoin T+0 treasury rails</span>
+                                </span>
+                            </a>
+                            <a href="index.html#scenarios" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-teal-50 text-teal-600"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_sol_ecom">E-Commerce & Digital</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_sol_ecom_desc">Marketplace, checkout & global payouts</span>
+                                </span>
+                            </a>
+                            <a href="index.html#rwa" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-purple-50 text-purple-600"><i class="fa-solid fa-gem" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_sol_rwa">RWA Tokenization</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_sol_rwa_desc">Real-world asset mint & global settlement</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="coverage.html" class="nav-link" aria-current="page" data-i18n="nav_coverage">Coverage</a>
+
+                    <div class="nav-dropdown">
+                        <button type="button" class="nav-dropdown-trigger" aria-expanded="false">
+                            <span data-i18n="nav_resources">Resources</span>
+                            <i class="fa-solid fa-chevron-down text-[0.65rem] opacity-60 nav-chevron" aria-hidden="true"></i>
+                        </button>
+                        <div class="nav-popover">
+                            <a href="https://docs.rail.aurellix.com/" data-api-link="true" target="_blank" rel="noopener noreferrer" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-slate-100 text-slate-700"><i class="fa-solid fa-code" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_api">API Docs</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_api_desc">REST APIs, SDKs & Webhook reference</span>
+                                </span>
+                            </a>
+                            <a href="https://demo.rail.aurellix.com" target="_blank" rel="noopener noreferrer" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-sky-50 text-sky-600"><i class="fa-solid fa-desktop" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_demo">Demo</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_demo_desc">Live institutional checkout sandbox</span>
+                                </span>
+                            </a>
+                            <a href="index.html#compliance" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-emerald-50 text-emerald-600"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_partners">Compliance & Ecosystem</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_partners_desc">Licensed rails & global settlement network</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="hidden lg:flex items-center gap-3.5 ml-auto">
+                    <div class="lang-dropdown">
+                        <button type="button" class="flex items-center gap-1.5 text-xs font-extrabold text-slate-600 hover:text-[#0052ff] transition cursor-pointer" aria-label="Switch Language">
+                            <i class="fa-solid fa-globe text-xs text-slate-400" aria-hidden="true"></i>
+                            <span id="current-lang-label">EN</span>
+                            <i class="fa-solid fa-chevron-down text-[0.6rem]" aria-hidden="true"></i>
+                        </button>
+                        <div class="lang-menu" role="menu">
+                            <button type="button" class="lang-option" data-lang="en" onclick="changeLang('en')">English</button>
+                            <button type="button" class="lang-option" data-lang="zh" onclick="changeLang('zh')">简体中文</button>
+                        </div>
+                    </div>
+                    <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="btn-contact px-4 py-2 rounded-xl text-xs flex items-center gap-1.5" data-i18n="nav_contact">
+                        Contact <i class="fa-brands fa-telegram text-sm" data-keep-icon="true" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://merchant.rail.aurellix.com/" target="_blank" rel="noopener noreferrer" class="btn-primary px-5 py-2.5 rounded-xl text-xs" data-i18n="nav_portal">Merchant Portal</a>
+                </div>
+
+                <button id="mobile-menu-btn" type="button" class="lg:hidden ml-auto p-2 text-slate-700 hover:text-[#0052ff] cursor-pointer" onclick="AurellixV2.toggleMobileMenu()" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+                    <i id="menu-icon" class="fa-solid fa-bars text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 z-[110] bg-white lg:hidden overflow-y-auto pt-20 px-6 pb-12" aria-hidden="true">
+        <button type="button" onclick="AurellixV2.toggleMobileMenu(true)" class="absolute top-4 right-4 w-11 h-11 flex items-center justify-center text-slate-500 hover:text-slate-900 cursor-pointer" aria-label="Close menu">
+            <i class="fa-solid fa-xmark text-2xl" aria-hidden="true"></i>
+        </button>
+        <nav class="flex flex-col gap-4 text-base font-extrabold text-slate-800 mb-8" aria-label="Mobile Primary">
+            <a href="index.html" onclick="AurellixV2.toggleMobileMenu(true)" class="border-b border-slate-100 pb-3" data-i18n="nav_home">Home</a>
+
+            <div class="border-b border-slate-100 pb-3">
+                <div class="text-xs font-black uppercase tracking-widest text-slate-400 mb-2.5" data-i18n="nav_products">Products</div>
+                <div class="grid grid-cols-2 gap-2.5 text-sm font-bold">
+                    <a href="fx.html#fx-va-matrix" onclick="AurellixV2.toggleMobileMenu(true)" class="p-2.5 rounded-xl bg-slate-50 text-slate-800" data-i18n="nav_prod_collect">Global Collection</a>
+                    <a href="fx.html#fx-wallets" onclick="AurellixV2.toggleMobileMenu(true)" class="p-2.5 rounded-xl bg-slate-50 text-slate-800" data-i18n="nav_prod_payout">Global Payout</a>
+                    <a href="otc.html" onclick="AurellixV2.toggleMobileMenu(true)" class="p-2.5 rounded-xl bg-slate-50 text-slate-800" data-i18n="nav_prod_otc">FX & Stablecoin OTC</a>
+                    <a href="index.html#acquiring" onclick="AurellixV2.toggleMobileMenu(true)" class="p-2.5 rounded-xl bg-slate-50 text-slate-800" data-i18n="nav_prod_acq">Global Acquiring</a>
+                </div>
+            </div>
+
+            <div class="border-b border-slate-100 pb-3">
+                <div class="text-xs font-black uppercase tracking-widest text-slate-400 mb-2.5" data-i18n="nav_solutions">Solutions</div>
+                <div class="grid grid-cols-2 gap-2.5 text-sm font-bold">
+                    <a href="fx.html#fx-b2b" onclick="AurellixV2.toggleMobileMenu(true)" class="p-2.5 rounded-xl bg-slate-50 text-slate-800" data-i18n="nav_sol_b2b">B2B Foreign Trade</a>
+                    <a href="otc.html" onclick="AurellixV2.toggleMobileMenu(true)" class="p-2.5 rounded-xl bg-slate-50 text-slate-800" data-i18n="nav_sol_otc">Institutional OTC</a>
+                    <a href="index.html#scenarios" onclick="AurellixV2.toggleMobileMenu(true)" class="p-2.5 rounded-xl bg-slate-50 text-slate-800" data-i18n="nav_sol_ecom">E-Commerce & Digital</a>
+                    <a href="index.html#rwa" onclick="AurellixV2.toggleMobileMenu(true)" class="p-2.5 rounded-xl bg-slate-50 text-slate-800" data-i18n="nav_sol_rwa">RWA Tokenization</a>
+                </div>
+            </div>
+
+            <a href="coverage.html" onclick="AurellixV2.toggleMobileMenu(true)" class="text-[#0052ff] border-b border-slate-100 pb-3" aria-current="page" data-i18n="nav_coverage">Coverage</a>
+            <a href="https://docs.rail.aurellix.com/" data-api-link="true" target="_blank" rel="noopener noreferrer" onclick="AurellixV2.toggleMobileMenu(true)" class="border-b border-slate-100 pb-3" data-i18n="nav_api">API Docs</a>
+            <a href="https://demo.rail.aurellix.com" target="_blank" rel="noopener noreferrer" onclick="AurellixV2.toggleMobileMenu(true)" class="flex items-center gap-2 border-b border-slate-100 pb-3">
+                <span data-i18n="nav_demo">Demo</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-60" aria-hidden="true"></i>
+            </a>
+        </nav>
+        <div class="space-y-4 pt-1 mb-6">
+            <p class="text-xs font-extrabold text-slate-500 uppercase tracking-widest" data-i18n="mobile_lang_label">Select Language</p>
+            <div class="grid grid-cols-2 gap-3">
+                <button type="button" onclick="changeLang('en'); AurellixV2.toggleMobileMenu(true);" class="px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold text-slate-700 text-left cursor-pointer">English</button>
+                <button type="button" onclick="changeLang('zh'); AurellixV2.toggleMobileMenu(true);" class="px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold text-slate-700 text-left cursor-pointer">简体中文</button>
+            </div>
+        </div>
+        <div class="space-y-3">
+            <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="w-full btn-contact py-3.5 rounded-xl text-sm flex items-center justify-center gap-2" data-i18n="nav_contact">
+                Contact <i class="fa-brands fa-telegram" data-keep-icon="true" aria-hidden="true"></i>
+            </a>
+            <a href="https://merchant.rail.aurellix.com/" target="_blank" rel="noopener noreferrer" class="w-full btn-primary py-3.5 rounded-xl text-sm flex items-center justify-center" data-i18n="nav_portal">Merchant Portal</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Page Intro + Visual World Map First ("图多字少") -->
+        <section class="pt-28 pb-12 hero-mesh border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8 relative z-10 text-center">
+                <span class="label-caps text-[#0052ff] block mb-2.5" data-i18n="cov_page_tag">Global Network Coverage</span>
+                <h1 class="heading-xl text-slate-900 mb-3 max-w-4xl mx-auto" data-i18n="cov_page_title">Global Payment &amp; Settlement Network Map</h1>
+                <p class="body-text max-w-xl mx-auto mb-5" data-i18n="cov_page_desc">Interactive 94-country acquiring map + 36-market dual-channel treasury coverage.</p>
+                <div class="flex flex-wrap justify-center items-center gap-5 mb-6 text-sm font-bold text-slate-700">
+                    <span class="inline-flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-[#0052ff]" aria-hidden="true"></i><span data-i18n="cov_chk1">36 Treasury Markets</span></span>
+                    <span class="inline-flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-[#0052ff]" aria-hidden="true"></i><span data-i18n="cov_chk2">94 Acquiring Countries</span></span>
+                    <span class="inline-flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-[#0052ff]" aria-hidden="true"></i><span data-i18n="cov_chk3">6-Region Filterable Matrix</span></span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="#acquiring-map" class="btn-primary px-6 py-3 rounded-xl text-xs uppercase tracking-wider" data-i18n="cov_jump_acq">Interactive World Map ↓</a>
+                    <a href="#dm-matrix-details" class="btn-contact px-6 py-3 rounded-xl text-xs uppercase tracking-wider" data-i18n="cov_jump_dual">36-Market Dual-Channel Matrix ↓</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Block 1: Visual Interactive World Map + 5 Core Markets + Stowed 94-Market Directory -->
+        <section id="acquiring-map" class="py-14 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8 space-y-10">
+                <!-- Large Interactive World Map -->
+                <div class="bg-white p-4 sm:p-6 rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div id="map-container" class="relative w-full aspect-[784/458] flex items-center justify-center">
+                        <div class="flex flex-col items-center gap-3">
+                            <i class="fa-solid fa-circle-notch fa-spin text-3xl text-[#0052ff]" aria-hidden="true"></i>
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-widest">Loading Global Map...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommended 5 Core Acquiring Markets -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="w-1.5 h-4 bg-[#0052ff] rounded-full" aria-hidden="true"></span>
+                        <h2 class="text-xs font-900 text-[#0052ff] uppercase tracking-widest" data-i18n="cov_core_title">Core Verified Acquiring Markets</h2>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                        <div class="bento-card p-5 rounded-2xl">
+                            <div class="flex items-center gap-2.5 mb-3">
+                                <img src="https://flagcdn.com/hk.svg" alt="Hong Kong" class="w-7 h-5 object-cover rounded border border-slate-200" />
+                                <span class="font-extrabold text-sm text-slate-900" data-i18n="cov_hk">Hong Kong, China</span>
+                            </div>
+                            <div class="flex flex-wrap gap-1"><span class="tag-local px-2 py-0.5 rounded text-[0.65rem]">FPS</span><span class="tag-card px-2 py-0.5 rounded text-[0.65rem]">Cards</span><span class="tag-card px-2 py-0.5 rounded text-[0.65rem]">Apple Pay</span></div>
+                        </div>
+                        <div class="bento-card p-5 rounded-2xl">
+                            <div class="flex items-center gap-2.5 mb-3">
+                                <img src="https://flagcdn.com/tw.svg" alt="Taiwan" class="w-7 h-5 object-cover rounded border border-slate-200" />
+                                <span class="font-extrabold text-sm text-slate-900" data-i18n="cov_tw">Taiwan, China</span>
+                            </div>
+                            <div class="flex flex-wrap gap-1"><span class="tag-card px-2 py-0.5 rounded text-[0.65rem]">Cards</span><span class="tag-card px-2 py-0.5 rounded text-[0.65rem]">Apple/Google Pay</span></div>
+                        </div>
+                        <div class="bento-card p-5 rounded-2xl">
+                            <div class="flex items-center gap-2.5 mb-3">
+                                <img src="https://flagcdn.com/au.svg" alt="Australia" class="w-7 h-5 object-cover rounded border border-slate-200" />
+                                <span class="font-extrabold text-sm text-slate-900" data-i18n="cov_au">Australia</span>
+                            </div>
+                            <div class="flex flex-wrap gap-1"><span class="tag-local px-2 py-0.5 rounded text-[0.65rem]">PayID</span><span class="tag-local px-2 py-0.5 rounded text-[0.65rem]">POLi</span><span class="tag-card px-2 py-0.5 rounded text-[0.65rem]">Cards</span></div>
+                        </div>
+                        <div class="bento-card p-5 rounded-2xl">
+                            <div class="flex items-center gap-2.5 mb-3">
+                                <img src="https://flagcdn.com/us.svg" alt="United States" class="w-7 h-5 object-cover rounded border border-slate-200" />
+                                <span class="font-extrabold text-sm text-slate-900" data-i18n="cov_us">United States</span>
+                            </div>
+                            <div class="flex flex-wrap gap-1"><span class="tag-local px-2 py-0.5 rounded text-[0.65rem]">ACH</span><span class="tag-local px-2 py-0.5 rounded text-[0.65rem]">Wire</span><span class="tag-card px-2 py-0.5 rounded text-[0.65rem]">Cards</span></div>
+                        </div>
+                        <div class="bento-card p-5 rounded-2xl">
+                            <div class="flex items-center gap-2.5 mb-3">
+                                <img src="https://flagcdn.com/mx.svg" alt="Mexico" class="w-7 h-5 object-cover rounded border border-slate-200" />
+                                <span class="font-extrabold text-sm text-slate-900" data-i18n="cov_mx">Mexico</span>
+                            </div>
+                            <div class="flex flex-wrap gap-1"><span class="tag-local px-2 py-0.5 rounded text-[0.65rem]">SPEI</span><span class="tag-card px-2 py-0.5 rounded text-[0.65rem]">Cards</span><span class="tag-card px-2 py-0.5 rounded text-[0.65rem]">Apple Pay</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stowed Accordion: 94-Country Acquiring Directory -->
+                <details id="cov-dir-details" class="ax-accordion">
+                    <summary>
+                        <span class="inline-flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-xl bg-blue-50 text-[#0052ff] flex items-center justify-center text-sm"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i></span>
+                            <span data-i18n="cov_acc_dir">Expand: Global 94-Country Acquiring Directory (APAC / Europe / LatAm / Others)</span>
+                        </span>
+                        <i class="fa-solid fa-chevron-down ax-acc-chevron" aria-hidden="true"></i>
+                    </summary>
+                    <div class="ax-accordion-body">
+                        <div id="cov-tablist" class="v2-tablist mb-6" role="tablist" aria-label="Acquiring Regions">
+                            <button type="button" role="tab" id="cov-tab-apac" aria-selected="true" aria-controls="cov-content-apac" tabindex="0" class="v2-tab" data-region="apac" data-i18n="tab_apac">APAC (26)</button>
+                            <button type="button" role="tab" id="cov-tab-europe" aria-selected="false" aria-controls="cov-content-europe" tabindex="-1" class="v2-tab" data-region="europe" data-i18n="tab_europe">Europe &amp; UK (32)</button>
+                            <button type="button" role="tab" id="cov-tab-latam" aria-selected="false" aria-controls="cov-content-latam" tabindex="-1" class="v2-tab" data-region="latam" data-i18n="tab_latam">LatAm (17)</button>
+                            <button type="button" role="tab" id="cov-tab-others" aria-selected="false" aria-controls="cov-content-others" tabindex="-1" class="v2-tab" data-region="others" data-i18n="tab_others">Others (19)</button>
+                        </div>
+
+                        <div id="cov-content-apac" role="tabpanel" aria-labelledby="cov-tab-apac" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+                        <div id="cov-content-europe" role="tabpanel" aria-labelledby="cov-tab-europe" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" hidden></div>
+                        <div id="cov-content-latam" role="tabpanel" aria-labelledby="cov-tab-latam" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" hidden></div>
+                        <div id="cov-content-others" role="tabpanel" aria-labelledby="cov-tab-others" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" hidden></div>
+
+                        <p class="mt-8 pt-5 border-t border-slate-100 text-xs text-slate-600 text-center max-w-2xl mx-auto" data-i18n="cov_disclaimer">
+                            * Available payment methods, supported assets, and limits may vary over time. Refer to your Merchant Portal for real-time corridor availability.
+                        </p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Block 2: Stowed Accordion for 36-Market Dual-Channel Regional Matrix -->
+        <section id="channel-matrix" class="py-12 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+                <details id="dm-matrix-details" class="ax-accordion">
+                    <summary>
+                        <span class="inline-flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-xl bg-sky-50 text-[#0284c7] flex items-center justify-center text-sm"><i class="fa-solid fa-table-columns" aria-hidden="true"></i></span>
+                            <span id="dm-heading" data-i18n="cov_acc_dual">Expand: 36-Market Dual-Channel Matrix (Global OTC vs Global FX)</span>
+                        </span>
+                        <i class="fa-solid fa-chevron-down ax-acc-chevron" aria-hidden="true"></i>
+                    </summary>
+                    <div class="ax-accordion-body">
+                        <div id="dm-summary-pills" class="flex flex-wrap gap-2 text-xs font-extrabold mb-4"></div>
+
+                        <!-- Region Tabs -->
+                        <div class="space-y-3 mb-5">
+                            <div id="dm-region-tablist" class="v2-pill-tablist" role="tablist" aria-label="Filter 36 markets by region">
+                                <button type="button" role="tab" aria-selected="true" tabindex="0" class="v2-pill-tab" data-region="all" data-i18n="dm_reg_all">All Regions (36)</button>
+                                <button type="button" role="tab" aria-selected="false" tabindex="-1" class="v2-pill-tab" data-region="欧美及大洋洲" data-i18n="dm_reg_eu_oc">Europe, Americas &amp; Oceania (7)</button>
+                                <button type="button" role="tab" aria-selected="false" tabindex="-1" class="v2-pill-tab" data-region="大中华及日韩" data-i18n="dm_reg_gc_jp">Greater China, JP &amp; KR (4)</button>
+                                <button type="button" role="tab" aria-selected="false" tabindex="-1" class="v2-pill-tab" data-region="东南亚" data-i18n="dm_reg_sea">Southeast Asia (6)</button>
+                                <button type="button" role="tab" aria-selected="false" tabindex="-1" class="v2-pill-tab" data-region="拉丁美洲" data-i18n="dm_reg_latam">Latin America (6)</button>
+                                <button type="button" role="tab" aria-selected="false" tabindex="-1" class="v2-pill-tab" data-region="中东及南亚" data-i18n="dm_reg_me_sa">Middle East &amp; South Asia (7)</button>
+                                <button type="button" role="tab" aria-selected="false" tabindex="-1" class="v2-pill-tab" data-region="非洲" data-i18n="dm_reg_af">Africa (6)</button>
+                            </div>
+
+                            <!-- Channel Filter Tabs -->
+                            <div id="dm-support-tablist" class="v2-tablist" role="tablist" aria-label="Filter by channel availability">
+                                <button type="button" role="tab" aria-selected="true" tabindex="0" class="v2-tab" data-support="all" data-i18n="dm_sup_all">All Channels</button>
+                                <button type="button" role="tab" aria-selected="false" tabindex="-1" class="v2-tab" data-support="both" data-i18n="dm_sup_both">Both Channels</button>
+                                <button type="button" role="tab" aria-selected="false" tabindex="-1" class="v2-tab" data-support="otc" data-i18n="dm_sup_otc">Global OTC Only</button>
+                                <button type="button" role="tab" aria-selected="false" tabindex="-1" class="v2-tab" data-support="fx" data-i18n="dm_sup_fx">Global FX Only</button>
+                            </div>
+                        </div>
+
+                        <!-- 36-Market Table -->
+                        <div tabindex="0" role="region" aria-labelledby="dm-heading" class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="dm_th_reg">Region</th>
+                                        <th data-i18n="dm_th_mkt">Market &amp; Currency</th>
+                                        <th data-i18n="dm_th_otc">Channel 1: Global OTC (Fiat + Stablecoin)</th>
+                                        <th data-i18n="dm_th_fx">Channel 2: Global FX (B2B Local Fiat)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dm-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-[#1e3a5f] via-[#1a2f4a] to-[#0f1f35] text-white">
+        <div class="max-w-7xl mx-auto px-6 pt-14 pb-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-10">
+                <div class="md:col-span-5">
+                    <img src="static/logo.png" alt="Aurellix Pay" style="width: 126px; margin-bottom: 16px;" />
+                    <p class="text-white/70 text-[0.8rem] leading-relaxed max-w-xs mb-5" data-i18n="footer_desc">Aurellix Pay is a global institutional treasury platform.</p>
+                    <div class="flex items-center gap-3">
+                        <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition" aria-label="Telegram">
+                            <i class="fa-brands fa-telegram text-white/80 text-sm" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.aurellix.com/" target="_blank" rel="noopener noreferrer" id="group-link" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-xs transition">
+                            <i class="fa-solid fa-building text-white/60 text-[0.65rem]" aria-hidden="true"></i>
+                            <span data-i18n="footer_group">Aurellix Group</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[0.5rem] text-white/50" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-3">
+                    <h4 class="text-[0.68rem] uppercase tracking-[0.2em] font-black text-white/50 mb-5" data-i18n="footer_product">Solutions</h4>
+                    <ul class="space-y-3 text-[0.82rem]">
+                        <li><a href="index.html" class="text-white/80 hover:text-white transition" data-i18n="nav_home">Home</a></li>
+                        <li><a href="fx.html" class="text-white/80 hover:text-white transition" data-i18n="nav_fx">Global FX</a></li>
+                        <li><a href="otc.html" class="text-white/80 hover:text-white transition" data-i18n="nav_otc">OTC</a></li>
+                        <li><a href="index.html#acquiring" class="text-white/80 hover:text-white transition" data-i18n="nav_acquiring">Acquiring</a></li>
+                        <li><a href="coverage.html" class="text-white/80 hover:text-white transition" data-i18n="nav_coverage">Coverage</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="text-[0.68rem] uppercase tracking-[0.2em] font-black text-white/50 mb-5" data-i18n="footer_resources">Resources</h4>
+                    <ul class="space-y-3 text-[0.82rem]">
+                        <li><a href="https://docs.rail.aurellix.com/" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition inline-flex items-center gap-1" data-i18n="nav_api">API Docs <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] text-white/50" data-keep-icon="true" aria-hidden="true"></i></a></li>
+                        <li><a href="https://demo.rail.aurellix.com" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition inline-flex items-center gap-1" data-i18n="nav_demo">Demo <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] text-white/50" data-keep-icon="true" aria-hidden="true"></i></a></li>
+                        <li><a href="https://merchant.rail.aurellix.com/" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition" data-i18n="nav_portal">Merchant Portal</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="text-[0.68rem] uppercase tracking-[0.2em] font-black text-white/50 mb-5" data-i18n="nav_contact">Contact</h4>
+                    <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white/90 hover:text-white text-xs font-bold transition">
+                        <i class="fa-brands fa-telegram text-[#38bdf8] text-sm" aria-hidden="true"></i>
+                        <span>@cs_aurellix</span>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-6 flex flex-col items-center gap-3 text-center">
+                <p class="text-white/50 text-xs" data-i18n="copyright">© 2026 Aurellix Pay. All rights reserved.</p>
+                <div class="flex items-center gap-4 text-xs">
+                    <a href="privacy.html" class="text-white/60 hover:text-white transition" data-i18n="footer_privacy">Privacy Policy</a>
+                    <span class="text-white/25">|</span>
+                    <a href="terms.html" class="text-white/60 hover:text-white transition" data-i18n="footer_terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/v2-common.js"></script>
+    <script>
+        const PAGE_TRANSLATIONS = {
+            en: {
+                cov_page_tag: 'Global Network Coverage',
+                cov_page_title: 'Global Payment & Settlement Network Map',
+                cov_page_desc: 'Interactive 94-country acquiring map + 36-market dual-channel treasury coverage.',
+                cov_chk1: '36 Treasury Markets',
+                cov_chk2: '94 Acquiring Countries',
+                cov_chk3: '6-Region Filterable Matrix',
+                cov_jump_dual: '36-Market Dual-Channel Matrix ↓',
+                cov_jump_acq: 'Interactive World Map ↓',
+                cov_acc_dir: 'Expand: Global 94-Country Acquiring Directory (APAC / Europe / LatAm / Others)',
+                cov_acc_dual: 'Expand: 36-Market Dual-Channel Matrix (Global OTC vs Global FX)',
+                dm_tag: 'Treasury Coverage Comparison',
+                dm_title: 'Dual-Channel Regional Country & Currency Matrix (36 Markets)',
+                dm_reg_all: 'All Regions (36)',
+                dm_reg_eu_oc: 'Europe, Americas & Oceania (7)',
+                dm_reg_gc_jp: 'Greater China, JP & KR (4)',
+                dm_reg_sea: 'Southeast Asia (6)',
+                dm_reg_latam: 'Latin America (6)',
+                dm_reg_me_sa: 'Middle East & South Asia (7)',
+                dm_reg_af: 'Africa (6)',
+                dm_sup_all: 'All Channels',
+                dm_sup_both: 'Both Channels',
+                dm_sup_otc: 'Global OTC Only',
+                dm_sup_fx: 'Global FX Only',
+                dm_th_reg: 'Region',
+                dm_th_mkt: 'Market & Currency',
+                dm_th_otc: 'Channel 1: Global OTC (Fiat + Stablecoin)',
+                dm_th_fx: 'Channel 2: Global FX (B2B Local Fiat)',
+                cov_tag: 'Merchant Acquiring Coverage',
+                cov_title: 'Global On-Ramp Acquiring & Local Payment Methods',
+                cov_core_title: 'Core Verified Acquiring Markets',
+                cov_hk: 'Hong Kong, China',
+                cov_tw: 'Taiwan, China',
+                cov_au: 'Australia',
+                cov_us: 'United States',
+                cov_mx: 'Mexico',
+                cov_global_title: 'Global Acquiring Support Directory (94 Markets)',
+                tab_apac: 'APAC (26)',
+                tab_europe: 'Europe & UK (32)',
+                tab_latam: 'LatAm (17)',
+                tab_others: 'Others (19)',
+                cov_disclaimer: '* Available payment methods, supported assets, and limits may vary over time. Refer to your Merchant Portal for real-time corridor availability.'
+            },
+            zh: {
+                cov_page_tag: '全球网络覆盖全景图',
+                cov_page_title: '全球支付与清结算覆盖网络图谱',
+                cov_page_desc: '交互式 94 国全球收单地图 + 36 国双资金渠道对照覆盖查询。',
+                cov_chk1: '36 国双资金渠道',
+                cov_chk2: '94 国聚合收单',
+                cov_chk3: '6 大区域快捷筛选',
+                cov_jump_dual: '36 国双渠道对照表 ↓',
+                cov_jump_acq: '交互式世界地图 ↓',
+                cov_acc_dir: '展开查看：全球 94 国收单支付方式完整名录（亚太 / 欧洲 / 拉美 / 其他）',
+                cov_acc_dual: '展开查看：36 国双资金渠道（全球承兑 vs 全球收付）分地区对照表',
+                dm_tag: '双资金渠道对比',
+                dm_title: '双渠道分地区国家与币种支持对照表 (36 个重点市场)',
+                dm_reg_all: '全部地区 (36)',
+                dm_reg_eu_oc: '欧美及大洋洲 (7)',
+                dm_reg_gc_jp: '大中华及日韩 (4)',
+                dm_reg_sea: '东南亚 (6)',
+                dm_reg_latam: '拉丁美洲 (6)',
+                dm_reg_me_sa: '中东及南亚 (7)',
+                dm_reg_af: '非洲 (6)',
+                dm_sup_all: '全部通道',
+                dm_sup_both: '双渠道均支持',
+                dm_sup_otc: '仅全球承兑支持',
+                dm_sup_fx: '仅全球收付支持',
+                dm_th_reg: '所属地区',
+                dm_th_mkt: '国家 / 市场与主币种',
+                dm_th_otc: '渠道 1：全球承兑（法币 + 稳定币）',
+                dm_th_fx: '渠道 2：全球收付（外贸·本币）',
+                cov_tag: '聚合收单覆盖（保留网关）',
+                cov_title: '全球收单覆盖地区与本地支付通道',
+                cov_core_title: '推荐已跑通收单市场',
+                cov_hk: '中国香港',
+                cov_tw: '中国台湾',
+                cov_au: '澳大利亚',
+                cov_us: '美国',
+                cov_mx: '墨西哥',
+                cov_global_title: '全球收单多区域支持目录 (94 个国家/地区)',
+                tab_apac: '亚太地区 (26)',
+                tab_europe: '欧洲与英国 (32)',
+                tab_latam: '拉美地区 (17)',
+                tab_others: '其他地区 (19)',
+                cov_disclaimer: '* 实际可用的支付方式、支持币种及限额可能因各地区合规政策与通道调整而有所不同，请以实际收银台或商户后台展示为准。'
+            }
+        };
+
+        const PAGE_META = {
+            en: {
+                title: 'Aurellix Pay | Coverage',
+                desc: 'Aurellix Pay Global Coverage: 36-market dual-channel matrix (Global FX vs Global OTC) across 6 regions plus 94-country acquiring map.'
+            },
+            zh: {
+                title: 'Aurellix Pay | 覆盖范围',
+                desc: 'Aurellix Pay 全球覆盖范围：36 国双资金渠道（全球承兑 vs 全球收付）分地区支持对照表与 94 国聚合收单交互地图。'
+            }
+        };
+
+        // 36 Markets Dual-Channel Matrix (synced from AurellixPay-PC/src/modules/fx/FxGatewaysPage.tsx)
+        const CHANNEL_MARKETS = [
+            // 欧美及大洋洲 (7)
+            { flag: 'us', reg: '欧美及大洋洲', regEn: 'EU, Americas & Oceania', nameEn: 'United States', nameZh: '美国', curr: 'USD', ga: 'yes', gaEn: 'SWIFT + Local Pay-in + Local POBO', gaZh: 'SWIFT 收付款 + 本地收款 + 本地 POBO 代付', fx: 'yes', fxEn: 'VA (ACH/Fedwire) + Live FX + Local/SWIFT Payout', fxZh: '22国 VA 本地收款 (ACH/Fedwire) + 实时换汇 + 本地/SWIFT 付款' },
+            { flag: 'eu', reg: '欧美及大洋洲', regEn: 'EU, Americas & Oceania', nameEn: 'Eurozone', nameZh: '欧洲欧元区', curr: 'EUR', ga: 'yes', gaEn: 'SWIFT + Local SEPA Pay-in + POBO', gaZh: 'SWIFT 收付款 + 本地 SEPA 收款 + POBO 代付', fx: 'yes', fxEn: 'VA (SEPA/SWIFT) + Live FX + SEPA Payout', fxZh: 'VA 本地收款 (SEPA/SWIFT) + 实时换汇 + SEPA 本地付款' },
+            { flag: 'gb', reg: '欧美及大洋洲', regEn: 'EU, Americas & Oceania', nameEn: 'United Kingdom', nameZh: '英国', curr: 'GBP', ga: 'yes', gaEn: 'SWIFT + Local FPS Pay-in + POBO', gaZh: 'SWIFT 收付款 + 本地 FPS 收款 + POBO 代付', fx: 'yes', fxEn: 'VA (FPS/CHAPS, GBP/EUR/USD) + Live FX + FPS Payout', fxZh: 'VA 本地收款 (FPS/CHAPS，含 GBP/EUR/USD) + 实时换汇 + FPS 付款' },
+            { flag: 'ca', reg: '欧美及大洋洲', regEn: 'EU, Americas & Oceania', nameEn: 'Canada', nameZh: '加拿大', curr: 'CAD', ga: 'yes', gaEn: 'Global SWIFT Pay-in & Payout', gaZh: 'SWIFT 全球收付款（本地通道暂不支持）', fx: 'yes', fxEn: 'VA (EFT/Wire, CAD/USD) + Live FX', fxZh: 'VA 本地收款 (EFT/Wire，支持 CAD/USD) + 实时换汇' },
+            { flag: 'au', reg: '欧美及大洋洲', regEn: 'EU, Americas & Oceania', nameEn: 'Australia', nameZh: '澳大利亚', curr: 'AUD', ga: 'yes', gaEn: 'Global SWIFT Pay-in & Payout', gaZh: 'SWIFT 全球收付款（本地通道暂不支持）', fx: 'yes', fxEn: 'AUD Live FX Settlement & Local Payout', fxZh: '支持 AUD 实时换汇交割（暂未开放本地 VA 收款）' },
+            { flag: 'ch', reg: '欧美及大洋洲', regEn: 'EU, Americas & Oceania', nameEn: 'Switzerland', nameZh: '瑞士', curr: 'CHF', ga: 'yes', gaEn: 'Global SWIFT Pay-in & Payout', gaZh: 'SWIFT 全球收付款（本地通道暂不支持）', fx: 'yes', fxEn: 'CHF Live FX Settlement & Payout', fxZh: '支持 CHF 实时换汇交割（暂未开放本地 VA 收款）' },
+            { flag: 'nz', reg: '欧美及大洋洲', regEn: 'EU, Americas & Oceania', nameEn: 'New Zealand', nameZh: '新西兰', curr: 'NZD', ga: 'no', gaEn: 'Currency Not Supported', gaZh: '暂不支持该币种通道', fx: 'yes', fxEn: 'NZD Live FX Settlement & Local Payout', fxZh: '支持 NZD 实时换汇交割（暂未开放本地 VA 收款）' },
+
+            // 大中华及日韩 (4)
+            { flag: 'cn', reg: '大中华及日韩', regEn: 'Greater China, JP & KR', nameEn: 'Mainland China', nameZh: '中国大陆', curr: 'CNY', ga: 'no', gaEn: 'No Onshore CNY Settlement', gaZh: '不支持在岸人民币外管阳光结汇', fx: 'yes', fxEn: 'Trade-Backed Onshore CNY Settlement & Withdraw', fxZh: '支持 B2B 贸易合同申报阳光结汇 CNY 及对公/个人提现' },
+            { flag: 'hk', reg: '大中华及日韩', regEn: 'Greater China, JP & KR', nameEn: 'Hong Kong, China', nameZh: '中国香港', curr: 'HKD / CNH', ga: 'yes', gaEn: 'HKD Local + Offshore CNH SWIFT', gaZh: 'HKD 本地归集与付款 + 离岸 CNH SWIFT 全球收付款', fx: 'yes', fxEn: 'HK VA (FPS/CHATS, HKD/USD/CNH/EUR) + FX + Payout', fxZh: 'HK VA 收款 (FPS/CHATS，含 HKD/USD/CNH/EUR) + 换汇 + 本地付款' },
+            { flag: 'jp', reg: '大中华及日韩', regEn: 'Greater China, JP & KR', nameEn: 'Japan', nameZh: '日本', curr: 'JPY', ga: 'yes', gaEn: 'Global SWIFT Pay-in & Payout', gaZh: 'SWIFT 全球收付款（本地通道暂不支持）', fx: 'yes', fxEn: 'JPY Live FX Settlement & Payout', fxZh: '支持 JPY 实时换汇交割（暂未开放本地 VA 收款）' },
+            { flag: 'kr', reg: '大中华及日韩', regEn: 'Greater China, JP & KR', nameEn: 'South Korea', nameZh: '韩国', curr: 'KRW', ga: 'soon', gaEn: 'Local & SWIFT Channels Upcoming', gaZh: '本地收付款与 SWIFT 通道即将支持', fx: 'yes', fxEn: 'KRW Live FX Settlement & Payout', fxZh: '支持 KRW 实时换汇交割（暂未开放本地 VA 收款）' },
+
+            // 东南亚 (6)
+            { flag: 'sg', reg: '东南亚', regEn: 'Southeast Asia', nameEn: 'Singapore', nameZh: '新加坡', curr: 'SGD', ga: 'yes', gaEn: 'SWIFT + Local Pay-in (Local Payout Upcoming)', gaZh: 'SWIFT 收付款 + 本地收款（本地付款即将支持）', fx: 'yes', fxEn: 'VA (FAST/MEPS+) + Live FX + FAST Payout', fxZh: 'VA 本地收款 (FAST/MEPS+) + 实时换汇 + FAST 本地付款' },
+            { flag: 'id', reg: '东南亚', regEn: 'Southeast Asia', nameEn: 'Indonesia', nameZh: '印度尼西亚', curr: 'IDR', ga: 'yes', gaEn: 'Local Pay-in & Local Payout', gaZh: '本地收款与本地付款（不支持 SWIFT）', fx: 'yes', fxEn: 'VA (BI-FAST) + FX + Bank & 5 Mobile Wallets', fxZh: 'VA 本地收款 (BI-FAST) + 实时换汇 + 本地银行/5 种电子钱包秒付' },
+            { flag: 'th', reg: '东南亚', regEn: 'Southeast Asia', nameEn: 'Thailand', nameZh: '泰国', curr: 'THB', ga: 'yes', gaEn: 'SWIFT Transit + Local Bank Payout', gaZh: 'SWIFT 归集出金 + 本地银行付款（无本地收款）', fx: 'yes', fxEn: 'VA (PromptPay) + FX + 2 Mobile Wallets', fxZh: 'VA 本地收款 (PromptPay) + 实时换汇 + 2 种电子钱包秒付' },
+            { flag: 'my', reg: '东南亚', regEn: 'Southeast Asia', nameEn: 'Malaysia', nameZh: '马来西亚', curr: 'MYR', ga: 'yes', gaEn: 'Full SWIFT & Local Pay-in / Payout', gaZh: 'SWIFT 收付款与本地收付款全通道', fx: 'yes', fxEn: 'VA (DuitNow) + FX + 3 Mobile Wallets', fxZh: 'VA 本地收款 (DuitNow) + 实时换汇 + 3 种电子钱包秒付' },
+            { flag: 'vn', reg: '东南亚', regEn: 'Southeast Asia', nameEn: 'Vietnam', nameZh: '越南', curr: 'VND', ga: 'yes', gaEn: 'Local Payout (Local Pay-in Upcoming)', gaZh: '本地付款（本地收款即将支持，无 SWIFT）', fx: 'yes', fxEn: 'VA (NAPAS 247) + FX + 3 Mobile Wallets', fxZh: 'VA 本地收款 (NAPAS 247) + 实时换汇 + 3 种电子钱包秒付' },
+            { flag: 'ph', reg: '东南亚', regEn: 'Southeast Asia', nameEn: 'Philippines', nameZh: '菲律宾', curr: 'PHP', ga: 'yes', gaEn: 'SWIFT Payout + Local Payout (Pay-in Upcoming)', gaZh: 'SWIFT 出金与本地付款（本地收款即将支持）', fx: 'yes', fxEn: 'VA (InstaPay/PESONet) + FX + 4 Mobile Wallets', fxZh: 'VA 本地收款 (InstaPay/PESONet) + 实时换汇 + 4 种电子钱包秒付' },
+
+            // 拉丁美洲 (6)
+            { flag: 'br', reg: '拉丁美洲', regEn: 'Latin America', nameEn: 'Brazil', nameZh: '巴西', curr: 'BRL', ga: 'yes', gaEn: 'Local Transit Pay-in + Local Payout', gaZh: '本地归集收款 + 本地付款（不支持 SWIFT）', fx: 'yes', fxEn: 'VA (PIX/TED) + PIX & 3 Local Wallets', fxZh: 'VA 本地收款 (PIX/TED) + PIX 等 3 种本地钱包实时下发' },
+            { flag: 'mx', reg: '拉丁美洲', regEn: 'Latin America', nameEn: 'Mexico', nameZh: '墨西哥', curr: 'MXN', ga: 'yes', gaEn: 'Local Bank Payout (Pay-in Upcoming)', gaZh: '本地银行付款（本地收款即将支持）', fx: 'yes', fxEn: 'VA (SPEI/CLABE) + MXN Live FX', fxZh: 'VA 本地收款 (SPEI/CLABE) + MXN 实时换汇' },
+            { flag: 'cl', reg: '拉丁美洲', regEn: 'Latin America', nameEn: 'Chile', nameZh: '智利', curr: 'CLP', ga: 'no', gaEn: 'Not Supported', gaZh: '暂不支持该地区本币通道', fx: 'yes', fxEn: 'Goods Trade (02) Local VA (TEF)', fxZh: '一般货物贸易 (02) VA 本地收款 (TEF)' },
+            { flag: 'co', reg: '拉丁美洲', regEn: 'Latin America', nameEn: 'Colombia', nameZh: '哥伦比亚', curr: 'COP', ga: 'no', gaEn: 'Not Supported', gaZh: '暂不支持该地区本币通道', fx: 'yes', fxEn: 'Goods Trade (02) Local VA (PSE/ACH)', fxZh: '一般货物贸易 (02) VA 本地收款 (PSE/ACH)' },
+            { flag: 'pe', reg: '拉丁美洲', regEn: 'Latin America', nameEn: 'Peru', nameZh: '秘鲁', curr: 'PEN', ga: 'no', gaEn: 'Not Supported', gaZh: '暂不支持该地区本币通道', fx: 'yes', fxEn: 'Goods Trade (02) Local VA (CCE, PEN/USD)', fxZh: '一般货物贸易 (02) VA 本地收款 (CCE，支持 PEN/USD)' },
+            { flag: 'ar', reg: '拉丁美洲', regEn: 'Latin America', nameEn: 'Argentina', nameZh: '阿根廷', curr: 'ARS', ga: 'soon', gaEn: 'Local Pay-in & Payout Upcoming', gaZh: '本地收付款通道即将支持', fx: 'no', fxEn: 'Not Available', fxZh: '暂未开放本地 VA 收款与实时换汇' },
+
+            // 中东及南亚 (7)
+            { flag: 'ae', reg: '中东及南亚', regEn: 'Middle East & South Asia', nameEn: 'UAE', nameZh: '阿联酋', curr: 'AED', ga: 'yes', gaEn: 'SWIFT Pay-in/Out + Local Transit Pay-in', gaZh: 'SWIFT 收付款 + 本地归集收款', fx: 'yes', fxEn: 'GCC Regional Network (USD/AED)', fxZh: '通过巴林 GCC 区域清算网络覆盖 USD/AED 收款' },
+            { flag: 'sa', reg: '中东及南亚', regEn: 'Middle East & South Asia', nameEn: 'Saudi Arabia', nameZh: '沙特阿拉伯', curr: 'SAR', ga: 'yes', gaEn: 'Local Pay-in (Local Payout Upcoming)', gaZh: '本地收款（本地付款即将支持）', fx: 'yes', fxEn: 'GCC Regional Network (USD/SAR)', fxZh: '通过巴林 GCC 区域清算网络覆盖 USD/SAR 收款' },
+            { flag: 'bh', reg: '中东及南亚', regEn: 'Middle East & South Asia', nameEn: 'Bahrain / GCC', nameZh: '巴林与中东', curr: 'BHD / USD', ga: 'no', gaEn: 'Not Listed Separately', gaZh: '暂未单列巴林本地通道', fx: 'yes', fxEn: 'Local VA (GCC RTGS/SWIFT, USD/AED/SAR)', fxZh: 'VA 本地收款 (GCC RTGS/SWIFT，支持 USD/AED/SAR)' },
+            { flag: 'in', reg: '中东及南亚', regEn: 'Middle East & South Asia', nameEn: 'India', nameZh: '印度', curr: 'INR', ga: 'yes', gaEn: 'Local Pay-in + SWIFT + Local POBO', gaZh: '本地收款 + SWIFT 出金 + 本地 POBO 代付', fx: 'yes', fxEn: 'INR Local Clearing (IMPS/NEFT)', fxZh: 'INR 本地清算付款 (IMPS/NEFT，需附采购凭证)' },
+            { flag: 'pk', reg: '中东及南亚', regEn: 'Middle East & South Asia', nameEn: 'Pakistan', nameZh: '巴基斯坦', curr: 'PKR', ga: 'yes', gaEn: 'Local POBO (Pay-in Upcoming)', gaZh: '本地 POBO 代付（本地收款即将支持）', fx: 'yes', fxEn: 'Easypaisa & JazzCash E-Wallets', fxZh: 'Easypaisa / JazzCash 2 种本地电子钱包秒付' },
+            { flag: 'bd', reg: '中东及南亚', regEn: 'Middle East & South Asia', nameEn: 'Bangladesh', nameZh: '孟加拉国', curr: 'BDT', ga: 'no', gaEn: 'Not Supported', gaZh: '暂不支持该地区本币通道', fx: 'yes', fxEn: 'bKash & Nagad E-Wallets', fxZh: 'bKash / Nagad 2 种本地电子钱包秒付' },
+            { flag: 'il', reg: '中东及南亚', regEn: 'Middle East & South Asia', nameEn: 'Israel', nameZh: '以色列', curr: 'ILS', ga: 'yes', gaEn: 'Global SWIFT Pay-in & Payout', gaZh: 'SWIFT 全球收付款（本地通道暂不支持）', fx: 'no', fxEn: 'Not Available', fxZh: '暂未开放本地 VA 收款与实时换汇' },
+
+            // 非洲 (6)
+            { flag: 'ng', reg: '非洲', regEn: 'Africa', nameEn: 'Nigeria', nameZh: '尼日利亚', curr: 'NGN', ga: 'yes', gaEn: 'Local Transit Pay-in + Local Payout', gaZh: '本地归集收款 + 本地付款', fx: 'yes', fxEn: 'VA (NIP) + NGN FX + OPay/PalmPay', fxZh: 'VA 本地收款 (NIP) + NGN 换汇 + OPay/PalmPay 钱包秒付' },
+            { flag: 'gh', reg: '非洲', regEn: 'Africa', nameEn: 'Ghana', nameZh: '加纳', curr: 'GHS', ga: 'no', gaEn: 'Local Rail Not Supported (Use USDT)', gaZh: '暂不支持本币直通（可通过稳定币结算）', fx: 'yes', fxEn: 'VA (GIP) + 2 Mobile Wallets', fxZh: 'VA 本地收款 (GIP) + MTN Mobile Money 等 2 种钱包' },
+            { flag: 'ke', reg: '非洲', regEn: 'Africa', nameEn: 'Kenya', nameZh: '肯尼亚', curr: 'KES', ga: 'no', gaEn: 'Local Rail Not Supported (Use USDT)', gaZh: '暂不支持本币直通（可通过稳定币结算）', fx: 'yes', fxEn: 'VA (EFT/PesaLink) + M-Pesa Wallet', fxZh: 'VA 本地收款 (EFT/PesaLink) + M-Pesa 电子钱包' },
+            { flag: 'ug', reg: '非洲', regEn: 'Africa', nameEn: 'Uganda', nameZh: '乌干达', curr: 'UGX', ga: 'no', gaEn: 'Local Rail Not Supported', gaZh: '暂不支持本币直通', fx: 'yes', fxEn: 'Goods Trade (02) Local VA (EFT)', fxZh: '一般货物贸易 (02) VA 本地收款 (EFT)' },
+            { flag: 'ci', reg: '非洲', regEn: 'Africa', nameEn: "Côte d'Ivoire", nameZh: '科特迪瓦', curr: 'XOF', ga: 'no', gaEn: 'Local Rail Not Supported', gaZh: '暂不支持本币直通', fx: 'yes', fxEn: 'Goods Trade (02) Local VA (UEMOA)', fxZh: '一般货物贸易 (02) VA 本地收款 (UEMOA 区域清算)' },
+            { flag: 'za', reg: '非洲', regEn: 'Africa', nameEn: 'South Africa', nameZh: '南非', curr: 'ZAR', ga: 'yes', gaEn: 'Global SWIFT Pay-in & Payout', gaZh: 'SWIFT 全球收付款（本地通道暂不支持）', fx: 'no', fxEn: 'Not Available', fxZh: '暂未开放本地 VA 收款与实时换汇' }
+        ];
+
+        // 94 Acquiring Countries Dataset (no emojis used; SVG via FlagCDN)
+        const countriesData = [
+            { code: 'hk', region: 'apac', nameEn: 'Hong Kong, China', nameZh: '中国香港', isCore: true, isLocal: true, pmEn: ['FPS', 'Cards', 'Apple Pay'], pmZh: ['FPS转账', '卡支付', 'Apple Pay'] },
+            { code: 'tw', region: 'apac', nameEn: 'Taiwan, China', nameZh: '中国台湾', isCore: true, isLocal: true, pmEn: ['Cards', 'Apple/Google Pay'], pmZh: ['卡支付', 'Apple/Google Pay'] },
+            { code: 'au', region: 'apac', nameEn: 'Australia', nameZh: '澳大利亚', isCore: true, isLocal: true, pmEn: ['PayID', 'POLi', 'Cards'], pmZh: ['PayID即时付', 'POLi网银', '卡支付'] },
+            { code: 'sg', region: 'apac', nameEn: 'Singapore', nameZh: '新加坡', isCore: false, isLocal: true, pmEn: ['Cards', 'Apple/Google Pay'], pmZh: ['卡支付', 'Apple/Google Pay'] },
+            { code: 'jp', region: 'apac', nameEn: 'Japan', nameZh: '日本', isCore: false, isLocal: true, pmEn: ['Cards', 'Apple/Google Pay'], pmZh: ['卡支付', 'Apple/Google Pay'] },
+            { code: 'my', region: 'apac', nameEn: 'Malaysia', nameZh: '马来西亚', isCore: false, isLocal: true, pmEn: ['FPX', 'Cards'], pmZh: ['FPX网银转账', '卡支付'] },
+            { code: 'id', region: 'apac', nameEn: 'Indonesia', nameZh: '印度尼西亚', isCore: false, isLocal: true, pmEn: ['QRIS', 'Bank Transfer'], pmZh: ['QRIS扫码', '银行转账'] },
+            { code: 'kr', region: 'apac', nameEn: 'South Korea', nameZh: '韩国', isCore: false, isLocal: true, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'vn', region: 'apac', nameEn: 'Vietnam', nameZh: '越南', isCore: false, isLocal: true, pmEn: ['MoMo', 'Local Banks'], pmZh: ['MoMo钱包', '本地网银'] },
+            { code: 'th', region: 'apac', nameEn: 'Thailand', nameZh: '泰国', isCore: false, isLocal: true, pmEn: ['PromptPay', 'Bank Transfer'], pmZh: ['PromptPay扫码', '银行转账'] },
+            { code: 'ph', region: 'apac', nameEn: 'Philippines', nameZh: '菲律宾', isCore: false, isLocal: true, pmEn: ['GCash', 'Cards'], pmZh: ['GCash钱包', '卡支付'] },
+            { code: 'in', region: 'apac', nameEn: 'India', nameZh: '印度', isCore: false, isLocal: true, pmEn: ['UPI', 'NetBanking'], pmZh: ['UPI网银', '在线网银'] },
+            { code: 'nz', region: 'apac', nameEn: 'New Zealand', nameZh: '新西兰', isCore: false, isLocal: true, pmEn: ['Cards', 'Google Pay'], pmZh: ['卡支付', 'Google Pay'] },
+            { code: 'mv', region: 'apac', nameEn: 'Maldives', nameZh: '马尔代夫', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'lk', region: 'apac', nameEn: 'Sri Lanka', nameZh: '斯里兰卡', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'np', region: 'apac', nameEn: 'Nepal', nameZh: '尼泊尔', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'bd', region: 'apac', nameEn: 'Bangladesh', nameZh: '孟加拉国', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'pk', region: 'apac', nameEn: 'Pakistan', nameZh: '巴基斯坦', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'kh', region: 'apac', nameEn: 'Cambodia', nameZh: '柬埔寨', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'la', region: 'apac', nameEn: 'Laos', nameZh: '老挝', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'mn', region: 'apac', nameEn: 'Mongolia', nameZh: '蒙古', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'bn', region: 'apac', nameEn: 'Brunei', nameZh: '文莱', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'kz', region: 'apac', nameEn: 'Kazakhstan', nameZh: '哈萨克斯坦', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'uz', region: 'apac', nameEn: 'Uzbekistan', nameZh: '乌兹别克斯坦', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'kg', region: 'apac', nameEn: 'Kyrgyzstan', nameZh: '吉尔吉斯斯坦', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'tj', region: 'apac', nameEn: 'Tajikistan', nameZh: '塔吉克斯坦', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+
+            { code: 'gb', region: 'europe', nameEn: 'United Kingdom', nameZh: '英国', isCore: false, isLocal: true, pmEn: ['Faster Payments', 'Cards', 'Apple Pay'], pmZh: ['Faster Payments', '卡支付', 'Apple Pay'] },
+            { code: 'de', region: 'europe', nameEn: 'Germany', nameZh: '德国', isCore: false, isLocal: true, pmEn: ['SEPA Instant', 'Cards', 'Giropay'], pmZh: ['SEPA快速转账', '卡支付', 'Giropay'] },
+            { code: 'fr', region: 'europe', nameEn: 'France', nameZh: '法国', isCore: false, isLocal: true, pmEn: ['SEPA Instant', 'Cards', 'Apple Pay'], pmZh: ['SEPA快速转账', '卡支付', 'Apple Pay'] },
+            { code: 'it', region: 'europe', nameEn: 'Italy', nameZh: '意大利', isCore: false, isLocal: true, pmEn: ['SEPA Instant', 'Cards', 'Satispay'], pmZh: ['SEPA快速转账', '卡支付', 'Satispay'] },
+            { code: 'es', region: 'europe', nameEn: 'Spain', nameZh: '西班牙', isCore: false, isLocal: true, pmEn: ['SEPA Instant', 'Cards', 'Bizum'], pmZh: ['SEPA快速转账', '卡支付', 'Bizum'] },
+            { code: 'nl', region: 'europe', nameEn: 'Netherlands', nameZh: '荷兰', isCore: false, isLocal: true, pmEn: ['iDEAL', 'SEPA Instant', 'Cards'], pmZh: ['iDEAL支付', 'SEPA快速转账', '卡支付'] },
+            { code: 'be', region: 'europe', nameEn: 'Belgium', nameZh: '比利时', isCore: false, isLocal: true, pmEn: ['Bancontact', 'SEPA', 'Cards'], pmZh: ['Bancontact支付', 'SEPA转账', '卡支付'] },
+            { code: 'at', region: 'europe', nameEn: 'Austria', nameZh: '奥地利', isCore: false, isLocal: true, pmEn: ['EPS', 'SEPA Instant', 'Cards'], pmZh: ['EPS在线网银', 'SEPA快速转账', '卡支付'] },
+            { code: 'ie', region: 'europe', nameEn: 'Ireland', nameZh: '爱尔兰', isCore: false, isLocal: true, pmEn: ['SEPA Instant', 'Cards'], pmZh: ['SEPA快速转账', '卡支付'] },
+            { code: 'ch', region: 'europe', nameEn: 'Switzerland', nameZh: '瑞士', isCore: false, isLocal: true, pmEn: ['Cards', 'Apple Pay'], pmZh: ['卡支付', 'Apple Pay'] },
+            { code: 'pl', region: 'europe', nameEn: 'Poland', nameZh: '波兰', isCore: false, isLocal: true, pmEn: ['BLIK', 'Cards'], pmZh: ['BLIK扫码', '卡支付'] },
+            { code: 'tr', region: 'europe', nameEn: 'Turkey', nameZh: '土耳其', isCore: false, isLocal: true, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'pt', region: 'europe', nameEn: 'Portugal', nameZh: '葡萄牙', isCore: false, isLocal: true, pmEn: ['Multibanco', 'SEPA', 'Cards'], pmZh: ['Multibanco', 'SEPA转账', '卡支付'] },
+            { code: 'gr', region: 'europe', nameEn: 'Greece', nameZh: '希腊', isCore: false, isLocal: true, pmEn: ['SEPA Instant', 'Cards'], pmZh: ['SEPA快速转账', '卡支付'] },
+            { code: 'se', region: 'europe', nameEn: 'Sweden', nameZh: '瑞典', isCore: false, isLocal: true, pmEn: ['Cards', 'SEPA'], pmZh: ['卡支付', 'SEPA转账'] },
+            { code: 'no', region: 'europe', nameEn: 'Norway', nameZh: '挪威', isCore: false, isLocal: true, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'dk', region: 'europe', nameEn: 'Denmark', nameZh: '丹麦', isCore: false, isLocal: true, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'fi', region: 'europe', nameEn: 'Finland', nameZh: '芬兰', isCore: false, isLocal: true, pmEn: ['SEPA Instant', 'Cards'], pmZh: ['SEPA快速转账', '卡支付'] },
+            { code: 'cz', region: 'europe', nameEn: 'Czechia', nameZh: '捷克', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'hu', region: 'europe', nameEn: 'Hungary', nameZh: '匈牙利', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'ro', region: 'europe', nameEn: 'Romania', nameZh: '罗马尼亚', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'bg', region: 'europe', nameEn: 'Bulgaria', nameZh: '保加利亚', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'hr', region: 'europe', nameEn: 'Croatia', nameZh: '克罗地亚', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'sk', region: 'europe', nameEn: 'Slovakia', nameZh: '斯洛伐克', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'si', region: 'europe', nameEn: 'Slovenia', nameZh: '斯洛文尼亚', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'lt', region: 'europe', nameEn: 'Lithuania', nameZh: '立陶宛', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'lv', region: 'europe', nameEn: 'Latvia', nameZh: '拉脱维亚', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'ee', region: 'europe', nameEn: 'Estonia', nameZh: '爱沙尼亚', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'lu', region: 'europe', nameEn: 'Luxembourg', nameZh: '卢森堡', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'mt', region: 'europe', nameEn: 'Malta', nameZh: '马耳他', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'is', region: 'europe', nameEn: 'Iceland', nameZh: '冰岛', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'cy', region: 'europe', nameEn: 'Cyprus', nameZh: '塞浦路斯', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+
+            { code: 'mx', region: 'latam', nameEn: 'Mexico', nameZh: '墨西哥', isCore: true, isLocal: true, pmEn: ['SPEI', 'Cards', 'Apple Pay'], pmZh: ['SPEI转账', '卡支付', 'Apple Pay'] },
+            { code: 'br', region: 'latam', nameEn: 'Brazil', nameZh: '巴西', isCore: false, isLocal: true, pmEn: ['PIX', 'Cards', 'Apple Pay'], pmZh: ['PIX即时付', '卡支付', 'Apple Pay'] },
+            { code: 'co', region: 'latam', nameEn: 'Colombia', nameZh: '哥伦比亚', isCore: false, isLocal: true, pmEn: ['PSE', 'Cards'], pmZh: ['PSE网银', '卡支付'] },
+            { code: 'ar', region: 'latam', nameEn: 'Argentina', nameZh: '阿根廷', isCore: false, isLocal: true, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'cl', region: 'latam', nameEn: 'Chile', nameZh: '智利', isCore: false, isLocal: true, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'pe', region: 'latam', nameEn: 'Peru', nameZh: '秘鲁', isCore: false, isLocal: true, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'ec', region: 'latam', nameEn: 'Ecuador', nameZh: '厄瓜多尔', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'bo', region: 'latam', nameEn: 'Bolivia', nameZh: '玻利维亚', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'uy', region: 'latam', nameEn: 'Uruguay', nameZh: '乌拉圭', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'py', region: 'latam', nameEn: 'Paraguay', nameZh: '巴拉圭', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'cr', region: 'latam', nameEn: 'Costa Rica', nameZh: '哥斯达黎加', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'pa', region: 'latam', nameEn: 'Panama', nameZh: '巴拿马', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'do', region: 'latam', nameEn: 'Dominican Republic', nameZh: '多米尼加', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'gt', region: 'latam', nameEn: 'Guatemala', nameZh: '危地马拉', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'hn', region: 'latam', nameEn: 'Honduras', nameZh: '洪都拉斯', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'sv', region: 'latam', nameEn: 'El Salvador', nameZh: '萨尔瓦多', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'ni', region: 'latam', nameEn: 'Nicaragua', nameZh: '尼加拉瓜', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+
+            { code: 'us', region: 'others', nameEn: 'United States', nameZh: '美国', isCore: true, isLocal: true, pmEn: ['ACH', 'Wire', 'Cards'], pmZh: ['ACH转账', 'Wire电汇', '卡支付'] },
+            { code: 'ca', region: 'others', nameEn: 'Canada', nameZh: '加拿大', isCore: false, isLocal: true, pmEn: ['Interac', 'Cards', 'Apple/Google Pay'], pmZh: ['Interac电子转账', '卡支付', 'Apple/Google Pay'] },
+            { code: 'za', region: 'others', nameEn: 'South Africa', nameZh: '南非', isCore: false, isLocal: true, pmEn: ['EFT', 'Cards'], pmZh: ['EFT电子转账', '卡支付'] },
+            { code: 'ae', region: 'others', nameEn: 'United Arab Emirates', nameZh: '阿联酋', isCore: false, isLocal: true, pmEn: ['Cards', 'Apple Pay'], pmZh: ['卡支付', 'Apple Pay'] },
+            { code: 'sa', region: 'others', nameEn: 'Saudi Arabia', nameZh: '沙特阿拉伯', isCore: false, isLocal: true, pmEn: ['Mada Card', 'Cards'], pmZh: ['Mada借记卡', '卡支付'] },
+            { code: 'qa', region: 'others', nameEn: 'Qatar', nameZh: '卡塔尔', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'kw', region: 'others', nameEn: 'Kuwait', nameZh: '科威特', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'bh', region: 'others', nameEn: 'Bahrain', nameZh: '巴林', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'om', region: 'others', nameEn: 'Oman', nameZh: '阿曼', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'jo', region: 'others', nameEn: 'Jordan', nameZh: '约旦', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'il', region: 'others', nameEn: 'Israel', nameZh: '以色列', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'eg', region: 'others', nameEn: 'Egypt', nameZh: '埃及', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'ma', region: 'others', nameEn: 'Morocco', nameZh: '摩洛哥', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'ke', region: 'others', nameEn: 'Kenya', nameZh: '肯尼亚', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'ng', region: 'others', nameEn: 'Nigeria', nameZh: '尼日利亚', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'gh', region: 'others', nameEn: 'Ghana', nameZh: '加纳', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'dz', region: 'others', nameEn: 'Algeria', nameZh: '阿尔及利亚', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'tn', region: 'others', nameEn: 'Tunisia', nameZh: '突尼斯', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] },
+            { code: 'mu', region: 'others', nameEn: 'Mauritius', nameZh: '毛里求斯', isCore: false, isLocal: false, pmEn: ['Cards'], pmZh: ['卡支付'] }
+        ];
+
+        let dmRegion = 'all';
+        let dmSupport = 'all';
+
+        function statusChip(type, text) {
+            if (type === 'yes') return `<span class="badge-yes"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>${text}</span></span>`;
+            if (type === 'soon') return `<span class="badge-soon"><i class="fa-solid fa-clock" aria-hidden="true"></i><span>${text}</span></span>`;
+            return `<span class="badge-no"><i class="fa-solid fa-minus" aria-hidden="true"></i><span>${text}</span></span>`;
+        }
+
+        function renderDualMatrix(lang) {
+            const isZh = lang === 'zh';
+            const regRows = CHANNEL_MARKETS.filter(r => dmRegion === 'all' || r.reg === dmRegion);
+            const bothCnt = regRows.filter(r => r.ga !== 'no' && r.fx === 'yes').length;
+            const gaCnt = regRows.filter(r => r.ga !== 'no' && r.fx === 'no').length;
+            const fxCnt = regRows.filter(r => r.ga === 'no' && r.fx === 'yes').length;
+
+            const pillsEl = document.getElementById('dm-summary-pills');
+            if (pillsEl) {
+                pillsEl.innerHTML = `
+                    <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">${isZh ? '双渠道支持' : 'Both'}: ${bothCnt}</span>
+                    <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200">${isZh ? '仅全球承兑' : 'OTC Only'}: ${gaCnt}</span>
+                    <span class="px-3 py-1 rounded-full bg-sky-50 text-sky-800 border border-sky-200">${isZh ? '仅全球收付' : 'FX Only'}: ${fxCnt}</span>
+                `;
+            }
+
+            const filtered = regRows.filter(r => {
+                if (dmSupport === 'both') return r.ga !== 'no' && r.fx === 'yes';
+                if (dmSupport === 'otc') return r.ga !== 'no' && r.fx === 'no';
+                if (dmSupport === 'fx') return r.ga === 'no' && r.fx === 'yes';
+                return true;
+            });
+
+            const tbody = document.getElementById('dm-tbody');
+            if (!tbody) return;
+            if (filtered.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="4" class="text-center py-8 text-sm font-semibold text-slate-500">${isZh ? '当前筛选组合下暂无匹配市场，请切换筛选条件。' : 'No markets match this filter combination.'}</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = filtered.map(r => `
+                <tr>
+                    <td><span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-bold whitespace-nowrap">${isZh ? r.reg : r.regEn}</span></td>
+                    <td>
+                        <div class="flex items-center gap-2.5">
+                            <img src="https://flagcdn.com/${r.flag}.svg" alt="${r.nameEn}" class="w-6 h-4 rounded-sm border border-slate-200 object-cover shrink-0" />
+                            <div>
+                                <div class="font-extrabold text-slate-900 text-sm">${isZh ? r.nameZh : r.nameEn}</div>
+                                <div class="text-[0.68rem] font-bold text-slate-500">${r.curr}</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>${statusChip(r.ga, isZh ? r.gaZh : r.gaEn)}</td>
+                    <td>${statusChip(r.fx, isZh ? r.fxZh : r.fxEn)}</td>
+                </tr>
+            `).join('');
+        }
+
+        function renderAcquiringDirectory(lang) {
+            const isZh = lang === 'zh';
+            ['apac', 'europe', 'latam', 'others'].forEach(region => {
+                const container = document.getElementById(`cov-content-${region}`);
+                if (!container) return;
+                const filtered = countriesData
+                    .filter(c => c.region === region)
+                    .sort((a, b) => (b.isCore - a.isCore) || (b.isLocal - a.isLocal));
+
+                container.innerHTML = filtered.map(c => {
+                    const name = isZh ? c.nameZh : c.nameEn;
+                    const pms = isZh ? c.pmZh : c.pmEn;
+                    const tags = pms.map(pm => {
+                        const lower = pm.toLowerCase();
+                        const cls = (lower.includes('cards') || pm.includes('卡'))
+                            ? 'tag-card'
+                            : (lower.includes('pay') || pm.includes('钱包')) ? 'tag-wallet' : 'tag-local';
+                        return `<span class="${cls} px-2 py-0.5 rounded-full text-[0.65rem] whitespace-nowrap">${pm}</span>`;
+                    }).join('');
+                    return `
+                        <div id="dir-card-${c.code}" class="bento-card p-4 rounded-2xl cursor-pointer" onmouseenter="hoverCountry('${c.code}', true)" onmouseleave="hoverCountry('${c.code}', false)">
+                            <div class="flex items-center gap-3 mb-2.5">
+                                <img src="https://flagcdn.com/${c.code}.svg" alt="${name}" class="w-7 h-5 object-cover rounded-sm border border-slate-200 shrink-0" />
+                                <div class="min-w-0">
+                                    <div class="font-extrabold text-xs text-slate-900 truncate">${name}</div>
+                                    <div class="text-[0.62rem] font-bold text-slate-500 uppercase">${c.code}</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-1">${tags}</div>
+                        </div>
+                    `;
+                }).join('');
+            });
+        }
+
+        function switchCovTab(region) {
+            const targetBtn = document.getElementById(`cov-tab-${region}`);
+            if (!targetBtn) return;
+            document.querySelectorAll('#cov-tablist [role="tab"]').forEach(btn => {
+                const active = btn === targetBtn;
+                btn.setAttribute('aria-selected', String(active));
+                btn.setAttribute('tabindex', active ? '0' : '-1');
+            });
+            ['apac', 'europe', 'latam', 'others'].forEach(r => {
+                const p = document.getElementById(`cov-content-${r}`);
+                if (p) p.hidden = r !== region;
+            });
+        }
+
+        function hoverCountry(code, isHover) {
+            const el = document.getElementById(code);
+            if (!el) return;
+            const paths = el.tagName === 'g' ? el.querySelectorAll('path') : [el];
+            const isCore = el.classList.contains('map-core-active');
+            paths.forEach(p => {
+                p.style.fill = isHover ? (isCore ? '#38bdf8' : 'rgba(0, 82, 255, 0.75)') : '';
+            });
+        }
+
+        function highlightMapCountries() {
+            countriesData.forEach(c => {
+                const el = document.getElementById(c.code);
+                if (!el) return;
+                const cls = c.isCore ? 'map-core-active' : 'map-global-active';
+                el.classList.add(cls);
+                if (el.tagName === 'g') el.querySelectorAll('path').forEach(p => p.classList.add(cls));
+                el.style.cursor = 'pointer';
+                el.onclick = () => {
+                    switchCovTab(c.region);
+                    const dirDet = document.getElementById('cov-dir-details');
+                    if (dirDet) dirDet.open = true;
+                    const card = document.getElementById(`dir-card-${c.code}`);
+                    if (card) {
+                        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        card.classList.add('ring-2', 'ring-[#0052ff]');
+                        setTimeout(() => card.classList.remove('ring-2', 'ring-[#0052ff]'), 1500);
+                    }
+                };
+            });
+        }
+
+        function changeLang(lang) {
+            AurellixV2.applyLang(lang, PAGE_TRANSLATIONS, PAGE_META, (activeLang) => {
+                renderDualMatrix(activeLang);
+                renderAcquiringDirectory(activeLang);
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            AurellixV2.initTablist(document.getElementById('dm-region-tablist'), (tab) => {
+                dmRegion = tab.getAttribute('data-region') || 'all';
+                renderDualMatrix(AurellixV2.getLang());
+            });
+            AurellixV2.initTablist(document.getElementById('dm-support-tablist'), (tab) => {
+                dmSupport = tab.getAttribute('data-support') || 'all';
+                renderDualMatrix(AurellixV2.getLang());
+            });
+            AurellixV2.initTablist(document.getElementById('cov-tablist'), (tab) => {
+                switchCovTab(tab.getAttribute('data-region') || 'apac');
+            });
+
+            changeLang(AurellixV2.getInitialLang());
+            AurellixV2.initAccessibilityAndMotion();
+
+            if (typeof fetch === 'function') {
+                fetch('static/world_map.svg')
+                    .then(res => { if (!res.ok) throw new Error('Map load error'); return res.text(); })
+                    .then(svg => {
+                        const container = document.getElementById('map-container');
+                        container.innerHTML = svg;
+                        highlightMapCountries();
+                    })
+                    .catch(() => {
+                        const container = document.getElementById('map-container');
+                        if (container) container.innerHTML = '<p class="text-xs font-semibold text-slate-500">Interactive map unavailable; use directory below.</p>';
+                    });
+            }
+        });
+    </script>
+</body>
+</html>

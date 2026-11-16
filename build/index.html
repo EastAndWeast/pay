@@ -1,20 +1,20 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Aurellix Pay | Global Leading Stablecoin Payment Solutions</title>
-    <meta name="description" content="Aurellix Pay is an institutional compliant stablecoin aggregate payment platform offering global fiat acquiring, T+0 bi-directional OTC conversion, multi-currency Virtual Accounts (VA), and global payout across 26+ sovereign currencies." />
-    <meta name="keywords" content="Aurellix Pay, stablecoin payment, crypto gateway, USDT acquiring, USDC settlement, fiat to crypto, global OTC, virtual account collection, POBO payout" />
+    <title id="page-title">Aurellix Pay | Global Cross-Border Payment & Settlement Platform</title>
+    <meta name="description" content="Aurellix Pay provides one-stop global collection, payout, multi-currency FX, fiat-to-stablecoin OTC settlement, and merchant acquiring across 150+ countries." />
+    <meta name="keywords" content="Aurellix Pay, global collection, global payout, FX conversion, fiat to stablecoin OTC, USDT USDC settlement, merchant acquiring" />
     <link rel="canonical" href="https://rail.aurellix.com/" />
     <link rel="alternate" hreflang="en" href="https://rail.aurellix.com/?lang=en" />
     <link rel="alternate" hreflang="zh" href="https://rail.aurellix.com/?lang=zh" />
 
-    <!-- Open Graph / Telegram / WhatsApp / WeChat -->
+    <!-- Open Graph / Telegram / WhatsApp -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://rail.aurellix.com/" />
-    <meta property="og:title" id="og-title" content="Aurellix Pay | Global Leading Stablecoin Payment Solutions" />
-    <meta property="og:description" id="og-desc" content="Aurellix Pay provides compliant stablecoin aggregate payment solutions, global fiat acquiring, T+0 bi-directional OTC conversion, multi-currency VA accounts, and global payouts." />
+    <meta property="og:title" id="og-title" content="Aurellix Pay | Global Cross-Border Payment & Settlement Platform" />
+    <meta property="og:description" id="og-desc" content="One-stop global collection, payout, FX, stablecoin OTC & merchant acquiring across 150+ markets." />
     <meta property="og:image" id="og-image" content="https://pay-52p.pages.dev/static/share_en.png" />
     <meta property="og:image:secure_url" content="https://pay-52p.pages.dev/static/share_en.png" />
     <meta property="og:image:type" content="image/png" />
@@ -24,930 +24,1323 @@
 
     <!-- Twitter / Telegram Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" id="tw-title" content="Aurellix Pay | Global Leading Stablecoin Payment Solutions" />
-    <meta name="twitter:description" id="tw-desc" content="Compliant stablecoin aggregate payment gateway, T+0 bi-directional OTC conversion, multi-currency Virtual Accounts, and global payout." />
+    <meta name="twitter:title" id="tw-title" content="Aurellix Pay | Global Cross-Border Payment & Settlement Platform" />
+    <meta name="twitter:description" id="tw-desc" content="One-stop global collection, payout, FX, stablecoin OTC & merchant acquiring across 150+ markets." />
     <meta name="twitter:image" id="tw-image" content="https://pay-52p.pages.dev/static/share_en.png" />
+
+    <link rel="icon" href="static/brand_icon.png" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="static/vite.png" />
-    <!-- Google Fonts -->
-    <link rel="icon" href="static/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        :root {
-            --hex-blue: #0052ff;
-            --hex-cyan: #3cfff3;
-        }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #ffffff; 
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            color: #0f172a;
-            overflow-x: hidden;
-        }
-        
-        /* --- 全站常驻动画引擎 --- */
-        .reveal { 
-            opacity: 0; 
-            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); 
-            will-change: transform, opacity;
-        }
-        .reveal-up { transform: translateY(50px); }
-        .reveal-left { transform: translateX(-60px); }
-        .reveal-right { transform: translateX(60px); }
-        .reveal-scale { transform: scale(0.95); }
-        .reveal.active { opacity: 1; transform: translate(0, 0) scale(1); }
-
-        /* 首页内容加载动效 (独立于滚动) */
-        @keyframes hero-load-in {
-            from { opacity: 0; transform: translateY(20px); filter: blur(5px); }
-            to { opacity: 1; transform: translateY(0); filter: blur(0); }
-        }
-        .animate-hero-load { 
-            animation: hero-load-in 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; 
-        }
-
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 82, 255, 0.08);
-            z-index: 100;
-        }
-
-        /* 动态流光背景样式 */
-        .glow-bg {
-            background-color: #ffffff;
-            background-image: radial-gradient(rgba(0, 82, 255, 0.04) 1px, transparent 1px);
-            background-size: 32px 32px;
-            position: relative;
-            overflow: hidden;
-        }
-        .glow-bg::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: 
-                radial-gradient(circle at 75% 35%, rgba(60, 255, 243, 0.15) 0%, transparent 55%),
-                radial-gradient(circle at 15% 85%, rgba(0, 82, 255, 0.08) 0%, transparent 50%);
-            animation: flow-pulse 10s infinite alternate;
-            pointer-events: none;
-            z-index: 0;
-        }
-        @keyframes flow-pulse {
-            from { opacity: 0.4; transform: scale(1); }
-            to { opacity: 0.8; transform: scale(1.1) translate(10px, 10px); }
-        }
-
-        .btn-primary {
-            background-color: var(--hex-blue);
-            color: #ffffff;
-            font-weight: 800;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .btn-primary:hover {
-            box-shadow: 0 12px 28px rgba(0, 82, 255, 0.25);
-            transform: translateY(-2px);
-        }
-
-        .btn-contact {
-            background: #ffffff;
-            border: 2px solid rgba(0, 82, 255, 0.1);
-            color: #0052ff;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-        }
-        .btn-contact:hover {
-            background: #f0f5ff;
-            border-color: rgba(0, 82, 255, 0.25);
-            box-shadow: 0 4px 12px rgba(0, 82, 255, 0.08);
-            transform: translateY(-1px);
-        }
-
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 0 0 rgba(0, 82, 255, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(0, 82, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 82, 255, 0); }
-        }
-        .pulse-btn { animation: pulse-glow 2s infinite; }
-
-        /* 卡片设计 - 增强质感 */
-        .feature-card {
-            background: #ffffff;
-            border: 1.5px solid #eef2f6;
-            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.05);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            z-index: 1;
-        }
-        .feature-card:hover {
-            border-color: rgba(0, 82, 255, 0.3);
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.08);
-            transform: translateY(-8px);
-        }
-        
-        .vibrant-icon {
-            background: linear-gradient(135deg, var(--hex-blue), #4f46e5);
-            color: white;
-            box-shadow: 0 8px 16px -4px rgba(0, 82, 255, 0.4);
-            transition: all 0.4s ease;
-        }
-
-        /* UI 浮动 (Checkout) */
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-        .float-ui { animation: floating 6s ease-in-out infinite; }
-
-        /* --- 统一字体排版规范 --- */
-        .heading-xl { font-size: 3.5rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; } 
-        .heading-lg { font-size: 2.25rem; font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; } 
-        /* 统一所有小标题 */
-        .card-title { font-size: 1.15rem; font-weight: 900; letter-spacing: -0.01em; color: #0f172a; }
-        /* 统一所有介绍文字 */
-        .body-text { font-size: 0.875rem; line-height: 1.6; color: #64748b; font-weight: 700; }
-        
-        .label-caps { font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.15em; }
-
-        .tag-base { background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0; font-weight: 900; }
-        .token-item { border: 1.5px solid #f1f5f9; transition: all 0.2s; cursor: pointer; }
-        .token-item.active { border-color: var(--hex-blue); background: #f0f7ff; }
-
-        /* 语言切换器悬浮触发 */
-        .lang-dropdown { position: relative; display: inline-block; padding: 10px 0; }
-        .lang-menu {
-            display: none; position: absolute; right: 0; top: 100%; background: white;
-            border: 1px solid #f1f5f9; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-radius: 12px; min-width: 120px; z-index: 110; overflow: hidden;
-        }
-        .lang-dropdown:hover .lang-menu { display: block; }
-        .lang-option { padding: 12px 16px; font-size: 0.75rem; font-weight: 900; color: #64748b; cursor: pointer; transition: all 0.2s; }
-        .lang-option:hover { background: #f0f7ff; color: var(--hex-blue); }
-
-        @media (max-width: 1024px) {
-            .heading-xl { font-size: 2.5rem; }
-            .heading-lg { font-size: 1.85rem; }
-        }
-
-        /* #mobile-menu { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); } */
-        /* 移动端菜单 */
-        #mobile-menu {
-            transform: translateX(100%);
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        [dir="rtl"] #mobile-menu { transform: translateX(-100%); }
-        #mobile-menu.open { transform: translateX(0); }
-    </style>
+    <link rel="stylesheet" href="static/v2.css">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-nav">
-        <div class="max-w-6xl mx-auto px-5 lg:px-6">
-            <div class="flex h-16 items-center">
-                <a href="index.html" class="flex items-center gap-3 shrink-0">
-                    <img src="static/headerLogo.png" style="width: 126px;"/>
+    <!-- Grouped Dropdown Navbar -->
+    <header class="fixed top-0 inset-x-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+            <div class="flex h-16 items-center gap-4">
+                <a href="index.html" class="flex items-center gap-2.5 shrink-0" aria-label="Aurellix Pay Home">
+                    <img src="static/headerLogo.png" alt="Aurellix Pay" class="h-7 w-auto" />
                 </a>
-                
-                <!-- Group 1: Nav Links (close to logo) -->
-                <div class="hidden md:flex items-center gap-7 ml-10">
-                    <a href="index.html" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-[#0052ff]" data-i18n="nav_home">Home</a>
-                    <a href="coverage.html" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-slate-500 hover:text-[#0052ff]" data-i18n="nav_coverage">Coverage</a>
-                    <a href="otc.html" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-slate-500 hover:text-[#0052ff]" data-i18n="nav_otc">OTC</a>
-                    <a href="https://docs.rail.aurellix.com/" target="_blank" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-slate-500 hover:text-[#0052ff]" data-i18n="nav_api">API Docs</a>
-                    <a href="https://demo.rail.aurellix.com" target="_blank" class="text-link text-[0.75rem] uppercase font-bold tracking-widest text-slate-500 hover:text-[#0052ff] flex items-center gap-1" data-i18n="nav_demo">Demo <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] opacity-60"></i></a>
-                </div>
-                
-                <!-- Group 2: Actions (pushed right) -->
-                <div class="hidden md:flex items-center gap-5 ml-auto">
-                    <div class="lang-dropdown group">
-                        <button class="flex items-center gap-1.5 text-[0.7rem] font-black text-slate-400 group-hover:text-[#0052ff] transition">
-                            <span id="current-lang-label">EN</span>
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+
+                <nav class="hidden lg:flex items-center gap-7 ml-8" aria-label="Primary">
+                    <a href="index.html" class="nav-link" aria-current="page" data-i18n="nav_home">Home</a>
+
+                    <div class="nav-dropdown">
+                        <button type="button" class="nav-dropdown-trigger" aria-expanded="false">
+                            <span data-i18n="nav_products">Products</span>
+                            <i class="fa-solid fa-chevron-down text-[0.65rem] opacity-60 nav-chevron" aria-hidden="true"></i>
                         </button>
-                        <div class="lang-menu">
-                            <div class="lang-option" onclick="changeLang('en')">English</div>
-                            <div class="lang-option" onclick="changeLang('zh')">简体中文</div>
+                        <div class="nav-popover">
+                            <a href="fx.html#fx-va-matrix" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-sky-50 text-sky-600"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_prod_collect">Global Collection</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_prod_collect_desc">22+ local & global VA accounts</span>
+                                </span>
+                            </a>
+                            <a href="fx.html#fx-wallets" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-emerald-50 text-emerald-600"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_prod_payout">Global Payout</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_prod_payout_desc">33+ local rails, SWIFT & e-wallets</span>
+                                </span>
+                            </a>
+                            <a href="otc.html" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-amber-50 text-amber-600"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_prod_otc">FX & Stablecoin OTC</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_prod_otc_desc">0-fee FX & 26-fiat USDT/USDC OTC</span>
+                                </span>
+                            </a>
+                            <a href="index.html#acquiring" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-indigo-50 text-indigo-600"><i class="fa-solid fa-credit-card" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_prod_acq">Global Acquiring</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_prod_acq_desc">94+ countries cards, APMs & crypto</span>
+                                </span>
+                            </a>
                         </div>
                     </div>
-                    <a href="https://t.me/cs_aurellix" target="_blank" class="btn-contact px-5 py-2.5 rounded-xl text-[0.75rem] uppercase tracking-widest font-bold flex items-center gap-1.5" data-i18n="nav_contact">Contact <i class="fa-brands fa-telegram text-[0.7rem]"></i></a>
-                    <button onclick="onMerchant()" class="btn-primary px-6 py-2.5 rounded-xl text-[0.75rem] uppercase tracking-widest shadow-sm" data-i18n="nav_portal">Merchant Portal</button>
-                </div>
-                <button class="md:hidden text-slate-500 ml-auto" onclick="toggleMobileMenu()"><i id="menu-icon" class="fa-solid fa-bars text-xl"></i></button>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-white lg:hidden overflow-y-auto pt-24 px-6 pb-12 text-start">
-        <button onclick="toggleMobileMenu()" class="absolute top-5 right-5 w-12 h-12 flex items-center justify-center text-slate-400">
-            <i class="fa-solid fa-xmark text-2xl"></i>
-        </button>
-        <!-- Nav Links -->
-        <div class="flex flex-col gap-6 text-lg font-bold text-slate-800 mb-8 text-start">
-            <a href="index.html" onclick="toggleMobileMenu()" class="text-[#0052ff]" data-i18n="nav_home">Home</a>
-            <a href="coverage.html" onclick="toggleMobileMenu()" data-i18n="nav_coverage">Coverage</a>
-            <a href="otc.html" onclick="toggleMobileMenu()" data-i18n="nav_otc">OTC</a>
-            <a href="https://docs.rail.aurellix.com/" target="_blank" onclick="toggleMobileMenu()" data-i18n="nav_api">API Docs</a>
-            <a href="https://demo.rail.aurellix.com" target="_blank" onclick="toggleMobileMenu()" class="flex items-center gap-2" data-i18n="nav_demo">Demo <i class="fa-solid fa-arrow-up-right-from-square text-sm opacity-50"></i></a>
-        </div>
-        <!-- Language & Contact -->
-        <div class="space-y-4 pt-6 border-t border-slate-100 text-start mb-6">
-            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Select Language</p>
-            <div class="grid grid-cols-2 gap-3 text-start">
-                <button onclick="changeLang('en'); toggleMobileMenu();" class="px-4 py-3 bg-slate-50 rounded-xl text-sm font-bold text-slate-600 text-left">English</button>
-                <button onclick="changeLang('zh'); toggleMobileMenu();" class="px-4 py-3 bg-slate-50 rounded-xl text-sm font-bold text-slate-600 text-left">简体中文</button>
+                    <div class="nav-dropdown">
+                        <button type="button" class="nav-dropdown-trigger" aria-expanded="false">
+                            <span data-i18n="nav_solutions">Solutions</span>
+                            <i class="fa-solid fa-chevron-down text-[0.65rem] opacity-60 nav-chevron" aria-hidden="true"></i>
+                        </button>
+                        <div class="nav-popover">
+                            <a href="fx.html#fx-b2b" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-blue-50 text-[#0052ff]"><i class="fa-solid fa-ship" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_sol_b2b">B2B Foreign Trade</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_sol_b2b_desc">Local-currency collect, FX & supplier payout</span>
+                                </span>
+                            </a>
+                            <a href="otc.html" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-amber-50 text-amber-600"><i class="fa-solid fa-coins" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_sol_otc">Institutional OTC</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_sol_otc_desc">Fiat ⇄ Stablecoin T+0 treasury rails</span>
+                                </span>
+                            </a>
+                            <a href="index.html#scenarios" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-teal-50 text-teal-600"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_sol_ecom">E-Commerce & Digital</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_sol_ecom_desc">Marketplace, checkout & global payouts</span>
+                                </span>
+                            </a>
+                            <a href="index.html#rwa" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-purple-50 text-purple-600"><i class="fa-solid fa-gem" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_sol_rwa">RWA Tokenization</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_sol_rwa_desc">Real-world asset mint & global settlement</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="coverage.html" class="nav-link" data-i18n="nav_coverage">Coverage</a>
+
+                    <div class="nav-dropdown">
+                        <button type="button" class="nav-dropdown-trigger" aria-expanded="false">
+                            <span data-i18n="nav_resources">Resources</span>
+                            <i class="fa-solid fa-chevron-down text-[0.65rem] opacity-60 nav-chevron" aria-hidden="true"></i>
+                        </button>
+                        <div class="nav-popover">
+                            <a href="https://docs.rail.aurellix.com/" data-api-link="true" target="_blank" rel="noopener noreferrer" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-slate-100 text-slate-700"><i class="fa-solid fa-code" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_api">API Docs</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_api_desc">REST APIs, SDKs & Webhook reference</span>
+                                </span>
+                            </a>
+                            <a href="https://demo.rail.aurellix.com" target="_blank" rel="noopener noreferrer" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-sky-50 text-sky-600"><i class="fa-solid fa-desktop" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_demo">Demo</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_demo_desc">Live institutional checkout sandbox</span>
+                                </span>
+                            </a>
+                            <a href="index.html#compliance" class="nav-popover-item">
+                                <span class="nav-popover-icon bg-emerald-50 text-emerald-600"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                <span>
+                                    <span class="block text-xs font-extrabold text-slate-900" data-i18n="nav_partners">Compliance & Ecosystem</span>
+                                    <span class="block text-[0.7rem] text-slate-500 mt-0.5" data-i18n="nav_partners_desc">Licensed rails & global settlement network</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="hidden lg:flex items-center gap-3.5 ml-auto">
+                    <div class="lang-dropdown">
+                        <button type="button" class="flex items-center gap-1.5 text-xs font-extrabold text-slate-600 hover:text-[#0052ff] transition cursor-pointer" aria-label="Switch Language">
+                            <i class="fa-solid fa-globe text-xs text-slate-400" aria-hidden="true"></i>
+                            <span id="current-lang-label">EN</span>
+                            <i class="fa-solid fa-chevron-down text-[0.6rem]" aria-hidden="true"></i>
+                        </button>
+                        <div class="lang-menu" role="menu">
+                            <button type="button" class="lang-option" data-lang="en" onclick="changeLang('en')">English</button>
+                            <button type="button" class="lang-option" data-lang="zh" onclick="changeLang('zh')">简体中文</button>
+                        </div>
+                    </div>
+                    <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="btn-contact px-4 py-2 rounded-xl text-xs flex items-center gap-1.5" data-i18n="nav_contact">
+                        Contact <i class="fa-brands fa-telegram text-sm" data-keep-icon="true" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://merchant.rail.aurellix.com/" target="_blank" rel="noopener noreferrer" class="btn-primary px-5 py-2.5 rounded-xl text-xs" data-i18n="nav_portal">Merchant Portal</a>
+                </div>
+
+                <button id="mobile-menu-btn" type="button" class="lg:hidden ml-auto p-2 text-slate-700 hover:text-[#0052ff] cursor-pointer" onclick="AurellixV2.toggleMobileMenu()" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+                    <i id="menu-icon" class="fa-solid fa-bars text-xl" aria-hidden="true"></i>
+                </button>
             </div>
-            <a href="https://t.me/cs_aurellix" target="_blank" class="flex items-center gap-2 text-base font-bold text-slate-600 mt-4" data-i18n="nav_contact">Contact <i class="fa-brands fa-telegram text-blue-500"></i></a>
         </div>
-        <!-- CTA -->
-        <div class="mt-6 text-center">
-            <button onclick="onMerchant(); toggleMobileMenu();" class="w-full btn-primary px-6 py-[0.875rem] btn-base text-[15px] rounded-xl text-white uppercase tracking-widest shadow-xl" data-i18n="nav_portal">Merchant Portal</button>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 z-[110] bg-white lg:hidden overflow-y-auto pt-20 px-6 pb-12" aria-hidden="true">
+        <button type="button" onclick="AurellixV2.toggleMobileMenu(true)" class="absolute top-4 right-4 w-11 h-11 flex items-center justify-center text-slate-500 hover:text-slate-900 cursor-pointer" aria-label="Close menu">
+            <i class="fa-solid fa-xmark text-2xl" aria-hidden="true"></i>
+        </button>
+        <nav class="flex flex-col gap-4 text-base font-extrabold text-slate-800 mb-8" aria-label="Mobile Primary">
+            <a href="index.html" onclick="AurellixV2.toggleMobileMenu(true)" class="text-[#0052ff] border-b border-slate-100 pb-3" aria-current="page" data-i18n="nav_home">Home</a>
+
+            <div class="border-b border-slate-100 pb-3">
+                <div class="text-xs font-black uppercase tracking-widest text-slate-400 mb-2.5" data-i18n="nav_products">Products</div>
+                <div class="grid grid-cols-2 gap-2.5 text-sm font-bold">
+                    <a href="fx.html#fx-va-matrix" onclick="AurellixV2.toggleMobileMenu(true)" class="p-2.5 rounded-xl bg-slate-50 text-slate-800" data-i18n="nav_prod_collect">Global Collection</a>
+                    <a href="fx.html#fx-wallets" onclick="AurellixV2.toggleMobileMenu(true)" class="p-2.5 rounded-xl bg-slate-50 text-slate-800" data-i18n="nav_prod_payout">Global Payout</a>
+                    <a href="otc.html" onclick="AurellixV2.toggleMobileMenu(true)" class="p-2.5 rounded-xl bg-slate-50 text-slate-800" data-i18n="nav_prod_otc">FX & Stablecoin OTC</a>
+                    <a href="index.html#acquiring" onclick="AurellixV2.toggleMobileMenu(true)" class="p-2.5 rounded-xl bg-slate-50 text-slate-800" data-i18n="nav_prod_acq">Global Acquiring</a>
+                </div>
+            </div>
+
+            <div class="border-b border-slate-100 pb-3">
+                <div class="text-xs font-black uppercase tracking-widest text-slate-400 mb-2.5" data-i18n="nav_solutions">Solutions</div>
+                <div class="grid grid-cols-2 gap-2.5 text-sm font-bold">
+                    <a href="fx.html#fx-b2b" onclick="AurellixV2.toggleMobileMenu(true)" class="p-2.5 rounded-xl bg-slate-50 text-slate-800" data-i18n="nav_sol_b2b">B2B Foreign Trade</a>
+                    <a href="otc.html" onclick="AurellixV2.toggleMobileMenu(true)" class="p-2.5 rounded-xl bg-slate-50 text-slate-800" data-i18n="nav_sol_otc">Institutional OTC</a>
+                    <a href="index.html#scenarios" onclick="AurellixV2.toggleMobileMenu(true)" class="p-2.5 rounded-xl bg-slate-50 text-slate-800" data-i18n="nav_sol_ecom">E-Commerce & Digital</a>
+                    <a href="index.html#rwa" onclick="AurellixV2.toggleMobileMenu(true)" class="p-2.5 rounded-xl bg-slate-50 text-slate-800" data-i18n="nav_sol_rwa">RWA Tokenization</a>
+                </div>
+            </div>
+
+            <a href="coverage.html" onclick="AurellixV2.toggleMobileMenu(true)" class="border-b border-slate-100 pb-3" data-i18n="nav_coverage">Coverage</a>
+            <a href="https://docs.rail.aurellix.com/" data-api-link="true" target="_blank" rel="noopener noreferrer" onclick="AurellixV2.toggleMobileMenu(true)" class="border-b border-slate-100 pb-3" data-i18n="nav_api">API Docs</a>
+            <a href="https://demo.rail.aurellix.com" target="_blank" rel="noopener noreferrer" onclick="AurellixV2.toggleMobileMenu(true)" class="flex items-center gap-2 border-b border-slate-100 pb-3">
+                <span data-i18n="nav_demo">Demo</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-60" aria-hidden="true"></i>
+            </a>
+        </nav>
+        <div class="space-y-4 pt-1 mb-6">
+            <p class="text-xs font-extrabold text-slate-500 uppercase tracking-widest" data-i18n="mobile_lang_label">Select Language</p>
+            <div class="grid grid-cols-2 gap-3">
+                <button type="button" onclick="changeLang('en'); AurellixV2.toggleMobileMenu(true);" class="px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold text-slate-700 text-left cursor-pointer">English</button>
+                <button type="button" onclick="changeLang('zh'); AurellixV2.toggleMobileMenu(true);" class="px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold text-slate-700 text-left cursor-pointer">简体中文</button>
+            </div>
+        </div>
+        <div class="space-y-3">
+            <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="w-full btn-contact py-3.5 rounded-xl text-sm flex items-center justify-center gap-2" data-i18n="nav_contact">
+                Contact <i class="fa-brands fa-telegram" data-keep-icon="true" aria-hidden="true"></i>
+            </a>
+            <a href="https://merchant.rail.aurellix.com/" target="_blank" rel="noopener noreferrer" class="w-full btn-primary py-3.5 rounded-xl text-sm flex items-center justify-center" data-i18n="nav_portal">Merchant Portal</a>
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="relative pt-40 pb-20 lg:pt-56 lg:pb-32 glow-bg">
-        <div class="max-w-6xl mx-auto px-5 lg:px-6 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-                <div class="text-center lg:text-left">
-                    <div class="reveal reveal-up active inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-[#0052ff] label-caps mb-8 ring-1 ring-blue-100">
-                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_cyan]"></span>
-                        <span data-i18n="hero_badge">Global Compliance Platform</span>
+    <main>
+        <!-- 1. Hero Section ("字少图多": Crisp Headline + Visual 3-Card Global Rail Board) -->
+        <section class="hero-mesh pt-28 pb-16 lg:pt-36 lg:pb-20">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                    <div class="lg:col-span-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 mb-6">
+                            <span class="w-2 h-2 rounded-full bg-[#0052ff]"></span>
+                            <span class="text-[0.68rem] font-extrabold uppercase tracking-wider text-[#0052ff]" data-i18n="hero_badge">GLOBAL PAYMENT & SETTLEMENT INFRASTRUCTURE</span>
+                        </div>
+
+                        <h1 class="heading-xl text-slate-900 mb-4">
+                            <span data-i18n="hero_h1_l1">Global Cross-Border</span><br>
+                            <span class="text-[#0052ff]" data-i18n="hero_h1_l2">Payment & Settlement</span>
+                        </h1>
+
+                        <p class="text-lg font-bold text-slate-700 mb-3" data-i18n="hero_subtitle">Localized Global Financial Infrastructure</p>
+                        <p class="text-sm text-slate-600 mb-7 max-w-lg" data-i18n="hero_desc">One-stop global collection, payout, multi-currency FX, stablecoin OTC & acquiring.</p>
+
+                        <!-- 3 Concise Checkmarks -->
+                        <div class="flex flex-wrap items-center gap-6 mb-9 text-sm font-bold text-slate-700">
+                            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#0052ff]" aria-hidden="true"></i><span data-i18n="hero_chk1">More Secure</span></span>
+                            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#0052ff]" aria-hidden="true"></i><span data-i18n="hero_chk2">More Efficient</span></span>
+                            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#0052ff]" aria-hidden="true"></i><span data-i18n="hero_chk3">Lower Cost</span></span>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-4">
+                            <a href="https://merchant.rail.aurellix.com/" target="_blank" rel="noopener noreferrer" class="btn-primary px-7 py-4 rounded-xl text-sm inline-flex items-center gap-2.5">
+                                <span data-i18n="hero_btn1">Start Now</span>
+                                <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="btn-contact px-6 py-4 rounded-xl text-sm inline-flex items-center gap-2" data-i18n="hero_btn2">Talk to Advisor</a>
+                        </div>
                     </div>
-                    <h1 class="heading-xl text-slate-900 mb-8 reveal reveal-up active delay-1">
-                        <span data-i18n="hero_title">Global Leading Stablecoin Payment Solutions</span>
-                    </h1>
-                    <p class="body-text mb-12 max-w-md mx-auto lg:mx-0 reveal reveal-up active delay-2">
-                        <span data-i18n="hero_desc">Aurellix Pay is a compliant stablecoin aggregate payment platform, providing efficient and stable crypto solutions globally.</span>
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start reveal reveal-up active delay-3">
-                        <button onclick="onMerchant()" class="btn-primary px-10 py-4 rounded-2xl text-sm uppercase tracking-widest pulse-btn" data-i18n="nav_portal">Merchant Portal</button>
-                        <button onclick="handleTalk()" class="bg-white border-2 border-slate-100 text-slate-500 px-10 py-4 rounded-2xl text-sm font-black hover:bg-slate-50 transition shadow-sm" data-i18n="hero_cta_sales">Talk to Sales</button>
+
+                    <!-- Right Visual Graphic Board (3 Floating Glass UI Cards + Globe + Dashed Flow Lines) -->
+                    <div class="lg:col-span-6">
+                        <div class="ax-hero-board p-6 sm:p-8 text-white">
+                            <!-- Subtle Globe Circles & Flow Dashed SVG -->
+                            <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-35" viewBox="0 0 600 480" fill="none" aria-hidden="true">
+                                <circle cx="480" cy="360" r="190" stroke="#7dd3fc" stroke-width="1.2" stroke-dasharray="6 6" />
+                                <circle cx="480" cy="360" r="130" stroke="#38bdf8" stroke-width="1" />
+                                <path d="M120 120 H440 V240" stroke="#bae6fd" stroke-width="1.5" stroke-dasharray="6 6" />
+                                <path d="M90 120 V300 H220" stroke="#bae6fd" stroke-width="1.5" stroke-dasharray="6 6" />
+                                <circle cx="440" cy="120" r="14" fill="#38bdf8" fill-opacity="0.35" stroke="#e0f2fe" stroke-width="2" />
+                            </svg>
+
+                            <div class="relative z-10 space-y-5">
+                                <!-- Top Floating Glass Card: Payout / OTC Flow -->
+                                <div class="ax-glass-card p-5 max-w-sm float-ui">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <span class="text-xs font-bold text-sky-100" data-i18n="hero_vis_payout">Payout · Instant Rail</span>
+                                        <span class="px-2 py-0.5 rounded-full bg-emerald-400/20 text-emerald-200 text-[0.65rem] font-extrabold">T+0</span>
+                                    </div>
+                                    <div class="rounded-xl bg-white/10 p-3.5 flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-2.5">
+                                            <img src="https://flagcdn.com/us.svg" alt="USD" class="w-6 h-4 rounded-sm object-cover" />
+                                            <span class="text-sm font-black">USD</span>
+                                        </div>
+                                        <div class="text-right">
+                                            <div class="text-[0.65rem] text-sky-200" data-i18n="hero_vis_amt">Send Amount</div>
+                                            <div class="text-lg font-black tabular-nums">$ 10,000.00</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between text-xs text-sky-100">
+                                        <span data-i18n="hero_vis_recv">Recipient</span>
+                                        <span class="font-bold">Global Partner Ltd.</span>
+                                    </div>
+                                </div>
+
+                                <!-- Bottom Visual Grid: Multi-Currency Flags + Local Accounts -->
+                                <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-end">
+                                    <div class="sm:col-span-5 ax-glass-card p-4">
+                                        <div class="text-xs font-bold text-sky-100 mb-3" data-i18n="hero_vis_multi">Multi-Currency VA</div>
+                                        <div class="grid grid-cols-3 gap-2.5 text-center">
+                                            <div class="p-1.5 rounded-lg bg-white/10">
+                                                <img src="https://flagcdn.com/eu.svg" alt="EUR" class="w-6 h-4 mx-auto rounded-sm object-cover mb-1" />
+                                                <span class="text-[0.65rem] font-bold">EUR</span>
+                                            </div>
+                                            <div class="p-1.5 rounded-lg bg-white/10">
+                                                <img src="https://flagcdn.com/br.svg" alt="BRL" class="w-6 h-4 mx-auto rounded-sm object-cover mb-1" />
+                                                <span class="text-[0.65rem] font-bold">BRL</span>
+                                            </div>
+                                            <div class="p-1.5 rounded-lg bg-white/10">
+                                                <img src="https://flagcdn.com/my.svg" alt="MYR" class="w-6 h-4 mx-auto rounded-sm object-cover mb-1" />
+                                                <span class="text-[0.65rem] font-bold">MYR</span>
+                                            </div>
+                                            <div class="p-1.5 rounded-lg bg-white/10">
+                                                <img src="https://flagcdn.com/gb.svg" alt="GBP" class="w-6 h-4 mx-auto rounded-sm object-cover mb-1" />
+                                                <span class="text-[0.65rem] font-bold">GBP</span>
+                                            </div>
+                                            <div class="p-1.5 rounded-lg bg-white/10">
+                                                <img src="https://flagcdn.com/hk.svg" alt="HKD" class="w-6 h-4 mx-auto rounded-sm object-cover mb-1" />
+                                                <span class="text-[0.65rem] font-bold">HKD</span>
+                                            </div>
+                                            <div class="p-1.5 rounded-lg bg-white/10">
+                                                <img src="https://flagcdn.com/sg.svg" alt="SGD" class="w-6 h-4 mx-auto rounded-sm object-cover mb-1" />
+                                                <span class="text-[0.65rem] font-bold">SGD</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="sm:col-span-7 ax-glass-card p-4">
+                                        <div class="grid grid-cols-3 text-[0.65rem] font-bold text-sky-200 pb-2 mb-2 border-b border-white/15">
+                                            <span data-i18n="hero_vis_col1">Region</span>
+                                            <span data-i18n="hero_vis_col2">Account</span>
+                                            <span class="text-right" data-i18n="hero_vis_col3">Rail</span>
+                                        </div>
+                                        <div class="space-y-2 text-xs">
+                                            <div class="grid grid-cols-3 items-center py-1.5 px-2 rounded-lg bg-white/10">
+                                                <span class="flex items-center gap-1.5 font-bold"><img src="https://flagcdn.com/sg.svg" alt="SG" class="w-4 h-3 rounded-xs object-cover" /> SG</span>
+                                                <span class="font-mono text-sky-100">2378***769</span>
+                                                <span class="text-right font-bold text-emerald-200">B2B / FAST</span>
+                                            </div>
+                                            <div class="grid grid-cols-3 items-center py-1.5 px-2 rounded-lg bg-white/10">
+                                                <span class="flex items-center gap-1.5 font-bold"><img src="https://flagcdn.com/br.svg" alt="BR" class="w-4 h-3 rounded-xs object-cover" /> BR</span>
+                                                <span class="font-mono text-sky-100">9899***873</span>
+                                                <span class="text-right font-bold text-sky-200">PIX / TED</span>
+                                            </div>
+                                            <div class="grid grid-cols-3 items-center py-1.5 px-2 rounded-lg bg-white/10">
+                                                <span class="flex items-center gap-1.5 font-bold"><img src="https://flagcdn.com/hk.svg" alt="HK" class="w-4 h-3 rounded-xs object-cover" /> HK</span>
+                                                <span class="font-mono text-sky-100">8412***109</span>
+                                                <span class="text-right font-bold text-amber-200">OTC / FPS</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Checkout UI - Resident Floating -->
-                <div class="relative max-w-sm mx-auto lg:max-w-none w-full float-ui">
-                    <div class="bg-white rounded-[2.5rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.12)] border border-slate-100 p-8 lg:p-10 relative overflow-hidden ring-1 ring-slate-100">
-                        <div class="flex justify-between items-center mb-10 border-b border-slate-50 pb-6">
+            </div>
+        </section>
+
+        <!-- 2. Big KPI Numbers Strip (4 Bold Numbers + Minimal Labels) -->
+        <section class="py-14 bg-white border-b border-slate-100 reveal">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                    <div>
+                        <div class="ax-number-line text-4xl sm:text-5xl font-900 text-slate-900 tracking-tight mb-2">150<span class="text-[#0052ff]">+</span></div>
+                        <div class="text-sm font-bold text-slate-600" data-i18n="kpi_countries">Countries & Regions</div>
+                    </div>
+                    <div>
+                        <div class="ax-number-line text-4xl sm:text-5xl font-900 text-slate-900 tracking-tight mb-2">50<span class="text-[#0052ff]">+</span></div>
+                        <div class="text-sm font-bold text-slate-600" data-i18n="kpi_currencies">Global & Local Currencies</div>
+                    </div>
+                    <div>
+                        <div class="ax-number-line text-4xl sm:text-5xl font-900 text-slate-900 tracking-tight mb-2">T<span class="text-[#0052ff]">+</span>0</div>
+                        <div class="text-sm font-bold text-slate-600" data-i18n="kpi_settlement">Fastest Live Settlement</div>
+                    </div>
+                    <div>
+                        <div class="ax-number-line text-4xl sm:text-5xl font-900 text-slate-900 tracking-tight mb-2">100<span class="text-[#0052ff]">%</span></div>
+                        <div class="text-sm font-bold text-slate-600" data-i18n="kpi_compliance">Licensed Security</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Alternating Zig-Zag Product Modules (Left Copy / Right Visual, 4 Modules) -->
+
+        <!-- Module 1: Global Collection (Copy Left, Visual Window Right) -->
+        <section id="collection" class="py-20 lg:py-24 bg-white reveal">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    <div class="lg:col-span-5">
+                        <h2 class="text-3xl sm:text-4xl font-900 text-slate-900 tracking-tight mb-3" data-i18n="mod_col_title">Global Collection</h2>
+                        <p class="text-base font-bold text-slate-600 mb-8" data-i18n="mod_col_sub">One account to collect locally across global & emerging markets.</p>
+                        <div class="space-y-6 mb-8">
                             <div>
-                                <h3 class="font-900 text-lg text-slate-900" data-i18n="checkout_title">Aurellix Pay Checkout</h3>
-                                <p class="text-[0.7rem] text-slate-500 font-black uppercase tracking-widest">REF: AURELLIX-PAY-8820</p>
+                                <h3 class="text-base font-extrabold text-slate-900 mb-1" data-i18n="mod_col_p1_t">Multi-Account Management</h3>
+                                <p class="text-sm text-slate-500" data-i18n="mod_col_p1_d">Open multi-currency bank & VA accounts under one portal with unified flows.</p>
                             </div>
-                            <div class="text-right">
-                                <div class="text-3xl font-900 text-slate-900 tracking-tighter">$1,200.00</div>
-                                <p class="text-[0.6rem] text-slate-600 font-900 uppercase tracking-widest" data-i18n="checkout_due">Amount Due</p>
+                            <div>
+                                <h3 class="text-base font-extrabold text-slate-900 mb-1" data-i18n="mod_col_p2_t">Native Local-Currency Collect</h3>
+                                <p class="text-sm text-slate-500" data-i18n="mod_col_p2_d">22+ markets (US, EU, SE Asia, LatAm, Africa) credited directly with zero FX loss.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-extrabold text-slate-900 mb-1" data-i18n="mod_col_p3_t">B2B & Marketplace Ready</h3>
+                                <p class="text-sm text-slate-500" data-i18n="mod_col_p3_d">Tailored for B2B foreign trade, e-commerce platforms, logistics & ad tech.</p>
                             </div>
                         </div>
-                        <div class="space-y-6">
-                            <p class="label-caps text-slate-400 font-black" data-i18n="checkout_label">Select Token</p>
-                            <div class="grid grid-cols-2 gap-3">
-                                <div class="token-item active p-4 rounded-2xl flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-black text-xs">T</div>
-                                    <div><div class="text-[0.8rem] font-900 text-slate-900 uppercase">USDT</div><div class="text-[0.6rem] text-slate-500 font-black uppercase">Tether</div></div>
-                                </div>
-                                <div class="token-item p-4 rounded-2xl flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-black text-xs">C</div>
-                                    <div><div class="text-[0.8rem] font-900 text-slate-900 uppercase">USDC</div><div class="text-[0.6rem] text-slate-500 font-black uppercase">Circle</div></div>
-                                </div>
-                                <div class="token-item p-4 rounded-2xl flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-black text-xs">E</div>
-                                    <div><div class="text-[0.8rem] font-900 text-slate-900 uppercase">EURC</div><div class="text-[0.6rem] text-slate-500 font-black uppercase">Circle</div></div>
-                                </div>
-                                <div class="token-item p-4 rounded-2xl flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 font-black text-xs">P</div>
-                                    <div><div class="text-[0.8rem] font-900 text-slate-900 uppercase">PYUSD</div><div class="text-[0.6rem] text-slate-500 font-black uppercase">PayPal</div></div>
-                                </div>
-                            </div>
-                            <button onclick="confirmPayment()" class="w-full bg-[#0052ff] text-white py-4 rounded-2xl font-900 text-[0.85rem] shadow-xl shadow-blue-200 mt-4 flex items-center justify-center gap-2 uppercase tracking-widest transition active:scale-95">
-                                <span data-i18n="checkout_pay">Confirm Payment</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solutions - Darker Slate Background -->
-    <section id="features" class="py-24 border-y border-slate-200 bg-slate-100 overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-20 reveal reveal-up">
-                <h2 class="label-caps text-[#0052ff] mb-4" data-i18n="sec_biz_tag">Solutions</h2>
-                <p class="heading-lg text-slate-900" data-i18n="sec_biz_title">Comprehensive Stablecoin Gateway</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-                <!-- 1. Fiat -->
-                <div class="feature-card p-10 rounded-[2.5rem] reveal reveal-left delay-1">
-                    <div class="vibrant-icon w-14 h-14 rounded-2xl flex items-center justify-center mb-8 border border-white/20"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg></div>
-                    <h3 class="card-title mb-4" data-i18n="biz1_title">Fiat Acquiring · Stablecoin Settlement</h3>
-                    <p class="body-text mb-8" data-i18n="biz1_desc">Accept local fiat or card payments and settle in USDT / USDC.</p>
-                    <div class="mt-auto flex flex-wrap gap-2"><span class="tag-base px-2 py-0.5 rounded text-[0.65rem]">USD</span><span class="tag-base px-2 py-0.5 rounded text-[0.65rem]">EUR</span><span class="tag-base px-2 py-0.5 rounded text-[0.65rem]">HKD</span></div>
-                </div>
-
-                <!-- 2. Stablecoin -->
-                <div class="feature-card p-10 rounded-[2.5rem] reveal reveal-scale delay-2">
-                    <div class="vibrant-icon w-14 h-14 rounded-2xl flex items-center justify-center mb-8 border border-white/20" style="background: linear-gradient(135deg, #10b981, #059669);"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
-                    <h3 class="card-title mb-4" data-i18n="biz2_title">Stablecoin Acquiring · Fiat Settlement</h3>
-                    <p class="body-text mb-8" data-i18n="biz2_desc">Receive stablecoins directly. Auto-convert to local fiat for settlement.</p>
-                    <div class="mt-auto flex flex-wrap gap-2"><span class="tag-base px-2 py-0.5 rounded text-[0.65rem]">USDT</span><span class="tag-base px-2 py-0.5 rounded text-[0.65rem]">PYUSD</span><span class="tag-base px-2 py-0.5 rounded text-[0.65rem]">EURC</span></div>
-                </div>
-
-                <!-- 3. QR Code -->
-                <div class="feature-card p-10 rounded-[2.5rem] reveal reveal-right delay-3">
-                    <div class="vibrant-icon w-14 h-14 rounded-2xl flex items-center justify-center mb-8 border border-white/20" style="background: linear-gradient(135deg, #6366f1, #4f46e5);"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path></svg></div>
-                    <h3 class="card-title mb-4" data-i18n="biz3_title">QR Code / Payment Link</h3>
-                    <p class="body-text mb-8" data-i18n="biz3_desc">Collect via QR codes or links. Multi-method support for global retail.</p>
-                    <div class="mt-auto flex flex-wrap gap-2"><span class="tag-base px-2 py-0.5 rounded text-[0.6rem]">Visa</span><span class="tag-base px-2 py-0.5 rounded text-[0.6rem]">Master</span><span class="tag-base px-2 py-0.5 rounded text-[0.6rem]">Apple Pay</span></div>
-                </div>
-
-                <!-- API Integrated Card -->
-                <div class="feature-card p-10 rounded-[2.5rem] md:col-span-2 bg-white reveal reveal-left delay-1 overflow-hidden group">
-                    <div class="flex flex-col lg:flex-row gap-8 items-center h-full">
-                        <div class="flex-1">
-                            <div class="vibrant-icon w-14 h-14 rounded-2xl flex items-center justify-center mb-8 border border-white/20 group-hover:scale-110 transition-all"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></div>
-                            <h3 class="card-title mb-4" data-i18n="biz4_title">Merchant API & Platform</h3>
-                            <p class="body-text mb-6" data-i18n="biz4_desc">Standard API supporting acquiring, settlement, and reconciliation for enterprise integration.</p>
-                            <span class="label-caps text-emerald-600 font-black uppercase">Enterprise Ready</span>
-                        </div>
-                        <div class="flex-1 w-full p-6 bg-[#0f172a] rounded-3xl font-mono text-[0.65rem] leading-relaxed text-slate-400 shadow-2xl border border-slate-800">
-                            <div class="flex gap-2 mb-4"><div class="w-2 h-2 rounded-full bg-red-400"></div><div class="w-2 h-2 rounded-full bg-yellow-400"></div><div class="w-2 h-2 rounded-full bg-green-400"></div></div>
-                            <span class="text-blue-400 font-bold">// Checkout SDK Integration</span><br><span class="text-slate-500">await</span> Aurellix.pay(1200.0, <span class="text-emerald-400">"USDC"</span>);<br><br><span class="text-blue-400 font-bold">// Success Handler</span><br><span class="text-slate-500">on</span>(<span class="text-emerald-400">"success"</span>, (tx) => { ... });
-                        </div>
-                    </div>
-                </div>
-
-                <div class="feature-card p-10 rounded-[2.5rem] reveal reveal-right delay-2">
-                    <div class="vibrant-icon w-14 h-14 rounded-2xl flex items-center justify-center mb-8 border border-white/20" style="background: linear-gradient(135deg, #f59e0b, #d97706);"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg></div>
-                    <h3 class="card-title mb-4" data-i18n="biz5_title">Mini-app (Built-in Wallet)</h3>
-                    <p class="body-text mb-8" data-i18n="biz5_desc">Lightweight wallet SDK for social applications. Enable instant social payments.</p>
-                    <div class="mt-auto flex justify-between items-center"><span class="label-caps text-blue-500 font-black">SDK Ready</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section: Global OTC & Settlement Feature -->
-    <section id="otc-spotlight" class="py-24 border-b border-slate-200 bg-white overflow-hidden">
-        <div class="max-w-6xl mx-auto px-5 lg:px-6 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-                
-                <!-- Left: Headline & Core Values -->
-                <div class="lg:col-span-7 reveal reveal-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-[#0052ff] label-caps mb-6 ring-1 ring-blue-100">
-                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_cyan]"></span>
-                        <span data-i18n="spotlight_otc_badge">Institutional Desk & Liquidity Rails</span>
-                    </div>
-                    <h2 class="heading-lg text-slate-900 mb-6">
-                        <span data-i18n="spotlight_otc_title">Global Fiat & Stablecoin Bi-Directional Settlement Network</span>
-                    </h2>
-                    <p class="body-text text-base mb-8 max-w-xl" data-i18n="spotlight_otc_desc">
-                        Bridging traditional banking rails (SWIFT & Local Rails) with stablecoin liquidity. Empowering enterprises with compliant T+0 bi-directional conversion, multi-currency Virtual Accounts (VA), and Global Payouts (POBO).
-                    </p>
-
-                    <!-- 3 Specific Exchange Modes Badges -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
-                        <div class="p-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl">
-                            <div class="text-[0.65rem] font-black uppercase text-blue-600 mb-1" data-i18n="idx_mode1_tag">Fiat ⇄ Stablecoin</div>
-                            <div class="text-xs font-black text-slate-800" data-i18n="idx_mode1_title">Fiat ⇄ USDT/USDC</div>
-                        </div>
-                        <div class="p-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl">
-                            <div class="text-[0.65rem] font-black uppercase text-indigo-600 mb-1" data-i18n="idx_mode2_tag">Fiat ⇄ Fiat FX</div>
-                            <div class="text-xs font-black text-slate-800" data-i18n="idx_mode2_title">26+ Multi-Currency FX</div>
-                        </div>
-                        <div class="p-3.5 bg-slate-50 border border-slate-200/80 rounded-2xl">
-                            <div class="text-[0.65rem] font-black uppercase text-emerald-600 mb-1" data-i18n="idx_mode3_tag">Crypto ⇄ Crypto</div>
-                            <div class="text-xs font-black text-slate-800" data-i18n="idx_mode3_title">USDT ⇄ USDC ⇄ EURC</div>
-                        </div>
-                    </div>
-
-                    <!-- Feature Check Pills -->
-                    <div class="space-y-3 mb-10 text-sm font-bold text-slate-700">
-                        <div class="flex items-center gap-3">
-                            <div class="w-6 h-6 rounded-full bg-blue-100 text-[#0052ff] flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-check"></i></div>
-                            <span data-i18n="spotlight_otc_f1">Dedicated Multi-Currency Virtual Accounts (Global SWIFT & Local VA)</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-6 h-6 rounded-full bg-blue-100 text-[#0052ff] flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-check"></i></div>
-                            <span data-i18n="spotlight_otc_f2">Global Disbursements Across 26+ Corridors (SWIFT POBO & Local Rails)</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-6 h-6 rounded-full bg-blue-100 text-[#0052ff] flex items-center justify-center text-xs shrink-0"><i class="fa-solid fa-check"></i></div>
-                            <span data-i18n="spotlight_otc_f3">T+0 Institutional Deep Liquidity & Embedded Real-Time KYT Protection</span>
-                        </div>
-                    </div>
-
-                    <!-- Dual CTA -->
-                    <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
-                        <a href="https://t.me/cs_aurellix" target="_blank" class="btn-primary px-8 py-3.5 rounded-2xl text-xs uppercase tracking-widest text-center shadow-lg hover:shadow-xl transition inline-flex items-center justify-center gap-2" data-i18n="spotlight_otc_btn_contact">
-                            Contact Institutional Desk <i class="fa-brands fa-telegram text-sm"></i>
-                        </a>
-                        <a href="otc.html" class="bg-slate-50 border-2 border-slate-200 text-slate-700 px-8 py-3.5 rounded-2xl text-xs font-black uppercase tracking-widest text-center hover:bg-slate-100 hover:border-slate-300 transition inline-flex items-center justify-center gap-1.5" data-i18n="spotlight_otc_btn_explore">
-                            View 26+ Currencies Matrix <i class="fa-solid fa-arrow-right text-[0.65rem]"></i>
+                        <a href="fx.html" class="inline-flex items-center gap-2 text-sm font-extrabold text-[#0052ff] hover:underline">
+                            <span data-i18n="btn_learn_more">Learn More</span>
+                            <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
                         </a>
                     </div>
-                </div>
 
-                <!-- Right: High-tech Visual Architecture Card -->
-                <div class="lg:col-span-5 reveal reveal-right">
-                    <div class="bg-gradient-to-br from-slate-900 to-[#0f172a] text-white p-8 lg:p-9 rounded-[2.5rem] shadow-2xl border border-slate-800 relative overflow-hidden">
-                        <div class="absolute -right-16 -top-16 w-48 h-48 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
-                        <div class="absolute -left-16 -bottom-16 w-48 h-48 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="lg:col-span-7">
+                        <div class="ax-visual-stage px-3 sm:px-6">
+                            <div class="ax-dashed-frame hidden sm:block"></div>
 
-                        <div class="flex items-center justify-between border-b border-slate-800 pb-5 mb-6">
-                            <span class="label-caps text-blue-400 font-black" data-i18n="spotlight_flow_title">Settlement Flow</span>
-                            <span class="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[0.65rem] font-bold border border-emerald-500/20 flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> T+0 Instant Delivery
-                            </span>
-                        </div>
-
-                        <!-- Step 1: Fiat Virtual Accounts -->
-                        <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700/60 mb-3">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-xs font-bold text-slate-300 uppercase tracking-wider" data-i18n="spotlight_flow_s1">1. Fiat Collections (VA)</span>
-                                <span class="text-[0.65rem] text-cyan-400 font-mono">SWIFT & Local Pay-in</span>
-                            </div>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="px-2 py-0.5 rounded bg-slate-700 text-xs font-bold">USD</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-700 text-xs font-bold">EUR</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-700 text-xs font-bold">GBP</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-700 text-xs font-bold">HKD</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-700 text-xs font-bold">SGD</span>
-                                <span class="px-2 py-0.5 rounded bg-slate-700 text-xs font-bold text-slate-400">+21 Fiats</span>
-                            </div>
-                        </div>
-
-                        <!-- Directional Arrow Engine -->
-                        <div class="flex items-center justify-center my-3 text-cyan-400 gap-2 font-mono text-[0.7rem] uppercase tracking-widest font-black">
-                            <i class="fa-solid fa-arrows-up-down text-sm animate-bounce"></i>
-                            <span>Bi-Directional Smart Routing</span>
-                        </div>
-
-                        <!-- Step 2: Stablecoin Liquidity Pool -->
-                        <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700/60 mb-3">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-xs font-bold text-slate-300 uppercase tracking-wider" data-i18n="spotlight_flow_s2">2. Stablecoin Settlement</span>
-                                <span class="text-[0.65rem] text-emerald-400 font-mono">KYT Verified</span>
-                            </div>
-                            <div class="flex gap-2">
-                                <div class="px-3 py-1 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-black flex items-center gap-1.5">
-                                    <div class="w-2 h-2 rounded-full bg-emerald-400"></div> USDT
+                            <!-- Main macOS Visual Window -->
+                            <div class="ax-window p-6 sm:p-8 max-w-lg mx-auto">
+                                <div class="flex items-center gap-2 mb-6">
+                                    <span class="w-3 h-3 rounded-full bg-rose-400"></span>
+                                    <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                                    <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
                                 </div>
-                                <div class="px-3 py-1 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs font-black flex items-center gap-1.5">
-                                    <div class="w-2 h-2 rounded-full bg-blue-400"></div> USDC
+                                <div class="flex items-center gap-3.5 mb-6 pb-4 border-b border-slate-100">
+                                    <div class="w-11 h-11 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center text-[#0052ff]">
+                                        <i class="fa-solid fa-building text-lg" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-900 text-slate-900">Aurellix Treasury Ltd.</div>
+                                        <div class="text-xs text-slate-500" data-i18n="vis_col_acct">Multi-Currency VA Portfolio</div>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="p-3.5 rounded-2xl bg-sky-50/70 border border-sky-100 flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <img src="https://flagcdn.com/us.svg" alt="USD" class="w-7 h-7 rounded-full object-cover border border-slate-200" />
+                                            <span class="text-sm font-black text-slate-900">USD</span>
+                                        </div>
+                                        <span class="text-base font-900 text-slate-900 tabular-nums">128,500.00</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-sky-50/70 border border-sky-100 flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <img src="https://flagcdn.com/eu.svg" alt="EUR" class="w-7 h-7 rounded-full object-cover border border-slate-200" />
+                                            <span class="text-sm font-black text-slate-900">EUR</span>
+                                        </div>
+                                        <span class="text-base font-900 text-slate-900 tabular-nums">84,200.00</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-sky-50/70 border border-sky-100 flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <img src="https://flagcdn.com/br.svg" alt="BRL" class="w-7 h-7 rounded-full object-cover border border-slate-200" />
+                                            <span class="text-sm font-black text-slate-900">BRL</span>
+                                        </div>
+                                        <span class="text-base font-900 text-slate-900 tabular-nums">450,000.00</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Directional Arrow Engine -->
-                        <div class="flex items-center justify-center my-3 text-cyan-400 gap-2 font-mono text-[0.7rem] uppercase tracking-widest font-black">
-                            <i class="fa-solid fa-arrows-up-down text-sm animate-bounce"></i>
-                            <span>POBO & Domestic Clearing</span>
-                        </div>
-
-                        <!-- Step 3: Global Payout -->
-                        <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700/60">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-xs font-bold text-slate-300 uppercase tracking-wider" data-i18n="spotlight_flow_s3">3. Global Payout (POBO)</span>
-                                <span class="text-[0.65rem] text-blue-400 font-mono">SWIFT & Local Rail</span>
+                            <!-- Floating Rate Curve Badge (Top-Right) -->
+                            <div class="ax-float-card p-4 w-52 mt-4 sm:mt-0 sm:absolute sm:-top-5 sm:right-0">
+                                <svg viewBox="0 0 180 46" class="w-full h-11" fill="none" aria-hidden="true">
+                                    <path d="M5 36 C35 12, 65 40, 95 16 C125 -2, 145 34, 175 18" stroke="#bae6fd" stroke-width="2.5" stroke-linecap="round" />
+                                    <path d="M5 32 C38 22, 70 44, 102 20 C130 4, 152 30, 175 22" stroke="#0052ff" stroke-width="2.5" stroke-linecap="round" />
+                                    <circle cx="102" cy="20" r="4" fill="#0052ff" />
+                                </svg>
+                                <div class="mt-1 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-50 text-[#0052ff] text-[0.68rem] font-extrabold" data-i18n="vis_col_float1">0 Opening Fee · Direct VA</div>
                             </div>
-                            <p class="text-[0.7rem] text-slate-400 leading-relaxed" data-i18n="spotlight_flow_s3_desc">
-                                Direct disbursement to beneficiary bank accounts across 26+ countries and territories.
-                            </p>
+
+                            <!-- Floating Sync Card (Bottom-Left) -->
+                            <div class="ax-float-card p-4 w-56 mt-3 sm:mt-0 sm:absolute sm:-bottom-5 sm:left-2">
+                                <div class="flex items-center justify-between text-xs font-extrabold text-slate-800 mb-2.5">
+                                    <span data-i18n="vis_col_float2">Trade & Order Sync</span>
+                                    <i class="fa-solid fa-rotate text-[#0052ff]" aria-hidden="true"></i>
+                                </div>
+                                <div class="flex items-center gap-2 text-[0.68rem] font-extrabold">
+                                    <span class="px-2.5 py-1.5 rounded-lg bg-slate-100 text-slate-700">B2B Trade</span>
+                                    <span class="px-2.5 py-1.5 rounded-lg bg-slate-100 text-slate-700">Logistics</span>
+                                    <span class="px-2.5 py-1.5 rounded-lg bg-blue-50 text-[#0052ff]">22+ VA</span>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Industry & RWA Sections - Enhanced Flow Background -->
-    <section id="cases" class="py-24 glow-bg overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-16 reveal reveal-up">
-                <h2 class="label-caps text-[#0052ff] mb-4" data-i18n="sec_case_tag">Expertise</h2>
-                <p class="heading-lg text-slate-900" data-i18n="sec_case_title">Industry Use Cases</p>
-            </div>
+        <!-- Module 2: FX & Stablecoin OTC (Visual Window Left, Copy Right) -->
+        <section id="conversion" class="py-20 lg:py-24 bg-[#f8fafc] border-y border-slate-100 reveal">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    <div class="lg:col-span-7 order-2 lg:order-1">
+                        <div class="ax-visual-stage px-3 sm:px-6">
+                            <div class="ax-dashed-frame hidden sm:block"></div>
 
-            <!-- Standard Industry Cases -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
-                <div class="bg-white/80 backdrop-blur rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group reveal reveal-up delay-1">
-                    <div class="h-40 overflow-hidden"><img src="static/industry1.png" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"></div>
-                    <div class="p-6 flex-1"><h3 class="card-title mb-2 text-[1rem]" data-i18n="case1_title">Cross-border E-commerce</h3><p class="body-text text-xs" data-i18n="case1_desc">Multi-currency settlement and automated vendor payments.</p></div>
-                </div>
-                <div class="bg-white/80 backdrop-blur rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group reveal reveal-up delay-2">
-                    <div class="h-40 overflow-hidden"><img src="static/industry2.png" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"></div>
-                    <div class="p-6 flex-1"><h3 class="card-title mb-2 text-[1rem]" data-i18n="case2_title">Gaming & Entertainment</h3><p class="body-text text-xs" data-i18n="case2_desc">Instant in-game top-ups and incentive distributions.</p></div>
-                </div>
-                <div class="bg-white/80 backdrop-blur rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group reveal reveal-up delay-3">
-                    <div class="h-40 overflow-hidden"><img src="static/industry3.png" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"></div>
-                    <div class="p-6 flex-1"><h3 class="card-title mb-2 text-[1rem]" data-i18n="case3_title">MCN & Creator Economy</h3><p class="body-text text-xs" data-i18n="case3_desc">Global payroll and cross-border commission payouts.</p></div>
-                </div>
-                <div class="bg-white/80 backdrop-blur rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group reveal reveal-up delay-4">
-                    <div class="h-40 overflow-hidden"><img src="static/industry4.png" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"></div>
-                    <div class="p-6 flex-1"><h3 class="card-title mb-2 text-[1rem]" data-i18n="case4_title">Offline Stores</h3><p class="body-text text-xs" data-i18n="case4_desc">QR payment integration for global hotspots.</p></div>
-                </div>
-            </div>
+                            <!-- Main macOS Visual Converter Window -->
+                            <div class="ax-window p-6 sm:p-8 max-w-lg mx-auto">
+                                <div class="flex items-center gap-2 mb-6">
+                                    <span class="w-3 h-3 rounded-full bg-rose-400"></span>
+                                    <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                                    <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                                </div>
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="text-xs font-bold text-slate-500 mb-1.5" data-i18n="vis_fx_send">Sell / Source Currency</div>
+                                        <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50/70 flex items-center justify-between">
+                                            <span class="text-lg font-900 text-slate-900 tabular-nums">100,000.00</span>
+                                            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white border border-slate-200 text-xs font-black">
+                                                <img src="https://flagcdn.com/us.svg" alt="USD" class="w-5 h-5 rounded-full object-cover" /> USD
+                                            </span>
+                                        </div>
+                                    </div>
 
-            <!-- RWA Special Section -->
-            <div class="text-center mb-12 reveal reveal-up">
-                <h3 class="label-caps text-emerald-500 mb-2" data-i18n="sec_rwa_tag">RWA Ecosystem</h3>
-                <p class="text-2xl font-900 text-slate-900" data-i18n="sec_rwa_title">Advanced RWA Asset Tokenization</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                <div class="bg-white/80 backdrop-blur rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group reveal reveal-scale delay-1">
-                    <div class="h-32 overflow-hidden"><img src="static/usStocks.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"></div>
-                    <div class="p-6 flex-1"><h4 class="card-title mb-2 text-[0.85rem]" data-i18n="rwa1_title">US Stocks</h4><p class="body-text text-[0.65rem]" data-i18n="rwa1_desc">Global equity settlement via stablecoins.</p></div>
-                </div>
-                <div class="bg-white/80 backdrop-blur rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group reveal reveal-scale delay-2">
-                    <div class="h-32 overflow-hidden"><img src="static/cold.png" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"></div>
-                    <div class="p-6 flex-1"><h4 class="card-title mb-2 text-[0.85rem]" data-i18n="rwa2_title">Physical Gold</h4><p class="body-text text-[0.65rem]" data-i18n="rwa2_desc">Fractional ownership of precious metals.</p></div>
-                </div>
-                <div class="bg-white/80 backdrop-blur rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group reveal reveal-scale delay-3">
-                    <div class="h-32 overflow-hidden"><img src="static/minerals.png" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"></div>
-                    <div class="p-6 flex-1"><h4 class="card-title mb-2 text-[0.85rem]" data-i18n="rwa3_title">Minerals</h4><p class="body-text text-[0.65rem]" data-i18n="rwa3_desc">Digital rights for resource trading.</p></div>
-                </div>
-                <div class="bg-white/80 backdrop-blur rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group reveal reveal-scale delay-4">
-                    <div class="h-32 overflow-hidden"><img src="static/credit.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"></div>
-                    <div class="p-6 flex-1"><h4 class="card-title mb-2 text-[0.85rem]" data-i18n="rwa4_title">Private Credit</h4><p class="body-text text-[0.65rem]" data-i18n="rwa4_desc">Compliant yield-bearing loan pools.</p></div>
-                </div>
-                <div class="bg-white/80 backdrop-blur rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group reveal reveal-scale delay-5">
-                    <div class="h-32 overflow-hidden"><img src="static/real.png" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"></div>
-                    <div class="p-6 flex-1"><h4 class="card-title mb-2 text-[0.85rem]" data-i18n="rwa5_title">Real Estate</h4><p class="body-text text-[0.65rem]" data-i18n="rwa5_desc">Global property investment tokenization.</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
+                                    <div class="flex items-center gap-3 py-1 pl-2">
+                                        <span class="w-8 h-8 rounded-full bg-blue-50 text-[#0052ff] flex items-center justify-center text-xs font-black"><i class="fa-solid fa-percent" aria-hidden="true"></i></span>
+                                        <span class="text-xs font-bold text-slate-700" data-i18n="vis_fx_rate">Live Rate: 1 USD = 7.2450 CNY / 1.00 USDT</span>
+                                        <span class="ml-auto px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[0.68rem] font-extrabold">60s</span>
+                                    </div>
 
-    <!-- Global Compliance - Deep Slate Background -->
-    <section id="compliance" class="py-24 border-y border-slate-200 bg-slate-100 overflow-hidden">
-        <div class="max-w-6xl mx-auto px-5 lg:px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center text-center lg:text-left">
-                <div class="reveal reveal-left">
-                    <h2 class="heading-lg mb-8 tracking-tight" data-i18n="comp_title">Global Reach, Local Compliance</h2>
-                    <p class="body-text mb-12 font-extrabold text-slate-600" data-i18n="comp_desc">We provide a robust, transparent, and protected asset processing environment across world financial hubs.</p>
-                    
-                    <div class="space-y-4 mb-10 text-left max-w-sm mx-auto lg:mx-0">
-                        <div class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-blue-100 shadow-sm reveal reveal-up delay-1 hover:border-blue-400 transition-all"><div class="w-8 h-8 rounded-full bg-[#0052ff] text-white flex items-center justify-center text-[0.65rem] font-black">✓</div><span class="card-title text-[0.85rem]" data-i18n="comp1">Swiss SRO compliance support</span></div>
-                        <div class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-blue-100 shadow-sm reveal reveal-up delay-2 hover:border-blue-400 transition-all"><div class="w-8 h-8 rounded-full bg-[#0052ff] text-white flex items-center justify-center text-[0.65rem] font-black">✓</div><span class="card-title text-[0.85rem]" data-i18n="comp2">Dubai PSP licensed payment support</span></div>
-                        <div class="flex items-center gap-4 p-5 bg-white rounded-2xl border border-blue-100 shadow-sm reveal reveal-up delay-3 hover:border-blue-400 transition-all"><div class="w-8 h-8 rounded-full bg-[#0052ff] text-white flex items-center justify-center text-[0.65rem] font-black">✓</div><span class="card-title text-[0.85rem]" data-i18n="comp3">Licensed VASP Operator in Poland</span></div>
+                                    <div>
+                                        <div class="text-xs font-bold text-slate-500 mb-1.5" data-i18n="vis_fx_recv">Receive Amount</div>
+                                        <div class="p-3.5 rounded-xl border border-blue-200 bg-blue-50/40 flex items-center justify-between">
+                                            <span class="text-lg font-900 text-[#0052ff] tabular-nums">724,500 CNY / 100K USDT</span>
+                                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white border border-blue-200 text-xs font-black text-slate-800">
+                                                <img src="https://flagcdn.com/cn.svg" alt="CNY" class="w-5 h-5 rounded-full object-cover" /> CNY · ₮
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Top-Right Recipient Card -->
+                            <div class="ax-float-card p-4 w-56 mt-4 sm:mt-0 sm:absolute sm:-top-5 sm:right-0">
+                                <div class="flex items-center gap-2.5 mb-2.5">
+                                    <span class="w-8 h-8 rounded-full bg-[#0052ff] text-white flex items-center justify-center text-xs font-black">AX</span>
+                                    <div>
+                                        <div class="text-xs font-900 text-slate-900" data-i18n="vis_fx_float_t">Dual Rail Liquidity</div>
+                                        <div class="text-[0.65rem] text-slate-500">Fiat FX · Stablecoin OTC</div>
+                                    </div>
+                                </div>
+                                <div class="text-[0.7rem] text-slate-600 flex justify-between border-t border-slate-100 pt-2">
+                                    <span data-i18n="vis_fx_float_l">Lock Window</span>
+                                    <span class="font-bold text-slate-900">7×24 / 60s</span>
+                                </div>
+                            </div>
+
+                            <!-- Bottom-Left Check Badge -->
+                            <div class="ax-float-card px-4 py-3 mt-3 sm:mt-0 sm:inline-flex items-center gap-2.5 sm:absolute sm:-bottom-4 sm:left-4">
+                                <span class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+                                <span class="text-xs font-extrabold text-slate-800" data-i18n="vis_fx_zero">0 Conversion Fee · T+0</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="flex flex-wrap justify-center lg:justify-start gap-3.5 opacity-90 reveal reveal-up delay-3">
-                        <img src="https://flagcdn.com/ch.svg" class="w-8 h-5 object-cover rounded shadow-sm border border-slate-200" alt="Switzerland" />
-                        <img src="https://flagcdn.com/ae.svg" class="w-8 h-5 object-cover rounded shadow-sm border border-slate-200" alt="United Arab Emirates" />
-                        <img src="https://flagcdn.com/pl.svg" class="w-8 h-5 object-cover rounded shadow-sm border border-slate-200" alt="Poland" />
-                        <img src="https://flagcdn.com/ie.svg" class="w-8 h-5 object-cover rounded shadow-sm border border-slate-200" alt="Ireland" />
-                        <img src="https://flagcdn.com/de.svg" class="w-8 h-5 object-cover rounded shadow-sm border border-slate-200" alt="Germany" />
-                        <img src="https://flagcdn.com/sg.svg" class="w-8 h-5 object-cover rounded shadow-sm border border-slate-200" alt="Singapore" />
-                        <img src="https://flagcdn.com/hk.svg" class="w-8 h-5 object-cover rounded shadow-sm border border-slate-200" alt="Hong Kong" />
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-2 gap-6 text-center">
-                    <div class="p-10 bg-white rounded-[2.5rem] border border-slate-100 reveal reveal-scale delay-1 shadow-sm"><div class="text-4xl font-900 text-[#0052ff] mb-2 tracking-tighter">150+</div><div class="card-title text-[0.7rem] uppercase tracking-widest text-slate-400" data-i18n="stat_countries">Countries</div></div>
-                    <div class="p-10 bg-white rounded-[2.5rem] border border-slate-100 reveal reveal-scale delay-2 shadow-sm"><div class="text-4xl font-900 text-[#0052ff] mb-2 tracking-tighter">50+</div><div class="card-title text-[0.7rem] uppercase tracking-widest text-slate-400" data-i18n="stat_fiat">Currencies</div></div>
-                    <div class="p-10 bg-white rounded-[2.5rem] border border-slate-100 reveal reveal-scale delay-1 shadow-sm"><div class="text-4xl font-900 text-[#0052ff] mb-2 tracking-tighter">30+</div><div class="card-title text-[0.7rem] uppercase tracking-widest text-slate-400" data-i18n="stat_methods">Methods</div></div>
-                    <div class="p-12 bg-white rounded-[2.5rem] border border-slate-100 flex flex-col justify-center items-center reveal reveal-scale delay-2 shadow-sm"><div class="w-10 h-10 rounded-full border-2 border-emerald-400 flex items-center justify-center animate-spin mb-2"><div class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></div></div><div class="card-title text-[0.7rem] uppercase tracking-widest text-slate-400" data-i18n="stat_scaling">Scaling</div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer - Modern Multi-column -->
-    <footer class="bg-gradient-to-br from-[#1e3a5f] via-[#1a2f4a] to-[#0f1f35] text-white overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 pt-14 pb-8">
-            <!-- Top: Multi-column -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-10 reveal active">
-                <!-- Brand Column -->
-                <div class="md:col-span-5">
-                    <img src="static/logo.png" style="width: 126px; margin-bottom: 16px;"/>
-                    <p class="text-white/50 text-[0.8rem] leading-relaxed max-w-xs mb-5" data-i18n="footer_desc">Aurellix Pay is a compliant stablecoin aggregate payment platform.</p>
-                    <div class="flex items-center gap-3">
-                        <a href="https://t.me/cs_aurellix" target="_blank" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110" title="Telegram">
-                            <i class="fa-brands fa-telegram text-white/70 text-sm"></i>
-                        </a>
-                        <a href="https://www.aurellix.com/" target="_blank" id="group-link" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/60 hover:text-white text-[0.7rem] transition-all duration-300 group">
-                            <i class="fa-solid fa-building text-white/40 text-[0.6rem] group-hover:text-white/70 transition-colors"></i>
-                            <span data-i18n="footer_group">Aurellix Group</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[0.45rem] text-white/30"></i>
+                    <div class="lg:col-span-5 order-1 lg:order-2">
+                        <h2 class="text-3xl sm:text-4xl font-900 text-slate-900 tracking-tight mb-3" data-i18n="mod_fx_title">FX & Stablecoin OTC</h2>
+                        <p class="text-base font-bold text-slate-600 mb-8" data-i18n="mod_fx_sub">Two-way fiat & stablecoin liquidity with zero FX markup and 60s rate lock.</p>
+                        <div class="space-y-6 mb-8">
+                            <div>
+                                <h3 class="text-base font-extrabold text-slate-900 mb-1" data-i18n="mod_fx_p1_t">19-Currency Real-Time FX</h3>
+                                <p class="text-sm text-slate-500" data-i18n="mod_fx_p1_d">Zero-fee bidirectional swaps across 19 currencies with 60-second rate lock.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-extrabold text-slate-900 mb-1" data-i18n="mod_fx_p2_t">26-Fiat ⇄ Stablecoin OTC</h3>
+                                <p class="text-sm text-slate-500" data-i18n="mod_fx_p2_d">Deep T+0 settlement across USDT & USDC (TRC20 / ERC20) and 26 fiat corridors.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-extrabold text-slate-900 mb-1" data-i18n="mod_fx_p3_t">Compliant CNY Trade Settlement</h3>
+                                <p class="text-sm text-slate-500" data-i18n="mod_fx_p3_d">Order-verified RMB repatriation and mainland supplier settlement quotas.</p>
+                            </div>
+                        </div>
+                        <a href="otc.html" class="inline-flex items-center gap-2 text-sm font-extrabold text-[#0052ff] hover:underline">
+                            <span data-i18n="btn_learn_more">Learn More</span>
+                            <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
-                <!-- Product Column -->
-                <div class="md:col-span-3">
-                    <h4 class="text-[0.65rem] uppercase tracking-[0.2em] font-black text-white/40 mb-5" data-i18n="footer_product">Product</h4>
-                    <ul class="space-y-3">
-                        <li><a href="index.html" class="text-white/70 hover:text-white text-[0.8rem] transition-colors" data-i18n="nav_home">Home</a></li>
-                        <li><a href="coverage.html" class="text-white/70 hover:text-white text-[0.8rem] transition-colors" data-i18n="nav_coverage">Coverage</a></li>
-                        <li><a href="otc.html" class="text-white/70 hover:text-white text-[0.8rem] transition-colors" data-i18n="nav_otc">OTC</a></li>
-                    </ul>
+            </div>
+        </section>
+
+        <!-- Module 3: Global Payout (Dark Navy Showcase Section: Copy Left, Visual Window Right) -->
+        <section id="payout" class="py-20 lg:py-24 treasury-dark reveal">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    <div class="lg:col-span-5">
+                        <h2 class="text-3xl sm:text-4xl font-900 text-white tracking-tight mb-3" data-i18n="mod_pay_title">Global Payout</h2>
+                        <p class="text-base font-bold text-sky-200 mb-8" data-i18n="mod_pay_sub">One-click instant disbursement to global banks & mobile wallets.</p>
+                        <div class="space-y-6 mb-8">
+                            <div>
+                                <h3 class="text-base font-extrabold text-white mb-1" data-i18n="mod_pay_p1_t">Same-Currency Zero Markup</h3>
+                                <p class="text-sm text-slate-300" data-i18n="mod_pay_p1_d">Pay suppliers directly from multi-currency balances without extra conversions.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-extrabold text-white mb-1" data-i18n="mod_pay_p2_t">33+ Local & POBO SWIFT Rails</h3>
+                                <p class="text-sm text-slate-300" data-i18n="mod_pay_p2_d">Direct connection to SEPA, FPS, ACH, PIX, SPEI & SWIFT POBO networks.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-extrabold text-white mb-1" data-i18n="mod_pay_p3_t">11-Country E-Wallet Instant Pay</h3>
+                                <p class="text-sm text-slate-300" data-i18n="mod_pay_p3_d">Batch payout to GCash, DANA, GrabPay, Dana, bKash and 19 local wallets.</p>
+                            </div>
+                        </div>
+                        <a href="fx.html#fx-wallets" class="inline-flex items-center gap-2 text-sm font-extrabold text-sky-300 hover:text-white transition">
+                            <span data-i18n="btn_learn_more">Learn More</span>
+                            <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div class="ax-window-dark p-6 sm:p-8">
+                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-rose-400"></span>
+                                    <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                                    <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                                    <span class="ml-3 text-xs font-extrabold text-sky-200 uppercase tracking-wider" data-i18n="vis_pay_header">Live Payout Dispatch</span>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-[0.68rem] font-extrabold" data-i18n="vis_pay_batch">Batch & API Ready</span>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between gap-4">
+                                    <div class="flex items-center gap-3">
+                                        <img src="https://flagcdn.com/hk.svg" alt="HK" class="w-7 h-7 rounded-full object-cover" />
+                                        <div>
+                                            <div class="text-sm font-extrabold text-white">CITIBANK Hong Kong</div>
+                                            <div class="text-xs text-slate-400">FPS / CHATS · POBO</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-sm font-black text-white tabular-nums">$ 48,000.00</div>
+                                        <span class="text-[0.68rem] font-bold text-emerald-300" data-i18n="vis_pay_st1">Credited · T+0</span>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between gap-4">
+                                    <div class="flex items-center gap-3">
+                                        <img src="https://flagcdn.com/br.svg" alt="BR" class="w-7 h-7 rounded-full object-cover" />
+                                        <div>
+                                            <div class="text-sm font-extrabold text-white">PIX Instant Supplier</div>
+                                            <div class="text-xs text-slate-400">PIX Local Rail · BRL</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-sm font-black text-white tabular-nums">R$ 125,000.00</div>
+                                        <span class="text-[0.68rem] font-bold text-sky-300" data-i18n="vis_pay_st2">Settled · Real-Time</span>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between gap-4">
+                                    <div class="flex items-center gap-3">
+                                        <img src="https://flagcdn.com/ph.svg" alt="PH" class="w-7 h-7 rounded-full object-cover" />
+                                        <div>
+                                            <div class="text-sm font-extrabold text-white">GCash / DANA Batch (120)</div>
+                                            <div class="text-xs text-slate-400">Mobile E-Wallet API</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-sm font-black text-white tabular-nums">₱ 1,420,000</div>
+                                        <span class="text-[0.68rem] font-bold text-emerald-300" data-i18n="vis_pay_st3">Instant Delivery</span>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between gap-4">
+                                    <div class="flex items-center gap-3">
+                                        <span class="w-7 h-7 rounded-full bg-teal-500/20 text-teal-300 flex items-center justify-center font-black text-xs">₮</span>
+                                        <div>
+                                            <div class="text-sm font-extrabold text-white">USDT · TRC20 / ERC20</div>
+                                            <div class="text-xs text-slate-400">Global On-Chain Treasury</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-sm font-black text-white tabular-nums">250,000 USDT</div>
+                                        <span class="text-[0.68rem] font-bold text-amber-300" data-i18n="vis_pay_st4">KYT Cleared</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Resources Column -->
-                <div class="md:col-span-2">
-                    <h4 class="text-[0.65rem] uppercase tracking-[0.2em] font-black text-white/40 mb-5" data-i18n="footer_resources">Resources</h4>
-                    <ul class="space-y-3">
-                        <li><a href="https://docs.rail.aurellix.com/" target="_blank" class="text-white/70 hover:text-white text-[0.8rem] transition-colors inline-flex items-center gap-1" data-i18n="nav_api">API Docs <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] text-white/40"></i></a></li>
-                        <li><a href="https://demo.rail.aurellix.com" target="_blank" class="text-white/70 hover:text-white text-[0.8rem] transition-colors inline-flex items-center gap-1" data-i18n="nav_demo">Demo <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] text-white/40"></i></a></li>
-                        <li><a href="https://merchant.rail.aurellix.com/" target="_blank" class="text-white/70 hover:text-white text-[0.8rem] transition-colors" data-i18n="nav_portal">Merchant Portal</a></li>
-                    </ul>
+            </div>
+        </section>
+
+        <!-- Module 4: Global Acquiring (Interactive Visual Checkout Left, Copy Right) -->
+        <section id="acquiring" class="py-20 lg:py-24 bg-white reveal">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    <div class="lg:col-span-6 order-2 lg:order-1">
+                        <div class="ax-visual-stage px-3 sm:px-5">
+                            <div class="ax-dashed-frame hidden sm:block"></div>
+
+                            <!-- Interactive Checkout Window -->
+                            <div class="ax-window p-6 sm:p-7 max-w-md mx-auto">
+                                <div class="flex items-center gap-2 mb-5">
+                                    <span class="w-3 h-3 rounded-full bg-rose-400"></span>
+                                    <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                                    <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                                </div>
+
+                                <div class="flex items-start justify-between mb-5 pb-4 border-b border-slate-100">
+                                    <div>
+                                        <h3 class="text-sm font-900 text-slate-900" data-i18n="chk_title">Aurellix Pay Checkout</h3>
+                                        <p class="text-[0.68rem] font-bold text-slate-400">REF: AURELLIX-PAY-8820</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-2xl font-900 text-slate-900 tabular-nums">$1,200.00</div>
+                                        <div class="text-[0.65rem] font-bold uppercase text-slate-400" data-i18n="chk_due">Amount Due</div>
+                                    </div>
+                                </div>
+
+                                <p class="text-[0.68rem] font-extrabold uppercase tracking-wider text-slate-400 mb-3" data-i18n="chk_select">Select Settlement Token</p>
+                                <div id="checkout-token-grid" class="grid grid-cols-2 gap-2.5 mb-5" role="group" aria-label="Select payment token">
+                                    <button type="button" onclick="selectCheckoutToken(this)" aria-pressed="true" class="token-btn p-3 rounded-xl border-2 border-[#0052ff] bg-blue-50/70 flex items-center gap-2.5 text-left cursor-pointer transition">
+                                        <span class="w-7 h-7 rounded-full bg-emerald-500 text-white font-black text-xs flex items-center justify-center shrink-0">T</span>
+                                        <span>
+                                            <span class="block text-xs font-900 text-slate-900">USDT</span>
+                                            <span class="block text-[0.65rem] text-slate-500">Tether</span>
+                                        </span>
+                                    </button>
+                                    <button type="button" onclick="selectCheckoutToken(this)" aria-pressed="false" class="token-btn p-3 rounded-xl border border-slate-200 hover:border-slate-300 bg-white flex items-center gap-2.5 text-left cursor-pointer transition">
+                                        <span class="w-7 h-7 rounded-full bg-sky-500 text-white font-black text-xs flex items-center justify-center shrink-0">C</span>
+                                        <span>
+                                            <span class="block text-xs font-900 text-slate-900">USDC</span>
+                                            <span class="block text-[0.65rem] text-slate-500">Circle</span>
+                                        </span>
+                                    </button>
+                                    <button type="button" onclick="selectCheckoutToken(this)" aria-pressed="false" class="token-btn p-3 rounded-xl border border-slate-200 hover:border-slate-300 bg-white flex items-center gap-2.5 text-left cursor-pointer transition">
+                                        <span class="w-7 h-7 rounded-full bg-indigo-500 text-white font-black text-xs flex items-center justify-center shrink-0">E</span>
+                                        <span>
+                                            <span class="block text-xs font-900 text-slate-900">EURC</span>
+                                            <span class="block text-[0.65rem] text-slate-500">Circle</span>
+                                        </span>
+                                    </button>
+                                    <button type="button" onclick="selectCheckoutToken(this)" aria-pressed="false" class="token-btn p-3 rounded-xl border border-slate-200 hover:border-slate-300 bg-white flex items-center gap-2.5 text-left cursor-pointer transition">
+                                        <span class="w-7 h-7 rounded-full bg-blue-600 text-white font-black text-xs flex items-center justify-center shrink-0">P</span>
+                                        <span>
+                                            <span class="block text-xs font-900 text-slate-900">PYUSD</span>
+                                            <span class="block text-[0.65rem] text-slate-500">PayPal</span>
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <div class="flex flex-wrap items-center gap-1.5 mb-5 text-[0.68rem] font-extrabold text-slate-600">
+                                    <span class="px-2 py-1 rounded bg-slate-100">VISA / MC</span>
+                                    <span class="px-2 py-1 rounded bg-slate-100">Apple / Google Pay</span>
+                                    <span class="px-2 py-1 rounded bg-slate-100">PIX / FPS / QR</span>
+                                </div>
+
+                                <a href="https://demo.rail.aurellix.com" target="_blank" rel="noopener noreferrer" class="w-full btn-primary py-3 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-shield-halved text-xs" aria-hidden="true"></i>
+                                    <span data-i18n="chk_btn">Launch Live Demo</span>
+                                </a>
+                            </div>
+
+                            <!-- Floating Custom Brand Checkout Badge (Bottom-Left) -->
+                            <div class="ax-float-card p-4 w-52 mt-4 sm:mt-0 sm:absolute sm:-bottom-5 sm:left-0">
+                                <div class="text-xs font-900 text-slate-900 mb-1" data-i18n="vis_acq_custom">Embedded Cashier</div>
+                                <div class="text-[0.68rem] text-slate-500 mb-2.5" data-i18n="vis_acq_settle">Fiat & Stablecoin Settlement</div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-5 h-3.5 rounded bg-[#0052ff]"></span>
+                                    <span class="w-5 h-3.5 rounded bg-emerald-600"></span>
+                                    <span class="w-5 h-3.5 rounded bg-slate-900"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6 order-1 lg:order-2">
+                        <h2 class="text-3xl sm:text-4xl font-900 text-slate-900 tracking-tight mb-3" data-i18n="mod_acq_title">Global Acquiring</h2>
+                        <p class="text-base font-bold text-slate-600 mb-8" data-i18n="mod_acq_sub">Single integration for 94+ countries across cards, local wallets & stablecoin checkout.</p>
+                        <div class="space-y-6 mb-8">
+                            <div>
+                                <h3 class="text-base font-extrabold text-slate-900 mb-1" data-i18n="mod_acq_p1_t">Fiat ⇄ Stablecoin Two-Way Acquiring</h3>
+                                <p class="text-sm text-slate-500" data-i18n="mod_acq_p1_d">Accept local APMs or stablecoins with automated settlement in USDT or local fiat.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-extrabold text-slate-900 mb-1" data-i18n="mod_acq_p2_t">Payment Links, QR & Mini-App</h3>
+                                <p class="text-sm text-slate-500" data-i18n="mod_acq_p2_d">Zero-code pay links, hosted cashier, REST APIs and embedded Telegram mini-apps.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-extrabold text-slate-900 mb-1" data-i18n="mod_acq_p3_t">94+ Countries Verified Coverage</h3>
+                                <p class="text-sm text-slate-500" data-i18n="mod_acq_p3_d">Supporting 50+ fiat currencies and 30+ local APMs worldwide.</p>
+                            </div>
+                        </div>
+
+                        <!-- Compact Core Verified Market Flag Pills -->
+                        <div class="flex flex-wrap items-center gap-2 mb-6">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700"><img src="https://flagcdn.com/hk.svg" alt="HK" class="w-4 h-3 rounded-xs object-cover" /> HK · FPS</span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700"><img src="https://flagcdn.com/tw.svg" alt="TW" class="w-4 h-3 rounded-xs object-cover" /> TW · Cards</span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700"><img src="https://flagcdn.com/au.svg" alt="AU" class="w-4 h-3 rounded-xs object-cover" /> AU · PayID</span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700"><img src="https://flagcdn.com/us.svg" alt="US" class="w-4 h-3 rounded-xs object-cover" /> US · ACH</span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-bold text-slate-700"><img src="https://flagcdn.com/mx.svg" alt="MX" class="w-4 h-3 rounded-xs object-cover" /> MX · SPEI</span>
+                        </div>
+
+                        <a href="coverage.html#acquiring-map" class="inline-flex items-center gap-2 text-sm font-extrabold text-[#0052ff] hover:underline">
+                            <span data-i18n="acq_more_link">Explore All 94+ Acquiring Markets</span>
+                            <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
-                <!-- Contact Column -->
-                <div class="md:col-span-2">
-                    <h4 class="text-[0.65rem] uppercase tracking-[0.2em] font-black text-white/40 mb-5" data-i18n="nav_contact">Contact</h4>
-                    <a href="https://t.me/cs_aurellix" target="_blank" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-[0.8rem] transition-all duration-300 group">
-                        <i class="fa-brands fa-telegram text-[#29b6f6] group-hover:scale-110 transition-transform"></i>
-                        <span>Telegram</span>
+            </div>
+        </section>
+
+        <!-- 4. 4-Step Visual Onboarding (From partners reference layout: "四步极速开启") -->
+        <section id="onboarding" class="py-16 lg:py-20 bg-[#f8fafc] border-t border-slate-100 reveal">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-900 text-slate-900 tracking-tight" data-i18n="step_title">Start Global Payments in 4 Steps</h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bento-card p-6 rounded-2xl text-center relative">
+                        <div class="w-14 h-14 mx-auto rounded-2xl bg-blue-50 border border-blue-100 text-[#0052ff] flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
+                        </div>
+                        <div class="text-[0.68rem] font-black text-[#0052ff] uppercase tracking-widest mb-1">01</div>
+                        <h3 class="text-base font-900 text-slate-900 mb-1" data-i18n="step1_t">Free Sign Up</h3>
+                        <p class="text-xs text-slate-500" data-i18n="step1_d">Create your merchant account</p>
+                    </div>
+
+                    <div class="bento-card p-6 rounded-2xl text-center relative">
+                        <div class="w-14 h-14 mx-auto rounded-2xl bg-sky-50 border border-sky-100 text-sky-600 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-id-card-clip" aria-hidden="true"></i>
+                        </div>
+                        <div class="text-[0.68rem] font-black text-sky-600 uppercase tracking-widest mb-1">02</div>
+                        <h3 class="text-base font-900 text-slate-900 mb-1" data-i18n="step2_t">KYB Verification</h3>
+                        <p class="text-xs text-slate-500" data-i18n="step2_d">Fast one-profile multi-rail review</p>
+                    </div>
+
+                    <div class="bento-card p-6 rounded-2xl text-center relative">
+                        <div class="w-14 h-14 mx-auto rounded-2xl bg-amber-50 border border-amber-100 text-amber-600 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-vault" aria-hidden="true"></i>
+                        </div>
+                        <div class="text-[0.68rem] font-black text-amber-600 uppercase tracking-widest mb-1">03</div>
+                        <h3 class="text-base font-900 text-slate-900 mb-1" data-i18n="step3_t">Open Accounts</h3>
+                        <p class="text-xs text-slate-500" data-i18n="step3_d">Enable VA, OTC & Acquiring rails</p>
+                    </div>
+
+                    <div class="bento-card p-6 rounded-2xl text-center relative">
+                        <div class="w-14 h-14 mx-auto rounded-2xl bg-emerald-50 border border-emerald-100 text-emerald-600 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-earth-americas" aria-hidden="true"></i>
+                        </div>
+                        <div class="text-[0.68rem] font-black text-emerald-600 uppercase tracking-widest mb-1">04</div>
+                        <h3 class="text-base font-900 text-slate-900 mb-1" data-i18n="step4_t">Go Global Live</h3>
+                        <p class="text-xs text-slate-500" data-i18n="step4_d">Collect, swap & settle globally</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Industry Photo Showcase ("行业场景全覆盖": Real Photography + 1-Line Captions) -->
+        <section id="scenarios" class="py-20 bg-white reveal">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+                    <div>
+                        <h2 class="text-3xl font-900 text-slate-900 tracking-tight mb-2" data-i18n="ind_title">Built for Every Global Industry</h2>
+                        <p class="text-sm text-slate-500" data-i18n="ind_sub">Seamless financial rails across B2B foreign trade, e-commerce, digital platforms & creator payouts.</p>
+                    </div>
+                </div>
+
+                <!-- 4 Large Industry Photo Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+                    <a href="fx.html" class="ax-photo-card h-72 group block">
+                        <img src="static/industry2.png" alt="B2B Foreign Trade" class="w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/35 to-transparent p-6 flex flex-col justify-end">
+                            <h3 class="text-lg font-900 text-white mb-1" data-i18n="ind1_t">B2B Foreign Trade</h3>
+                            <p class="text-xs text-slate-200 mb-3" data-i18n="ind1_d">Local collect, FX & supplier pay</p>
+                            <span class="text-xs font-extrabold text-sky-300 inline-flex items-center gap-1"><span data-i18n="btn_learn_more">Learn More</span> <i class="fa-solid fa-arrow-right text-[0.65rem]" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+
+                    <a href="index.html#acquiring" class="ax-photo-card h-72 group block">
+                        <img src="static/industry1.png" alt="E-Commerce & Retail" class="w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/35 to-transparent p-6 flex flex-col justify-end">
+                            <h3 class="text-lg font-900 text-white mb-1" data-i18n="ind2_t">E-Commerce & Retail</h3>
+                            <p class="text-xs text-slate-200 mb-3" data-i18n="ind2_d">Global checkout & platform settlement</p>
+                            <span class="text-xs font-extrabold text-sky-300 inline-flex items-center gap-1"><span data-i18n="btn_learn_more">Learn More</span> <i class="fa-solid fa-arrow-right text-[0.65rem]" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+
+                    <a href="otc.html" class="ax-photo-card h-72 group block">
+                        <img src="static/industry3.png" alt="Digital & Entertainment" class="w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/35 to-transparent p-6 flex flex-col justify-end">
+                            <h3 class="text-lg font-900 text-white mb-1" data-i18n="ind3_t">Digital & Gaming</h3>
+                            <p class="text-xs text-slate-200 mb-3" data-i18n="ind3_d">94+ country pay-in & OTC settlement</p>
+                            <span class="text-xs font-extrabold text-sky-300 inline-flex items-center gap-1"><span data-i18n="btn_learn_more">Learn More</span> <i class="fa-solid fa-arrow-right text-[0.65rem]" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+
+                    <a href="fx.html#fx-wallets" class="ax-photo-card h-72 group block">
+                        <img src="static/industry4.png" alt="MCN & Global Creators" class="w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/35 to-transparent p-6 flex flex-col justify-end">
+                            <h3 class="text-lg font-900 text-white mb-1" data-i18n="ind4_t">MCN & Global Payroll</h3>
+                            <p class="text-xs text-slate-200 mb-3" data-i18n="ind4_d">Instant e-wallet & batch payouts</p>
+                            <span class="text-xs font-extrabold text-sky-300 inline-flex items-center gap-1"><span data-i18n="btn_learn_more">Learn More</span> <i class="fa-solid fa-arrow-right text-[0.65rem]" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Compact 5-Photo RWA Strip -->
+                <div id="rwa" class="pt-4">
+                    <div class="flex items-center justify-between mb-5">
+                        <h3 class="text-lg font-900 text-slate-900" data-i18n="rwa_title">RWA Asset Settlement Ecosystem</h3>
+                        <span class="text-xs font-bold text-slate-500" data-i18n="rwa_tag">Compliant Minting & Global Payouts</span>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                        <div class="ax-photo-card h-44">
+                            <img src="static/usStocks.jpg" alt="US Equities RWA" class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/20 to-transparent p-4 flex flex-col justify-end">
+                                <div class="text-sm font-900 text-white" data-i18n="rwa1_t">US Equities</div>
+                                <div class="text-[0.68rem] text-slate-300" data-i18n="rwa1_d">24/7 Stablecoin Rail</div>
+                            </div>
+                        </div>
+                        <div class="ax-photo-card h-44">
+                            <img src="static/cold.png" alt="Physical Gold RWA" class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/20 to-transparent p-4 flex flex-col justify-end">
+                                <div class="text-sm font-900 text-white" data-i18n="rwa2_t">Physical Gold</div>
+                                <div class="text-[0.68rem] text-slate-300" data-i18n="rwa2_d">LBMA Bullion Backed</div>
+                            </div>
+                        </div>
+                        <div class="ax-photo-card h-44">
+                            <img src="static/minerals.png" alt="Minerals & Energy RWA" class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/20 to-transparent p-4 flex flex-col justify-end">
+                                <div class="text-sm font-900 text-white" data-i18n="rwa3_t">Minerals & Energy</div>
+                                <div class="text-[0.68rem] text-slate-300" data-i18n="rwa3_d">Trade Treasury Rail</div>
+                            </div>
+                        </div>
+                        <div class="ax-photo-card h-44">
+                            <img src="static/credit.jpg" alt="Private Credit RWA" class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/20 to-transparent p-4 flex flex-col justify-end">
+                                <div class="text-sm font-900 text-white" data-i18n="rwa4_t">Private Credit</div>
+                                <div class="text-[0.68rem] text-slate-300" data-i18n="rwa4_d">Yield Distribution</div>
+                            </div>
+                        </div>
+                        <div class="ax-photo-card h-44 col-span-2 sm:col-span-1">
+                            <img src="static/real.png" alt="Global Real Estate RWA" class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/20 to-transparent p-4 flex flex-col justify-end">
+                                <div class="text-sm font-900 text-white" data-i18n="rwa5_t">Real Estate</div>
+                                <div class="text-[0.68rem] text-slate-300" data-i18n="rwa5_d">Cross-Border Escrow</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Compliance Licenses & Settlement Network Plates -->
+        <section id="compliance" class="py-16 lg:py-20 bg-[#f8fafc] border-t border-slate-100 reveal">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-900 text-slate-900 tracking-tight mb-2" data-i18n="comp_title">Security, Compliance & Networks</h2>
+                    <p class="text-sm text-slate-500" data-i18n="comp_sub">Licensed global infrastructure safeguarded by bank-grade security & on-chain KYT</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center">
+                        <img src="https://flagcdn.com/ch.svg" alt="Switzerland" class="w-8 h-6 mx-auto rounded-sm object-cover border border-slate-200 mb-3" />
+                        <div class="text-xs font-900 text-slate-900" data-i18n="comp1_t">Switzerland SRO</div>
+                        <div class="text-[0.68rem] text-slate-500 mt-1" data-i18n="comp1_d">AML Regulated</div>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center">
+                        <img src="https://flagcdn.com/ae.svg" alt="UAE" class="w-8 h-6 mx-auto rounded-sm object-cover border border-slate-200 mb-3" />
+                        <div class="text-xs font-900 text-slate-900" data-i18n="comp2_t">Dubai PSP</div>
+                        <div class="text-[0.68rem] text-slate-500 mt-1" data-i18n="comp2_d">Licensed Rail</div>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center">
+                        <img src="https://flagcdn.com/pl.svg" alt="Poland" class="w-8 h-6 mx-auto rounded-sm object-cover border border-slate-200 mb-3" />
+                        <div class="text-xs font-900 text-slate-900" data-i18n="comp3_t">Poland VASP</div>
+                        <div class="text-[0.68rem] text-slate-500 mt-1" data-i18n="comp3_d">EU Digital Asset</div>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center">
+                        <div class="w-8 h-6 mx-auto mb-3 flex items-center justify-center text-[#0052ff] text-lg"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+                        <div class="text-xs font-900 text-slate-900">PCI DSS & KYT</div>
+                        <div class="text-[0.68rem] text-slate-500 mt-1" data-i18n="comp4_d">Real-Time Risk</div>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center">
+                        <div class="w-8 h-6 mx-auto mb-3 flex items-center justify-center text-sky-600 text-lg"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></div>
+                        <div class="text-xs font-900 text-slate-900">SWIFT · SEPA · PIX</div>
+                        <div class="text-[0.68rem] text-slate-500 mt-1" data-i18n="comp5_d">Global Clearing</div>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center">
+                        <div class="w-8 h-6 mx-auto mb-3 flex items-center justify-center text-emerald-600 text-lg font-black">₮</div>
+                        <div class="text-xs font-900 text-slate-900">USDT · USDC · PYUSD</div>
+                        <div class="text-[0.68rem] text-slate-500 mt-1" data-i18n="comp6_d">Multi-Chain Rail</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Slogan CTA Banner -->
+        <section class="py-16 lg:py-20 bg-gradient-to-r from-[#003cc2] via-[#0052ff] to-[#0284c7] text-white">
+            <div class="max-w-4xl mx-auto px-5 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-900 tracking-tight mb-3" data-i18n="cta_banner_title">Open Aurellix Pay & Power Global Payments</h2>
+                <p class="text-sm sm:text-base text-sky-100 mb-8" data-i18n="cta_banner_desc">One-stop global treasury infrastructure for B2B collection, payout, FX, OTC & acquiring.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://merchant.rail.aurellix.com/" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl bg-white text-[#0052ff] font-extrabold text-sm hover:bg-slate-100 transition inline-flex items-center gap-2">
+                        <span data-i18n="cta_banner_btn">Launch Portal</span>
+                        <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl bg-white/15 border border-white/30 text-white font-extrabold text-sm hover:bg-white/25 transition inline-flex items-center gap-2" data-i18n="nav_contact">
+                        Contact <i class="fa-brands fa-telegram text-base" data-keep-icon="true" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
-            <!-- Bottom: Copyright + Legal -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-[#1e3a5f] via-[#1a2f4a] to-[#0f1f35] text-white">
+        <div class="max-w-7xl mx-auto px-6 pt-14 pb-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-10">
+                <div class="md:col-span-5">
+                    <img src="static/logo.png" alt="Aurellix Pay" style="width: 126px; margin-bottom: 16px;" />
+                    <p class="text-white/70 text-[0.8rem] leading-relaxed max-w-xs mb-5" data-i18n="footer_desc">Aurellix Pay is a global institutional treasury platform.</p>
+                    <div class="flex items-center gap-3">
+                        <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition" aria-label="Telegram">
+                            <i class="fa-brands fa-telegram text-white/80 text-sm" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.aurellix.com/" target="_blank" rel="noopener noreferrer" id="group-link" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-xs transition">
+                            <i class="fa-solid fa-building text-white/60 text-[0.65rem]" aria-hidden="true"></i>
+                            <span data-i18n="footer_group">Aurellix Group</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[0.5rem] text-white/50" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-3">
+                    <h4 class="text-[0.68rem] uppercase tracking-[0.2em] font-black text-white/50 mb-5" data-i18n="footer_product">Solutions</h4>
+                    <ul class="space-y-3 text-[0.82rem]">
+                        <li><a href="index.html" class="text-white/80 hover:text-white transition" data-i18n="nav_home">Home</a></li>
+                        <li><a href="fx.html" class="text-white/80 hover:text-white transition" data-i18n="nav_fx">Global FX</a></li>
+                        <li><a href="otc.html" class="text-white/80 hover:text-white transition" data-i18n="nav_otc">OTC</a></li>
+                        <li><a href="index.html#acquiring" class="text-white/80 hover:text-white transition" data-i18n="nav_acquiring">Acquiring</a></li>
+                        <li><a href="coverage.html" class="text-white/80 hover:text-white transition" data-i18n="nav_coverage">Coverage</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="text-[0.68rem] uppercase tracking-[0.2em] font-black text-white/50 mb-5" data-i18n="footer_resources">Resources</h4>
+                    <ul class="space-y-3 text-[0.82rem]">
+                        <li><a href="https://docs.rail.aurellix.com/" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition inline-flex items-center gap-1" data-i18n="nav_api">API Docs <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] text-white/50" data-keep-icon="true" aria-hidden="true"></i></a></li>
+                        <li><a href="https://demo.rail.aurellix.com" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition inline-flex items-center gap-1" data-i18n="nav_demo">Demo <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] text-white/50" data-keep-icon="true" aria-hidden="true"></i></a></li>
+                        <li><a href="https://merchant.rail.aurellix.com/" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition" data-i18n="nav_portal">Merchant Portal</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="text-[0.68rem] uppercase tracking-[0.2em] font-black text-white/50 mb-5" data-i18n="nav_contact">Contact</h4>
+                    <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white/90 hover:text-white text-xs font-bold transition">
+                        <i class="fa-brands fa-telegram text-[#38bdf8] text-sm" aria-hidden="true"></i>
+                        <span>@cs_aurellix</span>
+                    </a>
+                </div>
+            </div>
             <div class="border-t border-white/10 pt-6 flex flex-col items-center gap-3 text-center">
-                <p class="text-white/30 text-[0.7rem] tracking-wide" data-i18n="copyright">© 2026 Aurellix Pay. All rights reserved.</p>
-                <div class="flex items-center gap-4 text-[0.65rem]">
-                    <a href="privacy.html" class="text-white/40 hover:text-white/70 transition-colors" data-i18n="footer_privacy">Privacy Policy</a>
-                    <span class="text-white/15">|</span>
-                    <a href="terms.html" class="text-white/40 hover:text-white/70 transition-colors" data-i18n="footer_terms">Terms of Service</a>
+                <p class="text-white/50 text-xs" data-i18n="copyright">© 2026 Aurellix Pay. All rights reserved.</p>
+                <div class="flex items-center gap-4 text-xs">
+                    <a href="privacy.html" class="text-white/60 hover:text-white transition" data-i18n="footer_privacy">Privacy Policy</a>
+                    <span class="text-white/25">|</span>
+                    <a href="terms.html" class="text-white/60 hover:text-white transition" data-i18n="footer_terms">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="static/v2-common.js"></script>
     <script>
-        const translations = {
+        const PAGE_META = {
             en: {
-                nav_portal: "Merchant Portal", nav_api: "API Docs", nav_home: "Home", nav_demo: "Demo", nav_contact: "Contact", hero_badge: "Global Compliance Platform",nav_aurellix: "Aurellix Group", nav_coverage: "Coverage", nav_otc: "OTC",
-                hero_title: "Global Leading Stablecoin Payment Solutions",
-                hero_desc: "Aurellix Pay is a compliant stablecoin aggregate payment platform, providing efficient and stable crypto payment solutions for overseas platforms, Web3 projects, and payment providers.",
-                checkout_title: "Aurellix Pay Checkout", checkout_label: "Select Token", checkout_due: "Amount Due", checkout_pay: "Confirm Payment",
-                sec_biz_tag: "Solutions", sec_biz_title: "Comprehensive Stablecoin Gateway",
-                biz1_title: "Fiat Acquiring · Stablecoin Settlement", biz1_desc: "Accept local fiat or card payments and settle in USDT / USDC.",
-                biz2_title: "Stablecoin Acquiring · Fiat Settlement", biz2_desc: "Receive stablecoins directly. Auto-convert to local fiat.",
-                biz3_title: "QR Code / Payment Link", biz3_desc: "Collect from global users via QR codes or links.",
-                biz4_title: "Merchant API & Platform", biz4_desc: "Standard API supporting acquiring, settlement, and reconciliation.",
-                biz5_title: "Mini-app (Built-in Wallet)", biz5_desc: "Lightweight wallet SDK for Telegram and social applications.",
-                sec_case_tag: "Expertise", sec_case_title: "Industry Use Cases", 
-                case1_title: "Cross-border E-commerce", case1_desc: "Multi-currency settlement and automated vendor payments.", 
-                case2_title: "Gaming & Entertainment", case2_desc: "Instant in-game top-ups and incentive distributions.",
-                case3_title: "MCN & Creator Economy", case3_desc: "Global payroll and cross-border commission payouts.",
-                case4_title: "Offline Stores", case4_desc: "QR payment integration for global hotspots.",
-                sec_rwa_tag: "RWA Ecosystem", sec_rwa_title: "RWA Asset Tokenization Cases",
-                rwa1_title: "US Stocks", rwa1_desc: "Global equity settlement via stablecoins.",
-                rwa2_title: "Physical Gold", rwa2_desc: "Fractional ownership of precious metals.",
-                rwa3_title: "Minerals", rwa3_desc: "Digital rights for resource trading.",
-                rwa4_title: "Private Credit", rwa4_desc: "Compliant yield-bearing loan pools.",
-                rwa5_title: "Real Estate", rwa5_desc: "Global property investment tokenization.",
-                comp_title: "Global Reach, Local Compliance",
-                comp_desc: "A robust asset processing environment across global hubs.",
-                comp1: "Swiss SRO compliance support", comp2: "Dubai PSP licensed payment support", comp3: "Licensed VASP Operator in Poland",
-                stat_countries: "Countries Supported", stat_fiat: "Fiats Supported", stat_methods: "Local Channels (APMs)", stat_scaling: "Scaling Fast",
-                footer_product: "Product", footer_resources: "Resources", footer_group: "Aurellix Group",
-footer_privacy: "Privacy Policy", footer_terms: "Terms of Service",
-footer_desc: "Aurellix Pay is a compliant stablecoin aggregate payment platform, providing efficient and stable crypto solutions globally.",
-                copyright: "© 2026 Aurellix Pay. All rights reserved.",
-                cov_tag: "Coverage",
-                cov_title: "Global Coverage & Payment Methods",
-                cov_stat_countries: "Countries Supported",
-                cov_stat_fiats: "Fiats Supported",
-                cov_stat_apms: "Local Channels (APMs)",
-                cov_core_title: "Core Verified Markets",
-                cov_hk: "Hong Kong, China",
-                cov_tw: "Taiwan, China",
-                cov_au: "Australia",
-                cov_us: "United States",
-                cov_global_title: "Global Support Directory",
-                cov_more_link: "View Official Channel Lists",
-                cov_disclaimer: "* Available payment methods, supported assets, and transaction limits may vary over time. Please refer to the actual checkout interface or your merchant portal for real-time availability.",
-                spotlight_otc_badge: "Institutional Desk & Liquidity Rails",
-                spotlight_otc_title: "Global Fiat & Stablecoin Bi-Directional Settlement Network",
-                spotlight_otc_desc: "Bridging traditional banking rails (SWIFT & Local Rails) with stablecoin liquidity. Empowering enterprises with compliant T+0 bi-directional conversion, multi-currency Virtual Accounts (VA), and Global Payouts (POBO).",
-                spotlight_otc_f1: "Dedicated Multi-Currency Virtual Accounts (Global SWIFT & Local VA)",
-                spotlight_otc_f2: "Global Disbursements Across 26+ Corridors (SWIFT POBO & Local Rails)",
-                spotlight_otc_f3: "T+0 Institutional Deep Liquidity & Embedded Real-Time KYT Protection",
-                idx_mode1_tag: "Fiat ⇄ Stablecoin",
-                idx_mode1_title: "Fiat ⇄ USDT/USDC",
-                idx_mode2_tag: "Fiat ⇄ Fiat FX",
-                idx_mode2_title: "26+ Multi-Currency FX",
-                idx_mode3_tag: "Crypto ⇄ Crypto",
-                idx_mode3_title: "USDT ⇄ USDC ⇄ EURC",
-                spotlight_otc_btn_contact: "Contact Institutional Desk",
-                spotlight_otc_btn_explore: "View 26+ Currencies Matrix",
-                spotlight_flow_title: "Settlement Flow",
-                spotlight_flow_s1: "1. Fiat Collections (VA)",
-                spotlight_flow_s2: "2. Stablecoin Settlement",
-                spotlight_flow_s3: "3. Global Payout (POBO)",
-                spotlight_flow_s3_desc: "Direct disbursement to beneficiary bank accounts across 26+ countries and territories."
+                title: 'Aurellix Pay | Global Cross-Border Payment & Settlement Platform',
+                desc: 'One-stop global collection, payout, multi-currency FX, fiat-to-stablecoin OTC & merchant acquiring across 150+ countries.'
             },
             zh: {
-                nav_portal: "商户管理后台", nav_api: "API 接口文档", nav_home: "首页", nav_demo: "演示 Demo", nav_contact: "咨询", hero_badge: "全球合规支付平台", nav_aurellix: "Aurellix集团", nav_coverage: "覆盖范围", nav_otc: "全球承兑",
-                hero_title: "全球领先的稳定币支付解决方案",
-                hero_desc: "Aurellix Pay 是合规稳定币聚合支付平台，专注于为出海平台、Web3项目、支付公司等提供合规、高效、稳定的加密支付解决方案，灵活对接全球主流法币、数字货币与支付通道。",
-                checkout_title: "Aurellix Pay 收银台", checkout_label: "选择支付币种", checkout_due: "待支付总额", checkout_pay: "确认支付",
-                sec_biz_tag: "解决方案", sec_biz_title: "全场景稳定币支付网关",
-                biz1_title: "法币收单 · 稳定币结算", biz1_desc: "商户收取本地法币或国际卡支付，资金可结算为 USDT / USDC。",
-                biz2_title: "稳定币收单 · 法币结算", biz2_desc: "直接收取用户支付的稳定币，并按需自动兑换为本地法币结算入账。",
-                biz3_title: "收款码 / 支付链接", biz3_desc: "支持 Visa / Master / Apple Pay 全球收款，兼容混合支付模式。",
-                biz4_title: "商户 API 与平台化接入", biz4_desc: "提供标准化 API，支持企业级收单、结算与对账能力无缝集成。",
-                biz5_title: "Mini-app (社交内置钱包)", biz5_desc: "适配社交应用的轻量钱包 SDK。支持即时出入金，实现即用即付社交支付。",
-                sec_case_tag: "业务实践", sec_case_title: "行业解决方案", 
-                case1_title: "跨境电商", case1_desc: "解决多币种资金结算，支持自动化分账。", 
-                case2_title: "游戏娱乐", case2_desc: "支持游戏内即时充值与激励发放。",
-                case3_title: "MCN 网红经纪", case3_desc: "全球创作者薪酬发放与跨国佣金清算。",
-                case4_title: "线下连锁门店", case4_desc: "扫码聚合支付。为全球游客提供资产支付能力。",
-                sec_rwa_tag: "RWA 生态实践", sec_rwa_title: "RWA 资产代币化案例",
-                rwa1_title: "美股市场", rwa1_desc: "使用稳定币申购全球美股资产并清算。",
-                rwa2_title: "实物黄金", rwa2_desc: "贵金属代币化，支持实物挂钩与碎片化。",
-                rwa3_title: "矿产资源", rwa3_desc: "资源收益权上链，解决大宗贸易结算。",
-                rwa4_title: "企业信贷", rwa4_desc: "合规的固定收益贷款池代币化结算。连接机构级信贷资产与全球流动性。",
-                rwa5_title: "跨境地产", rwa5_desc: "不动产投资代币化，提供全球资产配置。",
-                comp_title: "全球布局，合规先行", comp_desc: "我们在全球核心金融枢纽建立合规体系，为您的资产处理提供稳健、透明且受保护的环境。",
-                comp1: "瑞士 SRO 自律组织合规支持", comp2: "迪拜 PSP 支付服务商牌照支持", comp3: "波兰 VASP 虚拟资产服务商持牌运营",
-                stat_countries: "覆盖国家地区", stat_fiat: "支持法币币种", stat_methods: "区域本地通道", stat_scaling: "快速扩张中",
-                footer_product: "产品", footer_resources: "资源", footer_group: "Aurellix 集团",
-footer_privacy: "隐私政策", footer_terms: "服务条款",
-footer_desc: "Aurellix Pay 是合规稳定币聚合支付平台，专注于提供合规、高效、稳定的全球加密支付解决方案。",
-                copyright: "© 2026 Aurellix Pay. All rights reserved.",
-                cov_tag: "服务范围",
-                cov_title: "全球覆盖地区与本地支付通道",
-                cov_stat_countries: "覆盖国家地区",
-                cov_stat_fiats: "支持法币币种",
-                cov_stat_apms: "区域本地通道",
-                cov_core_title: "高优验证已跑通市场",
-                cov_hk: "中国香港",
-                cov_tw: "中国台湾",
-                cov_au: "澳大利亚",
-                cov_us: "美国",
-                cov_global_title: "全球多区域支持目录",
-                cov_more_link: "查阅官方完整通道文档",
-                cov_disclaimer: "* 实际可用的支付方式、支持币种及限额可能因各地区合规政策与通道调整而有所不同，请以实际收银台（Checkout）或商户后台展示为准。",
-                spotlight_otc_badge: "机构级承兑台与清算网络",
-                spotlight_otc_title: "全球法币与稳定币双向承兑网络",
-                spotlight_otc_desc: "打通传统银行清算网络（SWIFT / 本地通道）与稳定币生态，为企业提供合规、T+0 极速交割的多币种虚拟账户（VA）收款、大额双向承兑及全球法币同名代付（POBO）服务。",
-                spotlight_otc_f1: "企业专属多币种虚拟账户（Global SWIFT / Local VA 收款）",
-                spotlight_otc_f2: "全球 26+ 币种极速下发（SWIFT POBO 代付 / Local Rail 本地清算）",
-                spotlight_otc_f3: "T+0 机构级深度流动性与全流程实时 KYT 防冻卡风控",
-                idx_mode1_tag: "法币与稳定币承兑",
-                idx_mode1_title: "法币 ⇄ USDT/USDC 双向承兑",
-                idx_mode2_tag: "跨国法币多币种外汇",
-                idx_mode2_title: "26+ 国多币种法币直接兑换",
-                idx_mode3_tag: "大额稳定币与币币互兑",
-                idx_mode3_title: "USDT ⇄ USDC ⇄ EURC 互兑",
-                spotlight_otc_btn_contact: "联系专属顾问",
-                spotlight_otc_btn_explore: "查看 26 国支持币种矩阵",
-                spotlight_flow_title: "双向清算架构",
-                spotlight_flow_s1: "1. 多币种法币虚拟账户 (VA)",
-                spotlight_flow_s2: "2. 稳定币合规清算池",
-                spotlight_flow_s3: "3. 全球法币极速下发 (POBO)",
-                spotlight_flow_s3_desc: "稳定币实时承兑并直达全球 26+ 国家与地区受益人银行账户。"
+                title: 'Aurellix Pay | 连接全球市场的企业级跨境收付平台',
+                desc: '一站式提供全球收款、全球付款、实时换汇与稳定币承兑、全球聚合收单服务，展业覆盖 150+ 国家与地区。'
             }
         };
 
-        let currentLang = 'en'
+        const PAGE_TRANSLATIONS = {
+            en: {
+                hero_badge: 'GLOBAL PAYMENT & SETTLEMENT INFRASTRUCTURE',
+                hero_h1_l1: 'Global Cross-Border',
+                hero_h1_l2: 'Payment & Settlement',
+                hero_subtitle: 'Localized Global Financial Infrastructure',
+                hero_desc: 'One-stop global collection, payout, multi-currency FX, stablecoin OTC & acquiring.',
+                hero_chk1: 'More Secure',
+                hero_chk2: 'More Efficient',
+                hero_chk3: 'Lower Cost',
+                hero_btn1: 'Start Now',
+                hero_btn2: 'Talk to Advisor',
+                hero_vis_payout: 'Payout · Instant Rail',
+                hero_vis_amt: 'Send Amount',
+                hero_vis_recv: 'Recipient',
+                hero_vis_multi: 'Multi-Currency VA',
+                hero_vis_col1: 'Region',
+                hero_vis_col2: 'Account',
+                hero_vis_col3: 'Rail',
+                kpi_countries: 'Countries & Regions',
+                kpi_currencies: 'Global & Local Currencies',
+                kpi_settlement: 'Fastest Live Settlement',
+                kpi_compliance: 'Licensed Security',
+                mod_col_title: 'Global Collection',
+                mod_col_sub: 'One account to collect locally across global & emerging markets.',
+                mod_col_p1_t: 'Multi-Account Management',
+                mod_col_p1_d: 'Open multi-currency bank & VA accounts under one portal with unified flows.',
+                mod_col_p2_t: 'Native Local-Currency Collect',
+                mod_col_p2_d: '22+ markets (US, EU, SE Asia, LatAm, Africa) credited directly with zero FX loss.',
+                mod_col_p3_t: 'B2B & Marketplace Ready',
+                mod_col_p3_d: 'Tailored for B2B foreign trade, e-commerce platforms, logistics & ad tech.',
+                vis_col_acct: 'Multi-Currency VA Portfolio',
+                vis_col_float1: '0 Opening Fee · Direct VA',
+                vis_col_float2: 'Trade & Order Sync',
+                mod_fx_title: 'FX & Stablecoin OTC',
+                mod_fx_sub: 'Two-way fiat & stablecoin liquidity with zero FX markup and 60s rate lock.',
+                mod_fx_p1_t: '19-Currency Real-Time FX',
+                mod_fx_p1_d: 'Zero-fee bidirectional swaps across 19 currencies with 60-second rate lock.',
+                mod_fx_p2_t: '26-Fiat ⇄ Stablecoin OTC',
+                mod_fx_p2_d: 'Deep T+0 settlement across USDT & USDC (TRC20 / ERC20) and 26 fiat corridors.',
+                mod_fx_p3_t: 'Compliant CNY Trade Settlement',
+                mod_fx_p3_d: 'Order-verified RMB repatriation and mainland supplier settlement quotas.',
+                vis_fx_send: 'Sell / Source Currency',
+                vis_fx_rate: 'Live Rate: 1 USD = 7.2450 CNY / 1.00 USDT',
+                vis_fx_recv: 'Receive Amount',
+                vis_fx_float_t: 'Dual Rail Liquidity',
+                vis_fx_float_l: 'Lock Window',
+                vis_fx_zero: '0 Conversion Fee · T+0',
+                mod_pay_title: 'Global Payout',
+                mod_pay_sub: 'One-click instant disbursement to global banks & mobile wallets.',
+                mod_pay_p1_t: 'Same-Currency Zero Markup',
+                mod_pay_p1_d: 'Pay suppliers directly from multi-currency balances without extra conversions.',
+                mod_pay_p2_t: '33+ Local & POBO SWIFT Rails',
+                mod_pay_p2_d: 'Direct connection to SEPA, FPS, ACH, PIX, SPEI & SWIFT POBO networks.',
+                mod_pay_p3_t: '11-Country E-Wallet Instant Pay',
+                mod_pay_p3_d: 'Batch payout to GCash, DANA, GrabPay, Dana, bKash and 19 local wallets.',
+                vis_pay_header: 'Live Payout Dispatch',
+                vis_pay_batch: 'Batch & API Ready',
+                vis_pay_st1: 'Credited · T+0',
+                vis_pay_st2: 'Settled · Real-Time',
+                vis_pay_st3: 'Instant Delivery',
+                vis_pay_st4: 'KYT Cleared',
+                mod_acq_title: 'Global Acquiring',
+                mod_acq_sub: 'Single integration for 94+ countries across cards, local wallets & stablecoin checkout.',
+                mod_acq_p1_t: 'Fiat ⇄ Stablecoin Two-Way Acquiring',
+                mod_acq_p1_d: 'Accept local APMs or stablecoins with automated settlement in USDT or local fiat.',
+                mod_acq_p2_t: 'Payment Links, QR & Mini-App',
+                mod_acq_p2_d: 'Zero-code pay links, hosted cashier, REST APIs and embedded Telegram mini-apps.',
+                mod_acq_p3_t: '94+ Countries Verified Coverage',
+                mod_acq_p3_d: 'Supporting 50+ fiat currencies and 30+ local APMs worldwide.',
+                chk_title: 'Aurellix Pay Checkout',
+                chk_due: 'Amount Due',
+                chk_select: 'Select Settlement Token',
+                chk_btn: 'Launch Live Demo',
+                vis_acq_custom: 'Embedded Cashier',
+                vis_acq_settle: 'Fiat & Stablecoin Settlement',
+                acq_more_link: 'Explore All 94+ Acquiring Markets',
+                btn_learn_more: 'Learn More',
+                step_title: 'Start Global Payments in 4 Steps',
+                step1_t: 'Free Sign Up',
+                step1_d: 'Create your merchant account',
+                step2_t: 'KYB Verification',
+                step2_d: 'Fast one-profile multi-rail review',
+                step3_t: 'Open Accounts',
+                step3_d: 'Enable VA, OTC & Acquiring rails',
+                step4_t: 'Go Global Live',
+                step4_d: 'Collect, swap & settle globally',
+                ind_title: 'Built for Every Global Industry',
+                ind_sub: 'Seamless financial rails across B2B foreign trade, e-commerce, digital platforms & creator payouts.',
+                ind1_t: 'B2B Foreign Trade',
+                ind1_d: 'Local collect, FX & supplier pay',
+                ind2_t: 'E-Commerce & Retail',
+                ind2_d: 'Global checkout & platform settlement',
+                ind3_t: 'Digital & Gaming',
+                ind3_d: '94+ country pay-in & OTC settlement',
+                ind4_t: 'MCN & Global Payroll',
+                ind4_d: 'Instant e-wallet & batch payouts',
+                rwa_title: 'RWA Asset Settlement Ecosystem',
+                rwa_tag: 'Compliant Minting & Global Payouts',
+                rwa1_t: 'US Equities',
+                rwa1_d: '24/7 Stablecoin Rail',
+                rwa2_t: 'Physical Gold',
+                rwa2_d: 'LBMA Bullion Backed',
+                rwa3_t: 'Minerals & Energy',
+                rwa3_d: 'Trade Treasury Rail',
+                rwa4_t: 'Private Credit',
+                rwa4_d: 'Yield Distribution',
+                rwa5_t: 'Real Estate',
+                rwa5_d: 'Cross-Border Escrow',
+                comp_title: 'Security, Compliance & Networks',
+                comp_sub: 'Licensed global infrastructure safeguarded by bank-grade security & on-chain KYT',
+                comp1_t: 'Switzerland SRO',
+                comp1_d: 'AML Regulated',
+                comp2_t: 'Dubai PSP',
+                comp2_d: 'Licensed Rail',
+                comp3_t: 'Poland VASP',
+                comp3_d: 'EU Digital Asset',
+                comp4_d: 'Real-Time Risk',
+                comp5_d: 'Global Clearing',
+                comp6_d: 'Multi-Chain Rail'
+            },
+            zh: {
+                hero_badge: '企业级全球跨境支付与清结算基础设施',
+                hero_h1_l1: '连接全球市场的',
+                hero_h1_l2: '企业级跨境收付平台',
+                hero_subtitle: '搭建全球本地化金融基础设施',
+                hero_desc: '一站式提供全球收款、全球付款、实时换汇承兑与聚合收单方案。',
+                hero_chk1: '更安全',
+                hero_chk2: '更高效',
+                hero_chk3: '成本更优',
+                hero_btn1: '立即体验',
+                hero_btn2: '联系专属顾问',
+                hero_vis_payout: '全球付款 · 实时通道',
+                hero_vis_amt: '汇出金额',
+                hero_vis_recv: '收款人',
+                hero_vis_multi: '多币种全球账户',
+                hero_vis_col1: '收款地区',
+                hero_vis_col2: '收款账号',
+                hero_vis_col3: '通道类型',
+                kpi_countries: '展业国家及地区',
+                kpi_currencies: '主流与新兴清算币种',
+                kpi_settlement: '最快实时清算交割',
+                kpi_compliance: '持牌合规安全保障',
+                mod_col_title: '全球收款',
+                mod_col_sub: '一套账户，全球收付——轻松管理多币种、多平台资金',
+                mod_col_p1_t: '多账户极速管理',
+                mod_col_p1_d: '一个账号在线开立多个本地与全球收款账户，流水清晰可查。',
+                mod_col_p2_t: '多币种原币直收',
+                mod_col_p2_d: '支持欧美、东南亚、拉美、非洲等 22+ 国原币入账，零汇损风险。',
+                mod_col_p3_t: '外贸与平台全适配',
+                mod_col_p3_d: '面向外贸 B2B 货物贸易、国际物流与海外营销平台无缝收款。',
+                vis_col_acct: '多币种企业收款资产',
+                vis_col_float1: '0 开户费 · 原币直收',
+                vis_col_float2: '订单与资金自动同步',
+                mod_fx_title: '换汇与承兑',
+                mod_fx_sub: '本币与稳定币双向互通——零汇损、深流动、60秒锁汇',
+                mod_fx_p1_t: '19 币种 0 手续费换汇',
+                mod_fx_p1_d: '7×24 实时双向询价锁汇 60 秒，大幅压缩跨境换汇成本。',
+                mod_fx_p2_t: '26 币种法币 ⇄ 稳定币承兑',
+                mod_fx_p2_d: '支持 USDT / USDC 极速充提兑，直通全球 26+ 国法币清算网络。',
+                mod_fx_p3_t: '合规贸易人民币结汇',
+                mod_fx_p3_d: '关联 B2B 贸易合同额度，阳光安全完成跨境人民币回款与结汇。',
+                vis_fx_send: '汇出币种',
+                vis_fx_rate: '实时汇率：1 USD = 7.2450 CNY / 1.00 USDT',
+                vis_fx_recv: '到账金额',
+                vis_fx_float_t: '双通道深度流动池',
+                vis_fx_float_l: '锁汇窗口',
+                vis_fx_zero: '0 换汇手续费 · T+0 交割',
+                mod_pay_title: '全球付款',
+                mod_pay_sub: '一键直付，闪速到账——付款网络通达全球银行与电子钱包',
+                mod_pay_p1_t: '本币直付免去汇兑',
+                mod_pay_p1_d: '使用账户多币种余额原币直付海外供应商，避免二次汇损。',
+                mod_pay_p2_t: '33+ 币种本地清算与电汇',
+                mod_pay_p2_d: '直连 SEPA、FPS、ACH、PIX、SPEI 本地网络及同名 POBO 电汇。',
+                mod_pay_p3_t: '11 国电子钱包毫秒级下发',
+                mod_pay_p3_d: '一键批量下发至 GCash、DANA、GrabPay 等 19 种本地电子钱包。',
+                vis_pay_header: '全球下发实时路由',
+                vis_pay_batch: '支持批量与 API 下发',
+                vis_pay_st1: '已到账 · T+0',
+                vis_pay_st2: '本地秒级清算',
+                vis_pay_st3: '钱包实时到账',
+                vis_pay_st4: 'KYT 合规放行',
+                mod_acq_title: '全球收单',
+                mod_acq_sub: '一次对接，快速集成——覆盖 94+ 国卡支付、本地钱包与稳定币',
+                mod_acq_p1_t: '法币 ⇄ 稳定币双向收单',
+                mod_acq_p1_d: '支持全球买家本地支付或稳定币付款，按需实时结算入账。',
+                mod_acq_p2_t: '收款码、托管页与小程序',
+                mod_acq_p2_d: '提供支付链接、自定义品牌收银台、API 与 Telegram 内置钱包。',
+                mod_acq_p3_t: '94+ 国家与地区已跑通验证',
+                mod_acq_p3_d: '完整兼容 50+ 法币、国际卡组织与 30+ 本地主流支付工具。',
+                chk_title: 'Aurellix Pay 交互收银台',
+                chk_due: '应付金额',
+                chk_select: '选择结算币种',
+                chk_btn: '打开在线 Demo 体验',
+                vis_acq_custom: '内嵌专属收银台',
+                vis_acq_settle: '支持自定义品牌与多币结算',
+                acq_more_link: '查看全部 94+ 个收单通道国家',
+                btn_learn_more: '了解更多',
+                step_title: '四步极速开启全球收付',
+                step1_t: '免费注册',
+                step1_d: '在线创建企业商户账号',
+                step2_t: '企业认证',
+                step2_d: '一套材料复用审核各通道',
+                step3_t: '开立账户',
+                step3_d: '按需开通收款、换汇与收单',
+                step4_t: '全球收付',
+                step4_d: '轻松实现本币直收与全球下发',
+                ind_title: '行业场景全覆盖',
+                ind_sub: '为B2B外贸、跨境电商、泛娱出海与全球灵活用工提供安全稳定的清结算底座。',
+                ind1_t: 'B2B 外贸',
+                ind1_d: 'B2B外贸收付款，一键通达',
+                ind2_t: '跨境电商与零售',
+                ind2_d: '独立站与门店收款，一站搞定',
+                ind3_t: '泛娱与数字服务',
+                ind3_d: '全球94国收单与承兑清算',
+                ind4_t: 'MCN 与全球发薪',
+                ind4_d: '本地钱包批量下发，秒级直达',
+                rwa_title: 'RWA 实物资产清结算生态',
+                rwa_tag: '合规资产代币化发行与全球交割',
+                rwa1_t: '美股代币化',
+                rwa1_d: '7×24 全球即时结算',
+                rwa2_t: '实物黄金',
+                rwa2_d: '金库资产锚定清算',
+                rwa3_t: '矿产与能源',
+                rwa3_d: '大宗贸易流动性通道',
+                rwa4_t: '企业私募信贷',
+                rwa4_d: '自动化本息清分',
+                rwa5_t: '跨境商业地产',
+                rwa5_d: '多法域资金托管交割',
+                comp_title: '安全合规资质与清算网络',
+                comp_sub: '全球持牌架构与金融机构合作网络，全程护航每一笔企业资金流动',
+                comp1_t: '瑞士 SRO 合规',
+                comp1_d: '受监管反洗钱体系',
+                comp2_t: '迪拜 PSP 牌照',
+                comp2_d: '中东机构支付通道',
+                comp3_t: '波兰 VASP 资质',
+                comp3_d: '欧盟数字资产牌照',
+                comp4_d: '全链路实时风控',
+                comp5_d: '直连多国本地清算',
+                comp6_d: '全链清结算支持'
+            }
+        };
+
+        function selectCheckoutToken(btn) {
+            const btns = document.querySelectorAll('#checkout-token-grid .token-btn');
+            btns.forEach((b) => {
+                b.setAttribute('aria-pressed', 'false');
+                b.classList.remove('border-2', 'border-[#0052ff]', 'bg-blue-50/70');
+                b.classList.add('border', 'border-slate-200', 'bg-white');
+            });
+            btn.setAttribute('aria-pressed', 'true');
+            btn.classList.remove('border', 'border-slate-200', 'bg-white');
+            btn.classList.add('border-2', 'border-[#0052ff]', 'bg-blue-50/70');
+        }
+
         function changeLang(lang) {
-            currentLang = lang
-            localStorage.setItem('pref-lang', lang);
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    const icon = el.querySelector('i');
-                    el.innerText = translations[lang][key];
-                    if (icon) {
-                        el.appendChild(document.createTextNode(' '));
-                        el.appendChild(icon);
-                    }
-                }
-            });
-            // 动态保存语言状态到URL，避免点击页面跳转后丢失
-            document.querySelectorAll('a[href$=".html"]').forEach(link => {
-                try {
-                    const url = new URL(link.href, location.origin);
-                    url.searchParams.set('lang', lang);
-                    link.href = url.pathname + url.search;
-                } catch(e) {}
-            });
-            // 更新 API Docs 链接
-            document.querySelectorAll('[data-i18n="nav_api"]').forEach(link => {
-                link.href = lang === 'zh' ? 'https://docs.rail.aurellix.com/zh/' : 'https://docs.rail.aurellix.com/';
-            });
-            // 更新集团链接语言
-            const groupLink = document.getElementById('group-link');
-            if (groupLink) {
-                groupLink.href = 'https://www.aurellix.com/' + (lang === 'zh' ? '?lang=zh' : '');
-            }
-            // Update SEO & Social sharing meta tags dynamically
-            const metaTitle = lang === 'zh' ? 'Aurellix Pay | 全球领先的稳定币支付解决方案' : 'Aurellix Pay | Global Leading Stablecoin Payment Solutions';
-            const metaDesc = lang === 'zh' ? 'Aurellix Pay 是合规稳定币聚合支付平台，提供全球法币收单、T+0 双向承兑清算、多币种虚拟账户（VA）与 26+ 国法币代付下发。' : 'Aurellix Pay is an institutional compliant stablecoin aggregate payment platform offering global fiat acquiring, T+0 bi-directional OTC conversion, and global payout across 26+ currencies.';
-            const baseHost = (location.origin && location.origin.startsWith('http')) ? location.origin : 'https://pay-52p.pages.dev';
-            const shareImg = lang === 'zh' ? (baseHost + '/static/share_zh.png') : (baseHost + '/static/share_en.png');
-
-            document.title = metaTitle;
-            const metaDescEl = document.querySelector('meta[name="description"]');
-            if (metaDescEl) metaDescEl.setAttribute('content', metaDesc);
-            const ogTitle = document.getElementById('og-title');
-            if (ogTitle) ogTitle.setAttribute('content', metaTitle);
-            const ogDesc = document.getElementById('og-desc');
-            if (ogDesc) ogDesc.setAttribute('content', metaDesc);
-            const ogImg = document.getElementById('og-image');
-            if (ogImg) ogImg.setAttribute('content', shareImg);
-            const twTitle = document.getElementById('tw-title');
-            if (twTitle) twTitle.setAttribute('content', metaTitle);
-            const twDesc = document.getElementById('tw-desc');
-            if (twDesc) twDesc.setAttribute('content', metaDesc);
-            const twImg = document.getElementById('tw-image');
-            if (twImg) twImg.setAttribute('content', shareImg);
-
-            const label = { en: "EN", zh: "中文" }[lang];
-            const deskLabel = document.getElementById('current-lang-label');
-            console.log('deskLabel', deskLabel)
-            const mobileLabel = document.getElementById('mobile-lang-label');
-            if (deskLabel) deskLabel.innerText = label;
-            if (mobileLabel) mobileLabel.innerText = label;
-            
-            document.querySelectorAll('.lang-option').forEach(opt => {
-                opt.style.color = opt.innerText.includes(label) ? 'var(--hex-blue)' : '#64748b';
-            });
+            AurellixV2.applyLang(lang, PAGE_TRANSLATIONS, PAGE_META);
         }
 
-        window.addEventListener('DOMContentLoaded', ()=>{
-            const params = new URLSearchParams(location.search)
-            let langs = params.get('lang')
-            if (!langs) {
-                langs = localStorage.getItem('pref-lang')
-            }
-            if (!langs) {
-                const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-                langs = browserLang.startsWith('zh') ? 'zh' : 'en';
-            }
-            changeLang(langs === 'zh' ? 'zh' : 'en');
-        })
-
-        function onAurellix() {
-            window.open(`https://rwa.aurellix.com/?lang=${currentLang}`, '_blank')
-        }
-
-        function onMerchant() {
-            window.open('https://merchant.rail.aurellix.com/', '_blank')
-        }
-
-        function confirmPayment(){
-            window.open('https://demo.rail.aurellix.com/', '_blank')
-        }
-
-        function handleTalk() {
-            window.open('https://t.me/cs_aurellix', '_blank')
-        }
-
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                } else {
-                    entry.target.classList.remove('active');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        window.onload = () => {
-            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-            document.querySelectorAll('.animate-hero-load').forEach(el => el.style.opacity = "1");
-        };
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            console.log('menu', menu)
-            const icon = document.getElementById('menu-icon');
-            const isOpen = menu.classList.toggle('open');
-            document.body.style.overflow = isOpen ? 'hidden' : 'auto';
-            icon.className = isOpen ? 'fa-solid fa-xmark text-xl' : 'fa-solid fa-bars text-xl';
-        }
-
-        function switchCovTab(tabId) {
-            document.querySelectorAll('.cov-tab-content').forEach(el => el.classList.add('hidden'));
-            const targetContent = document.getElementById(`cov-content-${tabId}`);
-            if (targetContent) targetContent.classList.remove('hidden');
-
-            document.querySelectorAll('[id^="cov-tab-"]').forEach(btn => {
-                btn.className = "px-4 py-2 text-xs font-black uppercase tracking-wider border-b-2 border-transparent text-slate-400 hover:text-slate-600 transition-all";
-            });
-            const activeBtn = document.getElementById(`cov-tab-${tabId}`);
-            if (activeBtn) {
-                activeBtn.className = "px-4 py-2 text-xs font-black uppercase tracking-wider border-b-2 border-[#0052ff] text-[#0052ff] transition-all";
-            }
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            AurellixV2.initAccessibilityAndMotion();
+            changeLang(AurellixV2.getInitialLang());
+        });
     </script>
 </body>
 </html>
