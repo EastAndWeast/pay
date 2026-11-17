@@ -210,3 +210,21 @@ git -C "AurellixPay_new_website" diff --name-only -- build/
 - `verify_v2.js build` → **`VERIFICATION SUMMARY -> PASSED: 1598 | FAILED: 0`**（7 页全覆盖）
 - `Select-String` 禁用词扫描 → **`PROHIBITED_TERMS_HITS: 0`**
 - `curl.exe` 请求 `5180` 与 `5181` 端口下全部 7 页 HTML（共 14 个端点）→ 全部返回 **`200`**
+
+
+---
+
+## 13. 修复 `wallet.html` UI 样式并改为直接提供 App 下载入口 (2026-11-17 16:03)
+
+### 问题与修复摘要
+1. **UI 样式对齐主站 `v2.css`**：
+   - 修复原版误用不存在的 `ax-pill`、`btn-outline`、`ax-card`、`ax-mockup` 类名导致的 Hero 按钮直角、无边框、能力卡片无阴影边框及预览窗框线缺失问题；改为完整对齐 `index.html` 的 Tailwind 胶囊徽标、`btn-primary px-7 py-4 rounded-xl`、`btn-contact px-6 py-4 rounded-xl`、白色描边能力卡片及 `.ax-visual-stage` + `.ax-dashed-frame` + `.ax-window` macOS 预览窗。
+   - 为 Hero 右侧 `.ax-hero-board` 补齐 `p-6 sm:p-8` 与内层 `.ax-glass-card` 的 `p-5` / `p-4`、`sm:col-span-5` / `sm:col-span-7` 栅格及 `shrink-0` 金额排版，彻底消除右侧卡片贴边与数字截断溢出。
+2. **去除外部跳转，改为站内直装下载入口（`#wallet-download`）**：
+   - Hero 主按钮改为锚点平滑定位至 `#wallet-download`（`立即下载 App` / `Download App`），彻底移除跳转到 `https://www.aurellix.com/wallet` 的外链。
+   - 在 `#wallet-download` 预览窗内置 **iOS 客户端（iOS 14.0+ · App Store / TestFlight）** 与 **Android APK（Android 8.0+ · 官方直装安装包）** 双下载入口卡片（由 `APP_DOWNLOAD_URLS = { ios, android }` 统一配置），未配置直链包前点击 `triggerAppDownload()` 会在当前页内动态更新下载状态提示并引导获取安装包，不跳转离站。
+
+### 实测命令与最终结果（`build_v2/` 镜像覆盖 `build/` 后执行）
+- `verify_v2.js build_v2` → **`VERIFICATION SUMMARY -> PASSED: 1604 | FAILED: 0`**
+- `verify_v2.js build` → **`VERIFICATION SUMMARY -> PASSED: 1604 | FAILED: 0`**
+- `curl.exe` 请求 `http://127.0.0.1:5180/wallet.html` 与 `http://127.0.0.1:5181/wallet.html` → 均返回 **`200`**

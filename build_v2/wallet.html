@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">Aurellix Pay | App Wallet — Multi-Asset Payment &amp; RWA</title>
     <meta name="description" content="Aurellix App Wallet: A unified mobile wallet upgrading from RWA asset management to multi-chain stablecoin payments, fiat settlement bridges, and global treasury access." />
-    <meta name="keywords" content="Aurellix App Wallet, multi-asset payment wallet, RWA wallet, stablecoin payment, USDT USDC wallet, cross-border mobile settlement" />
+    <meta name="keywords" content="Aurellix App Wallet, multi-asset payment wallet, RWA wallet, stablecoin payment, USDT USDC wallet, iOS Android download" />
     <link rel="canonical" href="https://rail.aurellix.com/wallet.html" />
     <link rel="alternate" hreflang="en" href="https://rail.aurellix.com/wallet.html?lang=en" />
     <link rel="alternate" hreflang="zh" href="https://rail.aurellix.com/wallet.html?lang=zh" />
@@ -180,11 +180,11 @@
                             <button type="button" onclick="changeLang('zh')" class="lang-option" data-lang="zh">简体中文</button>
                         </div>
                     </div>
-                    <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="btn-outline !py-2 !px-3.5 !text-xs">
+                    <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="btn-contact px-4 py-2 rounded-lg text-xs inline-flex items-center gap-1.5">
                         <span data-i18n="nav_contact">Contact</span>
                         <i class="fa-brands fa-telegram text-[#0052ff] text-xs" aria-hidden="true"></i>
                     </a>
-                    <a href="https://merchant.rail.aurellix.com/" target="_blank" rel="noopener noreferrer" class="btn-primary !py-2 !px-4 !text-xs" data-i18n="nav_portal">Merchant Portal</a>
+                    <a href="https://merchant.rail.aurellix.com/" target="_blank" rel="noopener noreferrer" class="btn-primary px-4 py-2 rounded-lg text-xs" data-i18n="nav_portal">Merchant Portal</a>
                 </div>
 
                 <button type="button" id="mobile-menu-btn" onclick="AurellixV2.toggleMobileMenu()" class="lg:hidden ml-auto p-2 text-slate-700" aria-label="Toggle Menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -239,98 +239,112 @@
             </div>
         </div>
         <div class="mt-auto space-y-3">
-            <a href="https://merchant.rail.aurellix.com/" target="_blank" rel="noopener noreferrer" class="btn-primary w-full justify-center" data-i18n="nav_portal">Merchant Portal</a>
-            <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="btn-outline w-full justify-center"><i class="fa-brands fa-telegram text-[#0052ff]" aria-hidden="true"></i> <span data-i18n="nav_contact">Contact</span></a>
+            <a href="https://merchant.rail.aurellix.com/" target="_blank" rel="noopener noreferrer" class="btn-primary w-full py-3.5 rounded-xl text-sm flex items-center justify-center" data-i18n="nav_portal">Merchant Portal</a>
+            <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="btn-contact w-full py-3.5 rounded-xl text-sm flex items-center justify-center gap-2"><i class="fa-brands fa-telegram text-[#0052ff]" aria-hidden="true"></i> <span data-i18n="nav_contact">Contact</span></a>
         </div>
     </div>
 
     <main>
-        <!-- Hero Section -->
-        <section class="pt-28 pb-16 lg:pt-32 lg:pb-20 bg-white ax-grid-bg overflow-hidden">
-            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <!-- 1. Hero Section (Aligned with index.html hero-mesh + ax-hero-board) -->
+        <section class="hero-mesh pt-28 pb-16 lg:pt-36 lg:pb-20">
+            <div class="max-w-7xl mx-auto px-5 lg:px-8 relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
                     <div class="lg:col-span-6">
-                        <span class="ax-pill mb-5"><i class="fa-solid fa-wallet text-[#0052ff]" aria-hidden="true"></i> <span data-i18n="wallet_badge">Aurellix App · Pay &amp; RWA</span></span>
-                        <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-[1.12] mb-5">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 mb-6">
+                            <span class="w-2 h-2 rounded-full bg-[#0052ff]"></span>
+                            <span class="text-[0.68rem] font-extrabold uppercase tracking-wider text-[#0052ff]" data-i18n="wallet_badge">Aurellix App · Pay &amp; RWA</span>
+                        </div>
+
+                        <h1 class="heading-xl text-slate-900 mb-4">
                             <span data-i18n="wallet_h1_1">Multi-Asset Payment</span><br/>
                             <span class="text-[#0052ff]" data-i18n="wallet_h1_2">&amp; RWA App Wallet</span>
                         </h1>
-                        <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-6 max-w-xl" data-i18n="wallet_desc">
+
+                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-7 max-w-lg" data-i18n="wallet_desc">
                             Upgrading from our RWA asset terminal into a unified mobile wallet—combining multi-chain stablecoin payments, direct fiat clearing bridges, and tokenized asset management in one account.
                         </p>
-                        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm font-bold text-slate-700 mb-8">
-                            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#0052ff]" aria-hidden="true"></i> <span data-i18n="wallet_hl_1">Multi-Chain Stablecoins</span></span>
-                            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#0052ff]" aria-hidden="true"></i> <span data-i18n="wallet_hl_2">Fiat Settlement Bridge</span></span>
-                            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#0052ff]" aria-hidden="true"></i> <span data-i18n="wallet_hl_3">RWA Holdings</span></span>
+
+                        <div class="flex flex-wrap items-center gap-6 mb-9 text-sm font-bold text-slate-700">
+                            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#0052ff]" aria-hidden="true"></i><span data-i18n="wallet_hl_1">Multi-Chain Stablecoins</span></span>
+                            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#0052ff]" aria-hidden="true"></i><span data-i18n="wallet_hl_2">Fiat Settlement Bridge</span></span>
+                            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-circle-check text-[#0052ff]" aria-hidden="true"></i><span data-i18n="wallet_hl_3">RWA Holdings</span></span>
                         </div>
-                        <div class="flex flex-wrap items-center gap-3.5">
-                            <a href="https://www.aurellix.com/wallet" data-wallet-link="true" target="_blank" rel="noopener noreferrer" class="btn-primary">
-                                <span data-i18n="wallet_btn_open">Open App Wallet</span>
-                                <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+
+                        <div class="flex flex-wrap items-center gap-4">
+                            <a href="#wallet-download" class="btn-primary px-7 py-4 rounded-xl text-sm inline-flex items-center gap-2.5">
+                                <i class="fa-solid fa-download text-xs" aria-hidden="true"></i>
+                                <span data-i18n="wallet_btn_download">Download App</span>
                             </a>
-                            <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="btn-outline">
+                            <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="btn-contact px-6 py-4 rounded-xl text-sm inline-flex items-center gap-2">
                                 <i class="fa-brands fa-telegram text-[#0052ff]" aria-hidden="true"></i>
-                                <span data-i18n="wallet_btn_consult">Contact Sales</span>
+                                <span data-i18n="wallet_btn_consult">Talk to Advisor</span>
                             </a>
                         </div>
                     </div>
 
-                    <!-- Visual Wallet Preview Board -->
+                    <!-- Right Visual Graphic Board -->
                     <div class="lg:col-span-6">
-                        <div class="ax-hero-board text-white">
-                            <div class="ax-glass-card mb-4">
-                                <div class="flex items-center justify-between mb-3">
-                                    <div class="flex items-center gap-2.5">
-                                        <span class="w-8 h-8 rounded-xl bg-white/15 flex items-center justify-center"><i class="fa-solid fa-wallet text-sky-300 text-sm" aria-hidden="true"></i></span>
-                                        <div>
-                                            <div class="text-xs font-extrabold text-white" data-i18n="wallet_card_title">Aurellix App Wallet</div>
-                                            <div class="text-[0.68rem] text-white/70" data-i18n="wallet_card_sub">Unified Payment &amp; RWA Account</div>
-                                        </div>
-                                    </div>
-                                    <span class="px-2.5 py-1 rounded-full bg-emerald-400/20 text-emerald-200 text-[0.65rem] font-extrabold tracking-wide" data-i18n="wallet_card_status">Active</span>
-                                </div>
-                                <div class="text-2xl sm:text-3xl font-black tracking-tight mb-3">$128,450.00</div>
-                                <div class="grid grid-cols-2 gap-2.5 text-xs">
-                                    <div class="rounded-xl bg-white/10 p-2.5">
-                                        <div class="text-white/65 text-[0.65rem] mb-0.5" data-i18n="wallet_card_pay_lbl">Liquid Payment Balance</div>
-                                        <div class="font-extrabold text-white">USDT · USDC · USD</div>
-                                    </div>
-                                    <div class="rounded-xl bg-white/10 p-2.5">
-                                        <div class="text-white/65 text-[0.65rem] mb-0.5" data-i18n="wallet_card_rwa_lbl">RWA Asset Holdings</div>
-                                        <div class="font-extrabold text-white" data-i18n="wallet_card_rwa_val">Equities · Gold · Credit</div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="ax-hero-board p-6 sm:p-8 text-white">
+                            <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-30" viewBox="0 0 600 480" fill="none" aria-hidden="true">
+                                <circle cx="480" cy="360" r="190" stroke="#7dd3fc" stroke-width="1.2" stroke-dasharray="6 6" />
+                                <circle cx="480" cy="360" r="130" stroke="#38bdf8" stroke-width="1" />
+                            </svg>
 
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                                <div class="ax-glass-card">
-                                    <div class="text-[0.68rem] uppercase tracking-wider font-extrabold text-white/65 mb-2.5" data-i18n="wallet_quick_title">Quick Actions</div>
-                                    <div class="grid grid-cols-3 gap-2 text-center text-[0.7rem] font-bold">
-                                        <div class="rounded-xl bg-white/10 py-2.5 px-1">
-                                            <i class="fa-solid fa-paper-plane text-sky-300 block mb-1" aria-hidden="true"></i>
-                                            <span data-i18n="wallet_act_pay">Pay</span>
+                            <div class="relative z-10 space-y-4">
+                                <div class="ax-glass-card p-5">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center gap-2.5">
+                                            <span class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center shrink-0"><i class="fa-solid fa-wallet text-sky-200 text-sm" aria-hidden="true"></i></span>
+                                            <div>
+                                                <div class="text-xs font-extrabold text-white" data-i18n="wallet_card_title">Aurellix App Wallet</div>
+                                                <div class="text-[0.68rem] text-sky-100/80" data-i18n="wallet_card_sub">Unified Payment &amp; RWA Account</div>
+                                            </div>
                                         </div>
-                                        <div class="rounded-xl bg-white/10 py-2.5 px-1">
-                                            <i class="fa-solid fa-arrows-rotate text-emerald-300 block mb-1" aria-hidden="true"></i>
-                                            <span data-i18n="wallet_act_swap">Swap</span>
+                                        <span class="px-2.5 py-1 rounded-full bg-emerald-400/20 text-emerald-200 text-[0.65rem] font-extrabold tracking-wide shrink-0" data-i18n="wallet_card_status">Active</span>
+                                    </div>
+                                    <div class="text-2xl sm:text-3xl font-black tracking-tight tabular-nums mb-4">$ 128,450.00</div>
+                                    <div class="grid grid-cols-2 gap-3 text-xs">
+                                        <div class="rounded-xl bg-white/10 p-3">
+                                            <div class="text-sky-100/75 text-[0.65rem] mb-0.5" data-i18n="wallet_card_pay_lbl">Liquid Payment Balance</div>
+                                            <div class="font-extrabold text-white">USDT · USDC · USD</div>
                                         </div>
-                                        <div class="rounded-xl bg-white/10 py-2.5 px-1">
-                                            <i class="fa-solid fa-qrcode text-amber-300 block mb-1" aria-hidden="true"></i>
-                                            <span data-i18n="wallet_act_recv">Receive</span>
+                                        <div class="rounded-xl bg-white/10 p-3">
+                                            <div class="text-sky-100/75 text-[0.65rem] mb-0.5" data-i18n="wallet_card_rwa_lbl">RWA Asset Holdings</div>
+                                            <div class="font-extrabold text-white" data-i18n="wallet_card_rwa_val">Equities · Gold · Credit</div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="ax-glass-card">
-                                    <div class="text-[0.68rem] uppercase tracking-wider font-extrabold text-white/65 mb-2.5" data-i18n="wallet_activity_title">Recent Activity</div>
-                                    <div class="space-y-2 text-xs">
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-white/85 truncate" data-i18n="wallet_tx_1">Supplier Payout</span>
-                                            <span class="font-extrabold text-white">-$12,500</span>
+                                <div class="grid grid-cols-1 sm:grid-cols-12 gap-4">
+                                    <div class="sm:col-span-5 ax-glass-card p-4">
+                                        <div class="text-[0.68rem] uppercase tracking-wider font-extrabold text-sky-100/80 mb-3" data-i18n="wallet_quick_title">Quick Actions</div>
+                                        <div class="grid grid-cols-3 gap-2 text-center text-[0.7rem] font-bold">
+                                            <div class="rounded-xl bg-white/10 py-2.5 px-1">
+                                                <i class="fa-solid fa-paper-plane text-sky-200 block mb-1" aria-hidden="true"></i>
+                                                <span data-i18n="wallet_act_pay">Pay</span>
+                                            </div>
+                                            <div class="rounded-xl bg-white/10 py-2.5 px-1">
+                                                <i class="fa-solid fa-arrows-rotate text-emerald-200 block mb-1" aria-hidden="true"></i>
+                                                <span data-i18n="wallet_act_swap">Swap</span>
+                                            </div>
+                                            <div class="rounded-xl bg-white/10 py-2.5 px-1">
+                                                <i class="fa-solid fa-qrcode text-amber-200 block mb-1" aria-hidden="true"></i>
+                                                <span data-i18n="wallet_act_recv">Receive</span>
+                                            </div>
                                         </div>
-                                        <div class="flex items-center justify-between">
-                                            <span class="text-white/85 truncate" data-i18n="wallet_tx_2">RWA Yield Credit</span>
-                                            <span class="font-extrabold text-emerald-300">+$1,240</span>
+                                    </div>
+
+                                    <div class="sm:col-span-7 ax-glass-card p-4">
+                                        <div class="text-[0.68rem] uppercase tracking-wider font-extrabold text-sky-100/80 mb-3" data-i18n="wallet_activity_title">Recent Activity</div>
+                                        <div class="space-y-2 text-xs">
+                                            <div class="flex items-center justify-between gap-3 py-1.5 px-2.5 rounded-lg bg-white/10">
+                                                <span class="text-white/90 truncate" data-i18n="wallet_tx_1">Supplier Payout</span>
+                                                <span class="font-extrabold text-white shrink-0 tabular-nums">-$12,500</span>
+                                            </div>
+                                            <div class="flex items-center justify-between gap-3 py-1.5 px-2.5 rounded-lg bg-white/10">
+                                                <span class="text-white/90 truncate" data-i18n="wallet_tx_2">RWA Yield Credit</span>
+                                                <span class="font-extrabold text-emerald-200 shrink-0 tabular-nums">+$1,240</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -341,7 +355,7 @@
             </div>
         </section>
 
-        <!-- Core Capabilities -->
+        <!-- 2. Core Capabilities -->
         <section class="py-16 lg:py-20 bg-[#f8fafc] border-y border-slate-200/70">
             <div class="max-w-7xl mx-auto px-5 lg:px-8">
                 <div class="max-w-2xl mb-10">
@@ -351,7 +365,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="ax-card p-6">
+                    <div class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
                         <div class="w-11 h-11 rounded-2xl bg-blue-50 text-[#0052ff] flex items-center justify-center mb-4">
                             <i class="fa-solid fa-coins text-lg" aria-hidden="true"></i>
                         </div>
@@ -359,7 +373,7 @@
                         <p class="text-sm text-slate-600 leading-relaxed" data-i18n="wallet_c1_d">Hold, send, and collect USDT, USDC, and EURC across TRC20 and ERC20 with instant transfers and transparent settlement status.</p>
                     </div>
 
-                    <div class="ax-card p-6">
+                    <div class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
                         <div class="w-11 h-11 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
                             <i class="fa-solid fa-building-columns text-lg" aria-hidden="true"></i>
                         </div>
@@ -367,7 +381,7 @@
                         <p class="text-sm text-slate-600 leading-relaxed" data-i18n="wallet_c2_d">Directly connected to Aurellix Pay's 26-currency conversion, local VA collection, and global POBO payout infrastructure.</p>
                     </div>
 
-                    <div class="ax-card p-6">
+                    <div class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
                         <div class="w-11 h-11 rounded-2xl bg-violet-50 text-violet-600 flex items-center justify-center mb-4">
                             <i class="fa-solid fa-gem text-lg" aria-hidden="true"></i>
                         </div>
@@ -378,11 +392,11 @@
             </div>
         </section>
 
-        <!-- Evolution Flow -->
-        <section class="py-16 lg:py-20 bg-white">
+        <!-- 3. Direct App Download & Architecture Showcase -->
+        <section id="wallet-download" class="py-16 lg:py-24 bg-white">
             <div class="max-w-7xl mx-auto px-5 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                    <div class="lg:col-span-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                    <div class="lg:col-span-5">
                         <span class="text-xs font-extrabold uppercase tracking-widest text-[#0052ff]" data-i18n="wallet_flow_tag">How It Works</span>
                         <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2 mb-6" data-i18n="wallet_flow_h2">One App Connecting RWA &amp; Real-World Payments</h2>
                         <div class="space-y-5">
@@ -410,37 +424,75 @@
                         </div>
                     </div>
 
-                    <div class="lg:col-span-6">
-                        <div class="ax-mockup">
-                            <div class="ax-mockup-bar">
-                                <span class="ax-mockup-dot bg-rose-400"></span>
-                                <span class="ax-mockup-dot bg-amber-400"></span>
-                                <span class="ax-mockup-dot bg-emerald-400"></span>
-                                <span class="ml-2 text-[0.7rem] font-bold text-slate-500">aurellix.com/wallet</span>
-                            </div>
-                            <div class="p-6 space-y-4">
-                                <div class="flex items-center justify-between p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
-                                    <div>
-                                        <div class="text-xs font-bold text-slate-500" data-i18n="wallet_mock_1_l">Payment Rail</div>
-                                        <div class="text-sm font-extrabold text-slate-900 mt-0.5" data-i18n="wallet_mock_1_v">USDT / USDC ⇄ Global Fiat Settlement</div>
+                    <!-- Right Visual Download Window (ax-visual-stage + ax-dashed-frame + ax-window) -->
+                    <div class="lg:col-span-7">
+                        <div class="ax-visual-stage">
+                            <div class="ax-dashed-frame"></div>
+                            <div class="ax-window p-6 sm:p-7">
+                                <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-3 h-3 rounded-full bg-rose-400/80"></span>
+                                        <span class="w-3 h-3 rounded-full bg-amber-400/80"></span>
+                                        <span class="w-3 h-3 rounded-full bg-emerald-400/80"></span>
+                                        <span class="ml-2 text-xs font-extrabold text-slate-700" data-i18n="wallet_dl_win_title">Aurellix App Wallet · Direct Download</span>
                                     </div>
-                                    <span class="badge-yes"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span data-i18n="wallet_mock_live">Live</span></span>
+                                    <span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[0.68rem] font-extrabold">v2.4.0</span>
                                 </div>
-                                <div class="flex items-center justify-between p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
-                                    <div>
-                                        <div class="text-xs font-bold text-slate-500" data-i18n="wallet_mock_2_l">Asset Rail</div>
-                                        <div class="text-sm font-extrabold text-slate-900 mt-0.5" data-i18n="wallet_mock_2_v">Tokenized Equities, Gold &amp; Private Credit</div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                                    <!-- iOS Download Card -->
+                                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between">
+                                        <div>
+                                            <div class="flex items-center gap-3 mb-3">
+                                                <span class="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center text-lg shrink-0">
+                                                    <i class="fa-brands fa-apple" aria-hidden="true"></i>
+                                                </span>
+                                                <div>
+                                                    <div class="text-sm font-extrabold text-slate-900" data-i18n="wallet_ios_title">iOS App</div>
+                                                    <div class="text-[0.7rem] text-slate-500" data-i18n="wallet_ios_req">iOS 14.0+ · App Store / TestFlight</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" onclick="triggerAppDownload('ios')" class="btn-primary w-full py-3 px-4 rounded-xl text-xs inline-flex items-center justify-center gap-2">
+                                            <i class="fa-solid fa-download" aria-hidden="true"></i>
+                                            <span data-i18n="wallet_ios_btn">Download for iOS</span>
+                                        </button>
                                     </div>
-                                    <span class="badge-sky"><i class="fa-solid fa-gem" aria-hidden="true"></i><span>RWA</span></span>
+
+                                    <!-- Android Download Card -->
+                                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col justify-between">
+                                        <div>
+                                            <div class="flex items-center gap-3 mb-3">
+                                                <span class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-lg shrink-0">
+                                                    <i class="fa-brands fa-android" aria-hidden="true"></i>
+                                                </span>
+                                                <div>
+                                                    <div class="text-sm font-extrabold text-slate-900" data-i18n="wallet_and_title">Android APK</div>
+                                                    <div class="text-[0.7rem] text-slate-500" data-i18n="wallet_and_req">Android 8.0+ · Direct APK Package</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" onclick="triggerAppDownload('android')" class="btn-primary w-full py-3 px-4 rounded-xl text-xs inline-flex items-center justify-center gap-2">
+                                            <i class="fa-solid fa-download" aria-hidden="true"></i>
+                                            <span data-i18n="wallet_and_btn">Download Android APK</span>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="flex items-center justify-between p-4 rounded-2xl bg-blue-50/70 border border-blue-200">
-                                    <div>
-                                        <div class="text-xs font-bold text-[#0052ff]" data-i18n="wallet_mock_3_l">Web &amp; Mobile Access</div>
-                                        <div class="text-sm font-extrabold text-slate-900 mt-0.5">https://www.aurellix.com/wallet</div>
+
+                                <!-- Inline Download Status / Enterprise Distribution Notice -->
+                                <div id="download-status-box" class="p-4 rounded-2xl bg-blue-50/70 border border-blue-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                    <div class="flex items-start gap-3">
+                                        <span class="w-9 h-9 rounded-xl bg-white text-[#0052ff] border border-blue-200 flex items-center justify-center shrink-0">
+                                            <i class="fa-solid fa-mobile-screen-button text-sm" aria-hidden="true"></i>
+                                        </span>
+                                        <div>
+                                            <div id="download-status-title" class="text-xs font-extrabold text-slate-900" data-i18n="wallet_dl_note_title">Official App Distribution</div>
+                                            <div id="download-status-desc" class="text-xs text-slate-600 mt-0.5" data-i18n="wallet_dl_note_desc">Select iOS or Android above to download the installation package directly. Need enterprise TestFlight or signed APK?</div>
+                                        </div>
                                     </div>
-                                    <a href="https://www.aurellix.com/wallet" data-wallet-link="true" target="_blank" rel="noopener noreferrer" class="btn-primary !py-2 !px-3.5 !text-xs">
-                                        <span data-i18n="wallet_mock_go">Launch</span>
-                                        <i class="fa-solid fa-arrow-up-right-from-square text-[0.65rem]" aria-hidden="true"></i>
+                                    <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="btn-contact px-4 py-2.5 rounded-xl text-xs inline-flex items-center justify-center gap-1.5 shrink-0">
+                                        <i class="fa-brands fa-telegram text-[#0052ff]" aria-hidden="true"></i>
+                                        <span data-i18n="wallet_dl_support">Get Install Link</span>
                                     </a>
                                 </div>
                             </div>
@@ -450,16 +502,16 @@
             </div>
         </section>
 
-        <!-- Bottom CTA -->
+        <!-- 4. Bottom CTA -->
         <section class="py-16 bg-[#0052ff] text-white">
             <div class="max-w-5xl mx-auto px-5 lg:px-8 text-center">
                 <span class="inline-block px-3 py-1 rounded-full bg-white/15 text-xs font-extrabold uppercase tracking-widest mb-4" data-i18n="wallet_cta_tag">Aurellix App Wallet</span>
                 <h2 class="text-2xl sm:text-4xl font-black mb-4" data-i18n="wallet_cta_title">Experience Unified Payment &amp; RWA Management</h2>
-                <p class="text-white/85 text-sm sm:text-base max-w-2xl mx-auto mb-8" data-i18n="wallet_cta_desc">Launch the Aurellix App Wallet portal or reach our team for enterprise onboarding and ecosystem integration.</p>
+                <p class="text-white/85 text-sm sm:text-base max-w-2xl mx-auto mb-8" data-i18n="wallet_cta_desc">Download the Aurellix App Wallet for iOS or Android, or reach our team for enterprise onboarding.</p>
                 <div class="flex flex-wrap justify-center gap-3.5">
-                    <a href="https://www.aurellix.com/wallet" data-wallet-link="true" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-full bg-white text-[#0052ff] font-extrabold text-sm hover:bg-slate-100 transition inline-flex items-center gap-2">
-                        <span data-i18n="wallet_btn_open">Open App Wallet</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                    <a href="#wallet-download" class="px-6 py-3.5 rounded-full bg-white text-[#0052ff] font-extrabold text-sm hover:bg-slate-100 transition inline-flex items-center gap-2">
+                        <i class="fa-solid fa-download text-xs" aria-hidden="true"></i>
+                        <span data-i18n="wallet_btn_download">Download App</span>
                     </a>
                     <a href="https://merchant.rail.aurellix.com/" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-full bg-white/15 hover:bg-white/25 text-white font-extrabold text-sm transition" data-i18n="cta_banner_btn">Launch Portal</a>
                 </div>
@@ -526,6 +578,12 @@
 
     <script src="static/v2-common.js"></script>
     <script>
+        // Single source of truth for direct App package / store download URLs
+        const APP_DOWNLOAD_URLS = {
+            ios: '',     // e.g. 'https://apps.apple.com/...' or TestFlight link
+            android: ''  // e.g. 'https://cdn.aurellix.com/app/aurellix-wallet-v2.4.0.apk'
+        };
+
         const PAGE_META = {
             en: {
                 title: 'Aurellix Pay | App Wallet — Multi-Asset Payment & RWA',
@@ -546,8 +604,8 @@
                 wallet_hl_1: 'Multi-Chain Stablecoins',
                 wallet_hl_2: 'Fiat Settlement Bridge',
                 wallet_hl_3: 'RWA Holdings',
-                wallet_btn_open: 'Open App Wallet',
-                wallet_btn_consult: 'Contact Sales',
+                wallet_btn_download: 'Download App',
+                wallet_btn_consult: 'Talk to Advisor',
                 wallet_card_title: 'Aurellix App Wallet',
                 wallet_card_sub: 'Unified Payment & RWA Account',
                 wallet_card_status: 'Active',
@@ -578,16 +636,19 @@
                 wallet_s2_d: 'Convert between stablecoins and supported fiat settlement rails to pay merchants, partners, or global beneficiaries.',
                 wallet_s3_t: 'Compliance & Risk Controls',
                 wallet_s3_d: 'Protected by institutional KYC/KYB verification, on-chain address screening, and multi-jurisdictional compliance controls.',
-                wallet_mock_1_l: 'Payment Rail',
-                wallet_mock_1_v: 'USDT / USDC ⇄ Global Fiat Settlement',
-                wallet_mock_live: 'Live',
-                wallet_mock_2_l: 'Asset Rail',
-                wallet_mock_2_v: 'Tokenized Equities, Gold & Private Credit',
-                wallet_mock_3_l: 'Web & Mobile Access',
-                wallet_mock_go: 'Launch',
+                wallet_dl_win_title: 'Aurellix App Wallet · Direct Download',
+                wallet_ios_title: 'iOS App',
+                wallet_ios_req: 'iOS 14.0+ · App Store / TestFlight',
+                wallet_ios_btn: 'Download for iOS',
+                wallet_and_title: 'Android APK',
+                wallet_and_req: 'Android 8.0+ · Direct APK Package',
+                wallet_and_btn: 'Download Android APK',
+                wallet_dl_note_title: 'Official App Distribution',
+                wallet_dl_note_desc: 'Select iOS or Android above to download the installation package directly. Need enterprise TestFlight or signed APK?',
+                wallet_dl_support: 'Get Install Link',
                 wallet_cta_tag: 'Aurellix App Wallet',
                 wallet_cta_title: 'Experience Unified Payment & RWA Management',
-                wallet_cta_desc: 'Launch the Aurellix App Wallet portal or reach our team for enterprise onboarding and ecosystem integration.'
+                wallet_cta_desc: 'Download the Aurellix App Wallet for iOS or Android, or reach our team for enterprise onboarding.'
             },
             zh: {
                 wallet_badge: 'Aurellix App 钱包 · 支付与 RWA 升级',
@@ -597,8 +658,8 @@
                 wallet_hl_1: '多链稳定币收付',
                 wallet_hl_2: '法币清算直连',
                 wallet_hl_3: 'RWA 资产持有',
-                wallet_btn_open: '打开 App 钱包',
-                wallet_btn_consult: '咨询专属顾问',
+                wallet_btn_download: '立即下载 App',
+                wallet_btn_consult: '联系专属顾问',
                 wallet_card_title: 'Aurellix App 钱包',
                 wallet_card_sub: '支付与 RWA 一体化账户',
                 wallet_card_status: '实时可用',
@@ -629,18 +690,54 @@
                 wallet_s2_d: '支持稳定币与合规法币清算通道即时衔接，满足商户付款、供应商结算与日常跨境支付需求。',
                 wallet_s3_t: '机构级合规与风控守护',
                 wallet_s3_d: '依托完善的 KYC/KYB 核验、链上地址安全筛查与多法域合规体系，保障账户与资金安全。',
-                wallet_mock_1_l: '支付通道',
-                wallet_mock_1_v: 'USDT / USDC ⇄ 全球法币清结算',
-                wallet_mock_live: '已上线',
-                wallet_mock_2_l: '资产通道',
-                wallet_mock_2_v: '代币化美股、实物黄金与私募信贷',
-                wallet_mock_3_l: '钱包在线入口',
-                wallet_mock_go: '前往体验',
+                wallet_dl_win_title: 'Aurellix App 钱包 · 官方直装下载',
+                wallet_ios_title: 'iOS 客户端',
+                wallet_ios_req: 'iOS 14.0+ · App Store / TestFlight',
+                wallet_ios_btn: '下载 iOS 版',
+                wallet_and_title: 'Android APK',
+                wallet_and_req: 'Android 8.0+ · 官方直装安装包',
+                wallet_and_btn: '下载 Android APK',
+                wallet_dl_note_title: '官方客户端分发通道',
+                wallet_dl_note_desc: '点击上方 iOS 或 Android 按钮即可直接获取安装包；如需企业 TestFlight 邀请码或最新签名包，请联系顾问获取。',
+                wallet_dl_support: '获取最新安装包',
                 wallet_cta_tag: 'Aurellix App 钱包',
                 wallet_cta_title: '开启支付与 RWA 一体化资金体验',
-                wallet_cta_desc: '立即进入 Aurellix App 钱包客户端，或联系专属顾问了解企业生态接入方案。'
+                wallet_cta_desc: '立即下载 Aurellix App iOS 或 Android 客户端，或联系专属顾问了解企业生态接入方案。'
             }
         };
+
+        function triggerAppDownload(platform) {
+            const url = APP_DOWNLOAD_URLS[platform];
+            if (url) {
+                const a = document.createElement('a');
+                a.href = url;
+                if (platform === 'android') a.setAttribute('download', '');
+                else {
+                    a.target = '_blank';
+                    a.rel = 'noopener noreferrer';
+                }
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                return;
+            }
+            const isZh = AurellixV2.getLang() === 'zh';
+            const titleEl = document.getElementById('download-status-title');
+            const descEl = document.getElementById('download-status-desc');
+            if (titleEl && descEl) {
+                if (platform === 'ios') {
+                    titleEl.textContent = isZh ? 'iOS 客户端下载提示' : 'iOS App Download';
+                    descEl.textContent = isZh
+                        ? '最新 iOS TestFlight / App Store 安装包正在同步发布中，点击右侧按钮联系 @cs_aurellix 立即获取企业直装链接。'
+                        : 'The latest iOS TestFlight / App Store build is being staged. Click the button on the right to get a direct install link from @cs_aurellix.';
+                } else {
+                    titleEl.textContent = isZh ? 'Android APK 下载提示' : 'Android APK Download';
+                    descEl.textContent = isZh
+                        ? '最新 Android 官方签名 APK（v2.4.0）正在同步上架中，点击右侧按钮联系 @cs_aurellix 立即领取直链安装包。'
+                        : 'The latest signed Android APK (v2.4.0) is being staged. Click the button on the right to receive the direct APK from @cs_aurellix.';
+                }
+            }
+        }
 
         function changeLang(lang) {
             AurellixV2.applyLang(lang, PAGE_TRANSLATIONS, PAGE_META);

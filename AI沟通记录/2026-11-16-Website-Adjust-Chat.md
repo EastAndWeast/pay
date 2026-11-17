@@ -237,3 +237,13 @@
   1. 新建 [wallet.html](../build_v2/wallet.html)，沿用当前主站 UI 与双语引擎，简要呈现 App 钱包由 RWA 资产端向「多链稳定币支付 + 法币清算直连 + RWA 资产管理」升级的核心能力与架构，并在页内保留前往 `https://www.aurellix.com/wallet` 的体验按钮。
   2. 全站 7 页桌面端 `开发与生态 ▾`、移动端菜单与页脚 `开发与入口` 列统一改为内链跳转 `wallet.html`，并在 `v2-common.js` 补全 `wallet.html` 的导航激活高亮。
   3. 同步覆盖 `build/`，通过 `verify_v2.js` **`1598 / 1598 PASS`**（含 `wallet.html`）、禁用词 0 命中及 `5180`/`5181` 全 14 端点 `200 OK` 校验，并推送至 `origin/dev`。
+
+
+---
+
+## 21. 修复 `wallet.html` UI 问题并改为站内 iOS / Android 直接下载入口 (2026-11-17 16:03)
+- **用户反馈**：上传两张截图指出 `wallet.html` 页面存在按钮样式/右侧面板溢出/预览窗无边框等 UI 问题，并要求直接提供下载入口而不是外跳。
+- **处理结果**：
+  1. 修复所有错用样式类名，全部对齐 `index.html` 的 `hero-mesh`、`ax-hero-board p-6 sm:p-8`、`btn-primary` / `btn-contact` 圆角按钮、白色描边能力卡片与 `.ax-visual-stage` + `.ax-window` 预览窗。
+  2. 移除所有跳转 `https://www.aurellix.com/wallet` 的按钮，改为在 `#wallet-download` 提供 **iOS 客户端** 与 **Android APK** 直接下载入口（由 `APP_DOWNLOAD_URLS` 单点配置，未配直链时点击触发页内提示）。
+  3. 同步 `build/` 并通过 `verify_v2.js` **`1604 / 1604 PASS`**、双端口 `200 OK` 校验及推送至 `origin/dev`。
