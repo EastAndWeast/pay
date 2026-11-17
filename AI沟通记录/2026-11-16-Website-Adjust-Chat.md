@@ -274,3 +274,10 @@
 ## 24. 修复 Telegram 分享 `pay.tianao1128.xyz` 仍显示旧图的问题 (2026-11-17 16:54)
 - **实测定位**：`curl -I` 实测确认 `https://pay.tianao1128.xyz/static/share_en.png` 已更新为新版 `333,291` 字节图，但 `https://rail.aurellix.com/static/share_en.png` 仍为 11 月 5 日旧图（`179,781` 字节）。由于 `<head>` 中 `og:image` 指向了 `rail.aurellix.com`，导致 Telegram 抓取了旧图。
 - **处理结果**：已将全站 7 页 `og:image` / `og:image:secure_url` / `twitter:image` 更新为 `https://pay.tianao1128.xyz/static/share_en.png?v=20261117b`，同步 `build/`、`verify_v2.js` **`1632 / 1632 PASS`** 并推送至 `origin/dev`。
+
+
+---
+
+## 25. 确认社交分享默认口径维持英文（点开后仍按手机语言自动切换）(2026-11-17 17:02)
+- **用户确认**：「默认先英文吧。因为都是发我们的官网。」
+- **最终状态**：Telegram / WhatsApp 分享卡片默认保持英文标题、英文描述与新版 `share_en.png`（`1200×630`）；访客点击进入官网后，仍由 `v2-common.js` 自动识别手机系统语言切换中英文。
