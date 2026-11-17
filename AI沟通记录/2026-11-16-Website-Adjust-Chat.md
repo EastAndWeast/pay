@@ -199,3 +199,13 @@
 ## 16. 官网开发经验总结与通道扩展维护指南归档 (2026-11-17 14:48)
 - **用户指令**：「请你把官网的经验总结一下，未来我可能给你新的支付通道，到时覆盖范围之类的可能要进行更新。」
 - **执行结果**：已整理并输出 [2026-11-17-官网开发维护与通道扩展指南.md](../文档/2026-11-17-官网开发维护与通道扩展指南.md)，系统梳理 `build_v2/` → `build/` 发布流、四大业务线（收款 / 付款 / 承兑 / 收单）新增通道对应的数据数组与地图映射清单，以及口径红线、i18n 图标防丢失、外部 SPA 文档路由检验、SVG 全清重绘与自动化校验等 6 条实战经验。
+
+
+---
+
+## 17. API 文档站语言路由实测与双语映射修正 (2026-11-17 15:00)
+- **实测结论**：经检查线上文档站 `https://docs.rail.aurellix.com/`：
+  - 根路径 `/` 为 **简体中文**（`AurellixPay 提供基于稳定币的快速、安全、合规的端到端支付解决方案...`）；
+  - `/en/` (`https://docs.rail.aurellix.com/en/`) 为 **English**（`AurellixPay Docs Center`）；
+  - `/zh/` 路径未部署，访问会由 VitePress 客户端路由渲染 `404 PAGE NOT FOUND`。
+- **修复**：在 [v2-common.js](../build_v2/static/v2-common.js#L160-L163) 将 `zh` 指向 `https://docs.rail.aurellix.com/`、`en` 指向 `https://docs.rail.aurellix.com/en/`，并同步覆盖 `build/`、通过 `verify_v2.js` 校验及推送至 `origin/dev`。

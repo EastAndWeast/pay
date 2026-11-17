@@ -157,9 +157,9 @@ window.AurellixV2 = (function () {
       } catch (e) {}
     });
 
-    // Dynamic API Docs & centralized RWA Platform links
+    // Dynamic API Docs & centralized RWA Platform links (docs root '/' is zh, '/en/' is English)
     document.querySelectorAll('a[data-i18n="nav_api"], a[data-api-link="true"]').forEach((link) => {
-      link.setAttribute('href', 'https://docs.rail.aurellix.com/');
+      link.setAttribute('href', currentLang === 'zh' ? 'https://docs.rail.aurellix.com/' : 'https://docs.rail.aurellix.com/en/');
     });
 
     const rwaUrl = RWA_SITE_URL + (currentLang === 'zh' ? '?lang=zh' : '');
