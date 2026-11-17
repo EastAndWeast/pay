@@ -228,3 +228,20 @@ git -C "AurellixPay_new_website" diff --name-only -- build/
 - `verify_v2.js build_v2` → **`VERIFICATION SUMMARY -> PASSED: 1604 | FAILED: 0`**
 - `verify_v2.js build` → **`VERIFICATION SUMMARY -> PASSED: 1604 | FAILED: 0`**
 - `curl.exe` 请求 `http://127.0.0.1:5180/wallet.html` 与 `http://127.0.0.1:5181/wallet.html` → 均返回 **`200`**
+
+
+---
+
+## 14. 对齐 `aurellix.com/download` 实现 `wallet.html` 弹出二维码与官方直链下载 (2026-11-17 16:18)
+
+### 变更摘要
+1. **对标 `https://www.aurellix.com/download` 提取真实下载配置**：
+   - 核实并接入 iOS TestFlight 链接 `https://testflight.apple.com/join/DFSw6TPa` 与 Android 官方企业直链 `https://download.aurellix.com` 至 `APP_DOWNLOAD_URLS`。
+2. **新增弹出二维码模态窗 `#wallet-qr-modal`**：
+   - 点击 `#wallet-download` 下的 **iOS 客户端** 或 **Android APK** 按钮时，弹出居中二维码弹窗（使用 `https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=...` 动态编码对应平台下载地址），同时在弹窗内附带简洁安装指引与「直接打开下载」链接（支持点击遮罩或 `Esc` 键关闭）。
+   - 下载窗口底部同时保留「直接下载 APK」快捷按钮指向 `https://download.aurellix.com`。
+
+### 实测命令与最终结果（`build_v2/` 镜像覆盖 `build/` 后执行）
+- `verify_v2.js build_v2` → **`VERIFICATION SUMMARY -> PASSED: 1609 | FAILED: 0`**
+- `verify_v2.js build` → **`VERIFICATION SUMMARY -> PASSED: 1609 | FAILED: 0`**（已覆盖点击 Android 弹窗检验二维码 URL 与直链 `https://download.aurellix.com`）
+- `curl.exe` 请求 `5180` 与 `5181` 端口 `wallet.html` → 均返回 **`200`**

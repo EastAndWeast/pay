@@ -247,3 +247,13 @@
   1. 修复所有错用样式类名，全部对齐 `index.html` 的 `hero-mesh`、`ax-hero-board p-6 sm:p-8`、`btn-primary` / `btn-contact` 圆角按钮、白色描边能力卡片与 `.ax-visual-stage` + `.ax-window` 预览窗。
   2. 移除所有跳转 `https://www.aurellix.com/wallet` 的按钮，改为在 `#wallet-download` 提供 **iOS 客户端** 与 **Android APK** 直接下载入口（由 `APP_DOWNLOAD_URLS` 单点配置，未配直链时点击触发页内提示）。
   3. 同步 `build/` 并通过 `verify_v2.js` **`1604 / 1604 PASS`**、双端口 `200 OK` 校验及推送至 `origin/dev`。
+
+
+---
+
+## 22. 为 `wallet.html` 接入弹出二维码与 `aurellix.com/download` 官方下载链路 (2026-11-17 16:18)
+- **用户指令**：「这个页面下载的方式，比如弹出二维码，安卓的下载地址：https://www.aurellix.com/download 参考这个。」
+- **处理结果**：
+  1. 实测检索 `https://www.aurellix.com/download` 线上包配置，对齐接入 **iOS TestFlight**（`https://testflight.apple.com/join/DFSw6TPa`）与 **Android APK**（`https://download.aurellix.com`）。
+  2. 为 `wallet.html` 新增弹出二维码模态窗 `#wallet-qr-modal`，点击 iOS / Android 按钮即弹出对应平台扫码二维码、安装指引及「直接打开下载」按钮，同时在卡片底部保留 Android APK 快捷下载按钮。
+  3. 同步 `build/`，通过 `verify_v2.js` **`1609 / 1609 PASS`** 与双端口 `200` 校验并推送至 `origin/dev`。

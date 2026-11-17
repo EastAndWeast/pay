@@ -453,8 +453,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="button" onclick="triggerAppDownload('ios')" class="btn-primary w-full py-3 px-4 rounded-xl text-xs inline-flex items-center justify-center gap-2">
-                                            <i class="fa-solid fa-download" aria-hidden="true"></i>
+                                        <button type="button" onclick="openDownloadQr('ios')" class="btn-primary w-full py-3 px-4 rounded-xl text-xs inline-flex items-center justify-center gap-2">
+                                            <i class="fa-solid fa-qrcode" aria-hidden="true"></i>
                                             <span data-i18n="wallet_ios_btn">Download for iOS</span>
                                         </button>
                                     </div>
@@ -472,14 +472,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="button" onclick="triggerAppDownload('android')" class="btn-primary w-full py-3 px-4 rounded-xl text-xs inline-flex items-center justify-center gap-2">
-                                            <i class="fa-solid fa-download" aria-hidden="true"></i>
+                                        <button type="button" onclick="openDownloadQr('android')" class="btn-primary w-full py-3 px-4 rounded-xl text-xs inline-flex items-center justify-center gap-2">
+                                            <i class="fa-solid fa-qrcode" aria-hidden="true"></i>
                                             <span data-i18n="wallet_and_btn">Download Android APK</span>
                                         </button>
                                     </div>
                                 </div>
 
-                                <!-- Inline Download Status / Enterprise Distribution Notice -->
+                                <!-- Inline Download Guide Notice -->
                                 <div id="download-status-box" class="p-4 rounded-2xl bg-blue-50/70 border border-blue-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                                     <div class="flex items-start gap-3">
                                         <span class="w-9 h-9 rounded-xl bg-white text-[#0052ff] border border-blue-200 flex items-center justify-center shrink-0">
@@ -487,12 +487,12 @@
                                         </span>
                                         <div>
                                             <div id="download-status-title" class="text-xs font-extrabold text-slate-900" data-i18n="wallet_dl_note_title">Official App Distribution</div>
-                                            <div id="download-status-desc" class="text-xs text-slate-600 mt-0.5" data-i18n="wallet_dl_note_desc">Select iOS or Android above to download the installation package directly. Need enterprise TestFlight or signed APK?</div>
+                                            <div id="download-status-desc" class="text-xs text-slate-600 mt-0.5" data-i18n="wallet_dl_note_desc">Click iOS or Android above to pop up the scan-to-install QR code or start direct download.</div>
                                         </div>
                                     </div>
-                                    <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="btn-contact px-4 py-2.5 rounded-xl text-xs inline-flex items-center justify-center gap-1.5 shrink-0">
-                                        <i class="fa-brands fa-telegram text-[#0052ff]" aria-hidden="true"></i>
-                                        <span data-i18n="wallet_dl_support">Get Install Link</span>
+                                    <a href="https://download.aurellix.com" target="_blank" rel="noopener noreferrer" class="btn-contact px-4 py-2.5 rounded-xl text-xs inline-flex items-center justify-center gap-1.5 shrink-0">
+                                        <i class="fa-solid fa-download text-[#0052ff]" aria-hidden="true"></i>
+                                        <span data-i18n="wallet_dl_direct_apk">Direct APK</span>
                                     </a>
                                 </div>
                             </div>
@@ -518,6 +518,33 @@
             </div>
         </section>
     </main>
+
+    <!-- QR Download Modal -->
+    <div id="wallet-qr-modal" class="fixed inset-0 z-[120] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="qr-modal-title">
+        <div onclick="closeDownloadQr()" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
+        <div class="relative z-10 bg-white w-full max-w-sm rounded-3xl border border-slate-200 shadow-2xl overflow-hidden">
+            <div class="flex items-center justify-between px-6 pt-6 pb-2">
+                <h3 id="qr-modal-title" class="text-lg font-extrabold text-slate-900">Scan to Download</h3>
+                <button type="button" onclick="closeDownloadQr()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-900 hover:bg-slate-200 transition cursor-pointer" aria-label="Close">
+                    <i class="fa-solid fa-xmark text-sm" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="px-6 pb-6 flex flex-col items-center">
+                <p id="qr-modal-desc" class="text-xs sm:text-sm text-slate-600 text-center mb-5"></p>
+                <div class="w-52 h-52 bg-slate-50 rounded-2xl border border-slate-200 flex items-center justify-center mb-4 p-3">
+                    <img id="qr-modal-img" src="" alt="App Download QR Code" class="w-44 h-44 rounded-xl object-contain" />
+                </div>
+                <p id="qr-modal-tip" class="text-[0.72rem] text-slate-500 text-center mb-5 leading-relaxed"></p>
+                <div class="grid grid-cols-2 gap-3 w-full">
+                    <a id="qr-modal-direct" href="https://download.aurellix.com" target="_blank" rel="noopener noreferrer" class="btn-primary py-3 px-4 rounded-xl text-xs inline-flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-download" aria-hidden="true"></i>
+                        <span data-i18n="wallet_qr_direct">Direct Link</span>
+                    </a>
+                    <button type="button" onclick="closeDownloadQr()" class="btn-contact py-3 px-4 rounded-xl text-xs inline-flex items-center justify-center" data-i18n="wallet_qr_close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gradient-to-br from-[#1e3a5f] via-[#1a2f4a] to-[#0f1f35] text-white">
@@ -580,8 +607,8 @@
     <script>
         // Single source of truth for direct App package / store download URLs
         const APP_DOWNLOAD_URLS = {
-            ios: '',     // e.g. 'https://apps.apple.com/...' or TestFlight link
-            android: ''  // e.g. 'https://cdn.aurellix.com/app/aurellix-wallet-v2.4.0.apk'
+            ios: 'https://testflight.apple.com/join/DFSw6TPa',
+            android: 'https://download.aurellix.com'
         };
 
         const PAGE_META = {
@@ -644,8 +671,10 @@
                 wallet_and_req: 'Android 8.0+ · Direct APK Package',
                 wallet_and_btn: 'Download Android APK',
                 wallet_dl_note_title: 'Official App Distribution',
-                wallet_dl_note_desc: 'Select iOS or Android above to download the installation package directly. Need enterprise TestFlight or signed APK?',
-                wallet_dl_support: 'Get Install Link',
+                wallet_dl_note_desc: 'Click iOS or Android above to pop up the scan-to-install QR code or start direct download.',
+                wallet_dl_direct_apk: 'Direct APK',
+                wallet_qr_direct: 'Direct Link',
+                wallet_qr_close: 'Close',
                 wallet_cta_tag: 'Aurellix App Wallet',
                 wallet_cta_title: 'Experience Unified Payment & RWA Management',
                 wallet_cta_desc: 'Download the Aurellix App Wallet for iOS or Android, or reach our team for enterprise onboarding.'
@@ -698,46 +727,55 @@
                 wallet_and_req: 'Android 8.0+ · 官方直装安装包',
                 wallet_and_btn: '下载 Android APK',
                 wallet_dl_note_title: '官方客户端分发通道',
-                wallet_dl_note_desc: '点击上方 iOS 或 Android 按钮即可直接获取安装包；如需企业 TestFlight 邀请码或最新签名包，请联系顾问获取。',
-                wallet_dl_support: '获取最新安装包',
+                wallet_dl_note_desc: '点击上方 iOS 或 Android 按钮即可弹出扫码下载二维码，或直接获取安卓安装包。',
+                wallet_dl_direct_apk: '直接下载 APK',
+                wallet_qr_direct: '直接打开下载',
+                wallet_qr_close: '关闭',
                 wallet_cta_tag: 'Aurellix App 钱包',
                 wallet_cta_title: '开启支付与 RWA 一体化资金体验',
                 wallet_cta_desc: '立即下载 Aurellix App iOS 或 Android 客户端，或联系专属顾问了解企业生态接入方案。'
             }
         };
 
-        function triggerAppDownload(platform) {
-            const url = APP_DOWNLOAD_URLS[platform];
-            if (url) {
-                const a = document.createElement('a');
-                a.href = url;
-                if (platform === 'android') a.setAttribute('download', '');
-                else {
-                    a.target = '_blank';
-                    a.rel = 'noopener noreferrer';
-                }
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-                return;
-            }
+        function openDownloadQr(platform) {
+            const url = APP_DOWNLOAD_URLS[platform] || APP_DOWNLOAD_URLS.android;
             const isZh = AurellixV2.getLang() === 'zh';
-            const titleEl = document.getElementById('download-status-title');
-            const descEl = document.getElementById('download-status-desc');
-            if (titleEl && descEl) {
-                if (platform === 'ios') {
-                    titleEl.textContent = isZh ? 'iOS 客户端下载提示' : 'iOS App Download';
-                    descEl.textContent = isZh
-                        ? '最新 iOS TestFlight / App Store 安装包正在同步发布中，点击右侧按钮联系 @cs_aurellix 立即获取企业直装链接。'
-                        : 'The latest iOS TestFlight / App Store build is being staged. Click the button on the right to get a direct install link from @cs_aurellix.';
-                } else {
-                    titleEl.textContent = isZh ? 'Android APK 下载提示' : 'Android APK Download';
-                    descEl.textContent = isZh
-                        ? '最新 Android 官方签名 APK（v2.4.0）正在同步上架中，点击右侧按钮联系 @cs_aurellix 立即领取直链安装包。'
-                        : 'The latest signed Android APK (v2.4.0) is being staged. Click the button on the right to receive the direct APK from @cs_aurellix.';
-                }
+            const modal = document.getElementById('wallet-qr-modal');
+            const titleEl = document.getElementById('qr-modal-title');
+            const descEl = document.getElementById('qr-modal-desc');
+            const tipEl = document.getElementById('qr-modal-tip');
+            const imgEl = document.getElementById('qr-modal-img');
+            const directEl = document.getElementById('qr-modal-direct');
+            if (!modal || !imgEl || !directEl) return;
+
+            if (platform === 'ios') {
+                titleEl.textContent = isZh ? '扫码下载 iOS 版' : 'Scan to Download iOS';
+                descEl.textContent = isZh ? '使用手机相机扫描下方二维码，加入 TestFlight 安装' : 'Scan with your iPhone camera to join TestFlight and install';
+                tipEl.textContent = isZh ? '请先在 App Store 安装官方 TestFlight，再打开链接接受测试邀请。' : 'Install Apple TestFlight from the App Store first, then tap Accept to install Aurellix.';
+            } else {
+                titleEl.textContent = isZh ? '扫码下载 Android 版' : 'Scan to Download Android';
+                descEl.textContent = isZh ? '使用手机相机或浏览器扫描下方二维码，下载 APK 安装包' : 'Scan with your phone camera or browser to download the APK package';
+                tipEl.textContent = isZh ? '若系统提示“未知来源”，请在设置 > 安全中允许安装来自浏览器的应用。' : 'If prompted "Unknown Source", allow app installs from your browser in Settings > Security.';
             }
+
+            imgEl.src = 'https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=' + encodeURIComponent(url);
+            directEl.setAttribute('href', url);
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
         }
+
+        function closeDownloadQr() {
+            const modal = document.getElementById('wallet-qr-modal');
+            if (!modal) return;
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeDownloadQr();
+        });
 
         function changeLang(lang) {
             AurellixV2.applyLang(lang, PAGE_TRANSLATIONS, PAGE_META);
