@@ -180,8 +180,8 @@ window.AurellixV2 = (function () {
     // Dynamic Meta / OG / Twitter tags
     if (metaMap && metaMap[currentLang]) {
       const m = metaMap[currentLang];
-      const baseHost = (location.origin && location.origin.startsWith('http')) ? location.origin : 'https://pay-52p.pages.dev';
-      const shareImg = currentLang === 'zh' ? (baseHost + '/static/share_zh.png') : (baseHost + '/static/share_en.png');
+      const baseHost = (location.origin && location.origin.startsWith('http')) ? location.origin : 'https://rail.aurellix.com';
+      const shareImg = (currentLang === 'zh' ? (baseHost + '/static/share_zh.png') : (baseHost + '/static/share_en.png')) + '?v=20261117';
 
       if (m.title) document.title = m.title;
       const descEl = document.querySelector('meta[name="description"]');
@@ -192,6 +192,10 @@ window.AurellixV2 = (function () {
       if (ogDesc && m.desc) ogDesc.setAttribute('content', m.desc);
       const ogImg = document.getElementById('og-image');
       if (ogImg) ogImg.setAttribute('content', shareImg);
+      const ogImgSec = document.getElementById('og-image-secure');
+      if (ogImgSec) ogImgSec.setAttribute('content', shareImg);
+      const ogLocale = document.getElementById('og-locale');
+      if (ogLocale) ogLocale.setAttribute('content', currentLang === 'zh' ? 'zh_CN' : 'en_US');
       const twTitle = document.getElementById('tw-title');
       if (twTitle && m.title) twTitle.setAttribute('content', m.title);
       const twDesc = document.getElementById('tw-desc');

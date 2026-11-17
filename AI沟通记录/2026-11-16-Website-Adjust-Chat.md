@@ -257,3 +257,13 @@
   1. 实测检索 `https://www.aurellix.com/download` 线上包配置，对齐接入 **iOS TestFlight**（`https://testflight.apple.com/join/DFSw6TPa`）与 **Android APK**（`https://download.aurellix.com`）。
   2. 为 `wallet.html` 新增弹出二维码模态窗 `#wallet-qr-modal`，点击 iOS / Android 按钮即弹出对应平台扫码二维码、安装指引及「直接打开下载」按钮，同时在卡片底部保留 Android APK 快捷下载按钮。
   3. 同步 `build/`，通过 `verify_v2.js` **`1609 / 1609 PASS`** 与双端口 `200` 校验并推送至 `origin/dev`。
+
+
+---
+
+## 23. 完成全站 SEO 升级与 Telegram / WhatsApp 社交分享卡片优化 (2026-11-17 16:35)
+- **用户指令**：「接下来优化 1.SEO优化 2.考虑分享到Telegram和whatsapp的社交分享显示」
+- **处理结果**：
+  1. 排查发现原 `share_en.png` / `share_zh.png` 仍为旧版截图（含 `PYUSD` 与破损 Logo），已重新渲染 `1200×630` 全新中英文品牌分享图，并将全站 7 页及 `v2-common.js` 分享图地址统一切换为 `https://rail.aurellix.com/static/share_*.png?v=20261117`。
+  2. 为全部 7 页补齐 `og:locale`、`og:image:secure_url`、`og:image:alt`、`hreflang="x-default"`、`robots`、`theme-color` 及 Schema.org `JSON-LD` 结构化数据，并新建 `robots.txt` 与 `sitemap.xml`。
+  3. 同步 `build/`，通过 `verify_v2.js` **`1632 / 1632 PASS`** 与双端口 `200 OK` 校验，并推送至 `origin/dev`。

@@ -245,3 +245,23 @@ git -C "AurellixPay_new_website" diff --name-only -- build/
 - `verify_v2.js build_v2` → **`VERIFICATION SUMMARY -> PASSED: 1609 | FAILED: 0`**
 - `verify_v2.js build` → **`VERIFICATION SUMMARY -> PASSED: 1609 | FAILED: 0`**（已覆盖点击 Android 弹窗检验二维码 URL 与直链 `https://download.aurellix.com`）
 - `curl.exe` 请求 `5180` 与 `5181` 端口 `wallet.html` → 均返回 **`200`**
+
+
+---
+
+## 15. 全站 SEO 升级与 Telegram / WhatsApp 社交分享卡片优化 (2026-11-17 16:35)
+
+### 变更摘要
+1. **重制双语社交分享主图（`1200×630`）**：
+   - 排查发现原 [share_en.png](../build_v2/static/share_en.png) 与 [share_zh.png](../build_v2/static/share_zh.png) 仍为旧版收银台截图（含 `PYUSD`、`share_zh.png` 左上角 Logo 破图且英文版实为中文）。已按新版集团主站风格重新渲染生成 `1200×630` 全新 `share_en.png`（英文）与 `share_zh.png`（中文），彻底清除 `PYUSD` 与破图问题。
+2. **修复静态 HTML OG/Twitter 分享域名与 Telegram/WhatsApp 字段**：
+   - 将全站 7 页 `<head>` 与 [v2-common.js](../build_v2/static/v2-common.js) 默认分享图地址从旧域名 `https://pay-52p.pages.dev/static/share_*.png` 统一修正为线上主域 `https://rail.aurellix.com/static/share_*.png?v=20261117`（附带版本参数刷新 Telegram `@WebpageBot` 与 WhatsApp 缓存）。
+   - 为全部 7 页补齐 `og:url`、`og:locale` (`en_US`)、`og:locale:alternate` (`zh_CN`)、`og:image:secure_url`、`og:image:type`、`og:image:width`、`og:image:height`、`og:image:alt`、`og:site_name`。
+3. **技术 SEO 与结构化数据**：
+   - 新增 [robots.txt](../build_v2/robots.txt) 与多语言 `xhtml:link` [sitemap.xml](../build_v2/sitemap.xml)（覆盖全站 7 页及 `en`/`zh`/`x-default`）。
+   - 为全站 7 页补齐 `meta[name="robots"]`、`meta[name="theme-color"]` 与 `hreflang="x-default"`，并在 `index.html`、`fx.html`、`otc.html`、`coverage.html`、`wallet.html` 植入 Schema.org `JSON-LD` 结构化数据（`Organization` / `WebSite` / `FinancialService` / `SoftwareApplication`）。
+
+### 实测命令与最终结果（`build_v2/` 镜像覆盖 `build/` 后执行）
+- `verify_v2.js build_v2` → **`VERIFICATION SUMMARY -> PASSED: 1632 | FAILED: 0`**
+- `verify_v2.js build` → **`VERIFICATION SUMMARY -> PASSED: 1632 | FAILED: 0`**（含 `robots.txt`、`sitemap.xml`、7 页完整 SEO/OG/Twitter 标签及无旧 `pay-52p.pages.dev` 残留断言）
+- `curl.exe` 请求 `5180` 与 `5181` 端口下 `robots.txt`、`sitemap.xml`、`static/share_en.png`、`static/share_zh.png`、`index.html` 共 10 个端点 → 全部返回 **`200`**
