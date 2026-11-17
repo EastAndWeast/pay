@@ -162,3 +162,19 @@ git -C "AurellixPay_new_website" diff --name-only -- build/
 - `node "...\verify_v2.js" build` → **`VERIFICATION SUMMARY -> PASSED: 1310 | FAILED: 0`**（退出码 `0`）
 - `Select-String`（检查 `build/*.html` 与 `build/static/v2-common.js` 中的第三方词、`\bOTC\b`、`\bPYUSD\b`、`官网子站|子网站|Sub-site`、`privacy@aurellix|legal@aurellix`）→ **0 命中**
 - `curl.exe` 请求 `http://127.0.0.1:5180/`（`build_v2`）与 `http://127.0.0.1:5181/`（`build`）下全部 6 页 HTML 与 `static/v2-common.js` 共 14 个端点 → 全部返回 **`200`**
+
+
+---
+
+## 10. 全站折叠区块默认展开、人民币汇率更新至 6.6700 与 API 文档 `/zh/` 404 修复 (2026-11-17 14:42)
+
+### 变更摘要
+1. **全站 8 处折叠详情默认展开**：为 [fx.html](../build_v2/fx.html) 全部 4 组（22 国本地 VA、11 国电子钱包、20 币种全览、三大贸易单据与 6 类 KYB 主体）、[otc.html](../build_v2/otc.html) 全部 2 组（4 项清结算能力、26 国多币种矩阵）与 [coverage.html](../build_v2/coverage.html) 全部 2 组（36 国双渠道矩阵、94 国收单名录）`<details class="ax-accordion">` 统一添加 `open` 属性。
+2. **USD/CNY 汇率更新至最新参考汇率 (`6.6700`)**：将 [index.html](../build_v2/index.html) 与 [fx.html](../build_v2/fx.html) 演示卡片的中英文汇率 `1 USD = 7.2450 CNY` 同步更新为 `1 USD = 6.6700 CNY`（实时查询最新在岸/中间价参考约 `6.665–6.671`），对应 `$100,000.00` 试算金额同步更新为 `667,000.00` / `667,000 CNY`。
+3. **修复中文态点击 API 文档跳转 404**：排查确认 `https://docs.rail.aurellix.com/` 为 VitePress (`v1.6.4`) SPA 文档站，无 `/zh/` 路由导致访问 `/zh/` 时客户端渲染 404；已将 [v2-common.js](../build_v2/static/v2-common.js) 中中英文 `API 文档` 链接统一指向 `https://docs.rail.aurellix.com/`。
+
+### 实测命令与最终结果（`build_v2/` 镜像覆盖 `build/` 后执行）
+- `node "...\verify_v2.js" build_v2` → **`VERIFICATION SUMMARY -> PASSED: 1319 | FAILED: 0`**（退出码 `0`）
+- `node "...\verify_v2.js" build` → **`VERIFICATION SUMMARY -> PASSED: 1319 | FAILED: 0`**（退出码 `0`，新增全站 8 组 `details.ax-accordion` `open === true` 与旧汇率清理断言）
+- `Select-String` 扫描 `build/*.html` 与 `build/static/v2-common.js`（旧汇率 `7.2450`/`724,500`、`docs.rail.aurellix.com/zh`、第三方词、`PYUSD`）→ **0 命中**
+- `curl.exe` 请求 `5180` 与 `5181` 端口下 6 页 HTML 与 `v2-common.js` 共 14 个端点 → 全部返回 **`200`**

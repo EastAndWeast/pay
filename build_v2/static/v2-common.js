@@ -159,7 +159,7 @@ window.AurellixV2 = (function () {
 
     // Dynamic API Docs & centralized RWA Platform links
     document.querySelectorAll('a[data-i18n="nav_api"], a[data-api-link="true"]').forEach((link) => {
-      link.setAttribute('href', currentLang === 'zh' ? 'https://docs.rail.aurellix.com/zh/' : 'https://docs.rail.aurellix.com/');
+      link.setAttribute('href', 'https://docs.rail.aurellix.com/');
     });
 
     const rwaUrl = RWA_SITE_URL + (currentLang === 'zh' ? '?lang=zh' : '');

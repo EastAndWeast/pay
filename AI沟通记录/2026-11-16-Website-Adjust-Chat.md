@@ -178,3 +178,17 @@
   3. **页脚左侧品牌入口改版**：全部 6 页 `<footer>` 左侧移除圆形 Telegram 按钮，改为 **`支付官网`** (`Pay Website`, `#pay-site-link`) 与 **`RWA 官网`** (`RWA Website`, `#group-link`) 并排双入口（右侧咨询顾问列 `@cs_aurellix` 保留不变）。
   4. **[privacy.html](../build_v2/privacy.html) 与 [terms.html](../build_v2/terms.html) 内容充实与邮箱统一**：删除「最近更新时间 / Last updated」字样，中英文均扩展至 8 大完整条款（覆盖 KYB 准入、贸易真实性单据、锁汇与链上白名单、退汇与拒付、API 与知识产权、风控与责任限制及数据合规权利等），官方邮箱统一变更为 `info@aurellix.com`。
   5. **构建与验证**：`build_v2/` 镜像覆盖 `build/`，`verify_v2.js build_v2` 与 `verify_v2.js build` 均取得 **`PASSED: 1310 | FAILED: 0`**，静态扫描第三方词、`OTC`、`PYUSD`、`官网子站/Sub-site` 与旧邮箱均 `0` 命中。
+
+
+---
+
+## 15. 全站折叠区默认展开、人民币汇率更新与 API 文档 404 修复 (2026-11-17 14:42)
+- **用户反馈**：
+  1. 将 `fx.html` 图 1/2/3/5 及其他页面收起的折叠内容全部改为默认展开；
+  2. 人民币汇率 `7.2450` 较早，查询最新汇率后更新；
+  3. 中文模式下点击 API 文档进入 `https://docs.rail.aurellix.com/zh/` 显示 `404 PAGE NOT FOUND`，点击 `Take me home` 回到根域名才正常。
+- **处理结果**：
+  1. 为 `fx.html`（4 处）、`otc.html`（2 处）与 `coverage.html`（2 处）共 8 个 `<details class="ax-accordion">` 全部加上 `open` 默认展开。
+  2. 联网检索当前 USD/CNY 最新中间价（约 `6.665–6.671`），将 `index.html` 与 `fx.html` 演示牌价更新为 **`1 USD = 6.6700 CNY`**，试算金额同步更新为 **`667,000`**。
+  3. 验证 `docs.rail.aurellix.com` 为 VitePress `v1.6.4` 文档站（仅根路由 `/` 有效，无 `/zh/` 页面），将 `v2-common.js` 中英文下 `nav_api` / `[data-api-link="true"]` 统一改为 `https://docs.rail.aurellix.com/`。
+  4. 同步覆盖 `build/` 并运行 `verify_v2.js` 取得 **`PASSED: 1319 | FAILED: 0`**。
