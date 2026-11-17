@@ -178,3 +178,19 @@ git -C "AurellixPay_new_website" diff --name-only -- build/
 - `node "...\verify_v2.js" build` → **`VERIFICATION SUMMARY -> PASSED: 1319 | FAILED: 0`**（退出码 `0`，新增全站 8 组 `details.ax-accordion` `open === true` 与旧汇率清理断言）
 - `Select-String` 扫描 `build/*.html` 与 `build/static/v2-common.js`（旧汇率 `7.2450`/`724,500`、`docs.rail.aurellix.com/zh`、第三方词、`PYUSD`）→ **0 命中**
 - `curl.exe` 请求 `5180` 与 `5181` 端口下 6 页 HTML 与 `v2-common.js` 共 14 个端点 → 全部返回 **`200`**
+
+
+---
+
+## 11. 官网接入 App 钱包入口（方案 B）(2026-11-17 15:39)
+
+### 变更摘要
+1. **单点外链常量与双语自动拼接**：在 [v2-common.js](../build_v2/static/v2-common.js) 新增 `WALLET_SITE_URL = 'https://www.aurellix.com/wallet'`，补充 `nav_wallet`（`App Wallet` / `App 钱包`）与 `nav_wallet_desc`（`Multi-asset payment & RWA wallet app` / `多资产支付与 RWA 钱包客户端`）词条；`applyLang` 统一为所有 `a[data-wallet-link="true"]` 在中文态追加 `?lang=zh`，英文态保持根地址，并导出 `AurellixV2.getWalletUrl`。
+2. **全站 6 页低干扰入口落位（方案 B）**：保持首页 B2B 收付主链路不变，在 `index.html`、`fx.html`、`otc.html`、`coverage.html`、`privacy.html`、`terms.html` 全部 6 个页面的桌面端 `开发与生态 ▾` 下拉菜单、移动端抽屉菜单 `#mobile-menu`（`Demo` 下方）以及页脚 `开发与入口` 列（`商户管理后台` 下方）统一接入 `App Wallet / App 钱包` 外链入口（`data-wallet-link="true"`，`target="_blank" rel="noopener noreferrer"`）。
+3. **测试脚本覆盖**：在 `verify_v2.js` 新增桌面端导航、移动端抽屉、页脚 `a[data-wallet-link="true"]` 存在性及中英文 `?lang=zh` / 无参数切换断言（每页 `>= 3` 处）。
+
+### 实测命令与最终结果（`build_v2/` 镜像覆盖 `build/` 后执行）
+- `$env:NODE_PATH = (Resolve-Path "node_modules").Path; node "...\verify_v2.js" build_v2` → **`VERIFICATION SUMMARY -> PASSED: 1379 | FAILED: 0`**
+- `$env:NODE_PATH = (Resolve-Path "node_modules").Path; node "...\verify_v2.js" build` → **`VERIFICATION SUMMARY -> PASSED: 1379 | FAILED: 0`**
+- `Select-String` 禁用词扫描（`PYUSD|官网子站|子网站|Sub-site|privacy@aurellix\.com|legal@aurellix\.com`）→ **`PROHIBITED_TERMS_HITS: 0`**
+- `curl.exe` 请求 `http://127.0.0.1:5180/`（`build_v2`）与 `http://127.0.0.1:5181/`（`build`）下全部 6 页 HTML（共 12 个端点）→ 全部返回 **`200`**

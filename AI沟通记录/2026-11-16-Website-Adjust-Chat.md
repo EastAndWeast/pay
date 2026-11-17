@@ -209,3 +209,21 @@
   - `/en/` (`https://docs.rail.aurellix.com/en/`) 为 **English**（`AurellixPay Docs Center`）；
   - `/zh/` 路径未部署，访问会由 VitePress 客户端路由渲染 `404 PAGE NOT FOUND`。
 - **修复**：在 [v2-common.js](../build_v2/static/v2-common.js#L160-L163) 将 `zh` 指向 `https://docs.rail.aurellix.com/`、`en` 指向 `https://docs.rail.aurellix.com/en/`，并同步覆盖 `build/`、通过 `verify_v2.js` 校验及推送至 `origin/dev`。
+
+
+---
+
+## 18. 集团官网接入「RWA 支付 / App 钱包 (`aurellix.com/wallet`)」产品建议 (2026-11-17 15:08)
+- **用户咨询**：原 RWA 官网下的钱包 (`https://www.aurellix.com/wallet`) 计划由 RWA App 转型加入支付功能，咨询是否适合放入当前集团主官网及放置建议。
+- **调研事实**：实测 `https://www.aurellix.com/wallet` 返回 HTTP 200 SPA 页面，当前 `<meta>`/`og:description` 仍为旧「Leading RWA Investment Platform」口径。
+- **核心建议**：适合放入（补齐集团移动端终端闭环），但需避免与首屏 B2B 企业收付混淆及注意合规尽调口径；推荐采用「方案 A：在 `开发与生态 ▾` / 页脚资源列加 `Aurellix App 钱包 ↗` 入口 + 首页低干扰移动端展示条」，并同步更新 `/wallet` 页自身文案为「支付 + RWA 资产」定位。待用户确认方案后即可按需落地。
+
+
+---
+
+## 19. 拍板采用「方案 B」接入 `App 钱包` 入口并推送上线 (2026-11-17 15:39)
+- **用户指令**：「目前我觉得钱包在转型，想要采用B」
+- **执行结果**：
+  1. 在 [v2-common.js](../build_v2/static/v2-common.js) 新增 `WALLET_SITE_URL = 'https://www.aurellix.com/wallet'` 及 `nav_wallet` / `nav_wallet_desc` 中英文词条，支持中文态自动追加 `?lang=zh`。
+  2. 在全部 6 个页面（`index.html`、`fx.html`、`otc.html`、`coverage.html`、`privacy.html`、`terms.html`）的桌面端 `开发与生态 ▾` 下拉、移动端 `#mobile-menu` 及页脚 `开发与入口` 列接入 **`App 钱包 / App Wallet`**（`data-wallet-link="true"`），不占用首屏 B2B 主视觉版面。
+  3. 同步覆盖 `build/`，运行 `verify_v2.js` 在 `build_v2` 与 `build` 均取得 **`1379 PASSED / 0 FAILED`**，禁用词扫描 0 命中，本地 `5180`/`5181` 全 6 页 HTTP `200`，并将改动提交推送至 `origin/dev`。

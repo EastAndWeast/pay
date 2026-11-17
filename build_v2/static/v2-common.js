@@ -1,7 +1,8 @@
 /* Shared i18n, navigation, drawer, and accessibility utilities for Aurellix Group */
 window.AurellixV2 = (function () {
-  // Single source of truth for the Aurellix RWA Platform URL (update here when domain changes)
+  // Single source of truth for the Aurellix RWA Platform & App Wallet URLs
   const RWA_SITE_URL = 'https://www.aurellix.com/';
+  const WALLET_SITE_URL = 'https://www.aurellix.com/wallet';
 
   const COMMON_TRANSLATIONS = {
     en: {
@@ -31,6 +32,8 @@ window.AurellixV2 = (function () {
       nav_partners_desc: 'Licensed rails & global settlement network',
       nav_api_desc: 'REST APIs, SDKs & Webhook reference',
       nav_demo_desc: 'Live institutional checkout sandbox',
+      nav_wallet: 'App Wallet',
+      nav_wallet_desc: 'Multi-asset payment & RWA wallet app',
       nav_fx: 'Global FX',
       nav_fx_pill: 'B2B Fiat',
       nav_otc: 'Global Conversion',
@@ -83,6 +86,8 @@ window.AurellixV2 = (function () {
       nav_partners_desc: '持牌监管体系与全球银行清算网络',
       nav_api_desc: 'Open API 文档与 Webhook 回调集成',
       nav_demo_desc: '交互式收银台在线演示环境',
+      nav_wallet: 'App 钱包',
+      nav_wallet_desc: '多资产支付与 RWA 移动端钱包',
       nav_fx: '全球收付',
       nav_fx_pill: '外贸·本币',
       nav_otc: '全球承兑',
@@ -165,6 +170,11 @@ window.AurellixV2 = (function () {
     const rwaUrl = RWA_SITE_URL + (currentLang === 'zh' ? '?lang=zh' : '');
     document.querySelectorAll('a[data-rwa-link="true"], #group-link').forEach((link) => {
       link.setAttribute('href', rwaUrl);
+    });
+
+    const walletUrl = WALLET_SITE_URL + (currentLang === 'zh' ? '?lang=zh' : '');
+    document.querySelectorAll('a[data-wallet-link="true"]').forEach((link) => {
+      link.setAttribute('href', walletUrl);
     });
 
     // Dynamic Meta / OG / Twitter tags
@@ -481,6 +491,7 @@ window.AurellixV2 = (function () {
     initTablist,
     updateNavHighlight,
     getRwaUrl: () => RWA_SITE_URL,
+    getWalletUrl: () => WALLET_SITE_URL,
     getLang: () => currentLang
   };
 })();
