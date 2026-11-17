@@ -1,22 +1,27 @@
-/* Shared i18n, navigation, drawer, and accessibility utilities for Aurellix Pay V2 */
+/* Shared i18n, navigation, drawer, and accessibility utilities for Aurellix Group */
 window.AurellixV2 = (function () {
+  // Single source of truth for the Aurellix RWA Sub-site URL (update here when domain changes)
+  const RWA_SITE_URL = 'https://www.aurellix.com/';
+
   const COMMON_TRANSLATIONS = {
     en: {
       nav_home: 'Home',
       nav_products: 'Products',
       nav_solutions: 'Solutions',
       nav_resources: 'Resources',
+      nav_rwa: 'RWA Ecosystem',
+      nav_rwa_sub: 'RWA Sub-site',
       nav_prod_collect: 'Global Collection',
       nav_prod_collect_desc: '22+ local & global VA accounts',
       nav_prod_payout: 'Global Payout',
       nav_prod_payout_desc: '33+ local rails, SWIFT & e-wallets',
-      nav_prod_otc: 'FX & Stablecoin OTC',
-      nav_prod_otc_desc: '0-fee FX & 26-fiat USDT/USDC OTC',
+      nav_prod_otc: 'FX & Digital Conversion',
+      nav_prod_otc_desc: '0-fee FX & 26-fiat USDT/USDC settlement',
       nav_prod_acq: 'Global Acquiring',
       nav_prod_acq_desc: '94+ countries cards, APMs & crypto',
       nav_sol_b2b: 'B2B Foreign Trade',
       nav_sol_b2b_desc: 'Local-currency collect, FX & supplier payout',
-      nav_sol_otc: 'Institutional OTC',
+      nav_sol_otc: 'Fiat ⇄ Stablecoin Clearing',
       nav_sol_otc_desc: 'Fiat ⇄ Stablecoin T+0 treasury rails',
       nav_sol_ecom: 'E-Commerce & Digital',
       nav_sol_ecom_desc: 'Marketplace, checkout & global payouts',
@@ -28,7 +33,7 @@ window.AurellixV2 = (function () {
       nav_demo_desc: 'Live institutional checkout sandbox',
       nav_fx: 'Global FX',
       nav_fx_pill: 'B2B Fiat',
-      nav_otc: 'OTC',
+      nav_otc: 'Global Conversion',
       nav_otc_pill: 'Stablecoin',
       nav_acquiring: 'Acquiring',
       nav_coverage: 'Coverage',
@@ -37,16 +42,16 @@ window.AurellixV2 = (function () {
       nav_contact: 'Contact',
       nav_portal: 'Merchant Portal',
       mobile_lang_label: 'Select Language',
-      footer_desc: 'Aurellix Pay is a global institutional treasury, B2B cross-border collection/payout, stablecoin OTC settlement, and merchant acquiring platform.',
-      footer_group: 'Aurellix Group',
+      footer_desc: 'Aurellix Group operates global treasury & payment infrastructure spanning Pay (B2B collection, payout & acquiring), Global Conversion (fiat ⇄ stablecoin clearing), and the RWA Ecosystem.',
+      footer_group: 'Aurellix RWA Sub-site',
       footer_product: 'Solutions',
       footer_resources: 'Resources',
       footer_privacy: 'Privacy Policy',
       footer_terms: 'Terms of Service',
-      copyright: '© 2026 Aurellix Pay. All rights reserved.',
+      copyright: '© 2026 Aurellix Group · Aurellix Pay. All rights reserved.',
       cta_banner_tag: 'Get Started',
       cta_banner_title: 'Open Aurellix Pay & Power Global Payments',
-      cta_banner_desc: 'One-stop global treasury infrastructure for B2B collection, payout, FX, OTC & acquiring.',
+      cta_banner_desc: 'One-stop global treasury infrastructure for B2B collection, payout, FX, stablecoin conversion & acquiring.',
       cta_banner_btn: 'Launch Portal',
       btn_merchant: 'Open Merchant Portal'
     },
@@ -55,6 +60,8 @@ window.AurellixV2 = (function () {
       nav_products: '产品服务',
       nav_solutions: '解决方案',
       nav_resources: '开发与生态',
+      nav_rwa: 'RWA 生态',
+      nav_rwa_sub: '集团 RWA 子站',
       nav_prod_collect: '全球收款',
       nav_prod_collect_desc: '22+ 国本地与全球收款账户',
       nav_prod_payout: '全球付款',
@@ -86,22 +93,23 @@ window.AurellixV2 = (function () {
       nav_contact: '咨询顾问',
       nav_portal: '商户管理后台',
       mobile_lang_label: '选择语言 / Language',
-      footer_desc: 'Aurellix Pay 是企业级全球资金清结算平台，提供 B2B 跨境收付款、多币种实时换汇、法币⇄稳定币双向承兑与全球聚合收单服务。',
-      footer_group: 'Aurellix 集团',
-      footer_product: '核心方案',
+      footer_desc: 'Aurellix 集团官方主站 · 统筹旗下 Aurellix Pay（全球收付及聚合收单）、全球承兑（26 国法币⇄稳定币清结算）与 RWA 实物资产代币化子网站三大板块。',
+      footer_group: '访问 RWA 官网子站',
+      footer_product: '集团业务矩阵',
       footer_resources: '开发与入口',
       footer_privacy: '隐私政策',
       footer_terms: '服务条款',
-      copyright: '© 2026 Aurellix Pay. All rights reserved.',
+      copyright: '© 2026 Aurellix Group · Aurellix Pay. 保留所有权利。',
       cta_banner_tag: '开启全球收付',
       cta_banner_title: '开通 Aurellix Pay，开启全球收付',
-      cta_banner_desc: '一站式资金管理解决方案 · 赋能企业全球业务拓展',
+      cta_banner_desc: 'Aurellix 集团一站式资金管理基础设施 · 赋能企业全球业务拓展',
       cta_banner_btn: '立即体验',
       btn_merchant: '进入商户后台'
     }
   };
 
   let currentLang = 'en';
+  let navHighlightUpdater = null;
 
   function getInitialLang() {
     const params = new URLSearchParams(location.search);
@@ -147,15 +155,15 @@ window.AurellixV2 = (function () {
       } catch (e) {}
     });
 
-    // Dynamic API Docs & Group links
+    // Dynamic API Docs & centralized RWA Sub-site links
     document.querySelectorAll('a[data-i18n="nav_api"], a[data-api-link="true"]').forEach((link) => {
       link.setAttribute('href', currentLang === 'zh' ? 'https://docs.rail.aurellix.com/zh/' : 'https://docs.rail.aurellix.com/');
     });
 
-    const groupLink = document.getElementById('group-link');
-    if (groupLink) {
-      groupLink.setAttribute('href', 'https://www.aurellix.com/' + (currentLang === 'zh' ? '?lang=zh' : ''));
-    }
+    const rwaUrl = RWA_SITE_URL + (currentLang === 'zh' ? '?lang=zh' : '');
+    document.querySelectorAll('a[data-rwa-link="true"], #group-link').forEach((link) => {
+      link.setAttribute('href', rwaUrl);
+    });
 
     // Dynamic Meta / OG / Twitter tags
     if (metaMap && metaMap[currentLang]) {
@@ -252,32 +260,147 @@ window.AurellixV2 = (function () {
       }
     });
 
-    // Activate matching tabpanel or <details> drawer when navigating by #hash
-    function syncHashTarget() {
-      const hash = (location.hash || '').replace(/^#/, '');
-      if (!hash) return;
-      const target = document.getElementById(hash);
-      if (!target) return;
+    // Dynamically resolve active navbar group & popover item from route/hash (or explicit tab override)
+    function updateNavHighlight(forcedGroup, forcedSubKey) {
+      const page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+      const hash = (location.hash || '').toLowerCase();
+      let group = forcedGroup || null;
+      let subKey = forcedSubKey || null;
 
-      const parentDetails = target.tagName === 'DETAILS' ? target : target.closest('details');
-      if (parentDetails) {
-        parentDetails.open = true;
+      if (!group) {
+        if (page === 'coverage.html') {
+          group = 'coverage';
+        } else if (page === 'fx.html') {
+          if (hash === '#fx-b2b') {
+            group = 'solutions';
+            subKey = subKey || 'nav_sol_b2b';
+          } else {
+            group = 'products';
+            if (!subKey) {
+              subKey = hash === '#fx-wallets' ? 'nav_prod_payout' : (hash === '#fx-exchange' ? 'nav_prod_otc' : 'nav_prod_collect');
+            }
+          }
+        } else if (page === 'otc.html') {
+          if (hash === '#solution') {
+            group = 'solutions';
+            subKey = subKey || 'nav_sol_otc';
+          } else {
+            group = 'products';
+            subKey = subKey || 'nav_prod_otc';
+          }
+        } else if (page === 'privacy.html' || page === 'terms.html') {
+          group = null;
+        } else {
+          if (hash === '#scenarios') {
+            group = 'solutions';
+            subKey = subKey || 'nav_sol_ecom';
+          } else if (hash === '#rwa') {
+            group = 'solutions';
+            subKey = subKey || 'nav_sol_rwa';
+          } else if (hash === '#compliance') {
+            group = 'resources';
+            subKey = subKey || 'nav_partners';
+          } else if (hash === '#acquiring') {
+            group = 'products';
+            subKey = subKey || 'nav_prod_acq';
+          } else {
+            group = 'home';
+          }
+        }
       }
 
-      if (target.getAttribute('role') === 'tabpanel') {
-        const controllingTab = document.querySelector(`[role="tab"][aria-controls="${hash}"], [role="tab"][data-panel="${hash}"]`);
-        if (controllingTab) {
-          controllingTab.click();
+      const desktopNav = document.querySelector('header nav[aria-label="Primary"]');
+      if (desktopNav) {
+        desktopNav.querySelectorAll('.nav-link[aria-current], .nav-dropdown-trigger[aria-current], .nav-popover-item[aria-current]').forEach((el) => {
+          el.removeAttribute('aria-current');
+        });
+
+        if (group === 'home' || group === 'coverage') {
+          const topLink = desktopNav.querySelector('a[data-i18n="nav_' + group + '"]');
+          if (topLink) topLink.setAttribute('aria-current', 'page');
+        } else if (group) {
+          const trigger = Array.from(desktopNav.querySelectorAll('.nav-dropdown-trigger')).find((btn) =>
+            Boolean(btn.querySelector('[data-i18n="nav_' + group + '"]'))
+          );
+          if (trigger) trigger.setAttribute('aria-current', 'page');
+        }
+
+        if (subKey) {
+          const subItem = Array.from(desktopNav.querySelectorAll('.nav-popover-item')).find((a) =>
+            a.getAttribute('data-i18n') === subKey || Boolean(a.querySelector('[data-i18n="' + subKey + '"]'))
+          );
+          if (subItem) subItem.setAttribute('aria-current', 'page');
+        }
+      }
+
+      const mobileNav = document.querySelector('#mobile-menu nav[aria-label="Mobile Primary"]');
+      if (mobileNav) {
+        mobileNav.querySelectorAll('a[aria-current]').forEach((a) => {
+          a.removeAttribute('aria-current');
+          a.classList.remove('text-[#0052ff]', 'bg-blue-50');
+          if (a.classList.contains('rounded-xl')) {
+            a.classList.add('bg-slate-50', 'text-slate-800');
+          }
+        });
+
+        let mobileActive = null;
+        if (group === 'home' || group === 'coverage') {
+          mobileActive = mobileNav.querySelector('a[data-i18n="nav_' + group + '"]');
+        } else if (subKey) {
+          mobileActive = mobileNav.querySelector('a[data-i18n="' + subKey + '"]');
+        }
+        if (mobileActive) {
+          mobileActive.setAttribute('aria-current', 'page');
+          mobileActive.classList.remove('bg-slate-50', 'text-slate-800');
+          if (mobileActive.classList.contains('rounded-xl')) {
+            mobileActive.classList.add('bg-blue-50', 'text-[#0052ff]');
+          } else {
+            mobileActive.classList.add('text-[#0052ff]');
+          }
+        }
+      }
+    }
+
+    // Activate matching tabpanels (including nested ancestors) or <details> drawer when navigating by #hash
+    function syncHashTarget() {
+      const hash = (location.hash || '').replace(/^#/, '');
+      if (hash) {
+        const target = document.getElementById(hash);
+        if (target) {
+          // Activate any ancestor tabpanels first (from outermost inward)
+          const panels = [];
+          let cur = target;
+          while (cur && cur.nodeType === 1) {
+            if (cur.getAttribute('role') === 'tabpanel') panels.unshift(cur);
+            cur = cur.parentElement;
+          }
+          panels.forEach((panel) => {
+            const pId = panel.id;
+            if (!pId) return;
+            const tab = document.querySelector('[role="tab"][aria-controls="' + pId + '"], [role="tab"][data-panel="' + pId + '"]');
+            if (tab) tab.click();
+          });
+
+          const parentDetails = target.tagName === 'DETAILS' ? target : target.closest('details');
+          if (parentDetails) {
+            parentDetails.open = true;
+          }
         }
       }
       closeDropdowns(null);
+      updateNavHighlight();
     }
 
+    navHighlightUpdater = updateNavHighlight;
+    updateNavHighlight();
     syncHashTarget();
     window.addEventListener('hashchange', syncHashTarget);
 
-    document.querySelectorAll('.nav-popover a').forEach((link) => {
-      link.addEventListener('click', () => closeDropdowns(null));
+    document.querySelectorAll('.nav-popover a, #mobile-menu nav a').forEach((link) => {
+      link.addEventListener('click', () => {
+        closeDropdowns(null);
+        setTimeout(() => updateNavHighlight(), 0);
+      });
     });
 
     // Only animate scroll reveal when motion is allowed
@@ -303,6 +426,12 @@ window.AurellixV2 = (function () {
         el.classList.add('active');
       }
     });
+  }
+
+  function updateNavHighlight(forcedGroup, forcedSubKey) {
+    if (typeof navHighlightUpdater === 'function') {
+      navHighlightUpdater(forcedGroup, forcedSubKey);
+    }
   }
 
   // Accessible tablist helper (modern-web-guidance: tabs)
@@ -348,6 +477,8 @@ window.AurellixV2 = (function () {
     toggleMobileMenu,
     initAccessibilityAndMotion,
     initTablist,
+    updateNavHighlight,
+    getRwaUrl: () => RWA_SITE_URL,
     getLang: () => currentLang
   };
 })();

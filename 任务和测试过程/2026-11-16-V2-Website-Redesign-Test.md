@@ -110,3 +110,32 @@ git -C "AurellixPay_new_website" diff --name-only -- build/
   - 敏感词扫描（`build/*.html`、`build/static/*.js`、`build/static/*.css`）：**0 命中**。
   - `verify_v2.js build`：**`VERIFICATION SUMMARY -> PASSED: 1109 | FAILED: 0`**。
   - `http://127.0.0.1:5181/index.html` 与 `fx.html` 均返回 **`HTTP/1.1 200 OK`**。
+
+
+---
+
+## 8. 集团主站升级、4 业务覆盖地图、RWA 生态入口、导航高亮修复与去 OTC 字样 (2026-11-17)
+
+### 变更摘要
+1. **集团主站定位升级与全站清除可见 `"OTC"` 字样**：
+   - 在 [v2-common.js](../build_v2/static/v2-common.js) 及 6 个页面（[index.html](../build_v2/index.html)、[fx.html](../build_v2/fx.html)、[otc.html](../build_v2/otc.html)、[coverage.html](../build_v2/coverage.html)、[privacy.html](../build_v2/privacy.html)、[terms.html](../build_v2/terms.html)）的中英文文案、页面标题、Meta 标签与页脚中，统一升级为 **Aurellix 集团**主站口径，覆盖 Pay（全球收付及聚合收单）、全球承兑（法币 ⇄ 稳定币清结算）及 RWA 子网站三大板块；全部可见 UI、标题与描述中的 `"OTC"` 字样均替换为 `全球承兑` / `Global Conversion` / `Fiat ⇄ Stablecoin Clearing` 等合规清结算表述（保留内部文件名 `otc.html` 不影响链接）。
+2. **`coverage.html` 拆分为 4 业务独立 Tab 联动世界地图**：
+   - 新增 `#cov-biz-tablist`（`01 · 全球收款` | `02 · 全球付款` | `03 · 全球承兑` | `04 · 全球收单`），点击切换同步重绘 `static/world_map.svg` 高亮国家与地图图例，并对应展示 22 国本地 VA 卡片 (`#cov-va-grid`)、33+ 本地银行与 11 国 19 种电子钱包卡片 (`#cov-payout-grid`)、26 国承兑 KPI 与 36 国双渠道矩阵 (`#dm-matrix-details`)、以及 5 大已跑通核心市场与 94 国收单目录 (`#cov-dir-details`)；同步将首页 `#acquiring` 「查看全部 94+ 个收单通道国家」锚点指向 `coverage.html#cov-panel-acquiring`。
+3. **`RWA 生态 ↗` 独立导航与全站统一域名常量**：
+   - 在 [v2-common.js](../build_v2/static/v2-common.js) 定义单一配置常量 `RWA_SITE_URL = 'https://www.aurellix.com/'`，供全站 `[data-rwa-link="true"]` 与 `#group-link` 同步读取（未来更换 RWA 子站域名仅需修改此行）。
+   - 在 6 页桌面端 `<nav>`、`#mobile-menu` 及页脚核心菜单区新增独立 `RWA 生态` (`RWA Ecosystem`) 入口，并在首页 `#rwa` 区块新增直达子站按钮。
+4. **修复「解决方案」跳转后导航高亮误亮「产品服务」问题**：
+   - 在 `v2-common.js` 实现 `updateNavHighlight(forcedGroup, forcedSubKey)`，结合路径、`#hash` 及 `fx.html` Tab 状态动态维护桌面端及移动端 `aria-current="page"`（访问 `fx.html#fx-b2b`、点击 Tab 4 `B2B 外贸解决方案`、访问 `otc.html#solution`、`index.html#scenarios`、`index.html#rwa` 时均正确高亮 **解决方案**）。
+5. **合规资质精简（`index.html#compliance`）**：
+   - 移除 `瑞士 SRO 合规` 与 `迪拜 PSP 牌照` 两张卡片，保留 `波兰 VASP 资质`、`PCI DSS & KYT`、`SWIFT · SEPA · PIX`、`USDT · USDC · PYUSD` 共 4 张卡片并改为 4 列自适应网格（`grid-cols-2 lg:grid-cols-4`）。
+
+### 实测执行命令与验收结果（`build_v2/` 镜像覆盖 `build/` 后复测）
+- **同步 `build/` 命令**：`Remove-Item -Path "AurellixPay_new_website\build\*" -Recurse -Force; Copy-Item -Path "AurellixPay_new_website\build_v2\*" -Destination "AurellixPay_new_website\build" -Recurse -Force`
+- **自动化功能、i18n 与合规检查**：
+  - `node "...\verify_v2.js" build_v2` → **`VERIFICATION SUMMARY -> PASSED: 1240 | FAILED: 0`**（退出码 `0`）
+  - `node "...\verify_v2.js" build` → **`VERIFICATION SUMMARY -> PASSED: 1240 | FAILED: 0`**（退出码 `0`，涵盖中英文无 `OTC` 校验、4 合规卡校验、RWA 链接校验、`fx.html#fx-b2b` / `otc.html#solution` / `index.html#rwa` 导航高亮校验、`coverage.html` 4 业务 Tab 与 SVG 地图高亮联动及深链路由校验）
+- **敏感词与可见 `OTC` 静态扫描**：
+  - `Select-String -Path "AurellixPay_new_website\build\*.html","AurellixPay_new_website\build\static\v2-common.js" -Pattern "pyvio|mce|metacomp|stablex|unlimit|gatefi|visionx"` → **0 命中**
+  - `Select-String -Path "AurellixPay_new_website\build\*.html","AurellixPay_new_website\build\static\v2-common.js" -Pattern "\bOTC\b" -CaseSensitive` → **0 命中**
+- **本地预览双端口 HTTP 校验（`5180` = `build_v2`，`5181` = `build`）**：
+  - `index.html`、`fx.html`、`otc.html`、`coverage.html`、`privacy.html`、`terms.html`、`static/v2-common.js`、`static/v2.css`、`static/world_map.svg` 共 18 个端点 `curl.exe` 请求全部返回 **`200`**。

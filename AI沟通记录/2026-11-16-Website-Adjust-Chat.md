@@ -151,3 +151,18 @@
   - `AurellixPay_new_website` 已绑定 GitHub 远端 `origin`（`https://github.com/EastAndWeast/pay`），当前本地分支 `dev`（远端存在 `main` 与 `dev`）。
   - 当前未提交变动包括 `build_v2/`、`提示词.txt`、文档及 `.vscode/`；无 `.gitignore`。
 - **提供方案**：给出先在分支/独立目录 `build_v2` 部署预览再切换上线，或定稿后替换 `build/` 推送自动部署两种方案，以及 Cloudflare Pages（`Framework: None`、构建命令留空、输出目录填 `build_v2` 或 `build`）完整操作步骤，待用户确认是否由助手协助执行 Git 提交与推送或替换 `build/`。
+
+
+---
+
+## 13. 集团主站定位升级与四大核心需求修改 (2026-11-17)
+- **用户指令**：「1.全球覆盖范围：是之前针对收单的，实际要区分收单、收款这些…… 2.RWA: 当前的域名：www.aurellix.com（未来要改），希望导航和页脚能有体现。 3.解决方案的一些跳转以后，颜色还是显示到产品服务。 4.合规资质：红色这两个没有。备注：未来我们这个网站就当成集团网站，之前的RWA网站当成一个子网站。」
+- **用户确认口径**：
+  - **A1**：将收款、付款、承兑、收单拆成 **4 个独立 Tab** 切换世界地图与国家列表；
+  - **A2**：顶部导航栏独立显示 **`RWA 生态 ↗` (`RWA Ecosystem`)**，页脚及首页 `#rwa` 区同步体现；
+  - **A3**：升级为 **`Aurellix 集团`** 官网主站口径，统筹 Pay（收付/收单）+ 全球承兑 + RWA（资产子站）三大板块，且**承兑环节不体现 `"OTC"` 字样**（非 OTC 模式）。
+- **已落地改动与校验**：
+  1. 在 [v2-common.js](../build_v2/static/v2-common.js) 中以 `RWA_SITE_URL = 'https://www.aurellix.com/'` 集中管理 RWA 子站外链，新增 `updateNavHighlight()` 修复解决方案路径高亮，全站清除所有可见 `"OTC"` 字样并升级集团主站文案。
+  2. 将 [coverage.html](../build_v2/coverage.html) 重构为 4 业务独立 Tab（`01 · 全球收款` / `02 · 全球付款` / `03 · 全球承兑` / `04 · 全球收单`）动态重绘 `world_map.svg` 与下方国家/通道面板。
+  3. 移除 [index.html](../build_v2/index.html) `#compliance` 前两张卡片（瑞士 SRO、迪拜 PSP），调整为 4 栏布局并在 `#rwa` 增加子站直达按钮。
+  4. 同步镜像替换 `build/` 并通过 `verify_v2.js` 全量校验（`1240 / 1240 PASS`）、`0` 敏感词/`OTC` 命中及 `5180/5181` 端口 `200 OK` 检查。
