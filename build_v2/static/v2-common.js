@@ -181,7 +181,7 @@ window.AurellixV2 = (function () {
     if (metaMap && metaMap[currentLang]) {
       const m = metaMap[currentLang];
       const baseHost = (location.origin && location.origin.startsWith('http')) ? location.origin : 'https://pay.tianao1128.xyz';
-      const shareImg = (currentLang === 'zh' ? (baseHost + '/static/share_zh.png') : (baseHost + '/static/share_en.png')) + '?v=20261117b';
+      const shareImg = (currentLang === 'zh' ? (baseHost + '/static/share_zh.png') : (baseHost + '/static/share_en.png')) + '?v=20261117c';
 
       if (m.title) document.title = m.title;
       const descEl = document.querySelector('meta[name="description"]');
