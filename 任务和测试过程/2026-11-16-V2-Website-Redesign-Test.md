@@ -279,3 +279,10 @@ git -C "AurellixPay_new_website" diff --name-only -- build/
 ## 17. 切换 `share_en.png` / `share_zh.png` 为新版首页实拍截图 (2026-11-17 17:11)
 - **变更摘要**：按用户要求，使用无头浏览器对新版 `index.html?lang=en` 与 `index.html?lang=zh` 首屏执行 `1200×630` 实拍截图替换 `build_v2/static/share_en.png`（`412,724` 字节）与 `share_zh.png`（`422,866` 字节），同步将全站 7 页与 `v2-common.js` 版本参数更新为 `?v=20261117c`。
 - **验收结果**：同步覆盖 `build/` 后，`verify_v2.js build_v2` 与 `verify_v2.js build` 均返回 **`VERIFICATION SUMMARY -> PASSED: 1632 | FAILED: 0`**。
+
+
+---
+
+## 19. 回滚方案 A UI 精修，恢复保留原版样式 (2026-11-17 19:09)
+- **用户决定**：「还是用原来的版本吧。我感觉还是原来的版本好，不要精修版本。」
+- **处理结果**：已通过 `git checkout -- build_v2/index.html build_v2/static/v2.css` 完整还原 `build_v2/` 至原版（与 `build/` 及 `origin/dev` 一致），运行 `verify_v2.js build_v2` 返回 **`VERIFICATION SUMMARY -> PASSED: 1632 | FAILED: 0`**。
