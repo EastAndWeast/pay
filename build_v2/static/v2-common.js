@@ -180,8 +180,8 @@ window.AurellixV2 = (function () {
     // Dynamic Meta / OG / Twitter tags
     if (metaMap && metaMap[currentLang]) {
       const m = metaMap[currentLang];
-      const baseHost = (location.origin && location.origin.startsWith('http')) ? location.origin : 'https://rail.aurellix.com';
-      const shareImg = (currentLang === 'zh' ? (baseHost + '/static/share_zh.png') : (baseHost + '/static/share_en.png')) + '?v=20261117';
+      const baseHost = (location.origin && location.origin.startsWith('http')) ? location.origin : 'https://pay.tianao1128.xyz';
+      const shareImg = (currentLang === 'zh' ? (baseHost + '/static/share_zh.png') : (baseHost + '/static/share_en.png')) + '?v=20261117b';
 
       if (m.title) document.title = m.title;
       const descEl = document.querySelector('meta[name="description"]');

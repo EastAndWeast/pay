@@ -267,3 +267,10 @@
   1. 排查发现原 `share_en.png` / `share_zh.png` 仍为旧版截图（含 `PYUSD` 与破损 Logo），已重新渲染 `1200×630` 全新中英文品牌分享图，并将全站 7 页及 `v2-common.js` 分享图地址统一切换为 `https://rail.aurellix.com/static/share_*.png?v=20261117`。
   2. 为全部 7 页补齐 `og:locale`、`og:image:secure_url`、`og:image:alt`、`hreflang="x-default"`、`robots`、`theme-color` 及 Schema.org `JSON-LD` 结构化数据，并新建 `robots.txt` 与 `sitemap.xml`。
   3. 同步 `build/`，通过 `verify_v2.js` **`1632 / 1632 PASS`** 与双端口 `200 OK` 校验，并推送至 `origin/dev`。
+
+
+---
+
+## 24. 修复 Telegram 分享 `pay.tianao1128.xyz` 仍显示旧图的问题 (2026-11-17 16:54)
+- **实测定位**：`curl -I` 实测确认 `https://pay.tianao1128.xyz/static/share_en.png` 已更新为新版 `333,291` 字节图，但 `https://rail.aurellix.com/static/share_en.png` 仍为 11 月 5 日旧图（`179,781` 字节）。由于 `<head>` 中 `og:image` 指向了 `rail.aurellix.com`，导致 Telegram 抓取了旧图。
+- **处理结果**：已将全站 7 页 `og:image` / `og:image:secure_url` / `twitter:image` 更新为 `https://pay.tianao1128.xyz/static/share_en.png?v=20261117b`，同步 `build/`、`verify_v2.js` **`1632 / 1632 PASS`** 并推送至 `origin/dev`。

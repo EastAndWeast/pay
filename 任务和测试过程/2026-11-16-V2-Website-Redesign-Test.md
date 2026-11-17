@@ -265,3 +265,10 @@ git -C "AurellixPay_new_website" diff --name-only -- build/
 - `verify_v2.js build_v2` → **`VERIFICATION SUMMARY -> PASSED: 1632 | FAILED: 0`**
 - `verify_v2.js build` → **`VERIFICATION SUMMARY -> PASSED: 1632 | FAILED: 0`**（含 `robots.txt`、`sitemap.xml`、7 页完整 SEO/OG/Twitter 标签及无旧 `pay-52p.pages.dev` 残留断言）
 - `curl.exe` 请求 `5180` 与 `5181` 端口下 `robots.txt`、`sitemap.xml`、`static/share_en.png`、`static/share_zh.png`、`index.html` 共 10 个端点 → 全部返回 **`200`**
+
+
+---
+
+## 16. 修正 Telegram 分享图拉取旧域名缓存问题 (2026-11-17 16:54)
+- **问题原因**：用户分享测试域名 `https://pay.tianao1128.xyz/` 至 Telegram 时，实测 `pay.tianao1128.xyz/static/share_en.png` 已是新版 `333,291` 字节图，但静态 HTML `<head>` 中 `og:image` 指向了尚未同步 `dev` 分支的 `https://rail.aurellix.com/static/share_en.png`（仍返回 11 月 5 日旧版 `179,781` 字节图），导致 Telegram 预览仍显示旧图。
+- **修复结果**：将全站 7 页 `og:image` / `og:image:secure_url` / `twitter:image` 及 `v2-common.js` 默认分享图域名指向 `https://pay.tianao1128.xyz/static/share_en.png?v=20261117b`，同步 `build/` 并通过 `verify_v2.js` **`1632 / 1632 PASS`**，推送至 `origin/dev`。
