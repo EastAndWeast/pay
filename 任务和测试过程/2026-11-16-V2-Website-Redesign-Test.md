@@ -194,3 +194,19 @@ git -C "AurellixPay_new_website" diff --name-only -- build/
 - `$env:NODE_PATH = (Resolve-Path "node_modules").Path; node "...\verify_v2.js" build` → **`VERIFICATION SUMMARY -> PASSED: 1379 | FAILED: 0`**
 - `Select-String` 禁用词扫描（`PYUSD|官网子站|子网站|Sub-site|privacy@aurellix\.com|legal@aurellix\.com`）→ **`PROHIBITED_TERMS_HITS: 0`**
 - `curl.exe` 请求 `http://127.0.0.1:5180/`（`build_v2`）与 `http://127.0.0.1:5181/`（`build`）下全部 6 页 HTML（共 12 个端点）→ 全部返回 **`200`**
+
+
+---
+
+## 12. 新增独立 App 钱包介绍页 `wallet.html`（沿用主站 UI，内链直达）(2026-11-17 15:53)
+
+### 变更摘要
+1. **新增独立静态页 [wallet.html](../build_v2/wallet.html)**：沿用主站 `v2.css` + `v2-common.js` 视觉体系与中英文双语机制，构建包含 Hero 玻璃拟态钱包总览卡（流动支付余额 + RWA 持仓 + 快捷操作 + 近期动态）、三大核心能力卡片（多链稳定币收付 / 直连法币清结算网络 / RWA 资产一户管理）、三步运作架构 + macOS 通道预览窗口以及底部行动横幅（内含 `data-wallet-link="true"` 跳转 `https://www.aurellix.com/wallet` 按钮）。
+2. **全站导航改为内链跳转**：将全站全部页面（`index.html`、`fx.html`、`otc.html`、`coverage.html`、`privacy.html`、`terms.html`、`wallet.html`）桌面端 `开发与生态 ▾` 下拉、移动端抽屉 `#mobile-menu` 及页脚 `开发与入口` 列中的 `App 钱包` 统一指向站内 `wallet.html`（自动透传 `?lang=`）。
+3. **动态路由高亮适配**：在 [v2-common.js](../build_v2/static/v2-common.js) `updateNavHighlight` 新增 `page === 'wallet.html'` 分支，自动高亮 `开发与生态 ▾` 及 `App 钱包` 子项。
+
+### 实测命令与最终结果（`build_v2/` 镜像覆盖 `build/` 后执行）
+- `verify_v2.js build_v2` → **`VERIFICATION SUMMARY -> PASSED: 1598 | FAILED: 0`**（7 页全覆盖）
+- `verify_v2.js build` → **`VERIFICATION SUMMARY -> PASSED: 1598 | FAILED: 0`**（7 页全覆盖）
+- `Select-String` 禁用词扫描 → **`PROHIBITED_TERMS_HITS: 0`**
+- `curl.exe` 请求 `5180` 与 `5181` 端口下全部 7 页 HTML（共 14 个端点）→ 全部返回 **`200`**

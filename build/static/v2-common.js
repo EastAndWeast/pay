@@ -300,6 +300,9 @@ window.AurellixV2 = (function () {
             group = 'products';
             subKey = subKey || 'nav_prod_otc';
           }
+        } else if (page === 'wallet.html') {
+          group = 'resources';
+          subKey = subKey || 'nav_wallet';
         } else if (page === 'privacy.html' || page === 'terms.html') {
           group = null;
         } else {

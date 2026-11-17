@@ -227,3 +227,13 @@
   1. 在 [v2-common.js](../build_v2/static/v2-common.js) 新增 `WALLET_SITE_URL = 'https://www.aurellix.com/wallet'` 及 `nav_wallet` / `nav_wallet_desc` 中英文词条，支持中文态自动追加 `?lang=zh`。
   2. 在全部 6 个页面（`index.html`、`fx.html`、`otc.html`、`coverage.html`、`privacy.html`、`terms.html`）的桌面端 `开发与生态 ▾` 下拉、移动端 `#mobile-menu` 及页脚 `开发与入口` 列接入 **`App 钱包 / App Wallet`**（`data-wallet-link="true"`），不占用首屏 B2B 主视觉版面。
   3. 同步覆盖 `build/`，运行 `verify_v2.js` 在 `build_v2` 与 `build` 均取得 **`1379 PASSED / 0 FAILED`**，禁用词扫描 0 命中，本地 `5180`/`5181` 全 6 页 HTTP `200`，并将改动提交推送至 `origin/dev`。
+
+
+---
+
+## 20. 补充独立「App 钱包」站内介绍页 `wallet.html` 并推送上线 (2026-11-17 15:53)
+- **用户需求**：「钱包这个页面，可以我们简要做一个介绍吗？不是跳转，而是用当前主站的UI。单独一个页面。」
+- **执行结果**：
+  1. 新建 [wallet.html](../build_v2/wallet.html)，沿用当前主站 UI 与双语引擎，简要呈现 App 钱包由 RWA 资产端向「多链稳定币支付 + 法币清算直连 + RWA 资产管理」升级的核心能力与架构，并在页内保留前往 `https://www.aurellix.com/wallet` 的体验按钮。
+  2. 全站 7 页桌面端 `开发与生态 ▾`、移动端菜单与页脚 `开发与入口` 列统一改为内链跳转 `wallet.html`，并在 `v2-common.js` 补全 `wallet.html` 的导航激活高亮。
+  3. 同步覆盖 `build/`，通过 `verify_v2.js` **`1598 / 1598 PASS`**（含 `wallet.html`）、禁用词 0 命中及 `5180`/`5181` 全 14 端点 `200 OK` 校验，并推送至 `origin/dev`。
