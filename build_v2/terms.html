@@ -120,7 +120,7 @@
                     <a href="coverage.html" class="nav-link" data-i18n="nav_coverage">Coverage</a>
 
                     <a href="https://www.aurellix.com/" data-rwa-link="true" target="_blank" rel="noopener noreferrer" class="nav-link">
-                        <span data-i18n="nav_rwa">RWA Ecosystem</span>
+                        <span data-i18n="nav_rwa">RWA Platform</span>
                         <i class="fa-solid fa-arrow-up-right-from-square text-[0.62rem] opacity-60" aria-hidden="true"></i>
                     </a>
 
@@ -210,7 +210,7 @@
 
             <a href="coverage.html" onclick="AurellixV2.toggleMobileMenu(true)" class="border-b border-slate-100 pb-3" data-i18n="nav_coverage">Coverage</a>
             <a href="https://www.aurellix.com/" data-rwa-link="true" target="_blank" rel="noopener noreferrer" onclick="AurellixV2.toggleMobileMenu(true)" class="flex items-center gap-2 border-b border-slate-100 pb-3">
-                <span data-i18n="nav_rwa">RWA Ecosystem</span>
+                <span data-i18n="nav_rwa">RWA Platform</span>
                 <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-60" aria-hidden="true"></i>
             </a>
             <a href="https://docs.rail.aurellix.com/" data-api-link="true" target="_blank" rel="noopener noreferrer" onclick="AurellixV2.toggleMobileMenu(true)" class="border-b border-slate-100 pb-3" data-i18n="nav_api">API Docs</a>
@@ -238,34 +238,58 @@
         <section class="pt-28 pb-8 bg-gradient-to-b from-white to-slate-50">
             <div class="max-w-4xl mx-auto px-6 text-center">
                 <h1 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-3" data-i18n="terms_title">Terms of Service</h1>
-                <p class="text-sm text-slate-500" data-i18n="terms_updated">Last updated: November 2026</p>
             </div>
         </section>
 
         <section id="content-en" class="pb-20">
             <div class="max-w-4xl mx-auto px-6">
                 <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-8 md:p-12 legal-content">
-                    <p>Welcome to Aurellix Pay. These Terms of Service ("Terms") govern your access to and use of the Aurellix Pay platform, Global FX B2B rails, Global Conversion settlement rails, APIs, and merchant acquiring services.</p>
+                    <p>Welcome to Aurellix Group and Aurellix Pay. These Terms of Service ("Terms") govern your access to and use of the Aurellix Pay corporate website, Merchant Portal, Open APIs, global B2B collection and payout rails (Global FX), fiat-to-stablecoin conversion rails (Global Conversion), merchant acquiring checkout infrastructure, and connected RWA platform settlement interfaces.</p>
 
-                    <h2>1. Eligibility &amp; KYB Onboarding</h2>
+                    <h2>1. Scope of Services</h2>
+                    <p>Aurellix Pay delivers multi-jurisdiction corporate treasury capabilities including multi-currency virtual accounts (VA), local bank and SWIFT POBO disbursements, mobile e-wallet payouts, 19+ currency interbank FX swaps, 26-fiat bidirectional stablecoin settlement, and global card/APM acquiring. Specific rails available to your entity depend on approved corporate jurisdiction, business category, and active commercial agreements.</p>
+
+                    <h2>2. Corporate Eligibility, KYB &amp; Account Security</h2>
                     <ul>
-                        <li>Services are provided to legally registered corporate entities and verified B2B merchants subject to KYB/KYC approval.</li>
-                        <li>Channel access (including virtual accounts, trade settlement, and stablecoin whitelisting) depends on entity jurisdiction and approved business purposes.</li>
+                        <li>Institutional access is restricted to validly incorporated corporate entities and commercial organizations that complete Know Your Business (KYB) and beneficial ownership (UBO) due diligence.</li>
+                        <li>You are solely responsible for maintaining the confidentiality of portal logins, two-factor authentication credentials, and API signing keys, and for promptly notifying Aurellix Pay of any suspected unauthorized access.</li>
+                        <li>You must promptly inform us of material corporate changes, including changes in ownership exceeding 10%, directors, registered address, or licensed business scope.</li>
                     </ul>
 
-                    <h2>2. Permitted Use &amp; Compliance</h2>
+                    <h2>3. Trade Authenticity, AML/KYT &amp; Prohibited Activities</h2>
                     <ul>
-                        <li>All transactions must reflect genuine commercial or permitted financial activity and comply with applicable AML, CFT, and sanctions regulations.</li>
-                        <li>Supporting trade documentation (such as contracts, invoices, bank slips, or logistics records) must be submitted accurately upon request.</li>
+                        <li>All cross-border collections, B2B payouts, and trade settlement quotas must correspond to genuine, lawful commercial transactions or permitted corporate treasury movements.</li>
+                        <li>Upon request by Aurellix Pay or partner banking institutions, you agree to furnish accurate supporting documentation, including signed contracts, commercial invoices (PI), transport waybills, customs declarations, or bank payment slips.</li>
+                        <li>You shall not use the platform for money laundering, terrorist financing, sanctions evasion, unlicensed gambling, illicit narcotics, counterfeit goods, or transactions involving sanctioned jurisdictions or restricted wallet addresses flagged by on-chain KYT screening.</li>
                     </ul>
 
-                    <h2>3. Fees, FX Rates &amp; Settlement</h2>
-                    <p>Applicable fees, floating FX rates, and settlement timeframes (SLA) are displayed in your Merchant Portal prior to transaction confirmation and remain subject to banking rail cut-offs and network conditions.</p>
-
-                    <h2>4. Limitation of Liability &amp; Contact</h2>
-                    <p>Aurellix Pay is not liable for delays caused by intermediary banking interruptions, blockchain congestion, or force majeure events. For inquiries:</p>
+                    <h2>4. Virtual Accounts, FX Rate Lock &amp; On-Chain Whitelists</h2>
                     <ul>
-                        <li>Email: <a href="mailto:legal@aurellix.com" class="text-[#0052ff] hover:underline">legal@aurellix.com</a></li>
+                        <li>Dedicated virtual accounts and deposit addresses are provided solely to receive funds from approved commercial counterparties and whitelisted funding sources matching your declared business model.</li>
+                        <li>FX quotes locked through our real-time pricing engine (such as 60-second rate-lock windows) become binding upon order confirmation; expired or unconfirmed quotes require re-pricing under live market conditions.</li>
+                        <li>Stablecoin deposits and withdrawals (USDT / USDC on supported networks such as TRC20 / ERC20) require destination address whitelisting; you bear sole responsibility for verifying network protocol and wallet address accuracy prior to broadcast.</li>
+                    </ul>
+
+                    <h2>5. Fees, Settlement SLAs, Returns &amp; Chargebacks</h2>
+                    <ul>
+                        <li>Applicable transaction fees, FX spreads, wire charges, and estimated settlement timeframes (SLAs) are disclosed in your commercial schedule or on-screen portal confirmation prior to execution.</li>
+                        <li>Inward payments lacking clear beneficiary references, failing sanctions/compliance checks, or sent from unsupported third parties may be rejected or returned to the remitting bank, with intermediary banking or administrative return charges deducted where applicable.</li>
+                        <li>For merchant acquiring services, you remain responsible for customer refunds, card-scheme chargebacks, dispute documentation within network deadlines, and maintaining rolling risk reserves where stipulated.</li>
+                    </ul>
+
+                    <h2>6. API Integration &amp; Intellectual Property</h2>
+                    <p>All platform interfaces, API specifications, documentation, SDKs, trademarks, logos, and visual layouts remain the exclusive intellectual property of Aurellix Group and its affiliates. API integrators must adhere to rate limits, verify HMAC/cryptographic webhook signatures, and refrain from reverse engineering or automated scraping.</p>
+
+                    <h2>7. Risk Control, Suspension &amp; Limitation of Liability</h2>
+                    <ul>
+                        <li>We reserve the right to temporarily pause settlement, place compliance holds, request supplemental trade evidence, or suspend accounts if anomalous activity, compliance alerts, court orders, or banking-partner restrictions arise.</li>
+                        <li>To the maximum extent permitted by applicable law, Aurellix Pay is not liable for indirect, incidental, or consequential losses caused by intermediary bank cut-offs, correspondent delays, blockchain congestion, smart-contract oracle outages, or force majeure events.</li>
+                    </ul>
+
+                    <h2>8. Governing Principles, Amendments &amp; Contact</h2>
+                    <p>We may update these Terms periodically to reflect new payment corridors, technical standards, or regulatory requirements; continued use of the platform constitutes acceptance of the revised Terms. For legal or contractual inquiries, please contact us:</p>
+                    <ul>
+                        <li>Email: <a href="mailto:info@aurellix.com" class="text-[#0052ff] hover:underline">info@aurellix.com</a></li>
                         <li>Telegram: <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="text-[#0052ff] hover:underline">@cs_aurellix</a></li>
                     </ul>
                 </div>
@@ -275,27 +299,52 @@
         <section id="content-zh" class="pb-20" hidden>
             <div class="max-w-4xl mx-auto px-6">
                 <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-8 md:p-12 legal-content">
-                    <p>欢迎使用 Aurellix Pay。本服务条款规范您对 Aurellix Pay 平台、全球收付 (Global FX)、全球承兑 (Global Conversion)、API 及商户收单服务的使用。</p>
+                    <p>欢迎使用 Aurellix 集团及旗下 Aurellix Pay 平台服务。本服务条款（以下简称“本条款”）规范您访问与使用 Aurellix Pay 官网、商户管理后台、Open API 接口、全球收付 (Global FX)、全球承兑 (Global Conversion)、聚合收单服务以及与 RWA 平台相关的清结算联动通道时的各项权利与义务。</p>
 
-                    <h2>1. 准入资格与企业认证</h2>
+                    <h2>1. 协议范围与服务体系</h2>
+                    <p>Aurellix Pay 为合法合规企业提供一站式跨境资金基础设施，包括 22+ 国本地及全球虚拟收款账户 (VA)、33+ 币种本地银行及 SWIFT 同名代付 (POBO)、11 国移动电子钱包下发、19+ 币种实时换汇与贸易结汇、26 国法币 ⇄ 稳定币双向承兑清算以及全球 94 国聚合收单服务。您实际可开通的具体通道范围，以企业注册法域、审核通过的业务场景及双方签署的服务协议为准。</p>
+
+                    <h2>2. 准入资格、企业认证与账户安全</h2>
                     <ul>
-                        <li>服务面向依法注册并完成 KYB/KYC 审核的企业商户及机构客户开放。</li>
-                        <li>具体通道（如虚拟收款户、贸易结汇、白名单链上充提）可用性以企业注册地及审核批准的贸易用途为准。</li>
+                        <li>本平台面向依法注册并持续合法存续的企业法人或商业机构开放，所有客户须完整通过 KYB 企业资质审核及最终受益人 (UBO) 尽职调查后方可启用正式清算通道。</li>
+                        <li>您须妥善保管商户后台账号密码、双因素认证设备及 API 调用密钥，并对该账户及密钥下发生的一切操作指令承担责任；如发现疑似未授权登录或密钥泄露，应立即通知我们冻结或重置凭据。</li>
+                        <li>若企业发生控股股东变更（超过 10%）、董事高管调整、注册地址变更或主营业务变化，须在 15 个工作日内书面告知并同步更新 KYB 档案。</li>
                     </ul>
 
-                    <h2>2. 合规使用与贸易背景</h2>
+                    <h2>3. 真实贸易背景、反洗钱风控与禁止行为</h2>
                     <ul>
-                        <li>所有交易须具备真实合法的商业或金融背景，严禁涉洗钱、恐怖融资或受制裁实体交易。</li>
-                        <li>使用 B2B 收款及结汇额度时，需按要求准确提交贸易合同、发票、水单或物流凭证。</li>
+                        <li>所有跨境收款、供应链付款及在岸人民币结汇额度申请，均须基于真实、合法、可持续核验的商业交易或合规资金调拨目的。</li>
+                        <li>根据银行清算与监管审计要求，您有义务在规定时限内提供真实完整的佐证材料，包括贸易合同、形式/商业发票 (PI/Invoice)、海空运提单、报关信息、买方付款水单或平台对账单。</li>
+                        <li>严禁利用本平台从事洗钱、恐怖融资、规避国际制裁、地下钱庄对敲、非法博彩、侵权假冒商品交易或向经 KYT 风险评分标记为高风险/受制裁的链上地址进行资金划转。</li>
                     </ul>
 
-                    <h2>3. 费用、实时汇率与交割时效</h2>
-                    <p>相关费率、银行间浮动牌价及预计到账时效 (SLA) 均以商户后台确认页为准，并受制于合作银行清算窗口与链上网络状态。</p>
-
-                    <h2>4. 责任限制与联系方式</h2>
-                    <p>对于因合作银行系统维护、链上拥堵或不可抗力导致的延迟，Aurellix Pay 不承担间接责任。如有疑问请联络：</p>
+                    <h2>4. 虚拟收款账户、锁汇报价与链上白名单规则</h2>
                     <ul>
-                        <li>邮箱：<a href="mailto:legal@aurellix.com" class="text-[#0052ff] hover:underline">legal@aurellix.com</a></li>
+                        <li>分配给您的多币种本地虚拟收款户 (VA) 及专属充币地址仅限用于核准业务模式下的合法收付款项，未经许可不得转借第三方或用于未申报行业的资金归集。</li>
+                        <li>通过实时换汇引擎锁定汇率（如 60 秒有效锁汇窗口）并在有效期内确认下单的兑换指令，一经确认即具备交割约束力；超时未确认报价将随银行间牌价自动刷新。</li>
+                        <li>涉及稳定币（USDT / USDC 等及 TRC20 / ERC20 对应网络）充提操作时，出金目标地址须先完成白名单绑定审批；发起链上转账前，请务必核对网络协议类型与钱包地址完整性，因选错公链或地址错误导致的资产损失需由操作方自行承担。</li>
+                    </ul>
+
+                    <h2>5. 费率标准、清算时效、退汇与拒付处理</h2>
+                    <ul>
+                        <li>适用的通道费率、换汇点差、电汇手续费及预计到账时效 (SLA) 将于商业报价表或商户后台确认下单页清晰展示，交割速度可能受合作银行截汇时间 (Cut-off Time)、节假日及区块链拥堵状况影响。</li>
+                        <li>对于附言缺失、收款人名称不匹配、来源账户超出合规允许范围或未能通过合规核验的入账资金，合作银行或本平台有权执行退汇处理，由此产生的中间行退汇费用或手续费将在退款金额中直接扣减。</li>
+                        <li>使用聚合收单服务的商户，须就终端买家退款、国际卡组拒付 (Chargeback) 在规定时效内提交申诉证据，并按协议约定维持必要的风险保证金/滚动准备金。</li>
+                    </ul>
+
+                    <h2>6. API 对接规范与知识产权</h2>
+                    <p>Aurellix 集团及 Aurellix Pay 官网、商户系统、Open API 文档、SDK、品牌标识、界面设计与底层技术架构均受知识产权法律保护。技术对接方应遵循接口调用频率限制并严格校验 Webhook 签名，禁止对平台接口或网页资产进行逆向工程、恶意爬虫或未授权转售。</p>
+
+                    <h2>7. 风险处置、服务中止与责任限制</h2>
+                    <ul>
+                        <li>如遇异常高频交易、风控预警触发、司法/监管协查指令、合作银行通道临时维护或疑似违反本条款情形，我们有权依法采取暂停结算、延迟放行、要求补充贸易凭据、下调限额或中止账户权限等风险控制措施。</li>
+                        <li>在适用法律允许的最大范围内，因合作中间行系统中断、全球金融网络清算延迟、区块链主网拥堵或不可抗力事件导致的间接损失、预期利润损失或第三方延迟，Aurellix Pay 不承担间接或连带赔偿责任。</li>
+                    </ul>
+
+                    <h2>8. 适用原则、条款修订与联系方式</h2>
+                    <p>随着新增清算通道上线或监管政策演变，我们可能适时修订并发布更新后的服务条款；条款发布后您继续使用平台服务即视同接受修订内容。如对本条款或企业协议有任何咨询，请联络我们：</p>
+                    <ul>
+                        <li>官方邮箱：<a href="mailto:info@aurellix.com" class="text-[#0052ff] hover:underline">info@aurellix.com</a></li>
                         <li>Telegram：<a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="text-[#0052ff] hover:underline">@cs_aurellix</a></li>
                     </ul>
                 </div>
@@ -310,13 +359,14 @@
                 <div class="md:col-span-5">
                     <img src="static/logo.png" alt="Aurellix Pay" style="width: 126px; margin-bottom: 16px;" />
                     <p class="text-white/70 text-[0.8rem] leading-relaxed max-w-xs mb-5" data-i18n="footer_desc">Aurellix Group provides global treasury infrastructure spanning Pay, Conversion, and RWA.</p>
-                    <div class="flex items-center gap-3">
-                        <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition" aria-label="Telegram">
-                            <i class="fa-brands fa-telegram text-white/80 text-sm" aria-hidden="true"></i>
+                    <div class="flex flex-wrap items-center gap-2.5">
+                        <a href="index.html" id="pay-site-link" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-xs transition">
+                            <i class="fa-solid fa-credit-card text-white/60 text-[0.65rem]" aria-hidden="true"></i>
+                            <span data-i18n="footer_pay_site">Pay Website</span>
                         </a>
                         <a href="https://www.aurellix.com/" data-rwa-link="true" target="_blank" rel="noopener noreferrer" id="group-link" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-xs transition">
                             <i class="fa-solid fa-gem text-white/60 text-[0.65rem]" aria-hidden="true"></i>
-                            <span data-i18n="footer_group">Aurellix RWA Sub-site</span>
+                            <span data-i18n="footer_group">RWA Website</span>
                             <i class="fa-solid fa-arrow-up-right-from-square text-[0.5rem] text-white/50" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -329,7 +379,7 @@
                         <li><a href="otc.html" class="text-white/80 hover:text-white transition" data-i18n="nav_otc">Global Conversion</a></li>
                         <li><a href="index.html#acquiring" class="text-white/80 hover:text-white transition" data-i18n="nav_acquiring">Acquiring</a></li>
                         <li><a href="coverage.html" class="text-white/80 hover:text-white transition" data-i18n="nav_coverage">Coverage</a></li>
-                        <li><a href="https://www.aurellix.com/" data-rwa-link="true" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition inline-flex items-center gap-1" data-i18n="nav_rwa">RWA Ecosystem <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] text-white/50" data-keep-icon="true" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.aurellix.com/" data-rwa-link="true" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition inline-flex items-center gap-1" data-i18n="nav_rwa">RWA Platform <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] text-white/50" data-keep-icon="true" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
                 <div class="md:col-span-2">
@@ -362,8 +412,8 @@
     <script src="static/v2-common.js"></script>
     <script>
         const PAGE_TRANSLATIONS = {
-            en: { terms_title: 'Terms of Service', terms_updated: 'Last updated: November 2026' },
-            zh: { terms_title: '服务条款', terms_updated: '最后更新：2026 年 11 月' }
+            en: { terms_title: 'Terms of Service' },
+            zh: { terms_title: '服务条款' }
         };
         const PAGE_META = {
             en: { title: 'Aurellix Pay | Terms of Service', desc: 'Aurellix Pay Terms of Service governing Global FX, Global Conversion settlement, and merchant acquiring.' },

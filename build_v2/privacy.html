@@ -120,7 +120,7 @@
                     <a href="coverage.html" class="nav-link" data-i18n="nav_coverage">Coverage</a>
 
                     <a href="https://www.aurellix.com/" data-rwa-link="true" target="_blank" rel="noopener noreferrer" class="nav-link">
-                        <span data-i18n="nav_rwa">RWA Ecosystem</span>
+                        <span data-i18n="nav_rwa">RWA Platform</span>
                         <i class="fa-solid fa-arrow-up-right-from-square text-[0.62rem] opacity-60" aria-hidden="true"></i>
                     </a>
 
@@ -210,7 +210,7 @@
 
             <a href="coverage.html" onclick="AurellixV2.toggleMobileMenu(true)" class="border-b border-slate-100 pb-3" data-i18n="nav_coverage">Coverage</a>
             <a href="https://www.aurellix.com/" data-rwa-link="true" target="_blank" rel="noopener noreferrer" onclick="AurellixV2.toggleMobileMenu(true)" class="flex items-center gap-2 border-b border-slate-100 pb-3">
-                <span data-i18n="nav_rwa">RWA Ecosystem</span>
+                <span data-i18n="nav_rwa">RWA Platform</span>
                 <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-60" aria-hidden="true"></i>
             </a>
             <a href="https://docs.rail.aurellix.com/" data-api-link="true" target="_blank" rel="noopener noreferrer" onclick="AurellixV2.toggleMobileMenu(true)" class="border-b border-slate-100 pb-3" data-i18n="nav_api">API Docs</a>
@@ -238,46 +238,65 @@
         <section class="pt-28 pb-8 bg-gradient-to-b from-white to-slate-50">
             <div class="max-w-4xl mx-auto px-6 text-center">
                 <h1 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-3" data-i18n="privacy_title">Privacy Policy</h1>
-                <p class="text-sm text-slate-500" data-i18n="privacy_updated">Last updated: November 2026</p>
             </div>
         </section>
 
         <section id="content-en" class="pb-20">
             <div class="max-w-4xl mx-auto px-6">
                 <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-8 md:p-12 legal-content">
-                    <p>At Aurellix Pay ("we", "our", "us"), we are committed to protecting your privacy and ensuring the security of your personal and corporate information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our global treasury, B2B collection/payout, fiat-to-stablecoin conversion, and acquiring services.</p>
+                    <p>Aurellix Group and its payment division Aurellix Pay ("we", "our", "us") are committed to safeguarding personal, corporate, and transactional information entrusted to us. This Privacy Policy describes how we collect, process, store, share, and protect information when you access our corporate website, Merchant Portal, APIs, global collection and payout rails, multi-currency FX and fiat-to-stablecoin conversion services, merchant acquiring infrastructure, or RWA platform integrations.</p>
 
-                    <h2>1. Information We Collect</h2>
-                    <h3>1.1 Identity &amp; KYB Information</h3>
+                    <h2>1. Scope &amp; Overview</h2>
+                    <p>This Privacy Policy applies to all corporate clients, institutional partners, authorized representatives, beneficial owners, platform visitors, and API integrators interacting with Aurellix Pay across web portals, hosted checkout pages, and institutional treasury channels.</p>
+
+                    <h2>2. Information We Collect</h2>
+                    <h3>2.1 Corporate &amp; KYB Onboarding Information</h3>
                     <ul>
-                        <li>Identity information: name, date of birth, nationality, government-issued ID numbers</li>
-                        <li>Contact information: email address, phone number, mailing address</li>
-                        <li>Financial information: bank account details, virtual account records, settlement history</li>
-                        <li>Business information: company registration certificates, shareholding structures, beneficial ownership (UBO), and trade/logistics contracts</li>
+                        <li>Identity &amp; authority records: legal name, date of birth, nationality, passport or government-issued ID details, residential address, and board authorization letters of directors, authorized signatories, and ultimate beneficial owners (UBOs).</li>
+                        <li>Corporate registration records: certificate of incorporation, business license, articles of association, shareholding structure charts, organizational charts, and tax registration identifiers.</li>
+                        <li>Contact &amp; account credentials: business email addresses, telephone numbers, authorized Telegram handles, portal role permissions, and two-factor authentication tokens.</li>
                     </ul>
-                    <h3>1.2 Technical Information</h3>
+                    <h3>2.2 Transaction &amp; Trade Verification Documents</h3>
                     <ul>
-                        <li>Device information: IP address, browser type, operating system, device identifiers</li>
-                        <li>Usage data: pages visited, features used, transaction timestamps, API call logs</li>
+                        <li>Payment &amp; ledger data: virtual account (VA) routing numbers, beneficiary bank account details, whitelisted on-chain wallet addresses (TRC20/ERC20), order references, amounts, FX lock timestamps, and settlement instructions.</li>
+                        <li>Underlying trade &amp; commercial proof: sales contracts, proforma/commercial invoices (PI), bills of lading, air/sea waybills, logistics tracking receipts, bank payment slips, and platform store revenue statements where required for cross-border repatriation or trade settlement compliance.</li>
+                    </ul>
+                    <h3>2.3 Technical, Device &amp; API Telemetry</h3>
+                    <ul>
+                        <li>Network &amp; device metadata: IP address, browser family and version, operating system, time zone settings, device fingerprints, and HTTP request headers.</li>
+                        <li>Operational &amp; API logs: pages visited, webhook callback endpoints, API call audit trails, authentication timestamps, and risk-engine diagnostic events.</li>
                     </ul>
 
-                    <h2>2. How We Use Your Information</h2>
+                    <h2>3. How We Use Your Information</h2>
                     <ul>
-                        <li>Processing and settling global collections, FX conversions, stablecoin settlements, and payouts</li>
-                        <li>Identity verification (KYC/KYB), trade compliance verification, and AML/KYT checks</li>
-                        <li>Risk assessment, whitelist enforcement, and fraud prevention</li>
-                        <li>Providing customer support and regulatory reporting</li>
+                        <li>Service delivery &amp; clearing execution: opening and operating multi-currency virtual accounts, executing local bank and SWIFT POBO payouts, processing 19+ currency FX conversions, settling fiat ⇄ stablecoin clearing orders, and operating merchant acquiring cashiers.</li>
+                        <li>Compliance, KYB &amp; risk screening: performing identity verification, corporate eligibility assessments, underlying trade authenticity reviews, sanctions list screening, AML/CFT monitoring, and real-time on-chain KYT address risk analysis.</li>
+                        <li>Security &amp; fraud prevention: enforcing whitelisted payout destinations, detecting unauthorized portal access or anomalous transaction velocity, and maintaining audit integrity.</li>
+                        <li>Support &amp; regulatory obligations: responding to merchant inquiries, providing settlement reconciliation statements, and fulfilling statutory recordkeeping or reporting mandates from competent financial authorities.</li>
                     </ul>
 
-                    <h2>3. Information Sharing and Disclosure</h2>
-                    <p>We do not sell your personal information. We may share your information with licensed banking partners, clearing institutions, and regulatory authorities as required to deliver services or comply with applicable laws.</p>
+                    <h2>4. Cookies &amp; Session Technologies</h2>
+                    <p>We use essential browser storage and lightweight functional tokens (such as language preference storage <code>pref-lang</code> and authenticated session state tokens) to keep interface settings consistent, secure portal sessions, and prevent cross-site request forgery. We do not deploy third-party advertising trackers to sell your browsing behavior.</p>
 
-                    <h2>4. Data Security &amp; Retention</h2>
-                    <p>We implement industry-standard encryption, access controls, network segmentation, and regular security audits. Transaction and compliance records are retained for a minimum of 7 years or as mandated by financial regulations.</p>
-
-                    <h2>5. Contact Us</h2>
+                    <h2>5. Information Sharing &amp; Cross-Border Transfers</h2>
+                    <p>We do not sell or rent client data to third parties. Strictly on a need-to-know basis, we may share relevant information with:</p>
                     <ul>
-                        <li>Email: <a href="mailto:privacy@aurellix.com" class="text-[#0052ff] hover:underline">privacy@aurellix.com</a></li>
+                        <li>Licensed partner banks, local payment networks, card acquirers, and regulated liquidity providers strictly required to clear and settle your requested payment instructions.</li>
+                        <li>Independent identity-verification, sanctions-screening, KYT blockchain analytics, and cloud security infrastructure providers bound by strict confidentiality and data protection agreements.</li>
+                        <li>Competent regulatory, judicial, or law enforcement authorities where disclosure is legally mandated.</li>
+                    </ul>
+                    <p>Because cross-border payments span multiple clearing jurisdictions, information may be processed in or transferred to jurisdictions where partner clearing banks or compliance infrastructure operate, always subject to contractual safeguards and transport-layer encryption.</p>
+
+                    <h2>6. Data Security &amp; Retention Period</h2>
+                    <p>We maintain defense-in-depth technical and organizational controls, including TLS encryption in transit, AES-256 encryption at rest, role-based access control (RBAC), network isolation, cryptographic webhook signing, and periodic security audits. Transaction records, KYB files, trade verification documents, and compliance audit logs are retained for at least 7 years following account closure or transaction completion, or longer where required by applicable financial supervision laws.</p>
+
+                    <h2>7. Your Rights &amp; Data Management</h2>
+                    <p>Subject to applicable laws and statutory anti-money-laundering retention obligations, authorized representatives and individuals may request access to, correction of inaccurate records, or clarification regarding how corporate and personal data are processed. Certain compliance and ledger records cannot be prematurely erased during mandatory statutory retention periods.</p>
+
+                    <h2>8. Contact Us</h2>
+                    <p>For privacy inquiries, data update requests, or compliance verification questions, please contact our team:</p>
+                    <ul>
+                        <li>Email: <a href="mailto:info@aurellix.com" class="text-[#0052ff] hover:underline">info@aurellix.com</a></li>
                         <li>Telegram: <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="text-[#0052ff] hover:underline">@cs_aurellix</a></li>
                     </ul>
                 </div>
@@ -287,38 +306,58 @@
         <section id="content-zh" class="pb-20" hidden>
             <div class="max-w-4xl mx-auto px-6">
                 <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-8 md:p-12 legal-content">
-                    <p>Aurellix Pay（以下简称“我们”）致力于保护您的隐私并确保您个人与企业信息的安全。本隐私政策说明我们在提供全球收付款、多币种换汇、法币⇄稳定币承兑及聚合收单服务时如何收集、使用与保护您的信息。</p>
+                    <p>Aurellix 集团及旗下支付板块 Aurellix Pay（以下简称“我们”）高度重视客户企业及个人的信息与资金数据安全。本隐私政策详细说明了在您访问官网、使用商户管理后台、对接 Open API、开立多币种收款账户、使用全球付款、实时换汇与承兑清算、聚合收单或连接 RWA 平台服务时，我们如何依法合规地收集、使用、传输、存储和保护您的相关信息。</p>
 
-                    <h2>1. 我们收集的信息</h2>
-                    <h3>1.1 身份与企业认证 (KYB) 信息</h3>
+                    <h2>1. 适用范围与总体原则</h2>
+                    <p>本政策适用于通过 Aurellix Pay 网页端、商户控制台、托管收银台页面及 API 接口使用本服务的企业客户、机构合作伙伴、法定代表人、授权操作员、最终受益人 (UBO) 及网站访客。我们严格遵循合法、正当、最小必要与目的限制原则处理所有数据。</p>
+
+                    <h2>2. 我们收集的信息</h2>
+                    <h3>2.1 企业与 KYB 认证信息</h3>
                     <ul>
-                        <li>身份信息：姓名、出生日期、国籍、政府签发的证件号码</li>
-                        <li>联系信息：电子邮箱、电话号码、邮寄或经营地址</li>
-                        <li>财务信息：银行账户详情、虚拟收款户及交易结算记录</li>
-                        <li>企业信息：公司注册证书、股权架构图、最终受益人 (UBO) 及跨境贸易/物流佐证单据</li>
+                        <li>主体与权属资料：公司注册证书、商业登记证、公司章程、股权架构图、董事及股东名册、税务登记编码及授权签署文件。</li>
+                        <li>身份与联系信息：法定代表人、实际控制人、最终受益人 (UBO) 及经办人的姓名、国籍、证件号码、办公或联系地址、电子邮箱、联系电话及双因素认证凭据。</li>
                     </ul>
-                    <h3>1.2 技术信息</h3>
+                    <h3>2.2 交易与贸易背景单据</h3>
                     <ul>
-                        <li>设备信息：IP 地址、浏览器类型、操作系统、设备标识符</li>
-                        <li>使用数据：访问页面、功能使用、交易时间戳与 API 调用日志</li>
+                        <li>资金清算信息：多国本地虚拟收款账户 (VA) 明细、付款与收款银行账户信息、白名单链上地址（TRC20 / ERC20）、订单流水号、锁汇报价时间戳及清算指令记录。</li>
+                        <li>真实贸易佐证材料：针对外贸 B2B 收款及合规人民币结汇等场景，按合规要求提交的采购/销售合同、商业发票 (Invoice / PI)、海运/空运提单、国际物流底单、买家付款水单及电商平台结算账单。</li>
+                    </ul>
+                    <h3>2.3 设备、日志与 API 技术信息</h3>
+                    <ul>
+                        <li>访问与终端信息：IP 地址、浏览器类型及版本、操作系统、时区、设备指纹标识及请求头信息。</li>
+                        <li>运维与风控日志：页面访问轨迹、接口调用记录、Webhook 异步通知日志、登录认证时间及反欺诈风控审计事件。</li>
                     </ul>
 
-                    <h2>2. 信息的使用方式</h2>
+                    <h2>3. 信息的使用方式</h2>
                     <ul>
-                        <li>处理并清算全球收款、外币实时换汇、稳定币承兑与全球付款交易</li>
-                        <li>执行身份与企业认证（KYC/KYB）、真实贸易背景核验及反洗钱/KYT 合规筛查</li>
-                        <li>白名单风控校验、欺诈防范与客户支持</li>
+                        <li>核心清结算服务交付：为您开通及管理多国本地收款户，执行当地本地网络及 SWIFT 同名代付 (POBO)，完成 19+ 币种实时换汇、26 国法币 ⇄ 稳定币承兑交割，以及 94 国聚合收单清分结算。</li>
+                        <li>合规审查与全链路风控：履行 KYC/KYB 企业准入审核、贸易真实性核验、制裁名单与政治公众人物 (PEP) 筛查、反洗钱/反恐怖融资 (AML/CFT) 监控及链上 KYT 实时风险追踪。</li>
+                        <li>账户安全与欺诈防控：执行出金白名单校验、拦截异常登录或越权操作、保障商户后台与 API 通道安全稳定运行。</li>
+                        <li>客户服务与法定义务：提供对账水单与开户证明信导出、响应工单咨询，并依法履行金融监管机构的报送或核查义务。</li>
                     </ul>
 
-                    <h2>3. 信息共享与披露</h2>
-                    <p>我们不会出售您的信息，仅在交付清算服务所需范围内与持牌合作银行及清算机构共享，或在法律法规及监管要求时依法披露。</p>
+                    <h2>4. Cookie 与会话技术</h2>
+                    <p>我们的网站与系统仅使用保障基础功能与安全访问所必需的浏览器本地存储及会话标识（例如保存您的中英文语言偏好的 <code>pref-lang</code> 及会话校验标记），用于保持语言界面一致、维持登录安全状态及防范跨站攻击。我们不会利用广告跟踪器向任何外部数据经纪商出售您的访问轨迹。</p>
 
-                    <h2>4. 数据安全与保留</h2>
-                    <p>我们采用传输与存储加密、权限隔离、网络分段和定期安全审计措施保护数据安全；根据金融监管要求，交易与合规档案通常至少保留 7 年。</p>
-
-                    <h2>5. 联系我们</h2>
+                    <h2>5. 信息共享与跨境传输</h2>
+                    <p>我们绝不向第三方出售或出租客户及个人资料。仅在业务交付与合规审查所必需的最小范围内，我们可能向以下对象审慎共享必要信息：</p>
                     <ul>
-                        <li>邮箱：<a href="mailto:privacy@aurellix.com" class="text-[#0052ff] hover:underline">privacy@aurellix.com</a></li>
+                        <li>持牌合作银行、本地清算机构、国际卡组织收单通道及受监管流动池合作方，以完成您发起的跨境收付款与清结算指令。</li>
+                        <li>签署严格保密与数据保护协议的第三方身份核验、合规筛查、链上 KYT 风险分析及安全云托管服务商。</li>
+                        <li>依据适用法律法规、监管指令或司法程序要求依法须予配合披露的主管监管部门、税务机关或司法机关。</li>
+                    </ul>
+                    <p>鉴于跨境金融清结算涉及多法域资金通道协同，相关信息可能在合作清算银行及合规节点所在司法管辖区之间加密传输与处理，并全程受加密通道与访问隔离措施保护。</p>
+
+                    <h2>6. 数据安全与保留期限</h2>
+                    <p>我们采取多层次信息安全防护体系，包括全链路 TLS 传输加密、静态数据 AES-256 加密存储、最小权限角色隔离 (RBAC)、网络分段防御、Webhook 签名验真及定期第三方安全审计。根据反洗钱与国际金融监管规定，身份档案、KYB 证明文件、贸易单据及交易清算流水在账户注销或交易完结后通常至少保留 7 年（若相关法域要求更长期限，则从其规定）。</p>
+
+                    <h2>7. 您的权利与数据管理</h2>
+                    <p>在符合金融监管合规留存义务的前提下，您或企业授权代表有权联系我们查询、核对或申请更正不准确的企业与个人资料，亦可就数据处理范围提出问询或撤回非必要授权。对于依法处于强制法定保存期内的交易与反洗钱合规档案，我们将严格保管直至法定期限届满。</p>
+
+                    <h2>8. 联系我们</h2>
+                    <p>如您对本隐私政策、个人信息保护或企业合规资料更新有任何疑问，请通过以下官方渠道联系我们：</p>
+                    <ul>
+                        <li>官方邮箱：<a href="mailto:info@aurellix.com" class="text-[#0052ff] hover:underline">info@aurellix.com</a></li>
                         <li>Telegram：<a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="text-[#0052ff] hover:underline">@cs_aurellix</a></li>
                     </ul>
                 </div>
@@ -333,13 +372,14 @@
                 <div class="md:col-span-5">
                     <img src="static/logo.png" alt="Aurellix Pay" style="width: 126px; margin-bottom: 16px;" />
                     <p class="text-white/70 text-[0.8rem] leading-relaxed max-w-xs mb-5" data-i18n="footer_desc">Aurellix Group provides global treasury infrastructure spanning Pay, Conversion, and RWA.</p>
-                    <div class="flex items-center gap-3">
-                        <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition" aria-label="Telegram">
-                            <i class="fa-brands fa-telegram text-white/80 text-sm" aria-hidden="true"></i>
+                    <div class="flex flex-wrap items-center gap-2.5">
+                        <a href="index.html" id="pay-site-link" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-xs transition">
+                            <i class="fa-solid fa-credit-card text-white/60 text-[0.65rem]" aria-hidden="true"></i>
+                            <span data-i18n="footer_pay_site">Pay Website</span>
                         </a>
                         <a href="https://www.aurellix.com/" data-rwa-link="true" target="_blank" rel="noopener noreferrer" id="group-link" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-xs transition">
                             <i class="fa-solid fa-gem text-white/60 text-[0.65rem]" aria-hidden="true"></i>
-                            <span data-i18n="footer_group">Aurellix RWA Sub-site</span>
+                            <span data-i18n="footer_group">RWA Website</span>
                             <i class="fa-solid fa-arrow-up-right-from-square text-[0.5rem] text-white/50" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -352,7 +392,7 @@
                         <li><a href="otc.html" class="text-white/80 hover:text-white transition" data-i18n="nav_otc">Global Conversion</a></li>
                         <li><a href="index.html#acquiring" class="text-white/80 hover:text-white transition" data-i18n="nav_acquiring">Acquiring</a></li>
                         <li><a href="coverage.html" class="text-white/80 hover:text-white transition" data-i18n="nav_coverage">Coverage</a></li>
-                        <li><a href="https://www.aurellix.com/" data-rwa-link="true" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition inline-flex items-center gap-1" data-i18n="nav_rwa">RWA Ecosystem <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] text-white/50" data-keep-icon="true" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.aurellix.com/" data-rwa-link="true" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition inline-flex items-center gap-1" data-i18n="nav_rwa">RWA Platform <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] text-white/50" data-keep-icon="true" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
                 <div class="md:col-span-2">
@@ -385,8 +425,8 @@
     <script src="static/v2-common.js"></script>
     <script>
         const PAGE_TRANSLATIONS = {
-            en: { privacy_title: 'Privacy Policy', privacy_updated: 'Last updated: November 2026' },
-            zh: { privacy_title: '隐私政策', privacy_updated: '最后更新：2026 年 11 月' }
+            en: { privacy_title: 'Privacy Policy' },
+            zh: { privacy_title: '隐私政策' }
         };
         const PAGE_META = {
             en: { title: 'Aurellix Pay | Privacy Policy', desc: 'Aurellix Pay Privacy Policy across global collection, FX, fiat-to-stablecoin conversion, and acquiring services.' },

@@ -166,3 +166,15 @@
   2. 将 [coverage.html](../build_v2/coverage.html) 重构为 4 业务独立 Tab（`01 · 全球收款` / `02 · 全球付款` / `03 · 全球承兑` / `04 · 全球收单`）动态重绘 `world_map.svg` 与下方国家/通道面板。
   3. 移除 [index.html](../build_v2/index.html) `#compliance` 前两张卡片（瑞士 SRO、迪拜 PSP），调整为 4 栏布局并在 `#rwa` 增加子站直达按钮。
   4. 同步镜像替换 `build/` 并通过 `verify_v2.js` 全量校验（`1240 / 1240 PASS`）、`0` 敏感词/`OTC` 命中及 `5180/5181` 端口 `200 OK` 检查。
+
+
+---
+
+## 14. 「RWA 平台」文案统一、去除 PYUSD、页脚双官网入口及隐私/条款条款升级 (2026-11-17 14:05)
+- **用户指令**：「1.图1：不要叫RWA官网子站：改为RWA平台 2.图2：RWA平台 3.图3：去掉PYUSD（全站） 4.图4：显示支付官网，RWA官网，Telegram就不要了。(左边这个） 5.图5图6邮箱改为：info@aurellix.com, 隐私政策和服务条款请进行完善优化。内容稍微多一些，最近更新时间不要写了。」
+- **执行落地**：
+  1. **RWA 文案与平台命名统一**（[v2-common.js](../build_v2/static/v2-common.js)、[index.html](../build_v2/index.html) 等 6 页）：顶部导航与 `#rwa` 按钮统一改为 **`RWA 平台`** / **`RWA Platform`**，中英文彻底移除 `官网子站` / `子网站` / `Sub-site`。
+  2. **全站移除 `PYUSD`**：精简首页 `#checkout-token-grid` 为 3 列代币按钮（`USDT`、`USDC`、`EURC`）、首页 `#compliance` 合规币种卡片改为 `USDT · USDC`、并更新 [otc.html](../build_v2/otc.html) Mode 3 卡片为 `EURC / Local FX` 与 `USDT ⇄ USDC ⇄ EURC`。
+  3. **页脚左侧品牌入口改版**：全部 6 页 `<footer>` 左侧移除圆形 Telegram 按钮，改为 **`支付官网`** (`Pay Website`, `#pay-site-link`) 与 **`RWA 官网`** (`RWA Website`, `#group-link`) 并排双入口（右侧咨询顾问列 `@cs_aurellix` 保留不变）。
+  4. **[privacy.html](../build_v2/privacy.html) 与 [terms.html](../build_v2/terms.html) 内容充实与邮箱统一**：删除「最近更新时间 / Last updated」字样，中英文均扩展至 8 大完整条款（覆盖 KYB 准入、贸易真实性单据、锁汇与链上白名单、退汇与拒付、API 与知识产权、风控与责任限制及数据合规权利等），官方邮箱统一变更为 `info@aurellix.com`。
+  5. **构建与验证**：`build_v2/` 镜像覆盖 `build/`，`verify_v2.js build_v2` 与 `verify_v2.js build` 均取得 **`PASSED: 1310 | FAILED: 0`**，静态扫描第三方词、`OTC`、`PYUSD`、`官网子站/Sub-site` 与旧邮箱均 `0` 命中。

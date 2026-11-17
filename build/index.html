@@ -126,7 +126,7 @@
                     <a href="coverage.html" class="nav-link" data-i18n="nav_coverage">Coverage</a>
 
                     <a href="https://www.aurellix.com/" data-rwa-link="true" target="_blank" rel="noopener noreferrer" class="nav-link">
-                        <span data-i18n="nav_rwa">RWA Ecosystem</span>
+                        <span data-i18n="nav_rwa">RWA Platform</span>
                         <i class="fa-solid fa-arrow-up-right-from-square text-[0.62rem] opacity-60" aria-hidden="true"></i>
                     </a>
 
@@ -216,7 +216,7 @@
 
             <a href="coverage.html" onclick="AurellixV2.toggleMobileMenu(true)" class="border-b border-slate-100 pb-3" data-i18n="nav_coverage">Coverage</a>
             <a href="https://www.aurellix.com/" data-rwa-link="true" target="_blank" rel="noopener noreferrer" onclick="AurellixV2.toggleMobileMenu(true)" class="flex items-center gap-2 border-b border-slate-100 pb-3">
-                <span data-i18n="nav_rwa">RWA Ecosystem</span>
+                <span data-i18n="nav_rwa">RWA Platform</span>
                 <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-60" aria-hidden="true"></i>
             </a>
             <a href="https://docs.rail.aurellix.com/" data-api-link="true" target="_blank" rel="noopener noreferrer" onclick="AurellixV2.toggleMobileMenu(true)" class="border-b border-slate-100 pb-3" data-i18n="nav_api">API Docs</a>
@@ -723,7 +723,7 @@
                                 </div>
 
                                 <p class="text-[0.68rem] font-extrabold uppercase tracking-wider text-slate-400 mb-3" data-i18n="chk_select">Select Settlement Token</p>
-                                <div id="checkout-token-grid" class="grid grid-cols-2 gap-2.5 mb-5" role="group" aria-label="Select payment token">
+                                <div id="checkout-token-grid" class="grid grid-cols-3 gap-2.5 mb-5" role="group" aria-label="Select payment token">
                                     <button type="button" onclick="selectCheckoutToken(this)" aria-pressed="true" class="token-btn p-3 rounded-xl border-2 border-[#0052ff] bg-blue-50/70 flex items-center gap-2.5 text-left cursor-pointer transition">
                                         <span class="w-7 h-7 rounded-full bg-emerald-500 text-white font-black text-xs flex items-center justify-center shrink-0">T</span>
                                         <span>
@@ -743,13 +743,6 @@
                                         <span>
                                             <span class="block text-xs font-900 text-slate-900">EURC</span>
                                             <span class="block text-[0.65rem] text-slate-500">Circle</span>
-                                        </span>
-                                    </button>
-                                    <button type="button" onclick="selectCheckoutToken(this)" aria-pressed="false" class="token-btn p-3 rounded-xl border border-slate-200 hover:border-slate-300 bg-white flex items-center gap-2.5 text-left cursor-pointer transition">
-                                        <span class="w-7 h-7 rounded-full bg-blue-600 text-white font-black text-xs flex items-center justify-center shrink-0">P</span>
-                                        <span>
-                                            <span class="block text-xs font-900 text-slate-900">PYUSD</span>
-                                            <span class="block text-[0.65rem] text-slate-500">PayPal</span>
                                         </span>
                                     </button>
                                 </div>
@@ -919,7 +912,7 @@
                             <span class="text-xs font-bold text-slate-500" data-i18n="rwa_tag">Compliant Minting &amp; Global Payouts</span>
                         </div>
                         <a href="https://www.aurellix.com/" data-rwa-link="true" target="_blank" rel="noopener noreferrer" class="btn-contact px-4 py-2 rounded-xl text-xs inline-flex items-center gap-1.5 self-start sm:self-auto shrink-0" data-i18n="rwa_portal_btn">
-                            Visit RWA Sub-site <i class="fa-solid fa-arrow-up-right-from-square text-[0.65rem]" data-keep-icon="true" aria-hidden="true"></i>
+                            RWA Platform <i class="fa-solid fa-arrow-up-right-from-square text-[0.65rem]" data-keep-icon="true" aria-hidden="true"></i>
                         </a>
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -989,7 +982,7 @@
                     </div>
                     <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center">
                         <div class="w-8 h-6 mx-auto mb-3 flex items-center justify-center text-emerald-600 text-lg font-black">₮</div>
-                        <div class="text-xs font-900 text-slate-900">USDT · USDC · PYUSD</div>
+                        <div class="text-xs font-900 text-slate-900">USDT · USDC</div>
                         <div class="text-[0.68rem] text-slate-500 mt-1" data-i18n="comp6_d">Multi-Chain Rail</div>
                     </div>
                 </div>
@@ -1021,13 +1014,14 @@
                 <div class="md:col-span-5">
                     <img src="static/logo.png" alt="Aurellix Pay" style="width: 126px; margin-bottom: 16px;" />
                     <p class="text-white/70 text-[0.8rem] leading-relaxed max-w-xs mb-5" data-i18n="footer_desc">Aurellix Group provides global treasury infrastructure spanning Pay, Conversion, and RWA.</p>
-                    <div class="flex items-center gap-3">
-                        <a href="https://t.me/cs_aurellix" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition" aria-label="Telegram">
-                            <i class="fa-brands fa-telegram text-white/80 text-sm" aria-hidden="true"></i>
+                    <div class="flex flex-wrap items-center gap-2.5">
+                        <a href="index.html" id="pay-site-link" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-xs transition">
+                            <i class="fa-solid fa-credit-card text-white/60 text-[0.65rem]" aria-hidden="true"></i>
+                            <span data-i18n="footer_pay_site">Pay Website</span>
                         </a>
                         <a href="https://www.aurellix.com/" data-rwa-link="true" target="_blank" rel="noopener noreferrer" id="group-link" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white text-xs transition">
                             <i class="fa-solid fa-gem text-white/60 text-[0.65rem]" aria-hidden="true"></i>
-                            <span data-i18n="footer_group">Aurellix RWA Sub-site</span>
+                            <span data-i18n="footer_group">RWA Website</span>
                             <i class="fa-solid fa-arrow-up-right-from-square text-[0.5rem] text-white/50" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -1040,7 +1034,7 @@
                         <li><a href="otc.html" class="text-white/80 hover:text-white transition" data-i18n="nav_otc">Global Conversion</a></li>
                         <li><a href="index.html#acquiring" class="text-white/80 hover:text-white transition" data-i18n="nav_acquiring">Acquiring</a></li>
                         <li><a href="coverage.html" class="text-white/80 hover:text-white transition" data-i18n="nav_coverage">Coverage</a></li>
-                        <li><a href="https://www.aurellix.com/" data-rwa-link="true" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition inline-flex items-center gap-1" data-i18n="nav_rwa">RWA Ecosystem <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] text-white/50" data-keep-icon="true" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.aurellix.com/" data-rwa-link="true" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition inline-flex items-center gap-1" data-i18n="nav_rwa">RWA Platform <i class="fa-solid fa-arrow-up-right-from-square text-[0.55rem] text-white/50" data-keep-icon="true" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
                 <div class="md:col-span-2">
@@ -1182,7 +1176,7 @@
                 ind4_d: 'Instant e-wallet & batch payouts',
                 rwa_title: 'RWA Asset Settlement Ecosystem',
                 rwa_tag: 'Compliant Minting & Global Payouts',
-                rwa_portal_btn: 'Visit RWA Sub-site',
+                rwa_portal_btn: 'RWA Platform',
                 rwa1_t: 'US Equities',
                 rwa1_d: '24/7 Stablecoin Rail',
                 rwa2_t: 'Physical Gold',
@@ -1298,8 +1292,8 @@
                 ind4_t: 'MCN 与全球发薪',
                 ind4_d: '本地钱包批量下发，秒级直达',
                 rwa_title: 'RWA 实物资产清结算生态',
-                rwa_tag: 'Aurellix 集团 RWA 官网子站 · 合规资产代币化发行与全球交割',
-                rwa_portal_btn: '进入 RWA 官网子站',
+                rwa_tag: 'Aurellix 集团 RWA 平台 · 合规资产代币化发行与全球交割',
+                rwa_portal_btn: 'RWA 平台',
                 rwa1_t: '美股代币化',
                 rwa1_d: '7×24 全球即时结算',
                 rwa2_t: '实物黄金',

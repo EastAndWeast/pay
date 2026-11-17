@@ -139,3 +139,26 @@ git -C "AurellixPay_new_website" diff --name-only -- build/
   - `Select-String -Path "AurellixPay_new_website\build\*.html","AurellixPay_new_website\build\static\v2-common.js" -Pattern "\bOTC\b" -CaseSensitive` → **0 命中**
 - **本地预览双端口 HTTP 校验（`5180` = `build_v2`，`5181` = `build`）**：
   - `index.html`、`fx.html`、`otc.html`、`coverage.html`、`privacy.html`、`terms.html`、`static/v2-common.js`、`static/v2.css`、`static/world_map.svg` 共 18 个端点 `curl.exe` 请求全部返回 **`200`**。
+
+
+---
+
+## 9. RWA 平台命名统一、全站去 PYUSD、页脚双官网入口与隐私/服务条款完善 (2026-11-17 14:05)
+
+### 变更摘要
+1. **RWA 平台统一命名**：全站 6 页顶部导航、移动端抽屉、页脚业务列与首页 `#rwa` 按钮统一改为 **`RWA 平台`** / **`RWA Platform`**，全面去除 `官网子站` / `子网站` / `Sub-site` 表述（[v2-common.js](../build_v2/static/v2-common.js)、[index.html](../build_v2/index.html) 等）。
+2. **全站移除 `PYUSD`**：
+   - `index.html#checkout-token-grid` 改为 `grid grid-cols-3 gap-2.5 mb-5`（仅保留 `USDT`、`USDC`、`EURC`）。
+   - `index.html#compliance` 卡片由 `USDT · USDC · PYUSD` 改为 `USDT · USDC`。
+   - [otc.html](../build_v2/otc.html) Mode 3 卡片改为 `EURC / Local FX` 与 `USDT ⇄ USDC ⇄ EURC`。
+3. **页脚左侧改版**：6 页 `<footer>` 左侧移除圆形 Telegram 按钮，改为 **`支付官网`** (`#pay-site-link`, `href="index.html"`) 与 **`RWA 官网`** (`#group-link`, `data-rwa-link="true"`) 并排显示（右侧咨询顾问 `@cs_aurellix` 保持不变）。
+4. **[privacy.html](../build_v2/privacy.html) 与 [terms.html](../build_v2/terms.html) 完善**：
+   - 删除顶部「最近更新 / Last updated」字样及对应 i18n 键。
+   - 中英文均扩充至 8 章企业级合规条款（覆盖 KYB/UBO、贸易佐证单据、Cookie 与本地存储、锁汇与链上白名单规则、退汇与拒付、API 与知识产权、风控中止与责任限制及信息安全/权利保障）。
+   - 联系方式邮箱统一更改为 `info@aurellix.com`（清理旧 `privacy@aurellix.com` 与 `legal@aurellix.com`）。
+
+### 实测命令与最终结果（`build_v2/` 镜像覆盖 `build/` 后执行）
+- `node "...\verify_v2.js" build_v2` → **`VERIFICATION SUMMARY -> PASSED: 1310 | FAILED: 0`**（退出码 `0`）
+- `node "...\verify_v2.js" build` → **`VERIFICATION SUMMARY -> PASSED: 1310 | FAILED: 0`**（退出码 `0`）
+- `Select-String`（检查 `build/*.html` 与 `build/static/v2-common.js` 中的第三方词、`\bOTC\b`、`\bPYUSD\b`、`官网子站|子网站|Sub-site`、`privacy@aurellix|legal@aurellix`）→ **0 命中**
+- `curl.exe` 请求 `http://127.0.0.1:5180/`（`build_v2`）与 `http://127.0.0.1:5181/`（`build`）下全部 6 页 HTML 与 `static/v2-common.js` 共 14 个端点 → 全部返回 **`200`**

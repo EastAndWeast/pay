@@ -1,6 +1,6 @@
 /* Shared i18n, navigation, drawer, and accessibility utilities for Aurellix Group */
 window.AurellixV2 = (function () {
-  // Single source of truth for the Aurellix RWA Sub-site URL (update here when domain changes)
+  // Single source of truth for the Aurellix RWA Platform URL (update here when domain changes)
   const RWA_SITE_URL = 'https://www.aurellix.com/';
 
   const COMMON_TRANSLATIONS = {
@@ -9,8 +9,8 @@ window.AurellixV2 = (function () {
       nav_products: 'Products',
       nav_solutions: 'Solutions',
       nav_resources: 'Resources',
-      nav_rwa: 'RWA Ecosystem',
-      nav_rwa_sub: 'RWA Sub-site',
+      nav_rwa: 'RWA Platform',
+      nav_rwa_sub: 'RWA Platform',
       nav_prod_collect: 'Global Collection',
       nav_prod_collect_desc: '22+ local & global VA accounts',
       nav_prod_payout: 'Global Payout',
@@ -42,8 +42,9 @@ window.AurellixV2 = (function () {
       nav_contact: 'Contact',
       nav_portal: 'Merchant Portal',
       mobile_lang_label: 'Select Language',
-      footer_desc: 'Aurellix Group operates global treasury & payment infrastructure spanning Pay (B2B collection, payout & acquiring), Global Conversion (fiat ⇄ stablecoin clearing), and the RWA Ecosystem.',
-      footer_group: 'Aurellix RWA Sub-site',
+      footer_desc: 'Aurellix Group operates global treasury & payment infrastructure spanning Pay (B2B collection, payout & acquiring), Global Conversion (fiat ⇄ stablecoin clearing), and the RWA Platform.',
+      footer_pay_site: 'Pay Website',
+      footer_group: 'RWA Website',
       footer_product: 'Solutions',
       footer_resources: 'Resources',
       footer_privacy: 'Privacy Policy',
@@ -60,8 +61,8 @@ window.AurellixV2 = (function () {
       nav_products: '产品服务',
       nav_solutions: '解决方案',
       nav_resources: '开发与生态',
-      nav_rwa: 'RWA 生态',
-      nav_rwa_sub: '集团 RWA 子站',
+      nav_rwa: 'RWA 平台',
+      nav_rwa_sub: 'RWA 平台',
       nav_prod_collect: '全球收款',
       nav_prod_collect_desc: '22+ 国本地与全球收款账户',
       nav_prod_payout: '全球付款',
@@ -93,8 +94,9 @@ window.AurellixV2 = (function () {
       nav_contact: '咨询顾问',
       nav_portal: '商户管理后台',
       mobile_lang_label: '选择语言 / Language',
-      footer_desc: 'Aurellix 集团官方主站 · 统筹旗下 Aurellix Pay（全球收付及聚合收单）、全球承兑（26 国法币⇄稳定币清结算）与 RWA 实物资产代币化子网站三大板块。',
-      footer_group: '访问 RWA 官网子站',
+      footer_desc: 'Aurellix 集团官方主站 · 统筹旗下 Aurellix Pay（全球收付及聚合收单）、全球承兑（26 国法币⇄稳定币清结算）与 RWA 实物资产代币化平台三大板块。',
+      footer_pay_site: '支付官网',
+      footer_group: 'RWA 官网',
       footer_product: '集团业务矩阵',
       footer_resources: '开发与入口',
       footer_privacy: '隐私政策',
@@ -155,7 +157,7 @@ window.AurellixV2 = (function () {
       } catch (e) {}
     });
 
-    // Dynamic API Docs & centralized RWA Sub-site links
+    // Dynamic API Docs & centralized RWA Platform links
     document.querySelectorAll('a[data-i18n="nav_api"], a[data-api-link="true"]').forEach((link) => {
       link.setAttribute('href', currentLang === 'zh' ? 'https://docs.rail.aurellix.com/zh/' : 'https://docs.rail.aurellix.com/');
     });
