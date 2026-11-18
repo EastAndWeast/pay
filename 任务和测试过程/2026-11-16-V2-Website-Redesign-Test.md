@@ -286,3 +286,25 @@ git -C "AurellixPay_new_website" diff --name-only -- build/
 ## 19. 回滚方案 A UI 精修，恢复保留原版样式 (2026-11-17 19:09)
 - **用户决定**：「还是用原来的版本吧。我感觉还是原来的版本好，不要精修版本。」
 - **处理结果**：已通过 `git checkout -- build_v2/index.html build_v2/static/v2.css` 完整还原 `build_v2/` 至原版（与 `build/` 及 `origin/dev` 一致），运行 `verify_v2.js build_v2` 返回 **`VERIFICATION SUMMARY -> PASSED: 1632 | FAILED: 0`**。
+
+
+---
+
+## 20. 隐藏全站「人民币回款 / 在岸 CNY 结汇」相关展示（保留源码不删除）(2026-11-18 15:59)
+
+### 变更摘要
+1. **[index.html](../build_v2/index.html)**：
+   - `#conversion` 板块第 3 条特性「合规贸易人民币结汇 / Compliant CNY Trade Settlement」整块添加 `hidden data-cny-hidden="true"` 隐藏（源码保留）。
+   - 换汇演示窗将原 `6.6700 CNY` / `667,000 CNY` / `CNY` 标识置入 `hidden data-cny-hidden="true"` 保留，对外可见展示改为 `1 USD = 1.00 USDT · 0.92 EUR` 与 `100K USDT · 92K EUR`（`₮ · EUR`）。
+2. **[fx.html](../build_v2/fx.html)**：
+   - 顶部统计卡 `19+1 FX & CNY` 调整为 `19` / `Real-Time FX`（原文本置入 `hidden` 保留）；Tab 3 调整为 `03 · 实时多币种换汇` / `03 · Real-Time FX`。
+   - Panel 3（`#fx-exchange`）3 步「贸易订单申报 / 获取结汇额度 / 合规结汇水单」模块添加 `hidden data-cny-hidden="true"` 隐藏；演示计算窗由 `USD → CNY (6.6700)` 改为 `USD → EUR (0.9200)`（原 CNY 数值置入 `hidden` 保留）。
+   - `FX_CURRENCIES` 数组中 `CNY` 条目保留并标记 `hidden: true`，`renderCurrencies()` 过滤渲染其余 19 种币种。
+3. **[coverage.html](../build_v2/coverage.html)**：
+   - `CHANNEL_MARKETS` 与 `PAYOUT_HUB_MARKETS` 中 `Mainland China`（`CNY` / `Trade CNY Repatriation`）条目保留并标记 `hidden: true`，渲染函数过滤隐藏（双渠道表显示 35 市场，付款枢纽显示 15 项）；`BIZ_MAP_META.payout.global` 与 `convert.global` 注释移除 `'cn'` 地图高亮。
+4. **[privacy.html](../build_v2/privacy.html) & [terms.html](../build_v2/terms.html)**：
+   - 将「及合规人民币结汇」「与贸易结汇」「及在岸人民币结汇额度申请」短语用 `<span hidden data-cny-hidden="true">...</span>` 隐藏，原文保留。
+
+### 实测结果（`build_v2/` 覆盖 `build/` 后执行）
+- `verify_v2.js build_v2` → **`VERIFICATION SUMMARY -> PASSED: 1633 | FAILED: 0`**
+- `verify_v2.js build` → **`VERIFICATION SUMMARY -> PASSED: 1633 | FAILED: 0`**

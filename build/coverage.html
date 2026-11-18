@@ -725,7 +725,7 @@
             { flag: 'nz', reg: '欧美及大洋洲', regEn: 'EU, Americas & Oceania', nameEn: 'New Zealand', nameZh: '新西兰', curr: 'NZD', ga: 'no', gaEn: 'Currency Not Supported', gaZh: '暂不支持该币种通道', fx: 'yes', fxEn: 'NZD Live FX Settlement & Local Payout', fxZh: '支持 NZD 实时换汇交割（暂未开放本地 VA 收款）' },
 
             // 大中华及日韩 (4)
-            { flag: 'cn', reg: '大中华及日韩', regEn: 'Greater China, JP & KR', nameEn: 'Mainland China', nameZh: '中国大陆', curr: 'CNY', ga: 'no', gaEn: 'No Onshore CNY Settlement', gaZh: '不支持在岸人民币外管阳光结汇', fx: 'yes', fxEn: 'Trade-Backed Onshore CNY Settlement & Withdraw', fxZh: '支持 B2B 贸易合同申报阳光结汇 CNY 及对公/个人提现' },
+            { flag: 'cn', reg: '大中华及日韩', regEn: 'Greater China, JP & KR', nameEn: 'Mainland China', nameZh: '中国大陆', curr: 'CNY', ga: 'no', gaEn: 'No Onshore CNY Settlement', gaZh: '不支持在岸人民币外管阳光结汇', fx: 'yes', fxEn: 'Trade-Backed Onshore CNY Settlement & Withdraw', fxZh: '支持 B2B 贸易合同申报阳光结汇 CNY 及对公/个人提现', hidden: true },
             { flag: 'hk', reg: '大中华及日韩', regEn: 'Greater China, JP & KR', nameEn: 'Hong Kong, China', nameZh: '中国香港', curr: 'HKD / CNH', ga: 'yes', gaEn: 'HKD Local + Offshore CNH SWIFT', gaZh: 'HKD 本地归集与付款 + 离岸 CNH SWIFT 全球收付款', fx: 'yes', fxEn: 'HK VA (FPS/CHATS, HKD/USD/CNH/EUR) + FX + Payout', fxZh: 'HK VA 收款 (FPS/CHATS，含 HKD/USD/CNH/EUR) + 换汇 + 本地付款' },
             { flag: 'jp', reg: '大中华及日韩', regEn: 'Greater China, JP & KR', nameEn: 'Japan', nameZh: '日本', curr: 'JPY', ga: 'yes', gaEn: 'Global SWIFT Pay-in & Payout', gaZh: 'SWIFT 全球收付款（本地通道暂不支持）', fx: 'yes', fxEn: 'JPY Live FX Settlement & Payout', fxZh: '支持 JPY 实时换汇交割（暂未开放本地 VA 收款）' },
             { flag: 'kr', reg: '大中华及日韩', regEn: 'Greater China, JP & KR', nameEn: 'South Korea', nameZh: '韩国', curr: 'KRW', ga: 'soon', gaEn: 'Local & SWIFT Channels Upcoming', gaZh: '本地收付款与 SWIFT 通道即将支持', fx: 'yes', fxEn: 'KRW Live FX Settlement & Payout', fxZh: '支持 KRW 实时换汇交割（暂未开放本地 VA 收款）' },
@@ -876,7 +876,7 @@
 
         function renderDualMatrix(lang) {
             const isZh = lang === 'zh';
-            const regRows = CHANNEL_MARKETS.filter(r => dmRegion === 'all' || r.reg === dmRegion);
+            const regRows = CHANNEL_MARKETS.filter(r => !r.hidden && (dmRegion === 'all' || r.reg === dmRegion));
             const bothCnt = regRows.filter(r => r.ga !== 'no' && r.fx === 'yes').length;
             const gaCnt = regRows.filter(r => r.ga !== 'no' && r.fx === 'no').length;
             const fxCnt = regRows.filter(r => r.ga === 'no' && r.fx === 'yes').length;
@@ -997,7 +997,7 @@
             { code: 'us', svg: ['us'], nameEn: 'United States & Americas', nameZh: '美国及美洲枢纽', curr: 'USD / CAD / MXN', tags: ['ACH', 'Fedwire', 'SPEI', 'POBO'], slaEn: 'Same Day – 1d', slaZh: '当日 - 1日' },
             { code: 'eu', svg: ['de','fr','it','es','nl','gb'], nameEn: 'Europe & UK Clearing', nameZh: '欧洲与英国银行清算', curr: 'EUR / GBP / CHF', tags: ['SEPA Instant', 'FPS', 'POBO'], slaEn: 'Instant – T+0', slaZh: '实时 - T+0' },
             { code: 'hk', svg: ['hk','sg'], nameEn: 'Hong Kong & Singapore', nameZh: '香港与新加坡枢纽', curr: 'HKD / SGD / CNH', tags: ['FPS', 'FAST', 'SWIFT POBO'], slaEn: 'Same Day', slaZh: '当日到账' },
-            { code: 'cn', svg: ['cn'], nameEn: 'Mainland China', nameZh: '中国大陆', curr: 'CNY', tags: ['Trade CNY Repatriation', 'Bank Withdraw'], slaEn: 'T+0 Compliant', slaZh: '合规阳光结汇 T+0' },
+            { code: 'cn', svg: ['cn'], nameEn: 'Mainland China', nameZh: '中国大陆', curr: 'CNY', tags: ['Trade CNY Repatriation', 'Bank Withdraw'], slaEn: 'T+0 Compliant', slaZh: '合规阳光结汇 T+0', hidden: true },
             { code: 'au', svg: ['au','nz','jp','kr','ae'], nameEn: 'APAC & Middle East Bank', nameZh: '亚太及中东多币银行下发', curr: 'AUD / JPY / KRW / AED', tags: ['NPP/PayID', 'SWIFT POBO'], slaEn: 'T+0 – T+1', slaZh: 'T+0 - T+1' }
         ];
 
@@ -1014,7 +1014,7 @@
             },
             payout: {
                 core: ['id','ph','my','th','vn','br','ng','ke','pk','bd','in','us','gb','de','hk','sg'],
-                global: ['mx','co','cl','pe','ca','au','nz','ch','cn','jp','kr','ae','sa','il','za','gh','ug','ci','fr','it','es','nl','be','at','pt','ie','fi','gr','pl','se','no','dk'],
+                global: ['mx','co','cl','pe','ca','au','nz','ch','jp','kr','ae','sa','il','za','gh','ug','ci','fr','it','es','nl','be','at','pt','ie','fi','gr','pl','se','no','dk'], /* 'cn' hidden */
                 titleEn: '33+ Local Bank Rails & 11-Country 19 Mobile E-Wallets',
                 titleZh: '全球付款 · 33+ 币种本地银行清算 & 11 国 19 种电子钱包',
                 coreEn: '11-Country E-Wallet & Core Rails',
@@ -1024,7 +1024,7 @@
             },
             convert: {
                 core: ['us','gb','de','hk','sg','au','ca','ch','jp','id','th','my','vn','ph','br','mx','ae','sa','in','pk','ng','za','il'],
-                global: ['cn','nz','kr','cl','co','pe','ar','bh','bd','gh','ke','ug','ci','fr','it','es','nl','be','at','pt','ie','fi','gr'],
+                global: ['nz','kr','cl','co','pe','ar','bh','bd','gh','ke','ug','ci','fr','it','es','nl','be','at','pt','ie','fi','gr'], /* 'cn' hidden */
                 titleEn: '26 Fiats ⇄ USDT/USDC & 36-Market Dual-Channel Matrix',
                 titleZh: '全球承兑 · 26 国法币 ⇄ 稳定币 & 36 国双渠道网络',
                 coreEn: 'Active 2-Way Conversion Corridors',
@@ -1072,7 +1072,7 @@
             const el = document.getElementById('cov-payout-grid');
             if (!el) return;
             const isZh = lang === 'zh';
-            el.innerHTML = PAYOUT_HUB_MARKETS.map(m => `
+            el.innerHTML = PAYOUT_HUB_MARKETS.filter(m => !m.hidden).map(m => `
                 <div id="payout-card-${m.code}" class="bento-card p-4 rounded-2xl cursor-pointer" onmouseenter="hoverCountryList(${JSON.stringify(m.svg).replace(/"/g, '&quot;')}, true)" onmouseleave="hoverCountryList(${JSON.stringify(m.svg).replace(/"/g, '&quot;')}, false)">
                     <div class="flex items-center gap-3 mb-2.5">
                         <img src="https://flagcdn.com/${m.code}.svg" alt="${m.nameEn}" class="w-7 h-5 object-cover rounded-sm border border-slate-200 shrink-0" />

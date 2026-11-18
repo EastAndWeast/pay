@@ -610,8 +610,15 @@ body {
 
 @media (prefers-reduced-motion: no-preference) {
   @keyframes floating {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
   .float-ui {
@@ -632,6 +639,7 @@ body {
 
 /* Forced Colors Mode Support */
 @media (forced-colors: active) {
+
   .nav-link[aria-current="page"]::after,
   .nav-dropdown-trigger[aria-current="page"]::after,
   .v2-tab[aria-selected="true"]::after,
@@ -755,7 +763,7 @@ details.ax-accordion[open] {
   box-shadow: 0 18px 40px -16px rgba(0, 82, 255, 0.12);
 }
 
-details.ax-accordion > summary {
+details.ax-accordion>summary {
   list-style: none;
   display: flex;
   align-items: center;
@@ -770,16 +778,16 @@ details.ax-accordion > summary {
   transition: background-color 0.18s ease, color 0.18s ease;
 }
 
-details.ax-accordion > summary::-webkit-details-marker {
+details.ax-accordion>summary::-webkit-details-marker {
   display: none;
 }
 
-details.ax-accordion > summary:hover {
+details.ax-accordion>summary:hover {
   background: #f8fafc;
   color: var(--hex-blue);
 }
 
-details.ax-accordion > summary:focus-visible {
+details.ax-accordion>summary:focus-visible {
   outline: 2px solid var(--hex-blue);
   outline-offset: -2px;
 }
@@ -790,7 +798,7 @@ details.ax-accordion > summary:focus-visible {
   flex-shrink: 0;
 }
 
-details.ax-accordion[open] > summary .ax-acc-chevron {
+details.ax-accordion[open]>summary .ax-acc-chevron {
   transform: rotate(180deg);
   color: var(--hex-blue);
 }

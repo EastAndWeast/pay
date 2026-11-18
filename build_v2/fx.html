@@ -283,8 +283,9 @@
                             <div class="text-[0.65rem] font-bold text-slate-500 mt-0.5" data-i18n="fx_stat1">VA Markets</div>
                         </div>
                         <div class="bg-white/90 px-4 py-3 rounded-2xl border border-slate-200 text-center">
-                            <div class="text-xl font-900 text-[#0284c7]">19+1</div>
-                            <div class="text-[0.65rem] font-bold text-slate-500 mt-0.5" data-i18n="fx_stat2">FX &amp; CNY</div>
+                            <div class="text-xl font-900 text-[#0284c7]">19</div>
+                            <div class="text-[0.65rem] font-bold text-slate-500 mt-0.5" data-i18n="fx_stat2">Real-Time FX</div>
+                            <span hidden data-cny-hidden="true">19+1 FX &amp; CNY</span>
                         </div>
                         <div class="bg-white/90 px-4 py-3 rounded-2xl border border-slate-200 text-center">
                             <div class="text-xl font-900 text-[#0284c7]">33+</div>
@@ -301,7 +302,7 @@
                 <div id="fx-module-tablist" class="v2-tablist" role="tablist" aria-label="Global FX Service Modules">
                     <button type="button" role="tab" id="fx-mod-tab-collect" aria-selected="true" aria-controls="fx-va-matrix" tabindex="0" class="v2-tab" data-panel="fx-va-matrix" data-i18n="fx_tab_collect">01 · Global Collection (22 VA)</button>
                     <button type="button" role="tab" id="fx-mod-tab-payout" aria-selected="false" aria-controls="fx-wallets" tabindex="-1" class="v2-tab" data-panel="fx-wallets" data-i18n="fx_tab_payout">02 · Global Payout &amp; E-Wallets</button>
-                    <button type="button" role="tab" id="fx-mod-tab-exchange" aria-selected="false" aria-controls="fx-exchange" tabindex="-1" class="v2-tab" data-panel="fx-exchange" data-i18n="fx_tab_exchange">03 · Real-Time FX &amp; CNY</button>
+                    <button type="button" role="tab" id="fx-mod-tab-exchange" aria-selected="false" aria-controls="fx-exchange" tabindex="-1" class="v2-tab" data-panel="fx-exchange" data-i18n="fx_tab_exchange">03 · Real-Time FX</button>
                     <button type="button" role="tab" id="fx-mod-tab-b2b" aria-selected="false" aria-controls="fx-b2b" tabindex="-1" class="v2-tab" data-panel="fx-b2b" data-i18n="fx_tab_b2b">04 · B2B Trade Solutions</button>
                 </div>
             </div>
@@ -551,9 +552,9 @@
             <div class="max-w-7xl mx-auto px-5 lg:px-8 space-y-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                     <div class="lg:col-span-5">
-                        <h2 class="text-3xl font-900 text-slate-900 tracking-tight mb-3" data-i18n="curr_title">19+1 Currency Real-Time FX &amp; CNY Settlement</h2>
-                        <p class="text-sm text-slate-600 mb-6" data-i18n="fx_p3_sub">Live interbank rates with 60s lock and zero FX fee. Declare verified B2B orders to settle into onshore CNY compliantly.</p>
-                        <div class="grid grid-cols-3 gap-2.5 mb-7 text-center">
+                        <h2 class="text-3xl font-900 text-slate-900 tracking-tight mb-3" data-i18n="curr_title">19-Currency Real-Time FX</h2>
+                        <p class="text-sm text-slate-600 mb-6" data-i18n="fx_p3_sub">Live interbank rates with 60s lock and zero FX fee across 19 global currencies.</p>
+                        <div class="grid grid-cols-3 gap-2.5 mb-7 text-center" hidden data-cny-hidden="true">
                             <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
                                 <div class="text-xs font-black text-[#0052ff] mb-0.5">01</div>
                                 <div class="text-xs font-bold text-slate-800" data-i18n="cny_step1">Upload Orders</div>
@@ -593,15 +594,17 @@
                                         <span class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white border border-slate-200 text-xs font-black"><img src="https://flagcdn.com/us.svg" alt="USD" class="w-5 h-5 rounded-full object-cover" /> USD</span>
                                     </div>
                                     <div class="flex items-center justify-between text-xs font-bold text-slate-600 px-2">
-                                        <span data-i18n="fx_vis_rate">Interbank Rate: 1 USD = 6.6700 CNY</span>
+                                        <span data-i18n="fx_vis_rate">Interbank Rate: 1 USD = 0.9200 EUR</span>
+                                        <span hidden data-cny-hidden="true">Interbank Rate: 1 USD = 6.6700 CNY</span>
                                         <i class="fa-solid fa-arrow-down text-[#0052ff]" aria-hidden="true"></i>
                                     </div>
                                     <div class="p-3.5 rounded-xl border border-blue-200 bg-blue-50/40 flex items-center justify-between">
                                         <div>
                                             <div class="text-[0.68rem] font-bold text-slate-500" data-i18n="fx_vis_recv">Settle Amount</div>
-                                            <div class="text-lg font-900 text-[#0052ff] tabular-nums">667,000.00</div>
+                                            <div class="text-lg font-900 text-[#0052ff] tabular-nums">92,000.00</div>
+                                            <span hidden data-cny-hidden="true">667,000.00 CNY</span>
                                         </div>
-                                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white border border-blue-200 text-xs font-black"><img src="https://flagcdn.com/cn.svg" alt="CNY" class="w-5 h-5 rounded-full object-cover" /> CNY</span>
+                                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white border border-blue-200 text-xs font-black"><img src="https://flagcdn.com/eu.svg" alt="EUR" class="w-5 h-5 rounded-full object-cover" /> EUR</span>
                                     </div>
                                 </div>
                             </div>
@@ -782,12 +785,12 @@
                 fx_hero_title: '22-Country B2B Local Collect, FX & Payout',
                 fx_hero_desc: 'Dedicated local VA accounts, 7×24 real-time FX, and direct bank & wallet payouts.',
                 fx_stat1: 'VA Markets',
-                fx_stat2: 'FX & CNY',
+                fx_stat2: 'Real-Time FX',
                 fx_stat3: 'Local Payout',
                 fx_stat4: '11 Countries · 19 E-Wallets',
                 fx_tab_collect: '01 · Global Collection (22 VA)',
                 fx_tab_payout: '02 · Global Payout & E-Wallets',
-                fx_tab_exchange: '03 · Real-Time FX & CNY',
+                fx_tab_exchange: '03 · Real-Time FX',
                 fx_tab_b2b: '04 · B2B Trade Solutions',
                 fx_p1_sub: 'Open local accounts with official bank confirmation letters. Buyers pay locally with zero intermediary deductions.',
                 fx_chk1: '22-Market VA + Official Bank Letters',
@@ -819,15 +822,15 @@
                 fx_vis_pay_hdr: 'Multi-Rail Payout Dispatch',
                 fx_vis_pay_ok: '33+ Local & 19 E-Wallets',
                 fx_acc_wallets: 'Expand: 11-Country Mobile E-Wallets Directory & Single Limits',
-                curr_title: '19+1 Currency Real-Time FX & CNY Settlement',
-                fx_p3_sub: 'Live interbank rates with 60s lock and zero FX fee. Declare verified B2B orders to settle into onshore CNY compliantly.',
+                curr_title: '19-Currency Real-Time FX',
+                fx_p3_sub: 'Live interbank rates with 60s lock and zero FX fee across 19 global currencies.',
                 cny_step1: 'Upload Orders',
                 cny_step2: 'CNY Quota',
                 cny_step3: 'Settle & Slip',
                 fx_vis_send: 'Sell',
-                fx_vis_rate: 'Interbank Rate: 1 USD = 6.6700 CNY',
+                fx_vis_rate: 'Interbank Rate: 1 USD = 0.9200 EUR',
                 fx_vis_recv: 'Settle Amount',
-                fx_acc_curr: 'Expand: All 20 Supported FX & Settlement Currencies',
+                fx_acc_curr: 'Expand: All 19 Supported FX Currencies',
                 fx_b2b_title: 'B2B Trade Scenarios & KYB Onboarding',
                 fx_b2b_sub: 'Dedicated collection & settlement compliance tailored to Goods Trade, Logistics & Digital Tech.',
                 tr1_t: 'General Goods Trade',
@@ -848,14 +851,14 @@
             zh: {
                 fx_hero_badge: '全球收付 · 外贸 B2B 本币清算网络',
                 fx_hero_title: '22 国本地 VA 收款 · 实时换汇与全球下发',
-                fx_hero_desc: '一户开通多国本地收款账户，支持 19+1 币种实时换汇与 33+ 币种全球直付。',
+                fx_hero_desc: '一户开通多国本地收款账户，支持 19 币种实时换汇与 33+ 币种全球直付。',
                 fx_stat1: '本地 VA 国家',
-                fx_stat2: '换汇与结汇',
+                fx_stat2: '实时换汇',
                 fx_stat3: '本地银行清算',
                 fx_stat4: '11 国 19 种电子钱包',
                 fx_tab_collect: '01 · 全球收款 (22国VA)',
                 fx_tab_payout: '02 · 全球付款与电子钱包',
-                fx_tab_exchange: '03 · 实时换汇与合规结汇',
+                fx_tab_exchange: '03 · 实时多币种换汇',
                 fx_tab_b2b: '04 · B2B 外贸解决方案',
                 fx_p1_sub: '一键开立带官方开户信的 22 国本地账户，海外买家本地原币直付，0 中间行扣费。',
                 fx_chk1: '22 国本地 VA 与官方开户证明信',
@@ -887,15 +890,15 @@
                 fx_vis_pay_hdr: '全球多通道实时下发路由',
                 fx_vis_pay_ok: '33+ 本地银行 & 19 种钱包',
                 fx_acc_wallets: '展开查看：11 国 19 种本地移动电子钱包支持清单与限额',
-                curr_title: '19+1 币种实时换汇与在岸 CNY 结汇',
-                fx_p3_sub: '7×24 银行间实时牌价、60 秒锁汇、0 手续费；凭贸易订单阳光结汇人民币。',
+                curr_title: '19 币种实时换汇',
+                fx_p3_sub: '7×24 银行间实时牌价、60 秒锁汇、0 手续费，覆盖 19 种全球主流及新兴货币。',
                 cny_step1: '贸易订单申报',
                 cny_step2: '获取结汇额度',
                 cny_step3: '合规结汇水单',
                 fx_vis_send: '卖出币种',
-                fx_vis_rate: '实时汇率：1 USD = 6.6700 CNY',
-                fx_vis_recv: '结汇到账金额',
-                fx_acc_curr: '展开查看：支持的 20 种实时换汇与结汇币种全览',
+                fx_vis_rate: '实时汇率：1 USD = 0.9200 EUR',
+                fx_vis_recv: '兑换到账金额',
+                fx_acc_curr: '展开查看：支持的 19 种实时换汇币种全览',
                 fx_b2b_title: 'B2B 外贸三大场景与准入主体',
                 fx_b2b_sub: '针对一般货物贸易、国际物流与数字服务匹配差异化入账与开户规范。',
                 tr1_t: '一般货物贸易 (Code 02)',
@@ -956,7 +959,7 @@
 
         const FX_CURRENCIES = [
             { code: 'USD', flag: 'us', nameEn: 'US Dollar', nameZh: '美元' },
-            { code: 'CNY', flag: 'cn', nameEn: 'CNY (Onshore Settlement)', nameZh: '人民币 (在岸结汇)' },
+            { code: 'CNY', flag: 'cn', nameEn: 'CNY (Onshore Settlement)', nameZh: '人民币 (在岸结汇)', hidden: true },
             { code: 'CNH', flag: 'hk', nameEn: 'Offshore RMB', nameZh: '离岸人民币' },
             { code: 'EUR', flag: 'eu', nameEn: 'Euro', nameZh: '欧元' },
             { code: 'GBP', flag: 'gb', nameEn: 'British Pound', nameZh: '英镑' },
@@ -1066,7 +1069,7 @@
             const isZh = lang === 'zh';
             const grid = document.getElementById('fx-currency-grid');
             if (!grid) return;
-            grid.innerHTML = FX_CURRENCIES.map(c => `
+            grid.innerHTML = FX_CURRENCIES.filter(c => !c.hidden).map(c => `
                 <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center gap-3">
                     <img src="https://flagcdn.com/${c.flag}.svg" alt="${c.code}" class="w-7 h-5 rounded-sm border border-slate-200 object-cover shrink-0" />
                     <div class="min-w-0">

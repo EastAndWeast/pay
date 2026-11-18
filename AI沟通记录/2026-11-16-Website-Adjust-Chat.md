@@ -295,3 +295,12 @@
 ## 28. 确认放弃精修版本并完整恢复原版 UI (2026-11-17 19:09)
 - **用户指令**：「还是用原来的版本吧。我感觉还是原来的版本好，不要精修版本。」
 - **处理结果**：已完整还原 `build_v2/index.html` 与 `build_v2/static/v2.css` 至原版状态（`build/` 与 `origin/dev` 原本就未动），`verify_v2.js build_v2` 校验 **`1632 / 1632 PASS`**，本地 `5180` 与 `5181` 端口均已恢复一致的原版样式。
+
+
+---
+
+## 29. 全站隐藏「人民币回款 / 在岸 CNY 结汇」相关展示（保留源码不删除）(2026-11-18 15:59)
+- **用户指令**：「查一下官网，关于人民币回款相关的部分隐藏一下。不要删除。」
+- **处理结果**：
+  1. 以 `hidden` 属性及数据对象 `hidden: true` 过滤的方式，对 [index.html](../build_v2/index.html)、[fx.html](../build_v2/fx.html)、[coverage.html](../build_v2/coverage.html)、[privacy.html](../build_v2/privacy.html) 与 [terms.html](../build_v2/terms.html) 中所有人民币回款 / 在岸 CNY 结汇文案、算例（`6.6700 CNY`）、结汇步骤条、`CNY` 币种卡、中国大陆结汇列表及地图高亮进行完整隐藏，**全部源码与数据条目均保留未删除**（`otc.html` 中的 `CNY (Offshore)` 香港离岸通道未动）。
+  2. 已同步覆盖 `build/` 并通过 `verify_v2.js` **`1633 / 1633 PASS`**。
