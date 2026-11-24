@@ -304,3 +304,12 @@
 - **处理结果**：
   1. 以 `hidden` 属性及数据对象 `hidden: true` 过滤的方式，对 [index.html](../build_v2/index.html)、[fx.html](../build_v2/fx.html)、[coverage.html](../build_v2/coverage.html)、[privacy.html](../build_v2/privacy.html) 与 [terms.html](../build_v2/terms.html) 中所有人民币回款 / 在岸 CNY 结汇文案、算例（`6.6700 CNY`）、结汇步骤条、`CNY` 币种卡、中国大陆结汇列表及地图高亮进行完整隐藏，**全部源码与数据条目均保留未删除**（`otc.html` 中的 `CNY (Offshore)` 香港离岸通道未动）。
   2. 已同步覆盖 `build/` 并通过 `verify_v2.js` **`1633 / 1633 PASS`**。
+
+
+---
+
+## 30. 按 Pyvio + MCE 通道数据源校准全球付款币种、11 国 29 种钱包与 35 国矩阵数量 (2026-11-24 11:21)
+- **用户指令**：「目前我们官网的这个数量可以对的上吗？」「这些数据来源是MCE，pyvio吗？」「你先根据这两个通道进行处理。」
+- **处理结果**：
+  1. 在 [coverage.html](../build_v2/coverage.html) 补齐第 11 个电子钱包国家 **加纳（GH）** 及拉美/非洲/欧洲/亚太中东银行清算卡片（可见卡片扩至 18 张、覆盖 38 种清算币种，支撑 `33+`）；将电子钱包总量与 `fx.html`/`index.html` 统一校准为 **`11 国 29 种`**；将隐藏 `CNY` 后的双渠道可见市场数由 `36` 校准为 **`35`**。
+  2. 更新 `verify_v2.js` 数量校验并同步覆盖 `build/`，`verify_v2.js build_v2` 与 `verify_v2.js build` 均取得 **`1636 / 1636 PASS`**。暂未推送 GitHub，待用户确认后提交。

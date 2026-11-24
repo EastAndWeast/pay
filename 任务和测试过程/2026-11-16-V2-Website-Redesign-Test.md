@@ -308,3 +308,23 @@ git -C "AurellixPay_new_website" diff --name-only -- build/
 ### 实测结果（`build_v2/` 覆盖 `build/` 后执行）
 - `verify_v2.js build_v2` → **`VERIFICATION SUMMARY -> PASSED: 1633 | FAILED: 0`**
 - `verify_v2.js build` → **`VERIFICATION SUMMARY -> PASSED: 1633 | FAILED: 0`**
+
+
+---
+
+## 21. 依据 Pyvio + MCE 双通道口径校准全站全球付款、电子钱包与双渠道市场数量 (2026-11-24 11:21)
+
+### 变更摘要
+1. **[coverage.html](../build_v2/coverage.html)**：
+   - **全球付款枢纽（`PAYOUT_HUB_MARKETS`）**：补齐第 11 个电子钱包国家 **加纳（GH · `MTN Mobile Money / Vodafone Cash / GIP`）**，并在 `BIZ_MAP_META.payout.core` 同步纳入 `'gh'`；补充拉美多国本地银行清算（`CLP / COP / PEN`）、非洲多国本地银行（`ZAR / UGX / XOF`）并扩展欧洲与亚太中东枢纽币种清单（`PLN / SEK / NOK / DKK / NZD / SAR / ILS`），使卡片区从 15 张/24 币种扩展为 **18 张可见卡片、38 种可见清算币种**，与 `33+` 标称一致（隐藏 `CNY` 条目仍保留）。
+   - **电子钱包口径对齐**：将 `11 国 19 种` 统一校准为 **`11 国 29 种`**（与 `fx.html` `EWALLETS` 29 项明细 1:1 匹配）。
+   - **双渠道市场口径对齐**：因 `Mainland China (CNY)` 已隐藏，将可见对照表与文案从 `36` 校准为 **`35`**（`大中华及日韩 (4)` → `(3)`），同步更新 `<meta>`、`PAGE_META`、`PAGE_TRANSLATIONS` 与 `BIZ_MAP_META.convert`。
+2. **[fx.html](../build_v2/fx.html) & [index.html](../build_v2/index.html)**：
+   - 保持 `19 币种实时换汇` 不变，将付款电子钱包文案中的 `19 种` 同步校准为 **`29 种`**（并修正 `index.html` 英文 `mod_pay_p3_d` 重复词 `Dana`）。
+3. **自动化校验（`verify_v2.js`）**：
+   - 新增 `fx.html` `#fx-ewallet-grid` 钱包标签总数 `=== 29` 校验；更新 `coverage.html` 付款卡片数为 `18`（含 `#payout-card-gh`）及双渠道全地区标签 `(35)` 校验。
+
+### 实测结果（`build_v2/` 覆盖 `build/` 后执行）
+- `verify_v2.js build_v2` → **`VERIFICATION SUMMARY -> PASSED: 1636 | FAILED: 0`**
+- `verify_v2.js build` → **`VERIFICATION SUMMARY -> PASSED: 1636 | FAILED: 0`**
+- 静态扫描：`0` 处供应商词、`0` 处 `PYUSD`、`0` 处可见旧口径（`19 种钱包` / `36 国`）。
