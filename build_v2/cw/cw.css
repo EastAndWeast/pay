@@ -1,0 +1,752 @@
+/* Aurellix Pay 官网在线客服悬浮窗样式（作用域限定于 #cw-root 与 .cw-lightbox） */
+#cw-root {
+  --cw-blue: #0052ff;
+  --cw-blue-dark: #003cc2;
+  --cw-navy: #0b192c;
+  --cw-ink: #0f172a;
+  --cw-muted: #475569;
+  --cw-line: #e2e8f0;
+  --cw-surface: #ffffff;
+  --cw-soft: #f8fafc;
+  --cw-tg: #0ea5e9;
+  --cw-focus: #0052ff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--cw-ink);
+}
+
+#cw-root *,
+#cw-root *::before,
+#cw-root *::after {
+  box-sizing: border-box;
+}
+
+#cw-root [hidden] {
+  display: none !important;
+}
+
+#cw-root :focus-visible {
+  outline: 2.5px solid var(--cw-focus);
+  outline-offset: 2px;
+}
+
+#cw-root button,
+#cw-root input,
+#cw-root select,
+#cw-root textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+#cw-root button {
+  cursor: pointer;
+}
+
+#cw-root button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+/* ---- 悬浮气泡按钮 ---- */
+#cw-root .cw-launcher {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 90;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cw-blue), var(--cw-blue-dark));
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 28px -4px rgba(0, 82, 255, 0.42), 0 4px 10px rgba(11, 25, 44, 0.16);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#cw-root .cw-launcher:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px -4px rgba(0, 82, 255, 0.5), 0 6px 14px rgba(11, 25, 44, 0.2);
+}
+
+#cw-root .cw-launcher .cw-icon-close {
+  display: none;
+}
+
+#cw-root .cw-launcher[aria-expanded="true"] .cw-icon-chat {
+  display: none;
+}
+
+#cw-root .cw-launcher[aria-expanded="true"] .cw-icon-close {
+  display: block;
+}
+
+#cw-root .cw-unread {
+  position: absolute;
+  top: -0.2rem;
+  right: -0.2rem;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.32rem;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.25rem;
+  text-align: center;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.45);
+}
+
+/* ---- 悬浮面板 ---- */
+#cw-root .cw-panel {
+  position: fixed;
+  right: 1.25rem;
+  bottom: calc(1.25rem + 4.35rem);
+  z-index: 89;
+  width: min(24rem, calc(100vw - 1.5rem));
+  height: auto;
+  max-height: min(40rem, calc(100vh - 7.25rem));
+  display: flex;
+  flex-direction: column;
+  background: var(--cw-surface);
+  border: 1px solid var(--cw-line);
+  border-radius: 1.125rem;
+  overflow: hidden;
+  box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.24), 0 0 0 1px rgba(15, 23, 42, 0.04);
+}
+
+#cw-root .cw-panel:has(#cw-stage:not([hidden])) {
+  height: min(38rem, calc(100vh - 7.25rem));
+}
+
+#cw-root .cw-head {
+  position: relative;
+  padding: 1.15rem 1.2rem 0.95rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0b192c 0%, #003cc2 56%, #0052ff 100%);
+}
+
+#cw-root .cw-hi {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+#cw-root .cw-greet {
+  margin: 0.15rem 0 0.28rem;
+  font-size: 1.18rem;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+}
+
+#cw-root .cw-greet-sub {
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.88;
+}
+
+#cw-root .cw-head-tools {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+#cw-root .cw-languages {
+  display: flex;
+  gap: 0.15rem;
+}
+
+#cw-root .cw-languages button {
+  min-height: 1.7rem;
+  padding: 0.1rem 0.45rem;
+  border: 1px solid transparent;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+#cw-root .cw-languages button:hover,
+#cw-root .cw-languages button[aria-pressed="true"] {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+#cw-root .cw-languages button[aria-pressed="true"] {
+  font-weight: 700;
+}
+
+#cw-root .cw-icon-btn {
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 0;
+  border-radius: 0.45rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.86);
+  display: grid;
+  place-items: center;
+}
+
+#cw-root .cw-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+/* ---- 坐席状态与操作区 ---- */
+#cw-root .cw-presence-line {
+  padding: 0.6rem 1.15rem 0.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#cw-root .cw-presence {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--cw-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+#cw-root .cw-presence-dot {
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #cbd5e1;
+}
+
+#cw-root .cw-presence[data-state="online"] .cw-presence-dot {
+  background: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+}
+
+#cw-root .cw-presence[data-state="offline"] .cw-presence-dot,
+#cw-root .cw-presence[data-state="unavailable"] .cw-presence-dot {
+  background: #f59e0b;
+}
+
+#cw-root .cw-action-row {
+  padding: 0.45rem 1.15rem 1.05rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+/* ---- Telegram 渠道入口卡片 ---- */
+#cw-root .cw-tg-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid #bae6fd;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+  color: var(--cw-ink);
+  text-decoration: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+#cw-root .cw-tg-card:hover {
+  border-color: var(--cw-tg);
+  box-shadow: 0 6px 16px -6px rgba(14, 165, 233, 0.28);
+  transform: translateY(-1px);
+}
+
+#cw-root .cw-tg-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+#cw-root .cw-tg-badge {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.55rem;
+  background: var(--cw-tg);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+#cw-root .cw-tg-title {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--cw-ink);
+  line-height: 1.25;
+}
+
+#cw-root .cw-tg-sub {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--cw-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#cw-root .cw-tg-arrow {
+  color: #0284c7;
+  flex-shrink: 0;
+}
+
+#cw-root .cw-tg-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.65rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.65rem;
+  border: 1px solid #bae6fd;
+  background: #f0f9ff;
+  color: #0369a1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#cw-root .cw-tg-inline:hover {
+  background: #e0f2fe;
+}
+
+/* ---- 固定问题列表 ---- */
+#cw-root .cw-suggest {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 0.45rem 0.9rem 0.95rem;
+}
+
+#cw-root .cw-suggest-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--cw-line);
+  border-radius: 0.85rem;
+  overflow: hidden;
+  background: var(--cw-soft);
+}
+
+#cw-root .cw-suggest-item + .cw-suggest-item {
+  border-top: 1px solid var(--cw-line);
+}
+
+#cw-root .cw-suggest-q {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 0.7rem 0.9rem;
+  color: var(--cw-ink);
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.45;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+#cw-root .cw-suggest-q:hover {
+  background: #eff6ff;
+}
+
+#cw-root .cw-suggest-q .cw-chev {
+  flex-shrink: 0;
+  color: #94a3b8;
+  transition: transform 0.15s ease;
+}
+
+#cw-root .cw-suggest-item.open .cw-chev {
+  transform: rotate(90deg);
+}
+
+#cw-root .cw-suggest-a {
+  padding: 0 0.9rem 0.75rem;
+  color: var(--cw-muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+#cw-root .cw-suggest-tag {
+  display: inline-block;
+  margin-right: 0.35rem;
+  padding: 0.08rem 0.4rem;
+  border-radius: 0.35rem;
+  background: #eff6ff;
+  color: var(--cw-blue);
+  font-size: 0.68rem;
+  font-weight: 700;
+  vertical-align: 0.05em;
+}
+
+/* ---- 表单与聊天区域 ---- */
+#cw-root .cw-stage {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#cw-root .cw-stage-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.35rem 1.15rem 0;
+}
+
+#cw-root .cw-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.45rem;
+  margin-left: -0.45rem;
+  border: 0;
+  border-radius: 0.45rem;
+  background: transparent;
+  color: var(--cw-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+#cw-root .cw-back-btn:hover {
+  background: #f1f5f9;
+  color: var(--cw-blue);
+}
+
+#cw-root .cw-end-btn {
+  padding: 0.22rem 0.55rem;
+  border: 1px solid var(--cw-line);
+  border-radius: 0.45rem;
+  background: #ffffff;
+  color: var(--cw-muted);
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+#cw-root .cw-end-btn:hover {
+  border-color: #fca5a5;
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+#cw-root .cw-stage > form,
+#cw-root .cw-stage > #cw-receipt {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 0.65rem 1.15rem 1rem;
+}
+
+#cw-root .cw-notice {
+  margin: 0.1rem 0 0.75rem;
+  color: var(--cw-muted);
+  font-size: 0.75rem;
+}
+
+#cw-root .cw-notice.slim {
+  margin: 0.1rem 1rem 0.28rem;
+}
+
+#cw-root form label {
+  display: block;
+  margin-bottom: 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--cw-muted);
+}
+
+#cw-root input,
+#cw-root select,
+#cw-root textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.52rem 0.72rem;
+  border: 1px solid var(--cw-line);
+  border-radius: 0.65rem;
+  background: #ffffff;
+  color: var(--cw-ink);
+  font-size: 0.86rem;
+}
+
+#cw-root input:focus,
+#cw-root select:focus,
+#cw-root textarea:focus {
+  border-color: var(--cw-blue);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 82, 255, 0.12);
+}
+
+#cw-root textarea {
+  min-height: 5.5rem;
+  resize: vertical;
+}
+
+#cw-root .cw-primary {
+  min-height: 2.55rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, var(--cw-blue), var(--cw-blue-dark));
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0, 82, 255, 0.22);
+}
+
+#cw-root .cw-primary:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+#cw-root .cw-primary.wide {
+  width: 100%;
+}
+
+#cw-root .cw-text-btn {
+  min-height: 2.2rem;
+  padding: 0.25rem 0.65rem;
+  border: 0;
+  background: transparent;
+  color: var(--cw-blue);
+  font-weight: 700;
+  border-radius: 0.5rem;
+}
+
+#cw-root .cw-text-btn:hover {
+  background: #eff6ff;
+}
+
+#cw-root .cw-receipt-title {
+  margin: 0.2rem 0 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--cw-blue);
+}
+
+#cw-root #cw-receipt p {
+  margin-top: 0.2rem;
+  font-size: 0.86rem;
+  color: var(--cw-muted);
+}
+
+#cw-root #cw-chat-view {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-top: 0.4rem;
+}
+
+#cw-root #cw-messages {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.2rem 1rem 0.45rem;
+}
+
+#cw-root .cw-msg {
+  max-width: 82%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.85rem;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+#cw-root .cw-msg .cw-who {
+  display: block;
+  font-size: 0.68rem;
+  opacity: 0.72;
+  margin-bottom: 0.1rem;
+}
+
+#cw-root .cw-msg.agent {
+  align-self: flex-start;
+  background: #f1f5f9;
+  color: var(--cw-ink);
+  border-bottom-left-radius: 0.25rem;
+}
+
+#cw-root .cw-msg.visitor {
+  align-self: flex-end;
+  background: linear-gradient(135deg, var(--cw-blue), var(--cw-blue-dark));
+  color: #ffffff;
+  border-bottom-right-radius: 0.25rem;
+}
+
+#cw-root .cw-msg-empty {
+  color: var(--cw-muted);
+  font-size: 0.82rem;
+  padding: 0.4rem 0.2rem;
+}
+
+#cw-root .cw-composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.45rem;
+  padding: 0.4rem 1rem 0.85rem;
+}
+
+#cw-root .cw-composer input {
+  flex: 1;
+  margin-top: 0;
+  min-height: 2.55rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--cw-line);
+  border-radius: 1.3rem;
+  background: #ffffff;
+}
+
+#cw-root .cw-primary.round {
+  width: 2.55rem;
+  height: 2.55rem;
+  min-height: 2.55rem;
+  padding: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+#cw-root .cw-icon-attach {
+  width: 2.55rem;
+  height: 2.55rem;
+  min-height: 2.55rem;
+  padding: 0;
+  flex-shrink: 0;
+  border: 1px solid var(--cw-line);
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--cw-muted);
+  display: grid;
+  place-items: center;
+}
+
+#cw-root .cw-icon-attach:hover {
+  background: #eff6ff;
+  border-color: var(--cw-blue);
+  color: var(--cw-blue);
+}
+
+#cw-root #cw-attach-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0.2rem 1rem 0.3rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--cw-line);
+  border-radius: 0.65rem;
+  background: var(--cw-soft);
+}
+
+#cw-root #cw-attach-chip img {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: cover;
+  border-radius: 0.4rem;
+}
+
+#cw-root #cw-attach-chip span {
+  flex: 1;
+  font-size: 0.78rem;
+  color: var(--cw-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#cw-root #cw-attach-chip button {
+  width: 1.7rem;
+  height: 1.7rem;
+  border: 0;
+  border-radius: 0.35rem;
+  background: #e2e8f0;
+  color: var(--cw-muted);
+  font-size: 0.8rem;
+}
+
+#cw-root #cw-attach-chip button:hover {
+  background: #cbd5e1;
+  color: var(--cw-ink);
+}
+
+#cw-root .cw-msg-link {
+  color: inherit;
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+
+#cw-root .cw-msg.agent .cw-msg-link {
+  color: var(--cw-blue);
+}
+
+#cw-root .cw-msg-img {
+  display: block;
+  max-width: 100%;
+  max-height: 13rem;
+  border-radius: 0.5rem;
+  margin-top: 0.35rem;
+  cursor: zoom-in;
+}
+
+/* ---- 原生全屏灯箱 (<dialog>) ---- */
+dialog.cw-lightbox {
+  border: 0;
+  padding: 0;
+  margin: auto;
+  background: transparent;
+  max-width: 92vw;
+  max-height: 88vh;
+  overflow: visible;
+  cursor: zoom-out;
+}
+
+dialog.cw-lightbox:modal {
+  overscroll-behavior: contain;
+}
+
+dialog.cw-lightbox::backdrop {
+  background: rgba(11, 25, 44, 0.82);
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+
+dialog.cw-lightbox img {
+  display: block;
+  max-width: 92vw;
+  max-height: 86vh;
+  border-radius: 0.75rem;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.48);
+}
+
+@media (max-width: 32rem) {
+  #cw-root .cw-panel {
+    right: 0.65rem;
+    width: calc(100vw - 1.3rem);
+    height: min(74vh, calc(100vh - 6.2rem));
+    bottom: calc(0.9rem + 4.1rem);
+  }
+
+  #cw-root .cw-launcher {
+    right: 0.9rem;
+    bottom: 0.9rem;
+  }
+}

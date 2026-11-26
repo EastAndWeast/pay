@@ -96,7 +96,7 @@ window.AurellixV2 = (function () {
       nav_coverage: '全球覆盖',
       nav_api: 'API 接口文档',
       nav_demo: '演示 Demo',
-      nav_contact: '咨询顾问',
+      nav_contact: '咨询客服',
       nav_portal: '商户管理后台',
       mobile_lang_label: '选择语言 / Language',
       footer_desc: 'Aurellix 集团官方主站 · 统筹旗下 Aurellix Pay（全球收付及聚合收单）、全球承兑（26 国法币⇄稳定币清结算）与 RWA 实物资产代币化平台三大板块。',
