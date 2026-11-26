@@ -119,7 +119,7 @@
   box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.24), 0 0 0 1px rgba(15, 23, 42, 0.04);
 }
 
-#cw-root .cw-panel:has(#cw-stage:not([hidden])) {
+#cw-root .cw-panel:has(#cw-chat-view:not([hidden])) {
   height: min(38rem, calc(100vh - 7.25rem));
 }
 
@@ -531,16 +531,34 @@
   background: #eff6ff;
 }
 
+#cw-root #cw-receipt {
+  text-align: center;
+  padding: 1.5rem 1.25rem 1.35rem;
+}
+
+#cw-root .cw-receipt-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 0.85rem;
+  border-radius: 50%;
+  background: #ecfdf5;
+  color: #10b981;
+  display: grid;
+  place-items: center;
+  border: 1px solid #a7f3d0;
+}
+
 #cw-root .cw-receipt-title {
-  margin: 0.2rem 0 0.4rem;
-  font-size: 1.05rem;
+  margin: 0 0 0.45rem;
+  font-size: 1.08rem;
   font-weight: 800;
-  color: var(--cw-blue);
+  color: var(--cw-ink);
 }
 
 #cw-root #cw-receipt p {
-  margin-top: 0.2rem;
-  font-size: 0.86rem;
+  margin: 0 0 1.15rem;
+  font-size: 0.84rem;
+  line-height: 1.6;
   color: var(--cw-muted);
 }
 

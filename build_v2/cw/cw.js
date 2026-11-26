@@ -153,7 +153,7 @@ function createWidgetDOM() {
       <header class="cw-head">
         <div>
           <p class="cw-hi">Hi ~</p>
-          <h2 class="cw-greet"><span data-cw-text="greetName">我是 Aurellix 客服</span> <span aria-hidden="true">🙌</span></h2>
+          <h2 class="cw-greet"><span data-cw-text="greetName">我是 Aurellix 客服</span></h2>
           <p class="cw-greet-sub" data-cw-text="greetSub">支持网页在线客服与 Telegram 即时沟通</p>
         </div>
         <div class="cw-head-tools">
@@ -267,9 +267,20 @@ function createWidgetDOM() {
         </form>
 
         <div id="cw-receipt" hidden>
-          <p class="cw-receipt-title" data-cw-text="receiptTitle">留言已收到</p>
+          <div class="cw-receipt-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+              <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="cw-receipt-title" data-cw-text="receiptTitle">留言已收到</h3>
           <p data-cw-text="receiptDetail">已进入客服队列，我们将在下一个工作日回复到您的邮箱。</p>
-          <button class="cw-text-btn" id="cw-receipt-back" type="button" data-cw-text="receiptBack">返回</button>
+          <button class="cw-primary wide" id="cw-receipt-back" type="button" data-cw-text="receiptBack">返回</button>
+          <a class="cw-tg-inline" href="${TELEGRAM_URL}" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
+              <path d="M21.9 4.6c.2-.9-.6-1.6-1.4-1.3L2.7 10.2c-.9.3-.9 1.6.1 1.9l4.4 1.4 1.7 5.3c.2.7 1.1.9 1.6.4l2.5-2.5 4.7 3.4c.7.5 1.7.1 1.9-.7L21.9 4.6ZM9.3 13.7l8.2-5.1c.2-.1.4.2.2.4l-6.7 6.2-.3 2.9-1.4-4.4Z"/>
+            </svg>
+            <span data-cw-text="tgInline">或通过 Telegram 联系 ${TELEGRAM_HANDLE}</span>
+          </a>
         </div>
       </div>
     </section>
